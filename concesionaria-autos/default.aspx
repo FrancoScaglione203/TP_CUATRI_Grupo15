@@ -6,4 +6,6 @@
 
     <h1>INICIO...</h1>
 
+    <asp:GridView runat="server" Id="dgvMarcas"></asp:GridView>
+
 </asp:Content>
