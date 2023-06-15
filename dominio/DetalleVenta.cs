@@ -13,7 +13,7 @@ namespace dominio
         public int idFinanciacion { get; set; }
         public int idAuto {get; set; }
         public int Cantidad { get; set; }
-        public Decimal Precio { get; set; }
+        public decimal Precio { get; set; }
 
     }
 }
