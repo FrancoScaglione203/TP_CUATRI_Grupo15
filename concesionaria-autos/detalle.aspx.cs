@@ -7,16 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace concesionaria_autos
 {
-    public partial class MasterPage : System.Web.UI.MasterPage
+    public partial class detalle : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnLoginSingin_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("login.aspx");
         }
     }
 }
