@@ -16,22 +16,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Header -->
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-10 navbar-brand">
-                    <img src="https://www.serfadu.com/wp-content/uploads/2020/10/amazon.png" alt="logo">
-                </div>
-                <div class="col-2 py-3 formNav">
-                    <asp:TextBox ID="Search" class="form-control" type="text" placeholder="Buscar" runat="server"></asp:TextBox>
-                </div>
-            </div>
-        </div>
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-blue px-0">
             <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="https://www.carsmagazine.com.ar/wp-content/uploads/2021/03/Nuevo-logo-Renault-marzo-2021-fondo-negro.jpg" alt="logo">
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -64,10 +54,10 @@
                     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                         <h6 class="mb-4">Categorías</h6>
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Computadoras</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Celulares</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Televisores</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Cámaras</a></li>
+                            <li class="mb-2"><a href="#" class="nav-item nav-link">Autos</a></li>
+                            <li class="mb-2"><a href="#" class="nav-item nav-link">Motos</a></li>
+                            <li class="mb-2"><a href="#" class="nav-item nav-link">Camionetas</a></li>
+                            <li class="mb-2"><a href="#" class="nav-item nav-link">Jeep</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
@@ -75,8 +65,8 @@
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2"><a href="#" class="nav-item nav-link">Ingresar</a></li>
                             <li class="mb-2"><a href="#" class="nav-item nav-link">Registrarse</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Envíos</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Devoluciones</a></li>
+                            <li class="mb-2"><a href="#" class="nav-item nav-link">Sucursales</a></li>
+                            <li class="mb-2"><a href="#" class="nav-item nav-link">Planes</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-lg-0">
@@ -94,7 +84,7 @@
             </div>
             <div class="bg-blue py-3">
                 <div class="container text-center">
-                    <p class="text-white mb-0 py-2">© 2023 Amazon Todos los derechos reservados.</p>
+                    <p class="text-white mb-0 py-2">© 2023 Renault Todos los derechos reservados.</p>
                 </div>
             </div>
 
