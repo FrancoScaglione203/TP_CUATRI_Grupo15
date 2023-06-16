@@ -1,0 +1,147 @@
+﻿/*COLORES*/
+:root {
+    --foreColor: black;
+    --azul-hover: #4582c4;
+    --white: #ffffff;
+}
+
+.texto-azul {
+    color: var(--foreColor) !important;
+}
+
+.bg-blue {
+    background-color: var(--foreColor) !important;
+}
+
+/*GENERAL*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*,.container-fluid {
+    margin: 0;
+    padding: 0;
+    font-family: 'Muli', sans-serif;
+}
+
+/*BOTONES*/
+
+.btn-primary {
+    background-color: var(--foreColor) !important;
+    border: 1px solid var(--foreColor) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--azul-hover) !important;
+    border: 1px solid var(--azul-hover) !important;
+
+}
+
+/*NAVBAR*/
+
+nav a {
+    color: white !important;
+}
+
+.navbar-brand img {
+    max-height: 4rem;
+    height: 4rem;
+}
+
+/* SECCION HOME */
+
+
+
+main.home .sidebar {
+    background-color: #f8f9fa !important;
+    padding: 20px !important;
+}
+
+main.home .product-list {
+    padding: 20px !important;
+}
+
+main.home .card {
+    margin: 20px !important;
+    background-color: #f8f9fa !important;
+}
+
+main.home .card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2) !important;
+}
+
+main.home .card-body {
+    margin-bottom: 10px !important;
+    background-color: white !important;
+    border-top: 1px solid #ebebeb !important;
+    padding: 15px !important;
+}
+
+main.home img.card-top {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+}
+
+main.home p.precio {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    width: 100% !important;
+}
+
+main.home .boton{
+    width: 100% !important;
+    margin-bottom: 10px !important;
+}
+
+/*FOOTER*/
+
+footer h6 {
+    font-weight:600;
+}
+
+footer .fa {
+    color: var(--foreColor) !important;
+    font-size: 1.5rem;
+}
+
+footer .fa:hover {
+    color: var(--azul-hover) !important;
+}
+
+
+/*SECCION DETALLES*/
+.detail-img-container-mini {
+    max-height: 15vh;
+    height: 15vh;
+}
+
+.detail-img-container {
+    max-height: 60vh;
+    height: 60vh;
+}
+
+.detail-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.detail-info-container * {
+    max-width:25vw;
+    margin: 1rem 0;
+}
+
+/*CARRITO*/
+.carrito {
+    position:center;
+}
+
+/*CARRITO*/
+
+@media screen and (min-width:768px) and (max-width: 992px) {
+    main.home p.precio {
+        font-size: 0.8rem !important;
+    }
+}
