@@ -3,6 +3,7 @@
     --foreColor: black;
     --azul-hover: #4582c4;
     --white: #ffffff;
+    --decorations: blue;
 }
 
 .texto-azul {
@@ -15,12 +16,12 @@
 
 /*GENERAL*/
 
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.cdnfonts.com/css/nouvel-r');
 
-*,.container-fluid {
+*, .container-fluid {
     margin: 0;
     padding: 0;
-    font-family: 'Muli', sans-serif;
+    font-family: 'NouvelR', sans-serif;
 }
 
 /*BOTONES*/
@@ -36,8 +37,14 @@
 
 }
 
-/*NAVBAR*/
+.linkCards {
+    font-size: 0.9rem;
+    text-decoration:none;
+    border-bottom: 2px solid var(--decorations);
+    color:black;
+    }
 
+/*NAVBAR*/
 nav a {
     color: white !important;
 }
