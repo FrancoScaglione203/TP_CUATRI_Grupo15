@@ -1,0 +1,16 @@
+﻿div.name-container {
+    background-color: red !important;
+    margin: 2rem;
+    font-weight: 700;
+}
+
+div.name-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+
+.prueba {
+    background-color: red !important;
+}

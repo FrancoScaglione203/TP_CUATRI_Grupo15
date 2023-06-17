@@ -35,7 +35,7 @@
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
                     <p class="card-text">desde $<%: auto.Precio %></p>
-                    <a href="#" class="linkCards">descubrir</a>
+                    <a href="/detalle.aspx" class="linkCards">descubrir</a>
                 </div>
             </div>
             <%

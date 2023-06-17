@@ -153,3 +153,42 @@ footer .fa:hover {
         font-size: 0.8rem !important;
     }
 }
+
+/*DETALLE*/
+
+ div.name-container {
+    margin: 2rem;
+    font-weight: 700;
+}
+
+ div.name-price-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+
+ .price-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    width: 30%;
+    border-left: 2px solid darkgrey;
+ }
+
+.price{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.equipamiento{
+    display: flex;
+    justify-content: space-around;
+}
+
+.foto{
+    width: 300px;
+}
+
+
