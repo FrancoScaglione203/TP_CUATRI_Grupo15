@@ -12,11 +12,15 @@ namespace concesionaria_autos
 {
     public partial class _default : System.Web.UI.Page
     {
+        public List<Auto> ListaAutos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             MarcaNegocio negocio = new MarcaNegocio();
             dgvMarcas.DataSource = negocio.listar();
             dgvMarcas.DataBind();
+
+            AutoNeogocio autoNegocio = new AutoNeogocio();
+            ListaAutos = autoNegocio.listar();
         }
     }
 }

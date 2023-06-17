@@ -9,13 +9,11 @@ namespace dominio
     public class Auto
     {
         public int Id {  get; set; }
-        public string modelo { get; set; }
-        public int idMarca { get; set; }
+        public string Nombre { get; set; }
         public decimal Precio { get; set; }
-        public FichaTecnica FichaTecnica { get; set; }
-        public int idImagen { get; set; }
-        public int stock {get; set; }
-        public int idColor { get; set; }
-        public bool Estado { get; set; }
+        public int IdMarca { get; set; }
+        public string Imagen { get; set; }
+        public int Stock {get; set; }
+        public int Estado { get; set; }
     }
 }

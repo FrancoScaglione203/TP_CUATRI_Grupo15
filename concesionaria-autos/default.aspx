@@ -23,15 +23,27 @@
         </button>
     </div>
 
-    <div class="card border-0" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Card image cap">
-        <div class="card-body">
-            <h6 class="card-title text-uppercase fw-bold">Logan</h6>
-            <p class="card-text">desde $5.000.000</p>
-            <a href="#" class="linkCards">descubrir</a>
+    <div class="container">
+        <div class="row d-flex justify-content-around">
+
+            <%
+                foreach (dominio.Auto auto in ListaAutos)
+                {
+            %>
+            <div class="card border-0" style="width: 18rem">
+                <img class="card-img-top" src="<%: auto.Imagen %>" alt="<%: auto.Nombre %>">
+                <div class="card-body">
+                    <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
+                    <p class="card-text">desde $5.000.000</p>
+                    <a href="#" class="linkCards">descubrir</a>
+                </div>
+            </div>
+            <%
+                }
+            %>
         </div>
     </div>
 
-    <asp:GridView runat="server" ID="dgvMarcas"></asp:GridView>
+    <asp:GridView class="d-none" runat="server" ID="dgvMarcas"></asp:GridView>
 
 </asp:Content>

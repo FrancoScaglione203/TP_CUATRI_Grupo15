@@ -92,7 +92,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="sedan-lujo-rojo-carretera.jpg" />
     <Content Include="signin.aspx" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />

@@ -24,8 +24,11 @@
     font-family: 'NouvelR', sans-serif;
 }
 
-/*BOTONES*/
+.card {
+    margin: 0 2em;
+}
 
+/*BOTONES*/
 .btn-primary {
     background-color: var(--foreColor) !important;
     border: 1px solid var(--foreColor) !important;
@@ -55,8 +58,6 @@ nav a {
 }
 
 /* SECCION HOME */
-
-
 
 main.home .sidebar {
     background-color: #f8f9fa !important;
