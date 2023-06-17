@@ -34,7 +34,7 @@
                 <img class="card-img-top" src="<%: auto.Imagen %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
-                    <p class="card-text">desde $5.000.000</p>
+                    <p class="card-text">desde $<%: auto.Precio %></p>
                     <a href="#" class="linkCards">descubrir</a>
                 </div>
             </div>
