@@ -34,8 +34,8 @@
                         <a class="nav-item nav-link" href="#">Financiación</a>
                     </div>
                     <div class="navbar-nav ms-lg-4">
-                        <a class="nav-item nav-link" href="Carrito.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
-                            <asp:Label ID="lblCantidad" runat="server" CssClass="fa-solid px-1 nav-item nav-link"/>
+                     <%--   <a class="nav-item nav-link" href="Carrito.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <asp:Label ID="lblCantidad" runat="server" CssClass="fa-solid px-1 nav-item nav-link"/>--%>
                        <a class="nav-item nav-link" href="login.aspx">
                          <asp:Label ID="lblLogueo" runat="server" CssClass="fa-solid fa-user px-1" ></asp:Label></a>
                     </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 mb-lg-0">
                         <h6 class="mb-4">Nuestras Redes</h6>
-                        <p class=" mb-4">¡Síguenos en redes y descubre la mejor tecnología en nuestra tienda!.</p>
+                        <p class=" mb-4">¡Síguenos en redes y descubre los mejores modelos en nuestra tienda!.</p>
                         <ul class="list-inline mt-4">
                             <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
                             <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -84,7 +84,8 @@
             </div>
             <div class="bg-blue py-3">
                 <div class="container text-center">
-                    <p class="text-white mb-0 py-2">© 2023 Renault Todos los derechos reservados.</p>
+                    <p class="text-white mb-0 py-2">© Renault 2010-2023</p>
+       
                 </div>
             </div>
 

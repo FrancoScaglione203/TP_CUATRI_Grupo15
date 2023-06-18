@@ -29,14 +29,16 @@
 }
 
 /*BOTONES*/
+
 .btn-primary {
     background-color: var(--foreColor) !important;
     border: 1px solid var(--foreColor) !important;
+    border-style: none;
 }
 
 .btn-primary:hover {
-    background-color: var(--azul-hover) !important;
-    border: 1px solid var(--azul-hover) !important;
+    background-color: var(--decorations) !important;
+    border: 1px solid var(--decorations) !important;
 
 }
 

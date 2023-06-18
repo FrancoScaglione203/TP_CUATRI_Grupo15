@@ -64,6 +64,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="comparacion.aspx" />
+    <Content Include="configuracion.aspx" />
     <Content Include="Detalle.css" />
     <Content Include="Imagenes\banner1.png" />
     <Content Include="Imagenes\banner2.png" />
@@ -98,6 +100,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="comparacion.aspx.cs">
+      <DependentUpon>comparacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comparacion.aspx.designer.cs">
+      <DependentUpon>comparacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="configuracion.aspx.cs">
+      <DependentUpon>configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="configuracion.aspx.designer.cs">
+      <DependentUpon>configuracion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
