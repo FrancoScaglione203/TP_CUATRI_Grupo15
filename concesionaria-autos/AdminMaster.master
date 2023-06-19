@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="concesionaria_autos.AdminMaster" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="admin.css" rel="stylesheet" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="admin">
+        <nav>
+            <ul>
+                <li><a href="Usuarios.aspx">Listar Usuarios</a></li>
+                <li><a href="Autos.aspx">Listar Autos</a></li>
+                <!-- Sumar a la lista las opciones del menu de admin -->
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Contenido que se ve en pantalla -->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+    </div>
+    
+</asp:Content>
