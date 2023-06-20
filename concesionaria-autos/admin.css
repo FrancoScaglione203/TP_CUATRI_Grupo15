@@ -3,7 +3,6 @@
 }
 
 .admin nav {
-    width: 200px;
     background-color: #333;
     padding: 20px;
 }
@@ -12,10 +11,13 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
+        display:flex;
     }
 
 .admin nav ul li {
+        margin: 30px;
             margin-bottom: 10px;
+            
         }
 
 .admin nav ul li a {
@@ -34,7 +36,7 @@
             background-color: #666;
         }
 
-.admin {
-    flex: 1;
-    padding: 20px;
+.admin main {
+    padding: 3rem;
 }
+

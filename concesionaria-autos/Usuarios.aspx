@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="concesionaria_autos.Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Lista de Pokemons</h1>
+    <h1>Lista de Autos</h1>
     <div class="row">
         <div class="col-6">
             <div class="mb-3">
@@ -25,8 +25,8 @@
                     <asp:Label Text="Campo" ID="lblCampo" runat="server" />
                     <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" id="ddlCampo" OnSelectedIndexChanged="ddlCampo_SelectedIndexChanged">
                         <asp:ListItem Text="Nombre" />
-                        <asp:ListItem Text="Tipo" />
-                        <asp:ListItem Text="Número" />
+                        <%--<asp:ListItem Text="Tipo" />
+                        <asp:ListItem Text="Número" />--%>
                     </asp:DropDownList>
                 </div>
             </div>
@@ -69,9 +69,9 @@
         AllowPaging="True" PageSize="5">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-            <asp:BoundField HeaderText="Número" DataField="Numero" />
+            <%--<asp:BoundField HeaderText="Número" DataField="Numero" />
             <asp:BoundField HeaderText="Tipo" DataField="Tipo.Descripcion" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />--%>
             <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✍" />
         </Columns>
     </asp:GridView>
