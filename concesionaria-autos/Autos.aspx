@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="concesionaria_autos.Usuarios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="Autos.aspx.cs" Inherits="concesionaria_autos.Autos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Lista de Usuarios</h1>
+    <h1>Lista de Autos</h1>
     <div class="row">
         <div class="col-6">
             <div class="mb-3">
@@ -62,16 +62,13 @@
         </div>
         <%} %>
     </div>
-    <asp:GridView ID="dgvUsuarios" runat="server" DataKeyNames="Id"
+    <asp:GridView ID="dgvAutos" runat="server" DataKeyNames="Id"
         CssClass="table" AutoGenerateColumns="false"
-        OnSelectedIndexChanged="dgvUsuarios_SelectedIndexChanged"
-        OnPageIndexChanging="dgvUsuarios_PageIndexChanging"
+        OnSelectedIndexChanged="dgvAutos_SelectedIndexChanged"
+        OnPageIndexChanging="dgvAutos_PageIndexChanging"
         AllowPaging="True" PageSize="5">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-            <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-            <asp:BoundField HeaderText="DNI" DataField="DNI" />
-            <asp:BoundField HeaderText="Usuario" DataField="Usuario" />
 
             <%--<asp:BoundField HeaderText="Número" DataField="Numero" />
             <asp:BoundField HeaderText="Tipo" DataField="Tipo.Descripcion" />

@@ -1,15 +1,15 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using dominio;
-using negocio;
 
 namespace concesionaria_autos
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class Autos : System.Web.UI.Page
     {
         public bool FiltroAvanzado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -24,31 +24,31 @@ namespace concesionaria_autos
             FiltroAvanzado = chkAvanzado.Checked;
             if (!IsPostBack)
             {
-                UsuarioNegocio negocio = new UsuarioNegocio();
-                Session.Add("listaUsuarios", negocio.listarConSP());
-                dgvUsuarios.DataSource = Session["listaUsuarios"];
-                dgvUsuarios.DataBind();
+                AutoNeogocio negocio = new AutoNeogocio();
+                Session.Add("listaAutos", negocio.listar());
+                dgvAutos.DataSource = Session["listaAutos"];
+                dgvAutos.DataBind();
             }
         }
 
-        protected void dgvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void dgvAutos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            dgvUsuarios.PageIndex = e.NewPageIndex;
-            dgvUsuarios.DataBind();
+            dgvAutos.PageIndex = e.NewPageIndex;
+            dgvAutos.DataBind();
         }
 
-        protected void dgvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        protected void dgvAutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id = dgvUsuarios.SelectedDataKey.Value.ToString();
-            Response.Redirect("FormularioUsuario.aspx?id=" + id);
+            string id = dgvAutos.SelectedDataKey.Value.ToString();
+            Response.Redirect("FormularioAuto.aspx?id=" + id);
         }
 
         protected void filtro_TextChanged(object sender, EventArgs e)
         {
-            List<Usuario> lista = (List<Usuario>)Session["listaUsuarios"];
-            List<Usuario> listaFiltrada = lista.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()));
-            dgvUsuarios.DataSource = listaFiltrada;
-            dgvUsuarios.DataBind();
+            List<Auto> lista = (List<Auto>)Session["listaAutos"];
+            List<Auto> listaFiltrada = lista.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            dgvAutos.DataSource = listaFiltrada;
+            dgvAutos.DataBind();
         }
 
         protected void chkAvanzado_CheckedChanged(object sender, EventArgs e)
@@ -59,19 +59,19 @@ namespace concesionaria_autos
 
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlCriterio.Items.Clear();
-            if (ddlCampo.SelectedItem.ToString() == "Número")
-            {
-                ddlCriterio.Items.Add("Igual a");
-                ddlCriterio.Items.Add("Mayor a");
-                ddlCriterio.Items.Add("Menor a");
-            }
-            else
-            {
-                ddlCriterio.Items.Add("Contiene");
-                ddlCriterio.Items.Add("Comienza con");
-                ddlCriterio.Items.Add("Termina con");
-            }
+                ddlCriterio.Items.Clear();
+                if (ddlCampo.SelectedItem.ToString() == "Número")
+                {
+                    ddlCriterio.Items.Add("Igual a");
+                    ddlCriterio.Items.Add("Mayor a");
+                    ddlCriterio.Items.Add("Menor a");
+                }
+                else
+                {
+                    ddlCriterio.Items.Add("Contiene");
+                    ddlCriterio.Items.Add("Comienza con");
+                    ddlCriterio.Items.Add("Termina con");
+                }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -79,12 +79,12 @@ namespace concesionaria_autos
             try
             {
                 UsuarioNegocio negocio = new UsuarioNegocio();
-                dgvUsuarios.DataSource = negocio.filtrar(
+                dgvAutos.DataSource = negocio.filtrar(
                     ddlCampo.SelectedItem.ToString(),
                     ddlCriterio.SelectedItem.ToString(),
                     txtFiltroAvanzado.Text,
                     ddlEstado.SelectedItem.ToString());
-                dgvUsuarios.DataBind();
+                dgvAutos.DataBind();
             }
             catch (Exception ex)
             {

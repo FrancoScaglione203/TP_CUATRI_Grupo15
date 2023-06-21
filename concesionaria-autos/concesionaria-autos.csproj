@@ -65,9 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.css" />
+    <Content Include="Autos.aspx" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="Detalle.css" />
+    <Content Include="FormularioAuto.aspx" />
     <Content Include="Imagenes\banner1.png" />
     <Content Include="Imagenes\banner2.png" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -109,6 +111,13 @@
     <Compile Include="AdminMaster.master.designer.cs">
       <DependentUpon>AdminMaster.master</DependentUpon>
     </Compile>
+    <Compile Include="Autos.aspx.cs">
+      <DependentUpon>Autos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Autos.aspx.designer.cs">
+      <DependentUpon>Autos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="comparacion.aspx.cs">
       <DependentUpon>comparacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +145,13 @@
     </Compile>
     <Compile Include="detalle.aspx.designer.cs">
       <DependentUpon>detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioAuto.aspx.cs">
+      <DependentUpon>FormularioAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioAuto.aspx.designer.cs">
+      <DependentUpon>FormularioAuto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
