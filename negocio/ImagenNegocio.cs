@@ -26,14 +26,14 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     Imagen aux = new Imagen();
-                    
-                    if (!(datos.Lector["ImagenUrl"] is DBNull)) {
-                    aux.Id = (int)datos.Lector["Id"];
-                    aux.IdProducto = (int)datos.Lector["IdProducto"];
-                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    lista.Add(aux);
-                    }
 
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    {
+                        aux.Id = (int)datos.Lector["Id"];
+                        aux.IdProducto = (int)datos.Lector["IdProducto"];
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                        lista.Add(aux);
+                    }
                 }
 
                 return lista;
@@ -47,6 +47,5 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-
-
-      }
+    }
+}
