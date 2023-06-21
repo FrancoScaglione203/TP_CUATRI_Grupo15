@@ -36,7 +36,7 @@
                 {
             %>
             <div class="card border-0" style="width: 18rem">
-                <img class="card-img-top" src="<%: auto.Imagen %>" alt="<%: auto.Nombre %>">
+                <img class="card-img-top" src="<%: auto.Id %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
                     <p class="card-text">desde $<%: auto.Precio %></p>
@@ -50,6 +50,6 @@
         </div>
     </div>
 
-    <asp:GridView class="d-none" runat="server" ID="dgvMarcas"></asp:GridView>
+  
 
 </asp:Content>
