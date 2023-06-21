@@ -33,10 +33,10 @@
         <div class="row d-flex justify-content-around">
             <%
                 foreach (dominio.Auto auto in ListaAutos)
-                {
+                { 
             %>
             <div class="card border-0" style="width: 18rem">
-                <img class="card-img-top" src="<%: auto.Id %>" alt="<%: auto.Nombre %>">
+                <img class="card-img-top" src="<%:auto.Imagen.ImagenUrl %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
                     <p class="card-text">desde $<%: auto.Precio %></p>

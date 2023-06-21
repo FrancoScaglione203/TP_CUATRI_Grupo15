@@ -13,10 +13,14 @@ namespace concesionaria_autos
     public partial class _default : System.Web.UI.Page
     {
         public List<Auto> ListaAutos { get; set; }
+        public List<Imagen> listaImagenes { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             AutoNeogocio autoNegocio = new AutoNeogocio();
             ListaAutos = autoNegocio.listar();
+
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            listaImagenes = imagenNegocio.listar();
         }
     }
 }

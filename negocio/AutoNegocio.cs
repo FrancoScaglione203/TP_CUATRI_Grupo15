@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using dominio;
 using System.Configuration;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace negocio
 {
@@ -19,18 +20,23 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("select Id,Nombre,IdMarca,Imagen,Stock from Productos");
+                datos.setearConsulta("Select PRODUCTOS.Id,Nombre,Precio,Color,Estado,IMAGENES.ImagenUrl as ImagenUrl from PRODUCTOS inner join IMAGENES on IMAGENES.IdProducto=PRODUCTOS.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Auto aux = new Auto();
+ 
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    //aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.IdMarca = (int)datos.Lector["IdMarca"];
-                    aux.Imagen = (string)datos.Lector["Imagen"];
-                    aux.Stock = (int)datos.Lector["Stock"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Color = (int)datos.Lector["Color"];
+                    aux.Estado = (bool)datos.Lector["Estado"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    {
+                        aux.Imagen = new Imagen();
+                        aux.Imagen.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    }
 
                     lista.Add(aux);
                 }
@@ -190,9 +196,9 @@ namespace negocio
                     aux.Id = (int)lector["Id"];
                     aux.Nombre = (string)lector["Nombre"];
                     //aux.Precio = (decimal)lector["Precio"];
-                    aux.IdMarca = (int)lector["IdMarca"];
-                    aux.Imagen = (string)lector["Imagen"];
-                    aux.Stock = (int)lector["Stock"];
+                    //aux.IdMarca = (int)lector["IdMarca"];
+                    //aux.Imagen = (string)lector["Imagen"];
+                    //aux.Stock = (int)lector["Stock"];
 
                     //if(!(lector.IsDBNull(lector.GetOrdinal("UrlImagen"))))
                     //    aux.UrlImagen = (string)lector["UrlImagen"];
