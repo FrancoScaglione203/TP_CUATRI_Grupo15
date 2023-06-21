@@ -71,7 +71,6 @@
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
             <asp:BoundField HeaderText="DNI" DataField="DNI" />
-            <asp:BoundField HeaderText="Usuario" DataField="Usuario" />
 
             <%--<asp:BoundField HeaderText="Número" DataField="Numero" />
             <asp:BoundField HeaderText="Tipo" DataField="Tipo.Descripcion" />
