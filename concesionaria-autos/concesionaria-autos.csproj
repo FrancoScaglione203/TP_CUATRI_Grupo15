@@ -68,7 +68,6 @@
     <Content Include="Autos.aspx" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
-    <Content Include="Detalle.css" />
     <Content Include="FormularioAuto.aspx" />
     <Content Include="Imagenes\banner1.png" />
     <Content Include="Imagenes\banner2.png" />

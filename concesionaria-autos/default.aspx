@@ -26,21 +26,21 @@
 
     <div class="container">
 
-          <div class="d-flex justify-content-center my-4" >
+        <div class="d-flex justify-content-center my-4">
             <a href="/comparacion.aspx" class="btn btn-primary">Comparar modelos</a>
-            </div>
+        </div>
 
         <div class="row d-flex justify-content-around">
             <%
                 foreach (dominio.Auto auto in ListaAutos)
-                { 
+                {
             %>
             <div class="card border-0" style="width: 18rem">
                 <img class="card-img-top" src="<%:auto.Imagen.ImagenUrl %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
                     <p class="card-text">desde $<%: auto.Precio %></p>
-                    <a href="/detalle.aspx" class="linkCards me-4">descubrir</a>
+                    <a href="/detalle.aspx?id=<%: auto.Id %>" class="linkCards me-4">descubrir</a>
                     <a href="/configuracion.aspx" class="linkCards">configurar</a>
                 </div>
             </div>
@@ -50,6 +50,6 @@
         </div>
     </div>
 
-  
+
 
 </asp:Content>

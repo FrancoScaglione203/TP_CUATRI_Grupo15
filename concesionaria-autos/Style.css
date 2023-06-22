@@ -28,6 +28,15 @@
     margin: 0 2em;
 }
 
+p {
+    font-size: 0.9rem;
+}
+
+.vl {
+    border-left: 1px solid grey;
+    height: 7em;
+}
+
 /*BOTONES*/
 
 .btn-primary {
@@ -49,6 +58,15 @@
     color:black;
     }
 
+.linkDetail {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: black;
+}
+
+.fa-chevron-right {
+    color: var(--decorations);
+}
 /*NAVBAR*/
 nav a {
     color: white !important;
@@ -123,19 +141,21 @@ footer .fa:hover {
 
 
 /*SECCION DETALLES*/
+
 .detail-img-container-mini {
     max-height: 15vh;
     height: 15vh;
 }
 
 .detail-img-container {
-    max-height: 60vh;
-    height: 60vh;
+    overflow: hidden;
+    height: 50vh;
 }
 
 .detail-img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .detail-info-container * {
