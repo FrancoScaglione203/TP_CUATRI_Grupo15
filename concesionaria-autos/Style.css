@@ -194,5 +194,11 @@ footer .fa:hover {
 }
 
 
+/*SIGNIN*/
+
+.subt {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 34px; /* Reduce el tamaño de la fuente */
+}
 
 

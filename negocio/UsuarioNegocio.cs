@@ -11,7 +11,7 @@ namespace negocio
     public class UsuarioNegocio
     {
         public List<Usuario> listarConSP()
-         {
+        {
             List<Usuario> lista = new List<Usuario>();
             AccesoDatos datos = new AccesoDatos();
             try
@@ -119,6 +119,24 @@ namespace negocio
             {
                 throw ex;
             }
+        }
+
+        public int InsertarNuevo(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("insertarNuevo");
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return 1;
         }
 
     }
