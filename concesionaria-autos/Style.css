@@ -3,15 +3,25 @@
     --foreColor: black;
     --azul-hover: #4582c4;
     --white: #ffffff;
-    --decorations: blue;
+    --decorations: #EFDF00;
+    --darkGrey: #F2F2F2;
+    --lightGrey: #F8F8F8;
 }
 
 .texto-azul {
     color: var(--foreColor) !important;
 }
 
-.bg-blue {
+.bg-foreColor {
     background-color: var(--foreColor) !important;
+}
+
+.bg-darkGrey {
+    background-color: var(--darkGrey) !important;
+}
+
+.bg-lightGrey {
+    background-color: var(--lightGrey) !important;
 }
 
 /*GENERAL*/
@@ -48,16 +58,35 @@ p {
 
 /*BOTONES*/
 
+.btn {
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+}
+
 .btn-primary {
     background-color: var(--foreColor) !important;
     border: 1px solid var(--foreColor) !important;
     border-style: none;
 }
 
+.btn-warning {
+    background-color: var(--decorations) !important;
+    border: 1px solid var(--decorations) !important;
+    border-style: none;
+}
+
 .btn-primary:hover {
     background-color: var(--decorations) !important;
     border: 1px solid var(--decorations) !important;
+    color: var(--foreColor) !important;
+}
 
+.btn-warning:hover {
+    background-color: var(--foreColor) !important;
+    border: 1px solid var(--foreColor) !important;
+    color: white !important;
+    border-style: none;
 }
 
 .linkCards {
@@ -167,60 +196,20 @@ footer .fa:hover {
     object-fit: cover;
 }
 
-.detail-info-container * {
-    max-width:25vw;
-    margin: 1rem 0;
+/*COMPARAR MODELOS*/
+
+.filtroSinSeleccionar {
+    filter: contrast(0) brightness(.15) opacity(.4);
 }
 
-/*CARRITO*/
-.carrito {
-    position:center;
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }
 
-/*CARRITO*/
-
-@media screen and (min-width:768px) and (max-width: 992px) {
-    main.home p.precio {
-        font-size: 0.8rem !important;
-    }
+.accordion-item {
+    --bs-accordion-border-color: none;
 }
 
-/*DETALLE*/
-
- div.name-container {
-    margin: 2rem;
-    font-weight: 700;
-}
-
- div.name-price-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem;
-}
-
- .price-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 2rem;
-    width: 30%;
-    border-left: 2px solid darkgrey;
- }
-
-.price{
-    font-weight: 700;
-    font-size: 2rem;
-}
-
-.equipamiento{
-    display: flex;
-    justify-content: space-around;
-}
-
-.foto{
-    width: 300px;
-}
 
 
 

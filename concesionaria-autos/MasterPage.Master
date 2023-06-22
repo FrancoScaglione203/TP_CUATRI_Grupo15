@@ -17,7 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-blue px-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-foreColor px-0">
             <div class="container-fluid">
                 <div class="navbar-brand">
                     <img src="https://www.carsmagazine.com.ar/wp-content/uploads/2021/03/Nuevo-logo-Renault-marzo-2021-fondo-negro.jpg" alt="logo">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-blue py-3">
+            <div class="bg-foreColor py-3">
                 <div class="container text-center">
                     <p class="text-white mb-0 py-2">© Renault 2010-2023</p>
        
