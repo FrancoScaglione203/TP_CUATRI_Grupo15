@@ -29,7 +29,7 @@
         <%--BOTON--%>
 
         <div class="d-flex justify-content-center my-4">
-            <asp:Button class="btn btn-warning" ID="Button1" runat="server" Text="Compará" />
+            <asp:Button class="btn btn-warning" ID="Button1" runat="server" Text="Compará" OnClick="Button1_Click" />
         </div>
 
         <%--COMPARACION--%>
@@ -45,26 +45,26 @@
 
                         <div class="row justify-content-center py-3">Número de plazas</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3"></div>
-                            <div class="bg-lightGrey w-50 py-3"></div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.Plazas : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.Plazas : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Longitud total</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.Longitud : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.Longitud : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Ancho total</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.Ancho : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.Ancho : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Distancia entre ejes</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.Ejes : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.Ejes : 0 %></div>
                         </div>
 
                     </div>
@@ -81,20 +81,20 @@
                        
                         <div class="row justify-content-center py-3">Caja Manual</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.CajaManual : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica2.CajaManual : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Caja Automática</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.CajaAutomatica : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.CajaAutomatica : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Nafta</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.Nafta : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.Nafta : 0 %></div>
                         </div>
 
                     </div>
@@ -111,8 +111,8 @@
 
                         <div class="row justify-content-center py-3">Precio</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3">desde $<%: auto1!=null ? auto1.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3">desde $<%: auto1!=null ? auto1.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) : 0 %></div>
                         </div>
                     </div>
                 </div>
