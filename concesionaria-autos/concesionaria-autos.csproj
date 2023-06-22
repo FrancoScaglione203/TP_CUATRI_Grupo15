@@ -98,6 +98,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="signin.aspx" />
+    <Content Include="Stepper.js" />
     <Content Include="Style.css" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
@@ -221,7 +222,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dominio\dominio.csproj">
