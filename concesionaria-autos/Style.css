@@ -217,13 +217,18 @@ footer .fa:hover {
 }
 
 /*STEPPER*/
+.stepper {
+    height: 50em !important;
+}
+
+.step-content {
+    height: 45em !important;
+}
+
 ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .step.done .step-title:before {
     background-color: var(--decorations) !important;
 }
 
-.step-content {
-    height:1200px !important;
-}
 
 .list-dot {
     list-style-type: disc;
