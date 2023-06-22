@@ -25,7 +25,7 @@
                     <div class="step-content">
                         <div class="row justify-content-center">
 
-                            <!-- CONTENIDO -->
+                            <!-- VERSIONES -->
                             <%
                                 foreach (dominio.Equipamiento equipo in ListaEquipamientos)
                                 {
@@ -51,7 +51,7 @@
                                 }
                             %>
 
-                            <!-- FIN CONTENIDO -->
+                            <!-- FIN VERSIONES -->
 
                         </div>
                         <div class="step-actions">
@@ -65,13 +65,13 @@
                     <div class="step-content">
                         <div class="row">
 
-                            <!-- CONTENIDO -->
+                            <!-- EXTERIOR -->
+                             
+                            
 
 
 
-
-
-                            <!-- FIN CONTENIDO -->
+                            <!-- FIN EXTERIOR -->
 
                         </div>
                         <div class="step-actions">
@@ -85,13 +85,13 @@
                     <div class="step-content">
                         <div class="row">
 
-                            <!-- CONTENIDO -->
+                            <!-- INTERIOR -->
 
 
 
 
 
-                            <!-- FIN CONTENIDO -->
+                            <!-- FIN INTERIOR -->
 
                         </div>
                         <div class="step-actions">
@@ -105,13 +105,13 @@
                     <div class="step-content">
                         <div class="row">
 
-                            <!-- CONTENIDO -->
+                            <!-- EQUIPAMIENTO -->
 
 
 
 
 
-                            <!-- FIN CONTENIDO -->
+                            <!-- FIN EQUIPAMIENTO -->
 
                         </div>
                         <div class="step-actions">
@@ -125,13 +125,13 @@
                     <div class="step-content">
                         <div class="row">
 
-                            <!-- CONTENIDO -->
+                            <!-- RESUMEN -->
 
 
 
 
 
-                            <!-- FIN CONTENIDO -->
+                            <!-- FIN RESUMEN -->
 
                         </div>
                         <div class="step-actions">

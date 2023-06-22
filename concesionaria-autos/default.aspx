@@ -41,7 +41,7 @@
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
                     <p class="card-text">desde $<%: auto.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></p>
                     <a href="/detalle.aspx?id=<%: auto.Id %>" class="linkCards me-4">descubrir</a>
-                    <a href="/configuracion.aspx" class="linkCards">configurar</a>
+                    <a href="/configuracion.aspx?id=<%: auto.Id %>" class="linkCards">configurar</a>
                 </div>
             </div>
             <%
