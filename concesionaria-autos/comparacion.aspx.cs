@@ -64,32 +64,14 @@ namespace concesionaria_autos
                 int idAuto1 = int.Parse(DropDownList1.SelectedItem.Value);
                 DropDownList1.DataSource = ((List<Auto>)Session["listaAuto1"]).FindAll(x=>x.Id == idAuto1);
                 DropDownList1.DataBind();
-
-                //    AutoNeogocio autoNegocio = new AutoNeogocio();
-                //    ListaAutos = autoNegocio.listar();
-                //    auto1 = ListaAutos.Find(auto => auto.Id == idAuto1);
-
-                //FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
-                //ListaFichaTecnica1 = fichaTecnicaNegocio.listar();
-                //fichaTecnica1 = ListaFichaTecnica1.Find(ft => ft.IdProducto == idAuto1);
             }
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
                 int idAuto2 = int.Parse(DropDownList2.SelectedItem.Value);
                 DropDownList2.DataSource = ((List<Auto>)Session["listaAuto2"]).FindAll(x => x.Id == idAuto2);
                 DropDownList2.DataBind();
-
-                //AutoNeogocio autoNegocio = new AutoNeogocio();
-                //ListaAutos = autoNegocio.listar();
-                //auto2 = ListaAutos.Find(auto => auto.Id == idAuto2);
-
-                //FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
-                //ListaFichaTecnica2 = fichaTecnicaNegocio.listar();
-                //fichaTecnica2 = ListaFichaTecnica2.Find(ft => ft.IdProducto == idAuto2);
-
         }
 
         protected void Button1_Click(object sender, EventArgs e)

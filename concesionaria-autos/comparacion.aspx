@@ -12,15 +12,29 @@
             <h6>Compará todas las características de los diferentes modelos Renault</h6>
         </div>
         <div class="row justify-content-around my-3">
-            
+
             <div class="card border-0 p-0" style="width: 23rem">
+                <% if (auto1 != null)
+                    {  %>
+                <img class="card-img-top" src="<%:auto1.Imagen.ImagenUrl %>" alt="<%:auto1.Nombre %>">
+                <% }
+                    else
+                    { %>
                 <img class="card-img-top filtroSinSeleccionar" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Auto">
+                <% } %>
                 <asp:DropDownList class="form-select" ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
             </div>
 
             <div class="card border-0 p-0" style="width: 23rem">
+                <% if (auto2 != null)
+                    {  %>
+                <img class="card-img-top" src="<%:auto2.Imagen.ImagenUrl %>" alt="<%:auto2.Nombre %>">
+                <% }
+                    else
+                    { %>
                 <img class="card-img-top filtroSinSeleccionar" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Auto">
+                <% } %>
                 <asp:DropDownList class="form-select" ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                 </asp:DropDownList>
             </div>
@@ -78,7 +92,7 @@
                 </h4>
                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                     <div class="accordion-body m-0 p-0">
-                       
+
                         <div class="row justify-content-center py-3">Caja Manual</div>
                         <div class="d-flex justify-content-around text-center">
                             <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.CajaManual : 0 %></div>
@@ -112,7 +126,7 @@
                         <div class="row justify-content-center py-3">Precio</div>
                         <div class="d-flex justify-content-around text-center">
                             <div class="bg-darkGrey w-50 py-3">desde $<%: auto1!=null ? auto1.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) : 0 %></div>
-                            <div class="bg-lightGrey w-50 py-3">desde $<%: auto1!=null ? auto1.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3">desde $<%: auto2!=null ? auto2.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) : 0 %></div>
                         </div>
                     </div>
                 </div>
