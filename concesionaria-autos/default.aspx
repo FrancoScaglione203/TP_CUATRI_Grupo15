@@ -35,11 +35,11 @@
                 foreach (dominio.Auto auto in ListaAutos)
                 {
             %>
-            <div class="card border-0" style="width: 18rem">
+            <div class="allcard card border-0" style="width: 18rem">
                 <img class="card-img-top" src="<%:auto.Imagen.ImagenUrl %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
-                    <p class="card-text">desde $<%: auto.Precio %></p>
+                    <p class="card-text">desde $<%: auto.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></p>
                     <a href="/detalle.aspx?id=<%: auto.Id %>" class="linkCards me-4">descubrir</a>
                     <a href="/configuracion.aspx" class="linkCards">configurar</a>
                 </div>

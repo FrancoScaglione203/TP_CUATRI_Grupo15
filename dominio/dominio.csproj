@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Auto.cs" />
     <Compile Include="Color.cs" />
+    <Compile Include="Descripcion.cs" />
     <Compile Include="DetalleVenta.cs" />
     <Compile Include="FichaTecnica.cs" />
     <Compile Include="Imagen.cs" />

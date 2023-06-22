@@ -24,8 +24,12 @@
     font-family: 'NouvelR', sans-serif;
 }
 
-.card {
+.allcard {
     margin: 0 2em;
+}
+
+.descCard {
+
 }
 
 p {
@@ -35,6 +39,11 @@ p {
 .vl {
     border-left: 1px solid grey;
     height: 7em;
+}
+
+.hl {
+    border-bottom: 1px solid grey;
+    width: 4em;
 }
 
 /*BOTONES*/
