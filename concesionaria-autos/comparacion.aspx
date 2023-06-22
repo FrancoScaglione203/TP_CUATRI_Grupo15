@@ -15,15 +15,13 @@
             
             <div class="card border-0 p-0" style="width: 23rem">
                 <img class="card-img-top filtroSinSeleccionar" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Auto">
-                <asp:DropDownList class="form-select" ID="DropDownList1" runat="server">
-                    <asp:ListItem Enabled="true" Selected="True" Text="Elegí un modelo"></asp:ListItem>
+                <asp:DropDownList class="form-select" ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
             </div>
 
             <div class="card border-0 p-0" style="width: 23rem">
                 <img class="card-img-top filtroSinSeleccionar" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Auto">
-                <asp:DropDownList class="form-select" ID="DropDownList2" runat="server">
-                    <asp:ListItem Enabled="true" Selected="True" Text="Elegí un modelo"></asp:ListItem>
+                <asp:DropDownList class="form-select" ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                 </asp:DropDownList>
             </div>
         </div>
