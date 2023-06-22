@@ -47,6 +47,8 @@
         </div>
 
         <%--COMPARACION--%>
+        <% if (auto1 != null && auto2 != null)
+            {  %>
         <div class="accordion" id="accordionPanelsStayOpenExample">
             <div class="accordion-item ">
                 <h4 class="accordion-header" id="panelsStayOpen-headingOne">
@@ -95,20 +97,20 @@
 
                         <div class="row justify-content-center py-3">Caja Manual</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.CajaManual : 0 %></div>
-                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica2.CajaManual : 0 %></div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? (fichaTecnica1.CajaManual==true ? "Si" : "No") : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica1!=null ? (fichaTecnica2.CajaManual==true ? "Si" : "No") : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Caja Automática</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.CajaAutomatica : 0 %></div>
-                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.CajaAutomatica : 0 %></div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? (fichaTecnica1.CajaAutomatica==true ? "Si" : "No"): 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? (fichaTecnica2.CajaAutomatica==true ? "Si" : "No") : 0 %></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Nafta</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? fichaTecnica1.Nafta : 0 %></div>
-                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? fichaTecnica2.Nafta : 0 %></div>
+                            <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica1!=null ? (fichaTecnica1.Nafta==true ? "Si" : "No") : 0 %></div>
+                            <div class="bg-lightGrey w-50 py-3"><%: fichaTecnica2!=null ? (fichaTecnica2.Nafta==true ? "Si" : "No") : 0 %></div>
                         </div>
 
                     </div>
@@ -132,7 +134,7 @@
                 </div>
             </div>
         </div>
-
+        <% } %>
     </div>
 
 </asp:Content>
