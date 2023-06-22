@@ -45,8 +45,8 @@
 
                         <div class="row justify-content-center py-3">Número de plazas</div>
                         <div class="d-flex justify-content-around text-center">
-                            <div class="bg-darkGrey w-50 py-3">1</div>
-                            <div class="bg-lightGrey w-50 py-3">2</div>
+                            <div class="bg-darkGrey w-50 py-3"></div>
+                            <div class="bg-lightGrey w-50 py-3"></div>
                         </div>
 
                         <div class="row justify-content-center py-3">Longitud total</div>

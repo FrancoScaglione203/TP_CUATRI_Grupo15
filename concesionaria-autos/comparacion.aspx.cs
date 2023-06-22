@@ -11,7 +11,14 @@ namespace concesionaria_autos
 {
     public partial class comparacion : System.Web.UI.Page
     {
-         protected void Page_Load(object sender, EventArgs e)
+        public List<Auto> ListaAutos { get; set; }
+        public List<FichaTecnica> ListaFichaTecnica1 { get; set; }
+        public List<FichaTecnica> ListaFichaTecnica2 { get; set; }
+        public Auto auto1 { get; set; }
+        public Auto auto2 { get; set; }
+        public FichaTecnica fichaTecnica1 { get; set; }
+        public FichaTecnica fichaTecnica2 { get; set; }
+        protected void Page_Load(object sender, EventArgs e)
         {
             AutoNeogocio autoNeogocio=new AutoNeogocio();
             try
@@ -39,12 +46,27 @@ namespace concesionaria_autos
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idAuto1 = int.Parse(DropDownList1.SelectedItem.Value);
+
+            AutoNeogocio autoNegocio = new AutoNeogocio();
+            ListaAutos = autoNegocio.listar();
+            auto1 = ListaAutos.Find(auto => auto.Id == idAuto1);
+
+            FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
+            ListaFichaTecnica1 = fichaTecnicaNegocio.listar();
+            fichaTecnica1 = ListaFichaTecnica1.Find(ft => ft.IdProducto == idAuto1);
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
             int idAuto2 = int.Parse(DropDownList2.SelectedItem.Value);
 
+            AutoNeogocio autoNegocio = new AutoNeogocio();
+            ListaAutos = autoNegocio.listar();
+            auto2 = ListaAutos.Find(auto => auto.Id == idAuto2);
+
+            FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
+            ListaFichaTecnica2 = fichaTecnicaNegocio.listar();
+            fichaTecnica2 = ListaFichaTecnica2.Find(ft => ft.IdProducto == idAuto2);
         }
     }
 }
