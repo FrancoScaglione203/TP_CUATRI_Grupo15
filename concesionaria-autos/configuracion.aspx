@@ -66,14 +66,28 @@
                         <div class="row">
 
                             <!-- EXTERIOR -->
-                             
-                            
 
+                            <img id="img" class="configImg" src="" alt="Auto">
 
+                            <div class="container d-flex">
+                                <%
+                                    foreach (dominio.Color colores in ListaColores)
+                                    {
+                                %>
+                               
+                                    <a id="color" onclick="cambiarFoto(<%: colores.ImagenUrl %>)">
+                                         <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>" >
+                                    </a>   
+                                      
+                                <%
+                                    }
+                                %>
+                            </div>
 
+                         
                             <!-- FIN EXTERIOR -->
-
                         </div>
+                        
                         <div class="step-actions">
                             <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
                             <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>

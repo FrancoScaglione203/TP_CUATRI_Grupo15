@@ -91,9 +91,9 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Imagenes\LoganBlanco.png" />
-    <Content Include="Imagenes\LoganGris.png" />
-    <Content Include="Imagenes\LoganNegro.png" />
+    <Content Include="LoganBlanco.png" />
+    <Content Include="LoganGris.png" />
+    <Content Include="LoganNegro.png" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

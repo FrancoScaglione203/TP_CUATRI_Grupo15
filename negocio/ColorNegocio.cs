@@ -20,7 +20,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select Id,Color,ImagenUrl,IdProducto from COLORES");
+                datos.setearConsulta("Select Id,Nombre,Muestra,ImagenUrl,IdProducto from COLORES");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -28,9 +28,10 @@ namespace negocio
                     Color aux = new Color();
 
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.Nombre = (string)datos.Lector["Color"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Muestra = (string)datos.Lector["Muestra"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    aux.IdProducto = (int)datos.Lector["Color"];
+                    aux.IdProducto = (int)datos.Lector["IdProducto"];
                     lista.Add(aux);
                 }
 
