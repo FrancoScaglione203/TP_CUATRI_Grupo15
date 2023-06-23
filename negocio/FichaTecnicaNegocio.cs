@@ -26,9 +26,6 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     FichaTecnica aux = new FichaTecnica();
-
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
-                    {
                         aux.Id = (int)datos.Lector["Id"];
                         aux.Plazas = (int)datos.Lector["Plazas"];
                         aux.Longitud = (int)datos.Lector["Longitud"];
@@ -39,7 +36,6 @@ namespace negocio
                         aux.Nafta = (bool)datos.Lector["Nafta"];
                         aux.IdProducto = (int)datos.Lector["IdProducto"];
                         lista.Add(aux);
-                    }
                 }
 
                 return lista;

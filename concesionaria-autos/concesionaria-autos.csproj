@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
+    <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="FormularioAuto.aspx" />
@@ -90,6 +91,9 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="LoganBlanco.png" />
+    <Content Include="LoganGris.png" />
+    <Content Include="LoganNegro.png" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -98,6 +102,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="signin.aspx" />
+    <Content Include="Stepper.js" />
     <Content Include="Style.css" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
@@ -221,7 +226,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dominio\dominio.csproj">

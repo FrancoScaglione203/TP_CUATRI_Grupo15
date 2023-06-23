@@ -6,6 +6,7 @@
     --decorations: #EFDF00;
     --darkGrey: #F2F2F2;
     --lightGrey: #F8F8F8;
+    --red:red;
 }
 
 .texto-azul {
@@ -22,6 +23,24 @@
 
 .bg-lightGrey {
     background-color: var(--lightGrey) !important;
+}
+
+/*COLORES AUTOS*/
+
+.Black {
+    background-color: var(--foreColor) !important;
+}
+.LightGrey {
+    background-color: var(--lightGrey) !important;
+}
+.DarkGrey {
+    background-color: var(--darkGrey) !important;
+}
+.White {
+    background-color: var(--white) !important;
+}
+.Red {
+    background-color: var(--red) !important;
 }
 
 /*GENERAL*/
@@ -56,6 +75,11 @@ p {
     width: 4em;
 }
 
+.hl2 {
+    border-bottom: 1px solid grey;
+    width: 18.5em;
+}
+
 /*BOTONES*/
 
 .btn {
@@ -73,6 +97,7 @@ p {
 .btn-warning {
     background-color: var(--decorations) !important;
     border: 1px solid var(--decorations) !important;
+    color: var(--foreColor) !important;
     border-style: none;
 }
 
@@ -210,7 +235,31 @@ footer .fa:hover {
     --bs-accordion-border-color: none;
 }
 
+/*STEPPER*/
+.stepper {
+    height: 50em !important;
+}
+
+.step-content {
+    height: 45em !important;
+}
+
+ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .step.done .step-title:before {
+    background-color: var(--decorations) !important;
+}
 
 
+.list-dot {
+    list-style-type: disc;
+    margin: 0 0 0 2em;
+    font-size: 0.8rem;
+}
 
-
+/*CONFIGURACION*/
+.dot {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 0.2px solid lightgrey;
+    display: block;
+}

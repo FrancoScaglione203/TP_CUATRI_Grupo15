@@ -45,6 +45,7 @@
     <Compile Include="Color.cs" />
     <Compile Include="Descripcion.cs" />
     <Compile Include="DetalleVenta.cs" />
+    <Compile Include="Equipamiento.cs" />
     <Compile Include="FichaTecnica.cs" />
     <Compile Include="Imagen.cs" />
     <Compile Include="Marca.cs" />
