@@ -15,13 +15,13 @@ namespace concesionaria_autos
     {
 
         /// <summary>
-        /// Control txtUsuario.
+        /// Control txtDni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
+        protected global::System.Web.UI.WebControls.TextBox txtDni;
 
         /// <summary>
         /// Control txtClave.
@@ -42,12 +42,12 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.Label lblRegistro;
 
         /// <summary>
-        /// Control btnLogin.
+        /// Control btnIngresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.Button btnIngresar;
     }
 }

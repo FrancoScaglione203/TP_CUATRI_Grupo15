@@ -23,7 +23,7 @@ namespace concesionaria_autos
                 Usuario user = new Usuario();
                 UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
                 user.clave = txtClave.Text;
-                user.TipoUsuario = true;
+                user.tipoUsuario = TipoUsuario.NORMAL;
                 user.Nombre = txtNombre.Text;
                 user.Apellido = txtApellido.Text;
                 user.Dni = txtDni.Text;

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -121,6 +122,35 @@ namespace negocio
             }
         }
 
+        public bool loguear(Usuario usuario)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select Id, TipoUsuario, Nombre, Apellido, Email, Provincia, Localidad from USUARIOS where USUARIOS.Dni = @dni and USUARIOS.Clave = @clave ");
+                datos.setearParametro("@dni", usuario.Dni);
+                datos.setearParametro("@clave", usuario.clave);
+                datos.ejecutarLectura();
+                
+                while(datos.Lector.Read())
+                {
+                    usuario.Id = (int)datos.Lector["Id"];
+                    usuario.tipoUsuario = (int)(datos.Lector["TipoUsuario"]) == 2 ? TipoUsuario.ADMIN : TipoUsuario.NORMAL;
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            {
+                datos.cerrarConexion();
+            }
+        }
+
         public int InsertarNuevo(Usuario nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -129,7 +159,7 @@ namespace negocio
             {
                 datos.setearProcedimiento("insertarNuevo");
                 datos.setearParametro("@clave", nuevo.clave);
-                datos.setearParametro("@TipoUsuario", nuevo.TipoUsuario);
+                datos.setearParametro("@TipoUsuario", nuevo.tipoUsuario);
                 datos.setearParametro("@Nombre", nuevo.Nombre);
                 datos.setearParametro("@Apellido", nuevo.Apellido);
                 datos.setearParametro("@Dni", nuevo.Dni);

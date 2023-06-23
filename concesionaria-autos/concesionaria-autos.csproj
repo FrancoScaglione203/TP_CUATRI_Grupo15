@@ -69,6 +69,7 @@
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="Detalle.css" />
+    <Content Include="ErrorLog.aspx" />
     <Content Include="FormularioAuto.aspx" />
     <Content Include="Imagenes\banner1.png" />
     <Content Include="Imagenes\banner2.png" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="detalle.aspx.designer.cs">
       <DependentUpon>detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLog.aspx.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorLog.aspx.designer.cs">
+      <DependentUpon>ErrorLog.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioAuto.aspx.cs">
       <DependentUpon>FormularioAuto.aspx</DependentUpon>
