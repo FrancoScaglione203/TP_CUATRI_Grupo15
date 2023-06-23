@@ -249,7 +249,7 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
 }
 
 
-.list-dot {
+.list-dot { 
     list-style-type: disc;
     margin: 0 0 0 2em;
     font-size: 0.8rem;

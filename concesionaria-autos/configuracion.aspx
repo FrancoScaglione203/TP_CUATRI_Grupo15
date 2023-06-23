@@ -67,7 +67,7 @@
 
                             <!-- EXTERIOR -->
 
-                            <img id="img" class="configImg" src="" alt="Auto">
+                            <img class="configImg" src="LoganGris.png" alt="Auto">
 
                             <div class="container d-flex">
                                 <%
@@ -75,16 +75,28 @@
                                     {
                                 %>
                                
-                                    <a id="color" onclick="cambiarFoto(<%: colores.ImagenUrl %>)">
+                                    <a class="color" onclick="cambiarFoto(<%: colores.ImagenUrl %>)">
                                          <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>" >
                                     </a>   
+                                    <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
                                       
                                 <%
                                     }
                                 %>
                             </div>
 
-                         
+                            <script defer>
+                                var img = document.querySelector('.configImg');
+                                var color = document.querySelector('.color');
+                                var ImagenUrl = document.querySelector('.ImagenUrl');
+
+                                    color.addEventListener("click", function () {
+                                        alert("funciona");
+                                        img.src = ImagenUrl.textContent;
+                                    })
+
+                            </script>
+
                             <!-- FIN EXTERIOR -->
                         </div>
                         
