@@ -74,7 +74,7 @@
                                     <% foreach (dominio.Color colores in ListaColores)
                                         { %>
                                     <a class="color me-4">
-                                        <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>">
+                                        <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>" style="cursor: pointer;">
                                     </a>
                                     <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
                                     <% } %>
@@ -121,7 +121,7 @@
                                     <% foreach (dominio.Tapizado tapizado in ListaTapizado)
                                         { %>
                                     <a class="tapizado me-4">
-                                        <img class="dot" src="<%: tapizado.Muestra %>" alt="<%: tapizado.Nombre %>">
+                                        <img class="dot" src="<%: tapizado.Muestra %>" alt="<%: tapizado.Nombre %>" style="cursor: pointer;">
                                     </a>
                                     <span class="ImagenUrl2 d-none"><%: tapizado.ImagenUrl %></span>
                                     <% } %>
