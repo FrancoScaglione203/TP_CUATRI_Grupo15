@@ -81,7 +81,7 @@
                                 </div>
                             </div>
 
-                            <script defer>
+                            <script type="text/javascript">
                                 var img = document.querySelector('.configImg');
                                 var color = document.querySelectorAll('.color');
                                 var ImagenUrl = document.querySelectorAll('.ImagenUrl');
@@ -106,26 +106,54 @@
                         </div>
                     </div>
                 </li>
-                <%--<li class="step">
-                    <div class="step-title waves-effect waves-dark">Diseño Exterior</div>
+
+                <li class="step">
+                    <div class="step-title waves-effect waves-dark">Diseño Interior</div>
                     <div class="step-content">
                         <div class="row">
 
                             <!-- INTERIOR -->
 
+                            <img class="configImg2" src="<%:Tapizado.ImagenUrl %>" alt="Auto">
 
+                            <div class="container">
+                                <div class="d-flex justify-content-center m-4">
+                                    <% foreach (dominio.Tapizado tapizado in ListaTapizado)
+                                        { %>
+                                    <a class="tapizado me-4">
+                                        <img class="dot" src="<%: tapizado.Muestra %>" alt="<%: tapizado.Nombre %>">
+                                    </a>
+                                    <span class="ImagenUrl2 d-none"><%: tapizado.ImagenUrl %></span>
+                                    <% } %>
+                                </div>
+                            </div>
 
+                            <script type="text/javascript">
+                                var img2 = document.querySelector('.configImg2');
+                                var tapizado = document.querySelectorAll('.tapizado');
+                                var ImagenUrl2 = document.querySelectorAll('.ImagenUrl2');
 
+                                for (var i = 0; i < tapizado.length; i++) {
+                                    tapizado[i].addEventListener("click", function (e) {
+                                        var index = Array.from(tapizado).indexOf(e.currentTarget); // Obtener el índice del elemento clicado
+                                        var span = ImagenUrl2[index]; // Obtener el elemento <span> correspondiente al índice
+                                        var contenido = span.textContent;
+                                        /* alert(contenido);*/
+                                        img2.src = contenido;
+                                    });
+                                }
+                            </script>
 
-                            <!-- FIN INTERIOR -->
-
+                            <!-- FIN EXTERIOR -->
                         </div>
+
                         <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black  text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step  text-capitalize">Anterior</button>
+                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
                         </div>
                     </div>
-                </li>--%>
+                </li>
+               
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Equipamiento</div>
                     <div class="step-content">
@@ -214,15 +242,9 @@
                             <!-- RESUMEN -->
 
                             <div class="d-flex justify-content-evenly align-content-center">
-                                <div>
-                                    <div class="resumem-img-container">
-                                        <img class="resumen-img" src="<%:Color.ImagenUrl %>" alt="Auto">
-                                    </div>
 
-                                    <div class="d-flex justify-content-center my-5">
-                                        <a class="btn btn-light me-4">Solicitar un testdrive</a>
-                                        <a class="btn btn-warning">Solicitar un asesor</a>
-                                    </div>
+                                <div class="resumem-img-container">
+                                    <img class="resumen-img" src="<%:Color.ImagenUrl %>" alt="Auto">
                                 </div>
 
                                 <div class="card p-4" style="width: 25rem;">
@@ -255,13 +277,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-center my-5">
+                                <a class="btn btn-light me-4">Solicitar un testdrive</a>
+                                <a class="btn btn-warning">Solicitar un asesor</a>
+                            </div>
 
                             <!-- FIN RESUMEN -->
 
                         </div>
 
                     </div>
-                </li>
+                    </li>
             </ul>
         </form>
     </div>
