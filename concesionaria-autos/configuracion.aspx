@@ -172,7 +172,7 @@
                                     <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Ejes : 0 %></div>
 
                                 </div>
-                                 
+
                                 <div class="row justify-content-center py-3">Caja Manual</div>
                                 <div class="d-flex justify-content-around text-center">
                                     <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.CajaManual==true ? "Si" : "No") : 0 %></div>
@@ -209,19 +209,57 @@
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Resumen</div>
                     <div class="step-content">
-                        <div class="row">
+                        <div class="row my-4">
 
                             <!-- RESUMEN -->
 
+                            <div class="d-flex justify-content-evenly align-content-center">
+                                <div>
+                                    <div class="resumem-img-container">
+                                        <img class="resumen-img" src="<%:Color.ImagenUrl %>" alt="Auto">
+                                    </div>
 
+                                    <div class="d-flex justify-content-center my-5">
+                                        <a class="btn btn-light me-4">Solicitar un testdrive</a>
+                                        <a class="btn btn-warning">Solicitar un asesor</a>
+                                    </div>
+                                </div>
 
+                                <div class="card p-4" style="width: 25rem;">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle my-2 text-muted">Precio</h6>
+                                        <h5 class="card-title fw-bold">$5.454.200,00</h5>
+                                        <div class="hl2 pe-4 my-3"></div>
+                                        <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
+                                        <p class="card-text fw-bold">VERSION</p>
 
+                                        <p class="resumenP">
+                                            <span>Logan Life 1.6</span>
+                                            <span class="dottedLine"></span>
+                                            <span class="fw-bold">$5.449.200,00</span>
+                                        </p>
+
+                                        <p class="card-text fw-bold">COLOR</p>
+                                        <p class="resumenP">
+                                            <span>Blanco</span>
+                                            <span class="dottedLine"></span>
+                                            <span class="fw-bold">$0</span>
+                                        </p>
+
+                                        <p class="card-text fw-bold">TAPIZADO</p>
+                                        <p class="resumenP">
+                                            <span>Cuero</span>
+                                            <span class="dottedLine"></span>
+                                            <span class="fw-bold">$5.000,00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- FIN RESUMEN -->
 
                         </div>
-                        <div class="step-actions">
-                        </div>
+
                     </div>
                 </li>
             </ul>
