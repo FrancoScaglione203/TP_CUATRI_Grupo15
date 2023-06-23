@@ -13,6 +13,7 @@ namespace concesionaria_autos
     {
         public List<Equipamiento> ListaEquipamientos { get; set; }
         public List<Color> ListaColores { get; set; }
+        public Color Color { get; set; }
         public List<Auto> ListaAuto { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace concesionaria_autos
                 //Session["Id"] = id;
                 ListaEquipamientos = ListaEquipamientos.FindAll(equipo => equipo.IdProducto == id);
                 ListaColores = ListaColores.FindAll(color => color.IdProducto == id);
+                Color=ListaColores.Find(color => color.IdProducto == id);
             }
             catch (Exception)
             {
