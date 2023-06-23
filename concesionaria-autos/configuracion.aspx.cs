@@ -12,6 +12,7 @@ namespace concesionaria_autos
     public partial class configuracion : System.Web.UI.Page
     {
         public List<Equipamiento> ListaEquipamientos { get; set; }
+        public List<FichaTecnica> ListaFichaTecnica { get; set; }
         public List<Color> ListaColores { get; set; }
         public Color Color { get; set; }
         public List<Auto> ListaAuto { get; set; }
@@ -23,6 +24,9 @@ namespace concesionaria_autos
             ColorNegocio colorNegocio = new ColorNegocio();
             ListaColores = colorNegocio.listar();
 
+            FichaTecnicaNegocio fichaTecnica = new FichaTecnicaNegocio();
+            ListaFichaTecnica = fichaTecnica.listar();
+
             try
             {
                 int id = Convert.ToInt32(Request.QueryString["id"]);
@@ -30,6 +34,8 @@ namespace concesionaria_autos
                 ListaEquipamientos = ListaEquipamientos.FindAll(equipo => equipo.IdProducto == id);
                 ListaColores = ListaColores.FindAll(color => color.IdProducto == id);
                 Color=ListaColores.Find(color => color.IdProducto == id);
+                ListaFichaTecnica = ListaFichaTecnica.FindAll(ficha => ficha.IdProducto == id);
+
             }
             catch (Exception)
             {

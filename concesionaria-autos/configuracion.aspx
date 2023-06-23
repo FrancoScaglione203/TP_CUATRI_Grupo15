@@ -71,14 +71,14 @@
 
                             <div class="container ">
                                 <div class="d-flex justify-content-center m-4">
-                                <% foreach (dominio.Color colores in ListaColores)
-                                    { %>
-                                <a class="color me-4">
-                                    <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>">
-                                </a>
-                                <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
-                                <% } %>
-                                    </div>
+                                    <% foreach (dominio.Color colores in ListaColores)
+                                        { %>
+                                    <a class="color me-4">
+                                        <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>">
+                                    </a>
+                                    <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
+                                    <% } %>
+                                </div>
                             </div>
 
                             <script defer>
@@ -91,7 +91,7 @@
                                         var index = Array.from(color).indexOf(e.currentTarget); // Obtener el índice del elemento clicado
                                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                                         var contenido = span.textContent;
-                                       /* alert(contenido);*/
+                                        /* alert(contenido);*/
                                         img.src = contenido;
                                     });
                                 }
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="step">
+                <%--<li class="step">
                     <div class="step-title waves-effect waves-dark">Diseño Exterior</div>
                     <div class="step-content">
                         <div class="row">
@@ -125,7 +125,7 @@
                             <button class="waves-effect waves-dark btn-flat previous-step  text-capitalize">Anterior</button>
                         </div>
                     </div>
-                </li>
+                </li>--%>
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Equipamiento</div>
                     <div class="step-content">
@@ -133,8 +133,68 @@
 
                             <!-- EQUIPAMIENTO -->
 
+                            <%
+                                foreach (dominio.FichaTecnica fichaTecnica in ListaFichaTecnica)
+                                {
+                            %>
+                            <img class="configImg" src="<%:Color.ImagenUrl %>" alt="Auto">
 
+                            <%
+                                }
+                            %>
 
+                            <div class="justify-content-center m-4">
+
+                                <%
+                                    foreach (dominio.FichaTecnica fichaTecnica in ListaFichaTecnica)
+                                    {
+                                %>
+                                <div class="row justify-content-center py-3">Número de plazas</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Plazas : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Longitud total</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Longitud : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Ancho total</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Ancho : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Distancia entre ejes</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Ejes : 0 %></div>
+
+                                </div>
+                                 
+                                <div class="row justify-content-center py-3">Caja Manual</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.CajaManual==true ? "Si" : "No") : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Caja Automática</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.CajaAutomatica==true ? "Si" : "No"): 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Nafta</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.Nafta==true ? "Si" : "No") : 0 %></div>
+
+                                </div>
+
+                                <%
+                                    }
+                                %>
+                            </div>
 
 
                             <!-- FIN EQUIPAMIENTO -->
