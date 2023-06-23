@@ -66,7 +66,7 @@
   <ItemGroup>
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
-    <Content Include="Banner.mp4" />
+    <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="FormularioAuto.aspx" />
@@ -91,6 +91,9 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\LoganBlanco.png" />
+    <Content Include="Imagenes\LoganGris.png" />
+    <Content Include="Imagenes\LoganNegro.png" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
