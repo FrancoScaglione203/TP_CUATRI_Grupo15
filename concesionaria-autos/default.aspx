@@ -8,7 +8,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                <video autoplay loop muted class="myvid" id="player">
-            <source src="Banner.mp4" type="video/mp4">
+            <source src="./Videos/Banner.mp4" type="video/mp4">
             </video>
             </div>
         </div>
