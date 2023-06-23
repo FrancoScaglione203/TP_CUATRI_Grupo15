@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using negocio;
+using dominio;
 
 namespace concesionaria_autos
 {
@@ -11,6 +13,31 @@ namespace concesionaria_autos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuario user = new Usuario();
+                UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+                user.clave = txtClave.Text;
+                user.TipoUsuario = true;
+                user.Nombre = txtNombre.Text;
+                user.Apellido = txtApellido.Text;
+                user.Dni = txtDni.Text;
+                user.Email = txtEmail.Text;
+                user.Provincia = txtProvincia.Text;
+                user.Localidad = txtLocalidad.Text;
+                user.Activo = true;
+                int id = usuarioNegocio.InsertarNuevo(user);
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
+            }
 
         }
     }

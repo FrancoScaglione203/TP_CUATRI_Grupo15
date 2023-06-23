@@ -128,15 +128,25 @@ namespace negocio
             try
             {
                 datos.setearProcedimiento("insertarNuevo");
-
-
+                datos.setearParametro("@clave", nuevo.clave);
+                datos.setearParametro("@TipoUsuario", nuevo.TipoUsuario);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Apellido", nuevo.Apellido);
+                datos.setearParametro("@Dni", nuevo.Dni);
+                datos.setearParametro("@Email", nuevo.Email);
+                datos.setearParametro("@Provincia", nuevo.Provincia);
+                datos.setearParametro("@Localidad", nuevo.Localidad);
+                return datos.ejecutarAccionScalar();
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-            return 1;
+            finally 
+            {
+                datos.cerrarConexion();
+            }
         }
 
     }

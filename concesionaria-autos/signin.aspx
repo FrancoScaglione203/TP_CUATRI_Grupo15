@@ -12,23 +12,27 @@
         <div class="col">
             <div class="mb-3">
                 <label for="txtDni" class="form-label">Dni:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsuario" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
             </div>
             <div class="mb-3">
                 <label for="txtApellido" class="form-label">Apellido:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="TextBox5" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
             </div>
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="TextBox1" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
             </div>
             <div class="mb-3">
                 <label for="txtProvincia" class="form-label">Provincia:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="TextBox2" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtProvincia" />
             </div>
             <div class="mb-3">
                 <label for="txtLocalidad" class="form-label">Localidad:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="TextBox3" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtLocalidad" />
+            </div>
+            <div class="mb-3">
+                <label for="txtEmail" class="form-label">Email:</label>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
             </div>
             <div class="mb-3">
                 <label for="txtClave" class="form-label">Clave:</label>
@@ -36,8 +40,8 @@
             </div>
 
 
-          
-            <asp:Button Text="Registrarse" CssClass="btn btn-primary" runat="server" ID="btnLogin" />
+
+            <asp:Button Text="Registrarse" CssClass="btn btn-primary" runat="server" ID="btnRegistrarse" OnClick="btnRegistrarse_Click" />
         </div>
         <div class="col-4"></div>
     </div>
