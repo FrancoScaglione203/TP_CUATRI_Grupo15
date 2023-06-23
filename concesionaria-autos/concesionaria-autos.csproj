@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
+    <Content Include="Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="FormularioAuto.aspx" />

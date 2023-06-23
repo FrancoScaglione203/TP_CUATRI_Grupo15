@@ -7,10 +7,9 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Imagenes/banner1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Imagenes/banner2.png" class="d-block w-100" alt="...">
+               <video autoplay loop muted class="myvid" id="player">
+            <source src="Banner.mp4" type="video/mp4">
+            </video>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
