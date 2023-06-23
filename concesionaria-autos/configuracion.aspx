@@ -94,7 +94,6 @@
                                         alert("funciona");
                                         img.src = ImagenUrl.textContent;
                                     })
-
                             </script>
 
                             <!-- FIN EXTERIOR -->
