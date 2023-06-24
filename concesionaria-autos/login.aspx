@@ -4,6 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <% if (Session["usuario"] == null)
+        {%>
+    <br>
     <div class="row">
         <div class="col-4"></div>
         <div class="col">
@@ -22,5 +25,47 @@
         </div>
         <div class="col-4"></div>
     </div>
+    <%}
+        else
+        {
+%>
 
+    <br>
+
+
+
+<h2 class="subt">PERFIL</h2>
+<br>
+
+<div class="row justify-content-center">
+    <div class="col-4">
+        <div class="form-floating mb-3 text-center">
+            <input readonly class="form-control-plaintext" id="fltDni" value="<%= dni() %>">
+            <label for="fltDni">Dni</label>
+        </div>
+        <div class="form-floating mb-3 text-center">
+            <input readonly class="form-control-plaintext" id="fltApellido" value="<%= Apellido() %>">
+            <label for="fltApellido">Apellido</label>
+        </div>
+        <div class="form-floating mb-3 text-center">
+            <input readonly class="form-control-plaintext" id="fltNombre" value="<%= Nombre() %>">
+            <label for="fltNombre">Nombre</label>
+        </div>
+        <div class="form-floating mb-3 text-center">
+            <input readonly class="form-control-plaintext" id="fltProvincia" value="<%= Provincia() %>">
+            <label for="fltProvincia">Provincia</label>
+        </div>
+        <div class="form-floating mb-3 text-center">
+            <input readonly class="form-control-plaintext" id="fltLocalidad" value="<%= Localidad() %>">
+            <label for="fltLocalidad">Localidad</label>
+        </div>
+        <div class="form-floating mb-3 text-center">
+            <input readonly class="form-control-plaintext" id="fltEmail" value="<%= Email() %>">
+            <label for="fltEmail">Email</label>
+        </div>
+        <asp:Button Text="Modificar Perfil" CssClass="btn btn-primary" runat="server" ID="btnModificar"  />
+    </div>
+</div>
+
+            <%}%>
 </asp:Content>

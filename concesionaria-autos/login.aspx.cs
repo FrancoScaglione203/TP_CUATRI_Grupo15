@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
+using System.Web.Compilation;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
@@ -13,8 +15,70 @@ namespace concesionaria_autos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
+
+        public String dni()
+        {
+            Usuario usuario;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            usuario = (Usuario)Session["usuario"];
+            string dni = usuario.Dni;
+            return dni;
+        }
+
+        public String Apellido()
+        {
+            Usuario usuario;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            usuario = (Usuario)Session["usuario"];
+            string apellido = usuario.Apellido;
+            return apellido;
+        }
+
+        public String Nombre()
+        {
+            Usuario usuario;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            usuario = (Usuario)Session["usuario"];
+            string nombre = usuario.Nombre;
+            return nombre;
+        }
+
+        public String Provincia()
+        {
+            Usuario usuario;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            usuario = (Usuario)Session["usuario"];
+            string provincia = usuario.Provincia;
+            return provincia;
+        }
+
+        public String Localidad()
+        {
+            Usuario usuario;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            usuario = (Usuario)Session["usuario"];
+            string localidad = usuario.Localidad;
+            return localidad;
+        }
+
+        public String Email()
+        {
+            Usuario usuario;
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            usuario = (Usuario)Session["usuario"];
+            string email = usuario.Email;
+            return email;
+        }
+
+
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {

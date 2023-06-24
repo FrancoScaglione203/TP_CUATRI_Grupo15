@@ -34,8 +34,10 @@
                         <a class="nav-item nav-link" href="#">Financiación</a>
                     </div>
                     <div class="navbar-nav ms-lg-4">
-                        <a class="nav-item nav-link" href="login.aspx">
-                            <asp:Label ID="lblIngresar" runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
+                        <a class="nav-item nav-link" href="login.aspx" >
+
+                            <asp:Label ID="lblIngresar"  runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
+
                             <i class="fa-solid fa-user px-1"></i>
                             
                         </a>

@@ -139,6 +139,10 @@ namespace negocio
                     usuario.tipoUsuario = (int)(datos.Lector["TipoUsuario"]) == 2 ? TipoUsuario.ADMIN : TipoUsuario.NORMAL;
                     usuario.Nombre = datos.Lector["Nombre"].ToString();
                     usuario.Apellido = datos.Lector["Apellido"].ToString();
+                    usuario.Provincia = datos.Lector["Provincia"].ToString();
+                    usuario.Localidad = datos.Lector["Localidad"].ToString();
+                    usuario.Email = datos.Lector["Email"].ToString();
+
                     return true;
                 }
                 return false;
