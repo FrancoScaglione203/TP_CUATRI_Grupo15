@@ -35,9 +35,16 @@
                     </div>
                     <div class="navbar-nav ms-lg-4">
                         <a class="nav-item nav-link" href="login.aspx">
-                            <i class="fa-solid fa-user px-1"></i>
                             <asp:Label ID="lblIngresar" runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
+                            <i class="fa-solid fa-user px-1"></i>
+                            
                         </a>
+                        <% if (Session["usuario"] != null)
+                                { %>
+                        <asp:Button ID="btnCerrar" Text="Cerrar Sesion" CssClass="nav-item nav-link" runat="server" ForeColor="White" OnClick="btnCerrar_Click" /> 
+                             <!--  <asp:Label ID="btnCerrarSesion" runat="server" Text="Cerrar Sesion" Style="margin-left: 5px;"></asp:Label> -->
+                            <%}
+                            else { } %>
                     </div>
                 </div>
             </div>

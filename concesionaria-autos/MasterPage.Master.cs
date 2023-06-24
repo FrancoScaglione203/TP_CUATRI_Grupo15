@@ -32,5 +32,12 @@ namespace concesionaria_autos
         {
             Response.Redirect("login.aspx");
         }
+
+
+        protected void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("default.aspx");
+        }
     }
 }
