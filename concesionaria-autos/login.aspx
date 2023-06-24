@@ -63,7 +63,7 @@
             <input readonly class="form-control-plaintext" id="fltEmail" value="<%= Email() %>">
             <label for="fltEmail">Email</label>
         </div>
-        <asp:Button Text="Modificar Perfil" CssClass="btn btn-primary" runat="server" ID="btnModificar"  />
+        <asp:Button Text="Modificar Perfil" CssClass="btn btn-primary" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
     </div>
 </div>
 

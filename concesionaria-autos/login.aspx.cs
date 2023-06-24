@@ -112,5 +112,10 @@ namespace concesionaria_autos
                 Response.Redirect("ErrorLog.aspx");
             }
         }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ModificarPerfil.aspx");
+        }
     }
 }

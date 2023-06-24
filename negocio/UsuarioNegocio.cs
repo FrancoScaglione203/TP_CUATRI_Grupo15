@@ -186,6 +186,37 @@ namespace negocio
             }
         }
 
+        public void ModificarPerfil(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("ModificarPerfil");
+                datos.setearParametro("@id", nuevo.Id);
+                datos.setearParametro("@clave", nuevo.clave);
+                datos.setearParametro("@TipoUsuario", nuevo.tipoUsuario);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Apellido", nuevo.Apellido);
+                datos.setearParametro("@Email", nuevo.Email);
+                datos.setearParametro("@Provincia", nuevo.Provincia);
+                datos.setearParametro("@Localidad", nuevo.Localidad);
+                datos.ejecutarAccion();
+                return;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+
+
     }
 
 }

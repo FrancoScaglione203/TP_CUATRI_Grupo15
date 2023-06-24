@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,8 +17,12 @@ namespace concesionaria_autos
             
             if (Session["usuario"] != null)
             {
-                string nombreUsuario = Session["nombreUsuario"].ToString();
+
+                Usuario usuario;
+                usuario = (Usuario)Session["usuario"];
+                string nombreUsuario = usuario.Nombre + " " + usuario.Apellido;
                 lblIngresar.Text = nombreUsuario;
+
             }
             else
             {

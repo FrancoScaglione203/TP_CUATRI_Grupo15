@@ -32,6 +32,7 @@ namespace concesionaria_autos
                 user.Localidad = txtLocalidad.Text;
                 user.Activo = true;
                 int id = usuarioNegocio.InsertarNuevo(user);
+                Response.Redirect("default.aspx");
             }
             catch (Exception ex)
             {
