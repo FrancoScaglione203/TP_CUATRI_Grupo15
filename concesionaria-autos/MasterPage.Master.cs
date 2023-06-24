@@ -12,6 +12,20 @@ namespace concesionaria_autos
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            
+            if (Session["usuario"] != null)
+            {
+                string nombreUsuario = Session["nombreUsuario"].ToString();
+                lblIngresar.Text = nombreUsuario;
+            }
+            else
+            {
+                lblIngresar.Text = "Ingresar";
+            }
+
+
+
+
         }
 
         protected void btnLoginSingin_Click(object sender, EventArgs e)

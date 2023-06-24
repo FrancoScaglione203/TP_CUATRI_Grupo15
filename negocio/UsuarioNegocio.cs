@@ -1,6 +1,7 @@
 ﻿using dominio;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -136,6 +137,8 @@ namespace negocio
                 {
                     usuario.Id = (int)datos.Lector["Id"];
                     usuario.tipoUsuario = (int)(datos.Lector["TipoUsuario"]) == 2 ? TipoUsuario.ADMIN : TipoUsuario.NORMAL;
+                    usuario.Nombre = datos.Lector["Nombre"].ToString();
+                    usuario.Apellido = datos.Lector["Apellido"].ToString();
                     return true;
                 }
                 return false;

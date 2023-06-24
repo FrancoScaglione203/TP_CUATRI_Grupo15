@@ -34,10 +34,10 @@
                         <a class="nav-item nav-link" href="#">Financiación</a>
                     </div>
                     <div class="navbar-nav ms-lg-4">
-                     <%--   <a class="nav-item nav-link" href="Carrito.aspx"><i class="fa-solid fa-cart-shopping"></i></a>
-                            <asp:Label ID="lblCantidad" runat="server" CssClass="fa-solid px-1 nav-item nav-link"/>--%>
-                       <a class="nav-item nav-link" href="login.aspx">
-                         <asp:Label ID="lblLogueo" runat="server" CssClass="fa-solid fa-user px-1" ></asp:Label></a>
+                        <a class="nav-item nav-link" href="login.aspx">
+                            <i class="fa-solid fa-user px-1"></i>
+                            <asp:Label ID="lblIngresar" runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
             <div class="bg-blue py-3">
                 <div class="container text-center">
                     <p class="text-white mb-0 py-2">© Renault 2010-2023</p>
-       
+
                 </div>
             </div>
 

@@ -30,6 +30,8 @@ namespace concesionaria_autos
                 if(negocio.loguear(usuario))
                 {
                     Session.Add("usuario", usuario);
+                    string nombreUsuario = usuario.Nombre + " " + usuario.Apellido;
+                    Session.Add("nombreUsuario", nombreUsuario);
                     Response.Redirect("default.aspx", false);
                 }
                 else
