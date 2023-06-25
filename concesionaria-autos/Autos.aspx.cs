@@ -88,6 +88,7 @@ namespace concesionaria_autos
             }
             catch (Exception ex)
             {
+                throw ex;
                 Session.Add("error", ex);
                 throw;
             }

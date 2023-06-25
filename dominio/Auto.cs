@@ -14,5 +14,13 @@ namespace dominio
         public int Color {get; set; }
         public bool Estado { get; set; }
         public Imagen Imagen { get; set; }
+        public FichaTecnica FichaTecnica { get; set; }
+        public Auto()
+        {
+            this.Imagen = new Imagen();
+            this.FichaTecnica = new FichaTecnica();
+        }
+
     }
+
 }

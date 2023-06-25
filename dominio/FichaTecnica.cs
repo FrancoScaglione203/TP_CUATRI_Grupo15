@@ -9,10 +9,13 @@ namespace dominio
     public class FichaTecnica
     {
         public int Id {get;set;}
-        public string Combustible { get;set;}
-        public decimal Kilometraje { get;set;}
-        public int año { get;set;}
-        public decimal Precio { get;set;}
-        public string Version { get;set;} //Cambie "Equipamiento" por "Version", haciendo referencia a si es full, base, deportivo, estandard, etc..
+        public int Plazas { get;set;}
+        public int Longitud { get;set;}
+        public int Ancho { get;set;}
+        public int Ejes { get;set;}
+        public bool CajaManual { get; set; }
+        public bool CajaAutomatica { get; set; }
+        public bool Nafta { get; set; }
+        public int IdProducto { get; set; }
     }
 }

@@ -5,7 +5,8 @@
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title>Renault</title>
+    <link rel="icon" type="image/x-icon" href="Logo.ico">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="Style.css">
@@ -17,7 +18,7 @@
 <body>
     <form id="form1" runat="server">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-blue px-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-foreColor px-0">
             <div class="container-fluid">
                 <div class="navbar-brand">
                     <img src="https://www.carsmagazine.com.ar/wp-content/uploads/2021/03/Nuevo-logo-Renault-marzo-2021-fondo-negro.jpg" alt="logo">
@@ -57,49 +58,68 @@
         </asp:ContentPlaceHolder>
 
         <!-- Footer -->
-        <footer class="bg-light">
-            <div class="container py-4">
-                <div class="row py-4 justify-content-center">
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h6 class="mb-4">Categorías</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Autos</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Motos</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Camionetas</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Jeep</a></li>
-                        </ul>
+        <footer class="mt-4">
+            <div class="bg-black">
+
+                <div class="d-flex justify-content-evenly py-4">
+                    <div class="col-2 text-center text-white">
+                        <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-client-service.svg.asset.svg/ff25e7d74c.svg" style="width:2.8rem;" />
+                        <p>contactanos a través de nuestros canales digitales</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h6 class="mb-4">Ayuda</h6>
-                        <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Ingresar</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Registrarse</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Sucursales</a></li>
-                            <li class="mb-2"><a href="#" class="nav-item nav-link">Planes</a></li>
-                        </ul>
+                    <div class="col-2 text-center text-white">
+                        <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-warranty.svg.asset.svg/8409c777ab.svg" style="width:2.8rem;"/>
+                        <p> manejá con confianza con garantías Renault</p>
                     </div>
-                    <div class="col-lg-3 col-md-6 mb-lg-0">
-                        <h6 class="mb-4">Nuestras Redes</h6>
-                        <p class=" mb-4">¡Síguenos en redes y descubre los mejores modelos en nuestra tienda!.</p>
-                        <ul class="list-inline mt-4">
-                            <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
-                        </ul>
+                    <div class="col-2 text-center text-white">
+                        <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-trade-in.svg.asset.svg/177e95855f.svg" style="width:2.8rem;"/>
+                        <p>hacé la vida más fácil con Renault</p>
                     </div>
-                </div>
-            </div>
-            <div class="bg-blue py-3">
-                <div class="container text-center">
-                    <p class="text-white mb-0 py-2">© Renault 2010-2023</p>
 
                 </div>
             </div>
 
+            <div class="bg-light">
+                <div class="container py-4">
+                    <div class="row py-4 justify-content-center">
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Categorías</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Autos</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Motos</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Camionetas</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Jeep</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Ayuda</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Ingresar</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Registrarse</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Sucursales</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Planes</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-lg-0">
+                            <h6 class="mb-4">Nuestras Redes</h6>
+                            <p class=" mb-4">¡Síguenos en redes y descubre los mejores modelos en nuestra tienda!.</p>
+                            <ul class="list-inline mt-4">
+                                <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-3">
+                    <div class="container text-center">
+                        <p class="mb-0">© Renault 2010-2023</p>
+                    </div>
+                </div>
+
+            </div>
         </footer>
-
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

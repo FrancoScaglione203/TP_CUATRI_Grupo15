@@ -8,6 +8,8 @@ using System.Xml.Linq;
 using dominio;
 using System.Configuration;
 using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
+using System.Reflection;
 
 namespace negocio
 {
@@ -29,7 +31,7 @@ namespace negocio
  
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Precio = (decimal)datos.Lector["Precio"]; 
                     aux.Color = (int)datos.Lector["Color"];
                     aux.Estado = (bool)datos.Lector["Estado"];
                     if (!(datos.Lector["ImagenUrl"] is DBNull))
@@ -134,13 +136,16 @@ namespace negocio
         }
 
 
-        public void agregar(Marca nuevo)
+        public int agregar(Auto auto)
         {
+            int id = 0;
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into MARCAS (Descripcion) Values ('" + nuevo.Descripcion + "')");
-                datos.ejecutarAccion();
+                datos.setearConsulta("insert into Productos (Nombre,Precio,Color) Values ('" + auto.Nombre + "','" + auto.Precio + "','" + auto.Color + "'); SELECT SCOPE_IDENTITY()");
+                id = datos.leerIdUltimoCreado();
+
+                return id;
             }
             catch (Exception ex)
             {
@@ -173,56 +178,43 @@ namespace negocio
         public List<Auto> listar(string id = "")
         {
             List<Auto> lista = new List<Auto>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
-
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                conexion.ConnectionString = ConfigurationManager.AppSettings["cadenaConexion"];
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "select Id,Nombre,IdMarca,Imagen,Stock from Productos";
-                if (id != "")
-                    comando.CommandText += " and P.Id = " + id;
+                datos.setearConsulta("select top 1 p.id, p.nombre,p.precio,i.idproducto, i.ImagenUrl, f.ancho, f.CajaManual,f.CajaAutomatica,f.Ejes,f.Longitud,f.Nafta,f.Plazas from productos p inner join imagenes i on p.id = i.idProducto inner join fichatecnica f on p.id = f.id where P.id ="+ id);
+                datos.ejecutarLectura();
 
-                comando.Connection = conexion;
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Auto aux = new Auto();
-                    aux.Id = (int)lector["Id"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    //aux.Precio = (decimal)lector["Precio"];
-                    //aux.IdMarca = (int)lector["IdMarca"];
-                    //aux.Imagen = (string)lector["Imagen"];
-                    //aux.Stock = (int)lector["Stock"];
 
-                    //if(!(lector.IsDBNull(lector.GetOrdinal("UrlImagen"))))
-                    //    aux.UrlImagen = (string)lector["UrlImagen"];
-                    //if (!(lector["UrlImagen"] is DBNull))
-                    //    aux.UrlImagen = (string)lector["UrlImagen"];
+                    aux.Id = (int)datos.Lector["id"];
+                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Precio = (decimal)datos.Lector["precio"];
+                    aux.Imagen.IdProducto = (int)datos.Lector["idproducto"];
+                    aux.Imagen.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.FichaTecnica.Ancho = (int)datos.Lector["ancho"];
+                    aux.FichaTecnica.CajaManual = (bool)datos.Lector["CajaManual"];
+                    aux.FichaTecnica.CajaAutomatica = (bool)datos.Lector["CajaAutomatica"];
+                    aux.FichaTecnica.Ejes = (int)datos.Lector["Ejes"];
+                    aux.FichaTecnica.Longitud = (int)datos.Lector["Longitud"];
+                    aux.FichaTecnica.Nafta = (bool)datos.Lector["Nafta"];
+                    aux.FichaTecnica.Plazas = (int)datos.Lector["Plazas"];
 
-                    //aux.Tipo = new Elemento();
-                    //aux.Tipo.Id = (int)lector["IdTipo"];
-                    //aux.Tipo.Descripcion = (string)lector["Tipo"];
-                    //aux.Debilidad = new Elemento();
-                    //aux.Debilidad.Id = (int)lector["IdDebilidad"];
-                    //aux.Debilidad.Descripcion = (string)lector["Debilidad"];
-
-                    //aux.Activo = bool.Parse(lector["Activo"].ToString());
 
                     lista.Add(aux);
+                    
                 }
-
-                conexion.Close();
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
 
         }
@@ -232,15 +224,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                //datos.setearProcedimiento("storedModificarPokemon");
-                //datos.setearParametro("@numero", poke.Numero);
-                datos.setearParametro("@nombre", auto.Nombre);
-                //datos.setearParametro("@desc", poke.Descripcion);
-                //datos.setearParametro("@img", poke.UrlImagen);
-                //datos.setearParametro("@idTipo", poke.Tipo.Id);
-                //datos.setearParametro("@idDebilidad", poke.Debilidad.Id);
-                //datos.setearParametro("@id", poke.Id);
-
+                datos.setearConsulta("update Productos set Nombre = '" + auto.Nombre + "' ,Precio = '" + auto.Precio + "' WHERE id = '" + auto.Id + "'");
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

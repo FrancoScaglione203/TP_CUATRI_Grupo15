@@ -7,10 +7,9 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Imagenes/banner1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Imagenes/banner2.png" class="d-block w-100" alt="...">
+               <video autoplay loop muted class="myvid" id="player">
+            <source src="./Videos/Banner.mp4" type="video/mp4">
+            </video>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -26,22 +25,22 @@
 
     <div class="container">
 
-          <div class="d-flex justify-content-center my-4" >
+        <div class="d-flex justify-content-center my-4">
             <a href="/comparacion.aspx" class="btn btn-primary">Comparar modelos</a>
-            </div>
+        </div>
 
         <div class="row d-flex justify-content-around">
             <%
                 foreach (dominio.Auto auto in ListaAutos)
-                { 
+                {
             %>
-            <div class="card border-0" style="width: 18rem">
+            <div class="allcard card border-0" style="width: 18rem">
                 <img class="card-img-top" src="<%:auto.Imagen.ImagenUrl %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
-                    <p class="card-text">desde $<%: auto.Precio %></p>
-                    <a href="/detalle.aspx" class="linkCards me-4">descubrir</a>
-                    <a href="/configuracion.aspx" class="linkCards">configurar</a>
+                    <p class="card-text">desde $<%: auto.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></p>
+                    <a href="/detalle.aspx?id=<%: auto.Id %>" class="linkCards me-4">descubrir</a>
+                    <a href="/configuracion.aspx?id=<%: auto.Id %>" class="linkCards">configurar</a>
                 </div>
             </div>
             <%
@@ -50,6 +49,6 @@
         </div>
     </div>
 
-  
+
 
 </asp:Content>

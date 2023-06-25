@@ -66,15 +66,13 @@
         CssClass="table" AutoGenerateColumns="false"
         OnSelectedIndexChanged="dgvAutos_SelectedIndexChanged"
         OnPageIndexChanging="dgvAutos_PageIndexChanging"
-        AllowPaging="True" PageSize="5">
+        AllowPaging="True" PageSize="10">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-
-            <%--<asp:BoundField HeaderText="Número" DataField="Numero" />
-            <asp:BoundField HeaderText="Tipo" DataField="Tipo.Descripcion" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />--%>
-            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✍" />
+            <asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />
+            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✏️" />
         </Columns>
     </asp:GridView>
-    <a href="FormularioPokemon.aspx" class="btn btn-primary">Agregar</a>
+    <a href="FormularioAuto.aspx" class="btn btn-primary">Agregar</a>
 </asp:Content>

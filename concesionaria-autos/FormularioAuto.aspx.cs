@@ -20,8 +20,8 @@ namespace concesionaria_autos
             try
             {
                 //configuración inicial de la pantalla.
-                //if (!IsPostBack)
-                //{
+                if (!IsPostBack)
+                {
                 //    ElementoNegocio negocio = new ElementoNegocio();
                 //    List<Elemento> lista = negocio.listar();
 
@@ -34,29 +34,32 @@ namespace concesionaria_autos
                 //    ddlDebilidad.DataValueField = "Id";
                 //    ddlDebilidad.DataTextField = "Descripcion";
                 //    ddlDebilidad.DataBind();
-                //}
+                }
 
                 //configuración si estamos modificando.
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
                 if (id != "" && !IsPostBack)
                 {
                     AutoNeogocio negocio = new AutoNeogocio();
-                    //List<Pokemon> lista = negocio.listar(id);
-                    //Pokemon seleccionado = lista[0];
+                    List<Auto> lista = negocio.listar(id);
                     Auto seleccionado = (negocio.listar(id))[0];
 
-                    //guardo pokemon seleccionado en session
+                    //guardo auto seleccionado en session
                     Session.Add("autoSeleccionado", seleccionado);
 
                     //pre cargar todos los campos...
                     txtId.Text = id;
                     txtNombre.Text = seleccionado.Nombre;
-                    //txtDescripcion.Text = seleccionado.Marca;
-                    //txtImagenUrl.Text = seleccionado.UrlImagen;
-                    //txtNumero.Text = seleccionado.Numero.ToString();
+                    txtPrecio.Text = seleccionado.Precio.ToString();
+                    txtImagenUrl.Text = seleccionado.Imagen.ImagenUrl;
+                    txtAncho.Text = seleccionado.FichaTecnica.Ancho.ToString();
+                    ddlCajaManual.SelectedValue = seleccionado.FichaTecnica.CajaManual.ToString() != "True" ? "0" : "1";
+                    ddlCajaAutomatica.SelectedValue = seleccionado.FichaTecnica.CajaAutomatica.ToString() != "True" ? "0" : "1";
+                    txtEjes.Text = seleccionado.FichaTecnica.Ejes.ToString();
+                    txtLongitud.Text = seleccionado.FichaTecnica.Longitud.ToString();
+                    ddlNafta.SelectedValue = seleccionado.FichaTecnica.Nafta.ToString() != "True" ? "0" : "1";
+                    txtPlazas.Text = seleccionado.FichaTecnica.Plazas.ToString();
 
-                    //ddlTipo.SelectedValue = seleccionado.Tipo.Id.ToString();
-                    //ddlDebilidad.SelectedValue = seleccionado.Debilidad.Id.ToString();
                     txtImagenUrl_TextChanged(sender, e);
 
                     //configurar acciones
@@ -67,6 +70,7 @@ namespace concesionaria_autos
             }
             catch (Exception ex)
             {
+                throw ex;
                 Session.Add("error", ex);
                 Response.Redirect("Error.aspx");
             }
@@ -76,32 +80,53 @@ namespace concesionaria_autos
         {
             try
             {
-                Auto nuevo = new Auto();
-                AutoNeogocio negocio = new AutoNeogocio();
+                Auto auto = new Auto();
+                Imagen imagen = new Imagen();
+                FichaTecnica fichaTecnica = new FichaTecnica();
 
-                //nuevo.Numero = int.Parse(txtNumero.Text);
-                nuevo.Nombre = txtNombre.Text;
-                //nuevo.Descripcion = txtDescripcion.Text;
-                //nuevo.UrlImagen = txtImagenUrl.Text;
+                AutoNeogocio autoNegocio = new AutoNeogocio();
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
 
-                //nuevo.Tipo = new Elemento();
-                //nuevo.Tipo.Id = int.Parse(ddlTipo.SelectedValue);
-                //nuevo.Debilidad = new Elemento();
-                //nuevo.Debilidad.Id = int.Parse(ddlDebilidad.SelectedValue);
+                int idAuto = int.Parse(txtId.Text);
+                auto.Nombre = txtNombre.Text;
+                auto.Precio = decimal.Parse(txtPrecio.Text);
+                auto.Color = 1;
+                auto.Estado = true;
+                imagen.ImagenUrl = txtImagenUrl.Text;
+                imagen.IdProducto = idAuto;
+                fichaTecnica.IdProducto = idAuto;
+                fichaTecnica.Ancho = int.Parse(txtAncho.Text);
+                fichaTecnica.Longitud = int.Parse(txtLongitud.Text);
+                fichaTecnica.Plazas = int.Parse(txtPlazas.Text);
+                fichaTecnica.Ejes = int.Parse(txtEjes.Text);
+                fichaTecnica.CajaAutomatica = ddlCajaAutomatica.SelectedValue != "0" ? true : false;
+                fichaTecnica.CajaManual = ddlCajaManual.SelectedValue != "0" ? true : false;
+                fichaTecnica.Nafta = ddlNafta.SelectedValue != "0" ? true : false;
+
 
                 if (Request.QueryString["id"] != null)
                 {
-                    nuevo.Id = int.Parse(txtId.Text);
-                    negocio.modificarConSP(nuevo);
+                    auto.Id = idAuto;
+                    autoNegocio.modificarConSP(auto);
+                    imagenNegocio.modificar(imagen);
+                    fichaTecnicaNegocio.modificar(fichaTecnica);
                 }
                 else
-                    negocio.agregarConSP(nuevo);
+                {
+                    int idArt = autoNegocio.agregar(auto);
+                    imagen.IdProducto = idArt;
+                    fichaTecnica.IdProducto = idArt;
+                    imagenNegocio.agregar(imagen);
+                    fichaTecnicaNegocio.agregar(fichaTecnica);
+                }
 
 
-                Response.Redirect("PokemonsLista.aspx", false);
+                Response.Redirect("Autos.aspx", false);
             }
             catch (Exception ex)
             {
+                throw ex;
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
