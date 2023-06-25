@@ -71,34 +71,34 @@
 
 
 
-<div class="container d-flex">
-    <% foreach (dominio.Color colores in ListaColores) { %>
-        <a class="color">
-            <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>">
-        </a>
-        <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
-    <% } %>
-</div>
+                            <div class="container d-flex">
+                                <% foreach (dominio.Color colores in ListaColores)
+                                    { %>
+                                <a class="color">
+                                    <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>">
+                                </a>
+                                <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
+                                <% } %>
+                            </div>
 
-<script defer>
-    var img = document.querySelector('.configImg');
-    var color = document.querySelectorAll('.color');
-    var ImagenUrl = document.querySelectorAll('.ImagenUrl');
+                            <script defer>
+                                var img = document.querySelector('.configImg');
+                                var color = document.querySelectorAll('.color');
+                                var ImagenUrl = document.querySelectorAll('.ImagenUrl');
 
-    for (var i = 0; i < color.length; i++) {
-        color[i].addEventListener("click", function (e) {
-            var index = Array.from(color).indexOf(e.currentTarget); // Obtener el índice del elemento clicado
-            var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
-            var contenido = span.textContent;
-            alert(contenido);
-            img.src = contenido;
-        });
-    }
-</script>
+                                for (var i = 0; i < color.length; i++) {
+                                    color[i].addEventListener("click", function (e) {
+                                        var index = Array.from(color).indexOf(e.currentTarget); // Obtener el índice del elemento clicado
+                                        var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
+                                        var contenido = span.textContent;
+                                        img.src = contenido;
+                                    });
+                                }
+                            </script>
 
                             <!-- FIN EXTERIOR -->
                         </div>
-                        
+
                         <div class="step-actions">
                             <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
                             <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>

@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="Autos.aspx.cs" Inherits="concesionaria_autos.Autos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="ListaFichaTecnica.aspx.cs" Inherits="concesionaria_autos.ListaFichaTecnica" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Lista de Autos</h1>
+    <h1>Ficha Tecnica</h1>
     <div class="row">
         <div class="col-6">
             <div class="mb-3">
@@ -62,17 +62,24 @@
         </div>
         <%} %>
     </div>
-    <asp:GridView ID="dgvAutos" runat="server" DataKeyNames="Id"
+    <asp:GridView ID="dgvFT" runat="server" DataKeyNames="Id"
         CssClass="table" AutoGenerateColumns="false"
-        OnSelectedIndexChanged="dgvAutos_SelectedIndexChanged"
-        OnPageIndexChanging="dgvAutos_PageIndexChanging"
+        OnSelectedIndexChanged="dgvFT_SelectedIndexChanged"
+        OnPageIndexChanging="dgvFT_PageIndexChanging"
         AllowPaging="True" PageSize="10">
         <Columns>
-            <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-            <asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />
+            <asp:BoundField HeaderText="ID" DataField="Id" />
+            <asp:BoundField HeaderText="Longitud" DataField="Longitud" />
+            <asp:BoundField HeaderText="Ancho" DataField="Ancho" />
+            <asp:BoundField HeaderText="Ejes" DataField="Ejes" />
+            <asp:CheckBoxField HeaderText="Caja Manual" DataField="CajaManual" />
+            <asp:CheckBoxField HeaderText="Caja Automática" DataField="CajaAutomatica" />
+            <asp:CheckBoxField HeaderText="Nafta" DataField="Nafta" />
+
+            <%--<asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />--%>
             <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✏️" />
         </Columns>
     </asp:GridView>
-    <a href="FormularioAuto.aspx" class="btn btn-primary">Agregar</a>
+    <a href="FormularioPokemon.aspx" class="btn btn-primary">Agregar</a>
 </asp:Content>

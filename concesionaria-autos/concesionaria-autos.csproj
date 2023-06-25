@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
+    <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFichaTecnica.aspx.cs">
+      <DependentUpon>ListaFichaTecnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaFichaTecnica.aspx.designer.cs">
+      <DependentUpon>ListaFichaTecnica.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
