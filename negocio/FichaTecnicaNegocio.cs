@@ -49,5 +49,58 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void agregar(FichaTecnica nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert into FICHATECNICA(IdProducto,Plazas,Longitud,Ancho,Ejes,CajaManual,CajaAutomatica,Nafta)values(@IdProducto, @Plazas, @Longitud, @Ancho, @Ejes, @CajaManual, @CajaAutomatica, @Nafta)");
+                datos.setearParametro("@IdProducto", nuevo.IdProducto);
+                datos.setearParametro("@Plazas", nuevo.Plazas);
+                datos.setearParametro("@Longitud", nuevo.Longitud);
+                datos.setearParametro("@Ancho", nuevo.Ancho);
+                datos.setearParametro("@Ejes", nuevo.Ejes);
+                datos.setearParametro("@CajaManual", nuevo.CajaManual);
+                datos.setearParametro("@CajaAutomatica", nuevo.CajaAutomatica);
+                datos.setearParametro("@Nafta", nuevo.Nafta);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void modificar(FichaTecnica ft)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update FICHATECNICA set Plazas = @Plazas ,Longitud = @Longitud,Ancho = @Ancho,Ejes = @Ejes,CajaManual = @CajaManual,CajaAutomatica = @CajaAutomatica,Nafta = @Nafta WHERE IdProducto = @id");
+                datos.setearParametro("@Plazas", ft.Plazas);
+                datos.setearParametro("@Longitud", ft.Longitud);
+                datos.setearParametro("@Ancho", ft.Ancho);
+                datos.setearParametro("@Ejes", ft.Ejes);
+                datos.setearParametro("@CajaManual", ft.CajaManual);
+                datos.setearParametro("@CajaAutomatica", ft.CajaAutomatica);
+                datos.setearParametro("@Nafta", ft.Nafta);
+                datos.setearParametro("@id", ft.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
