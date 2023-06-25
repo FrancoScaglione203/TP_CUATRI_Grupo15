@@ -67,21 +67,21 @@
 
                             <!-- EXTERIOR -->
 
-                            <img class="configImg" src="LoganGris.png" alt="Auto">
+                            <img class="configImg" src="<%:Color.ImagenUrl %>" alt="Auto">
 
-
-
-                            <div class="container d-flex">
-                                <% foreach (dominio.Color colores in ListaColores)
-                                    { %>
-                                <a class="color">
-                                    <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>">
-                                </a>
-                                <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
-                                <% } %>
+                            <div class="container ">
+                                <div class="d-flex justify-content-center m-4">
+                                    <% foreach (dominio.Color colores in ListaColores)
+                                        { %>
+                                    <a class="color me-4">
+                                        <img class="dot" src="<%: colores.Muestra %>" alt="<%: colores.Nombre %>" style="cursor: pointer;">
+                                    </a>
+                                    <span class="ImagenUrl d-none"><%: colores.ImagenUrl %></span>
+                                    <% } %>
+                                </div>
                             </div>
 
-                            <script defer>
+                            <script type="text/javascript">
                                 var img = document.querySelector('.configImg');
                                 var color = document.querySelectorAll('.color');
                                 var ImagenUrl = document.querySelectorAll('.ImagenUrl');
@@ -91,6 +91,7 @@
                                         var index = Array.from(color).indexOf(e.currentTarget); // Obtener el índice del elemento clicado
                                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                                         var contenido = span.textContent;
+                                        /* alert(contenido);*/
                                         img.src = contenido;
                                     });
                                 }
@@ -105,26 +106,54 @@
                         </div>
                     </div>
                 </li>
+
                 <li class="step">
-                    <div class="step-title waves-effect waves-dark">Diseño Exterior</div>
+                    <div class="step-title waves-effect waves-dark">Diseño Interior</div>
                     <div class="step-content">
                         <div class="row">
 
                             <!-- INTERIOR -->
 
+                            <img class="configImg2" src="<%:Tapizado.ImagenUrl %>" alt="Auto">
 
+                            <div class="container">
+                                <div class="d-flex justify-content-center m-4">
+                                    <% foreach (dominio.Tapizado tapizado in ListaTapizado)
+                                        { %>
+                                    <a class="tapizado me-4">
+                                        <img class="dot" src="<%: tapizado.Muestra %>" alt="<%: tapizado.Nombre %>" style="cursor: pointer;">
+                                    </a>
+                                    <span class="ImagenUrl2 d-none"><%: tapizado.ImagenUrl %></span>
+                                    <% } %>
+                                </div>
+                            </div>
 
+                            <script type="text/javascript">
+                                var img2 = document.querySelector('.configImg2');
+                                var tapizado = document.querySelectorAll('.tapizado');
+                                var ImagenUrl2 = document.querySelectorAll('.ImagenUrl2');
 
+                                for (var i = 0; i < tapizado.length; i++) {
+                                    tapizado[i].addEventListener("click", function (e) {
+                                        var index = Array.from(tapizado).indexOf(e.currentTarget); // Obtener el índice del elemento clicado
+                                        var span = ImagenUrl2[index]; // Obtener el elemento <span> correspondiente al índice
+                                        var contenido = span.textContent;
+                                        /* alert(contenido);*/
+                                        img2.src = contenido;
+                                    });
+                                }
+                            </script>
 
-                            <!-- FIN INTERIOR -->
-
+                            <!-- FIN EXTERIOR -->
                         </div>
+
                         <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black  text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step  text-capitalize">Anterior</button>
+                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
                         </div>
                     </div>
                 </li>
+               
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Equipamiento</div>
                     <div class="step-content">
@@ -132,8 +161,68 @@
 
                             <!-- EQUIPAMIENTO -->
 
+                            <%
+                                foreach (dominio.FichaTecnica fichaTecnica in ListaFichaTecnica)
+                                {
+                            %>
+                            <img class="configImg" src="<%:Color.ImagenUrl %>" alt="Auto">
 
+                            <%
+                                }
+                            %>
 
+                            <div class="justify-content-center m-4">
+
+                                <%
+                                    foreach (dominio.FichaTecnica fichaTecnica in ListaFichaTecnica)
+                                    {
+                                %>
+                                <div class="row justify-content-center py-3">Número de plazas</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Plazas : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Longitud total</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Longitud : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Ancho total</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Ancho : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Distancia entre ejes</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? fichaTecnica.Ejes : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Caja Manual</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.CajaManual==true ? "Si" : "No") : 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Caja Automática</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.CajaAutomatica==true ? "Si" : "No"): 0 %></div>
+
+                                </div>
+
+                                <div class="row justify-content-center py-3">Nafta</div>
+                                <div class="d-flex justify-content-around text-center">
+                                    <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica!=null ? (fichaTecnica.Nafta==true ? "Si" : "No") : 0 %></div>
+
+                                </div>
+
+                                <%
+                                    }
+                                %>
+                            </div>
 
 
                             <!-- FIN EQUIPAMIENTO -->
@@ -148,21 +237,57 @@
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Resumen</div>
                     <div class="step-content">
-                        <div class="row">
+                        <div class="row my-4">
 
                             <!-- RESUMEN -->
 
+                            <div class="d-flex justify-content-evenly align-content-center">
 
+                                <div class="resumem-img-container">
+                                    <img class="resumen-img" src="<%:Color.ImagenUrl %>" alt="Auto">
+                                </div>
 
+                                <div class="card p-4" style="width: 25rem;">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle my-2 text-muted">Precio</h6>
+                                        <h5 class="card-title fw-bold">$5.454.200,00</h5>
+                                        <div class="hl2 pe-4 my-3"></div>
+                                        <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
+                                        <p class="card-text fw-bold">VERSION</p>
 
+                                        <p class="resumenP">
+                                            <span>Logan Life 1.6</span>
+                                            <span class="dottedLine"></span>
+                                            <span class="fw-bold">$5.449.200,00</span>
+                                        </p>
+
+                                        <p class="card-text fw-bold">COLOR</p>
+                                        <p class="resumenP">
+                                            <span>Blanco</span>
+                                            <span class="dottedLine"></span>
+                                            <span class="fw-bold">$0</span>
+                                        </p>
+
+                                        <p class="card-text fw-bold">TAPIZADO</p>
+                                        <p class="resumenP">
+                                            <span>Cuero</span>
+                                            <span class="dottedLine"></span>
+                                            <span class="fw-bold">$5.000,00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center my-5">
+                                <a class="btn btn-light me-4">Solicitar un testdrive</a>
+                                <a class="btn btn-warning">Solicitar un asesor</a>
+                            </div>
 
                             <!-- FIN RESUMEN -->
 
                         </div>
-                        <div class="step-actions">
-                        </div>
+
                     </div>
-                </li>
+                    </li>
             </ul>
         </form>
     </div>
