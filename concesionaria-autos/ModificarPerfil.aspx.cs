@@ -50,7 +50,7 @@ namespace concesionaria_autos
             usuario = (Usuario)Session["usuario"];
 
 
-            //SOSPECHO QUE NO SE PASA EL ID
+         
             usuario.Apellido = txtApellido.Text.ToString();
             usuario.Nombre = txtNombre.Text.ToString();
             usuario.Provincia = txtProvincia.Text.ToString();
@@ -59,7 +59,7 @@ namespace concesionaria_autos
             usuario.clave = txtClave.Text.ToString();
 
             negocio.ModificarPerfil(usuario);
-            Session["usuario"] = (Usuario)usuario; // FALTAN LAS VALIDACIONES
+            Session["usuario"] = (Usuario)usuario; 
             Response.Redirect("login.aspx");
 
         }
@@ -67,6 +67,11 @@ namespace concesionaria_autos
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("login.aspx");
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ConfirElimin.aspx");
         }
     }
 }

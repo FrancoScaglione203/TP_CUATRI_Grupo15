@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <h1> EREOR </h1>
+    <h1> DNI O CLAVE INCORRECTOS </h1>
+
+
 
 </asp:Content>

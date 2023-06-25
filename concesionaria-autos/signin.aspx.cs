@@ -31,8 +31,27 @@ namespace concesionaria_autos
                 user.Provincia = txtProvincia.Text;
                 user.Localidad = txtLocalidad.Text;
                 user.Activo = true;
-                int id = usuarioNegocio.InsertarNuevo(user);
-                Response.Redirect("default.aspx");
+
+                if(!usuarioNegocio.ValidacionDniEmail(user.Dni, user.Email))
+                {
+                    int id = usuarioNegocio.InsertarNuevo(user);
+                    if (id == 0)
+                    {
+                        Response.Redirect("ErrorLog.aspx");
+                    }
+                    else
+                    {
+                        Session.Add("usuario", user);
+                        Response.Redirect("default.aspx");
+                    }
+                }
+                else
+                {
+                    //Session.Add("usuario", user);
+                    Response.Redirect("ErrorLog.aspx");
+                }
+
+
             }
             catch (Exception ex)
             {

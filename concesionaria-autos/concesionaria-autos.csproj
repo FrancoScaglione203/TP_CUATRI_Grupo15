@@ -68,6 +68,7 @@
     <Content Include="Autos.aspx" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
+    <Content Include="ConfirElimin.aspx" />
     <Content Include="Detalle.css" />
     <Content Include="ErrorLog.aspx" />
     <Content Include="FormularioAuto.aspx" />
@@ -134,6 +135,13 @@
     </Compile>
     <Compile Include="configuracion.aspx.designer.cs">
       <DependentUpon>configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirElimin.aspx.cs">
+      <DependentUpon>ConfirElimin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirElimin.aspx.designer.cs">
+      <DependentUpon>ConfirElimin.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

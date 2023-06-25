@@ -45,6 +45,8 @@
             <asp:Button Text="Confirmar" CssClass="btn btn-primary" runat="server" ID="btnConfirmar" OnClick="btnConfirmar_Click"/>
 
             <asp:Button Text="Cancelar" CssClass="btn btn-primary" runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" />
+
+            <asp:Button Text="EliminarUsuario" CssClass="btn btn-primary" runat="server" ID="btnEliminar" OnClick="btnEliminar_Click" />
         </div>
         <div class="col-4"></div>
     </div>

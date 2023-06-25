@@ -12,6 +12,66 @@ namespace negocio
 {
     public class UsuarioNegocio
     {
+
+
+
+        public List<Usuario> listarUsuarios()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "select Id,Clave,TipoUsuario,Nombre,Apellido,Dni,Email,Provincia,Localidad,Estado from usuarios";
+                datos.setearConsulta(consulta);
+                //datos.setearProcedimiento("storedListar");
+
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Usuario aux = new Usuario();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.clave = (string)datos.Lector["Clave"];
+                    aux.tipoUsuario = (TipoUsuario)(int)datos.Lector["TipoUsuario"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Apellido = (string)datos.Lector["Apellido"];
+                    aux.Dni = (string)datos.Lector["Dni"];
+                    aux.Email = (string)datos.Lector["Email"];
+                    aux.Provincia = (string)datos.Lector["Provincia"];
+                    aux.Localidad = (string)(datos.Lector["Localidad"]);
+                    aux.Activo = (bool)(datos.Lector["Estado"]);
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool ValidacionDniEmail(string dni, string email)
+        {
+            List<Usuario> lista = new List<Usuario>();
+            AccesoDatos datos = new AccesoDatos();
+
+            lista = listarUsuarios();
+
+            Usuario userdni = lista.Find(u => u.Dni == dni);
+            Usuario useremail = lista.Find(u => u.Email == email);
+
+            if(userdni == null && useremail == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
         public List<Usuario> listarConSP()
         {
             List<Usuario> lista = new List<Usuario>();
@@ -128,10 +188,12 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Id, TipoUsuario, Nombre, Apellido, Email, Provincia, Localidad from USUARIOS where USUARIOS.Dni = @dni and USUARIOS.Clave = @clave ");
+                datos.setearConsulta("select Id, TipoUsuario, Nombre, Apellido, Email, Provincia, Localidad, Estado from USUARIOS where USUARIOS.Dni = @dni and USUARIOS.Clave = @clave and Estado = 1 ");
                 datos.setearParametro("@dni", usuario.Dni);
                 datos.setearParametro("@clave", usuario.clave);
                 datos.ejecutarLectura();
+
+
                 
                 while(datos.Lector.Read())
                 {
@@ -174,6 +236,9 @@ namespace negocio
                 datos.setearParametro("@Provincia", nuevo.Provincia);
                 datos.setearParametro("@Localidad", nuevo.Localidad);
                 return datos.ejecutarAccionScalar();
+
+
+
             }
             catch (Exception ex)
             {
@@ -201,6 +266,28 @@ namespace negocio
                 datos.setearParametro("@Email", nuevo.Email);
                 datos.setearParametro("@Provincia", nuevo.Provincia);
                 datos.setearParametro("@Localidad", nuevo.Localidad);
+                datos.ejecutarAccion();
+                return;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void BajaLogica(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("BajaLogica");
+                datos.setearParametro("@Id", id);
                 datos.ejecutarAccion();
                 return;
             }
