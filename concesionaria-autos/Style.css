@@ -61,7 +61,6 @@ p {
     width: 18.5em;
 }
 
-
 /*BOTONES*/
 
 .btn {
@@ -124,6 +123,13 @@ p {
 
 .fa-chevron-right {
     color: var(--decorations);
+}
+
+.carousel-button {
+    position: absolute;
+    z-index:100!important;
+    top: 15em;
+    left: 6.5em;
 }
 
 /*FORMULARIOS*/

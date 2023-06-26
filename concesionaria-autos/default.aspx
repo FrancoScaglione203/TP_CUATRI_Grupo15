@@ -7,10 +7,11 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-               <video autoplay loop muted class="myvid" id="player">
-            <source src="./Videos/Banner.mp4" type="video/mp4">
-            </video>
+                <video autoplay loop muted class="myvid" id="player">
+                    <source src="./Videos/Banner.mp4" type="video/mp4">
+                </video>
             </div>
+            <a class="carousel-button btn btn-light fw-bold" href="detalle.aspx?id=4">descubrí más</a>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
