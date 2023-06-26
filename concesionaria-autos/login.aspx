@@ -35,36 +35,40 @@
         {
     %>
 
-    <h2 class="subt">PERFIL</h2>
-    <br>
+    <div class="row justify-content-center mt-4">
 
-    <div class="row justify-content-center">
-        <div class="col-4">
-            <div class="form-floating mb-3 text-center">
-                <input readonly class="form-control-plaintext" id="fltDni" value="<%= dni() %>">
-                <label for="fltDni">Dni</label>
+        <div class="col-5 text-center">
+            <h6 class="fw-bold my-3">PERFIL</h6>
+
+            <div class="row justify-content-center">
+
+                <div class="form-floating mb-3">
+                    <input readonly class="form-control-plaintext" id="fltDni" value="<%= dni() %>">
+                    <label for="fltDni">Dni</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input readonly class="form-control-plaintext" id="fltApellido" value="<%= Apellido() %>">
+                    <label for="fltApellido">Apellido</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input readonly class="form-control-plaintext" id="fltNombre" value="<%= Nombre() %>">
+                    <label for="fltNombre">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input readonly class="form-control-plaintext" id="fltProvincia" value="<%= Provincia() %>">
+                    <label for="fltProvincia">Provincia</label>
+                </div>
+                <div class="form-floating mb-3 ">
+                    <input readonly class="form-control-plaintext" id="fltLocalidad" value="<%= Localidad() %>">
+                    <label for="fltLocalidad">Localidad</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input readonly class="form-control-plaintext" id="fltEmail" value="<%= Email() %>">
+                    <label for="fltEmail">Email</label>
+                </div>
+                <asp:Button Text="Modificar Perfil" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
+
             </div>
-            <div class="form-floating mb-3 text-center">
-                <input readonly class="form-control-plaintext" id="fltApellido" value="<%= Apellido() %>">
-                <label for="fltApellido">Apellido</label>
-            </div>
-            <div class="form-floating mb-3 text-center">
-                <input readonly class="form-control-plaintext" id="fltNombre" value="<%= Nombre() %>">
-                <label for="fltNombre">Nombre</label>
-            </div>
-            <div class="form-floating mb-3 text-center">
-                <input readonly class="form-control-plaintext" id="fltProvincia" value="<%= Provincia() %>">
-                <label for="fltProvincia">Provincia</label>
-            </div>
-            <div class="form-floating mb-3 text-center">
-                <input readonly class="form-control-plaintext" id="fltLocalidad" value="<%= Localidad() %>">
-                <label for="fltLocalidad">Localidad</label>
-            </div>
-            <div class="form-floating mb-3 text-center">
-                <input readonly class="form-control-plaintext" id="fltEmail" value="<%= Email() %>">
-                <label for="fltEmail">Email</label>
-            </div>
-            <asp:Button Text="Modificar Perfil" CssClass="btn btn-primary" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
         </div>
     </div>
 
