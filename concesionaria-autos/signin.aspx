@@ -4,46 +4,43 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <br>
-    <h2 class="subt">Registrate ingresando los datos pedidos a continuacion </h2>
-    <br>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col">
-            <div class="mb-3">
-                <label for="txtDni" class="form-label">Dni:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
-            </div>
-            <div class="mb-3">
-                <label for="txtApellido" class="form-label">Apellido:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
-            </div>
-            <div class="mb-3">
-                <label for="txtNombre" class="form-label">Nombre:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
-            </div>
-            <div class="mb-3">
-                <label for="txtProvincia" class="form-label">Provincia:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtProvincia" />
-            </div>
-            <div class="mb-3">
-                <label for="txtLocalidad" class="form-label">Localidad:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtLocalidad" />
-            </div>
-            <div class="mb-3">
-                <label for="txtEmail" class="form-label">Email:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
-            </div>
-            <div class="mb-3">
-                <label for="txtClave" class="form-label">Clave:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtClave" type="password" />
-            </div>
 
+    <div class="row justify-content-center mt-4">
+        <div class="col-5 text-center">
+            <h6 class="fw-bold my-3">Ingresá tus datos </h6>
 
+          
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
+                        <label for="txtDni" class="form-label">Dni</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
+                        <label for="txtApellido" class="form-label">Apellido</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
+                        <label for="txtNombre" class="form-label">Nombre</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtProvincia" />
+                        <label for="txtProvincia" class="form-label">Provincia</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtLocalidad" />
+                        <label for="txtLocalidad" class="form-label">Localidad</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
+                        <label for="txtEmail" class="form-label">Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtClave" type="password" />
+                        <label for="txtClave" class="form-label">Clave</label>
+                    </div>
 
-            <asp:Button Text="Registrarse" CssClass="btn btn-primary" runat="server" ID="btnRegistrarse" OnClick="btnRegistrarse_Click" />
+                    <asp:Button Text="Registrarme" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnRegistrarse" OnClick="btnRegistrarse_Click" />
+                    
         </div>
-        <div class="col-4"></div>
     </div>
-
 </asp:Content>

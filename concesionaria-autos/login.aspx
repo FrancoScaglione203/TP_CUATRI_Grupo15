@@ -6,66 +6,67 @@
 
     <% if (Session["usuario"] == null)
         {%>
-    <br>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col">
-            <div class="mb-3">
-                <label for="txtDni" class="form-label">Dni:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
-            </div>
-            <div class="mb-3">
-                <label for="txtClave" class="form-label">Clave:</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtClave" type="password" />
-                <a class="nav-item nav-link" href="signin.aspx">
-                    <asp:Label ID="lblRegistro" runat="server" CssClass="form-text" Text="Si no estas registrado haz click aqui" /></a>
+    <div class="row justify-content-center mt-4">
 
+        <div class="col-5 text-center">
+
+            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" />
+
+            <h6 class="fw-bold my-3">Bienvenido a MY RENAULT</h6>
+            <h6 class="fw-bold my-3">Donde quiera que vayas, disfrutá los beneficios</h6>
+
+            <div class="form-floating my-3">
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
+                <label for="txtDni" class="form-label">DNI</label>
             </div>
-            <asp:Button Text="Ingresar" CssClass="btn btn-primary" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
+            <div class="form-floating my-3">
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtClave" type="password" />
+                <label for="txtClave" class="form-label">Contraseña</label>
+            </div>
+
+            <asp:Button Text="Ingresar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
+            <a class="nav-item nav-link" href="signin.aspx">
+                <asp:Label ID="lblRegistro" runat="server" CssClass="btn btn-light w-50 p-3" Text="Todavía no estoy registrado" />
+            </a>
         </div>
-        <div class="col-4"></div>
     </div>
     <%}
         else
         {
-%>
+    %>
 
+    <h2 class="subt">PERFIL</h2>
     <br>
 
-
-
-<h2 class="subt">PERFIL</h2>
-<br>
-
-<div class="row justify-content-center">
-    <div class="col-4">
-        <div class="form-floating mb-3 text-center">
-            <input readonly class="form-control-plaintext" id="fltDni" value="<%= dni() %>">
-            <label for="fltDni">Dni</label>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <div class="form-floating mb-3 text-center">
+                <input readonly class="form-control-plaintext" id="fltDni" value="<%= dni() %>">
+                <label for="fltDni">Dni</label>
+            </div>
+            <div class="form-floating mb-3 text-center">
+                <input readonly class="form-control-plaintext" id="fltApellido" value="<%= Apellido() %>">
+                <label for="fltApellido">Apellido</label>
+            </div>
+            <div class="form-floating mb-3 text-center">
+                <input readonly class="form-control-plaintext" id="fltNombre" value="<%= Nombre() %>">
+                <label for="fltNombre">Nombre</label>
+            </div>
+            <div class="form-floating mb-3 text-center">
+                <input readonly class="form-control-plaintext" id="fltProvincia" value="<%= Provincia() %>">
+                <label for="fltProvincia">Provincia</label>
+            </div>
+            <div class="form-floating mb-3 text-center">
+                <input readonly class="form-control-plaintext" id="fltLocalidad" value="<%= Localidad() %>">
+                <label for="fltLocalidad">Localidad</label>
+            </div>
+            <div class="form-floating mb-3 text-center">
+                <input readonly class="form-control-plaintext" id="fltEmail" value="<%= Email() %>">
+                <label for="fltEmail">Email</label>
+            </div>
+            <asp:Button Text="Modificar Perfil" CssClass="btn btn-primary" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
         </div>
-        <div class="form-floating mb-3 text-center">
-            <input readonly class="form-control-plaintext" id="fltApellido" value="<%= Apellido() %>">
-            <label for="fltApellido">Apellido</label>
-        </div>
-        <div class="form-floating mb-3 text-center">
-            <input readonly class="form-control-plaintext" id="fltNombre" value="<%= Nombre() %>">
-            <label for="fltNombre">Nombre</label>
-        </div>
-        <div class="form-floating mb-3 text-center">
-            <input readonly class="form-control-plaintext" id="fltProvincia" value="<%= Provincia() %>">
-            <label for="fltProvincia">Provincia</label>
-        </div>
-        <div class="form-floating mb-3 text-center">
-            <input readonly class="form-control-plaintext" id="fltLocalidad" value="<%= Localidad() %>">
-            <label for="fltLocalidad">Localidad</label>
-        </div>
-        <div class="form-floating mb-3 text-center">
-            <input readonly class="form-control-plaintext" id="fltEmail" value="<%= Email() %>">
-            <label for="fltEmail">Email</label>
-        </div>
-        <asp:Button Text="Modificar Perfil" CssClass="btn btn-primary" runat="server" ID="btnModificar" OnClick="btnModificar_Click" />
     </div>
-</div>
 
-            <%}%>
+    <%}%>
 </asp:Content>

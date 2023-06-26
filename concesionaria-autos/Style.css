@@ -61,6 +61,7 @@ p {
     width: 18.5em;
 }
 
+
 /*BOTONES*/
 
 .btn {
@@ -124,6 +125,20 @@ p {
 .fa-chevron-right {
     color: var(--decorations);
 }
+
+/*FORMULARIOS*/
+.form-floating .form-control {
+    border: 0 none;
+    border-bottom: 1px solid #E5E5EB !important;
+    border-radius: 0px;
+}
+
+.form-floating .form-control:hover, .form-floating .form-control:active, .form-floating .form-control:focus {
+    border: 0 none;
+    border-bottom: 1px solid #E5E5EB !important;
+    border-radius: 0px;
+    background-color:var(--white)!important;
+ }
 
 /*NAVBAR*/
 
@@ -299,3 +314,4 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
     display: flex;
     align-items: baseline;
 }
+
