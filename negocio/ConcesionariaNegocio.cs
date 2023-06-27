@@ -32,10 +32,10 @@ namespace negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.MapsUrl = (string)datos.Lector["MapsUrl"];
-                    aux.SemanaAbre = (int)datos.Lector["SemanaAbre"];
-                    aux.SemanaCierra = (int)datos.Lector["SemanaCierra"];
-                    aux.SabadoAbre = (int)datos.Lector["SabadoAbre"];
-                    aux.SabadoCierra = (int)datos.Lector["SabadoCierra"];
+                    aux.SemanaAbre = (decimal)datos.Lector["SemanaAbre"];
+                    aux.SemanaCierra = (decimal)datos.Lector["SemanaCierra"];
+                    aux.SabadoAbre = (decimal)datos.Lector["SabadoAbre"];
+                    aux.SabadoCierra = (decimal)datos.Lector["SabadoCierra"];
                     aux.Localidad = (string)datos.Lector["Localidad"];
                     aux.Provincia = (string)datos.Lector["Provincia"];
                     lista.Add(aux);
