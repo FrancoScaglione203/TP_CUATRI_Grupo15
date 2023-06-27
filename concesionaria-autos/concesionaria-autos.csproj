@@ -66,7 +66,9 @@
   <ItemGroup>
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
+    <Content Include="BannerLocales.JPG" />
     <Content Include="Cuero.png" />
+    <Content Include="Locales.aspx" />
     <Content Include="Logo.ico" />
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
@@ -74,7 +76,6 @@
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="ConfirElimin.aspx" />
-    <Content Include="Detalle.css" />
     <Content Include="ErrorLog.aspx" />
     <Content Include="FormularioAuto.aspx" />
     <Content Include="Imagenes\banner1.png" />
@@ -189,6 +190,13 @@
     </Compile>
     <Compile Include="ListaFichaTecnica.aspx.designer.cs">
       <DependentUpon>ListaFichaTecnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Locales.aspx.cs">
+      <DependentUpon>Locales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Locales.aspx.designer.cs">
+      <DependentUpon>Locales.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
