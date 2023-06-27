@@ -68,7 +68,7 @@
     <Content Include="Autos.aspx" />
     <Content Include="BannerLocales.JPG" />
     <Content Include="Cuero.png" />
-    <Content Include="Locales.aspx" />
+    <Content Include="Concesionarias.aspx" />
     <Content Include="Logo.ico" />
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
@@ -191,12 +191,12 @@
     <Compile Include="ListaFichaTecnica.aspx.designer.cs">
       <DependentUpon>ListaFichaTecnica.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Locales.aspx.cs">
-      <DependentUpon>Locales.aspx</DependentUpon>
+    <Compile Include="Concesionarias.aspx.cs">
+      <DependentUpon>Concesionarias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Locales.aspx.designer.cs">
-      <DependentUpon>Locales.aspx</DependentUpon>
+    <Compile Include="Concesionarias.aspx.designer.cs">
+      <DependentUpon>Concesionarias.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

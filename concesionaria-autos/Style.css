@@ -219,7 +219,6 @@ footer .fa {
         color: var(--azul-hover) !important;
     }
 
-
 /*SECCION DETALLES*/
 
 .detail-img-container-mini {
@@ -315,9 +314,26 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
     font-size: 34px; /* Reduce el tamaño de la fuente */
 }
 
-
 .resumenP {
     display: flex;
     align-items: baseline;
+}
+
+/*SUCURSALES*/
+
+.concesionaria-img-container {
+    overflow: hidden;
+    height: 15em;
+}
+
+.img-concesesionaria {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-concesesionaria {
+    border-top-right-radius: 0px !important;
+    border-end-end-radius: 0px !important;
 }
 

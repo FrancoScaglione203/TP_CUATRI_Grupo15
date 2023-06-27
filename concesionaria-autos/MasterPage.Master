@@ -29,7 +29,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-lg-auto">
                         <a class="nav-item nav-link" href="Default.aspx" aria-current="page">Autos</a>
-                        <a class="nav-item nav-link" href="Locales.aspx">Concesionarias</a>
+                        <a class="nav-item nav-link" href="Concesionarias.aspx">Concesionarias</a>
                         <a class="nav-item nav-link" href="ServicioTecnico.aspx">Servicio técnico</a>
                         <a class="nav-item nav-link" href="Financiacion.aspx">Financiación</a>
                         <a class="nav-item nav-link" href="Contactanos.aspx">Contactanos</a>
