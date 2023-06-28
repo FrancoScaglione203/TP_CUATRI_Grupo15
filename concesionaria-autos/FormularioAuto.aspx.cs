@@ -88,14 +88,13 @@ namespace concesionaria_autos
                 ImagenNegocio imagenNegocio = new ImagenNegocio();
                 FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
 
-                int idAuto = int.Parse(txtId.Text);
+                
                 auto.Nombre = txtNombre.Text;
                 auto.Precio = decimal.Parse(txtPrecio.Text);
                 auto.Color = 1;
                 auto.Estado = true;
                 imagen.ImagenUrl = txtImagenUrl.Text;
-                imagen.IdProducto = idAuto;
-                fichaTecnica.IdProducto = idAuto;
+                
                 fichaTecnica.Ancho = int.Parse(txtAncho.Text);
                 fichaTecnica.Longitud = int.Parse(txtLongitud.Text);
                 fichaTecnica.Plazas = int.Parse(txtPlazas.Text);
@@ -107,7 +106,10 @@ namespace concesionaria_autos
 
                 if (Request.QueryString["id"] != null)
                 {
-                    auto.Id = idAuto;
+                    int idAuto = int.Parse(txtId.Text);
+                    imagen.IdProducto = idAuto;
+                    fichaTecnica.IdProducto = idAuto;
+                    auto.Id = int.Parse(txtId.Text);
                     autoNegocio.modificarConSP(auto);
                     imagenNegocio.modificar(imagen);
                     fichaTecnicaNegocio.modificar(fichaTecnica);
@@ -149,8 +151,12 @@ namespace concesionaria_autos
                 if (chkConfirmaEliminacion.Checked)
                 {
                     AutoNeogocio negocio = new AutoNeogocio();
+                    FichaTecnicaNegocio ftnegocio = new FichaTecnicaNegocio();
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    imagenNegocio.eliminar(int.Parse(txtId.Text));
+                    ftnegocio.eliminar(int.Parse(txtId.Text));
                     negocio.eliminar(int.Parse(txtId.Text));
-                    Response.Redirect("Autos.aspx");
+                    Response.Redirect("Autos.aspx",false);
                 }
             }
             catch (Exception ex)
@@ -160,21 +166,23 @@ namespace concesionaria_autos
             }
         }
 
-        protected void btnInactivar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AutoNeogocio negocio = new AutoNeogocio();
-                Auto seleccionado = (Auto)Session["autoSeleccionado"];
+        //protected void btnInactivar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        AutoNeogocio negocio = new AutoNeogocio();
+        //        Auto seleccionado = (Auto)Session["autoSeleccionado"];
 
-                //negocio.eliminarLogico(seleccionado.Id, !seleccionado.Activo);
-                Response.Redirect("Autos.aspx");
-            }
-            catch (Exception ex)
-            {
-                Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx");
-            }
-        }
+        //        negocio.eliminarLogico(seleccionado.Id);
+        //        Response.Redirect("Autos.aspx");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Session.Add("error", ex.ToString());
+        //        Response.Redirect("Error.aspx");
+        //    }
+        //}
+
+       
     }
 }
