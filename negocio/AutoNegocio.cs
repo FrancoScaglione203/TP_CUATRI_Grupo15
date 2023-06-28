@@ -161,10 +161,10 @@ namespace negocio
 
         public void eliminar(int id)
         {
+                AccesoDatos datos = new AccesoDatos();
             try
             {
-                AccesoDatos datos = new AccesoDatos();
-                datos.setearConsulta("delete from MARCAS where Id = " + id);
+                datos.setearConsulta("delete from PRODUCTOS where Id = " + id);
                 datos.ejecutarAccion();
 
             }
@@ -173,6 +173,11 @@ namespace negocio
 
                 throw ex;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
 
         public List<Auto> listar(string id = "")
@@ -262,6 +267,7 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
 
     }
 

@@ -73,7 +73,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Delete from Imagenes Where IdArticulo =" + id);
+                datos.setearConsulta("Delete from Imagenes Where IdProducto =" + id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
