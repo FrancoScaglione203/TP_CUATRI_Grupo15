@@ -66,17 +66,18 @@
         CssClass="table" AutoGenerateColumns="false"
         OnSelectedIndexChanged="dgvUsuarios_SelectedIndexChanged"
         OnPageIndexChanging="dgvUsuarios_PageIndexChanging"
-        AllowPaging="True" PageSize="5">
+        AllowPaging="True" PageSize="10">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
             <asp:BoundField HeaderText="DNI" DataField="DNI" />
-
-            <%--<asp:BoundField HeaderText="Número" DataField="Numero" />
-            <asp:BoundField HeaderText="Tipo" DataField="Tipo.Descripcion" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Activo" />--%>
+            <asp:BoundField HeaderText="Email" DataField="Email" />
+            <asp:BoundField HeaderText="Provincia" DataField="Provincia" />
+            <asp:BoundField HeaderText="Localidad" DataField="Localidad" />
+            <asp:BoundField HeaderText="Tipo de usuario" DataField="TipoUsuario" />
+            <asp:CheckBoxField headerText="Activo" DataField="Activo" />
             <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✍" />
         </Columns>
     </asp:GridView>
-    <a href="FormularioPokemon.aspx" class="btn btn-primary">Agregar</a>
+    <a href="signin.aspx" class="btn btn-primary">Agregar</a>
 </asp:Content>
