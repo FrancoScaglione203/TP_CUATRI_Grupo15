@@ -9,6 +9,7 @@
             <ul>
                 <li><a href="Usuarios.aspx">Listar Usuarios</a></li>
                 <li><a href="Autos.aspx">Listar Autos</a></li>
+                <li><a href="CargaVenta.aspx">Cargar Venta</a></li>
                 <!-- Sumar a la lista las opciones del menu de admin -->
             </ul>
         </nav>

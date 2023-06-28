@@ -67,6 +67,8 @@
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
     <Content Include="BannerLocales.JPG" />
+    <Content Include="CargaVenta.aspx" />
+    <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="Cuero.png" />
     <Content Include="Concesionarias.aspx" />
     <Content Include="Logo.ico" />
@@ -131,6 +133,20 @@
     </Compile>
     <Compile Include="Autos.aspx.designer.cs">
       <DependentUpon>Autos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaVenta.aspx.cs">
+      <DependentUpon>CargaVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaVenta.aspx.designer.cs">
+      <DependentUpon>CargaVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargaVentaUsuario.aspx.cs">
+      <DependentUpon>cargaVentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cargaVentaUsuario.aspx.designer.cs">
+      <DependentUpon>cargaVentaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="comparacion.aspx.cs">
       <DependentUpon>comparacion.aspx</DependentUpon>
