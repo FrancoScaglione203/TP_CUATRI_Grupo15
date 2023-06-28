@@ -155,7 +155,7 @@ namespace concesionaria_autos
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
                     imagenNegocio.eliminar(int.Parse(txtId.Text));
                     ftnegocio.eliminar(int.Parse(txtId.Text));
-                    gitnegocio.eliminar(int.Parse(txtId.Text));
+                    negocio.eliminar(int.Parse(txtId.Text));
                     Response.Redirect("Autos.aspx",false);
                 }
             }
