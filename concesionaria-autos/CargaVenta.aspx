@@ -2,12 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <h1>Carga de Venta</h1>
-        <div class="form-group">
-            <label for="txtDNI">DNI:</label>
-            <asp:TextBox ID="txtDNI" runat="server" CssClass="form-control"></asp:TextBox>
+
+        <h6 class="fw-bold text-center my-3">CARGA VENTA</h6>
+        
+        <div class="d-flex my-4">         
+        <asp:TextBox ID="txtDNI" runat="server" CssClass="form-control" placeholder="Inserte DNI"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Buscar" CssClass="btn btn-primary form-control w-25" OnClick="btnBuscar_Click"/>
         </div>
-        <asp:Button ID="Button1" runat="server" Text="Buscar" CssClass="btn btn-primary" OnClick="btnBuscar_Click" />
 
         <div id="usuarioDetails" class="d-flex justify-content-center" runat="server" visible="false">
             <div class="card my-4" style="width: 50vw">
