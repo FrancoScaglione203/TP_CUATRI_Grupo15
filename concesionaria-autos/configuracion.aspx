@@ -29,7 +29,7 @@
                             <asp:Repeater ID="RepeaterEquipamiento" runat="server">
                                 <ItemTemplate>
                                     <div class="card border-0 mx-4" style="width: 22rem">
-                                        <img class="card-img-top" src="<%#Eval("Imagen") %>" alt="<%#Eval("Nombre") %>">
+                                        <img class="card-img-top" src="#" alt="<%#Eval("Nombre") %>">
                                         <div class="card-body">
                                             <h6 class="card-title fw-bold"><%#Eval("Nombre") %></h6>
                                             <h6 class="card-text fw-bold">desde $<%#Eval("Precio") %>.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></h6>
@@ -41,11 +41,11 @@
                                                 <li class="list-dot">DRL LED C-shape﻿</li>
                                                 <li class="list-dot">Levantacristales delanteros con comando eléctrico﻿</li>
                                             </ul>
-                                            <asp:Button cssClass="btn btn-warning w-100 my-2 fw-bold text-capitalize" ID="btnEquipamiento" runat="server" Text="Configurar" CommandArgument='<%#Eval("Id")%>' CommandName="VersionId" OnClick="btnEquipamiento_Click" />
+                                            <asp:Button CssClass="btn btn-warning w-100 my-2 fw-bold text-capitalize" ID="btnEquipamiento" runat="server" Text="Configurar" CommandArgument='<%#Eval("Id")%>' CommandName="VersionId" OnClick="btnEquipamiento_Click" />
                                         </div>
                                     </div>
 
-                                </ItemTemplate> 
+                                </ItemTemplate>
                             </asp:Repeater>
 
                             <!-- FIN VERSIONES -->
@@ -70,7 +70,7 @@
                                 <div class="d-flex justify-content-center m-4">
                                     <asp:Repeater ID="RepeaterColor" runat="server">
                                         <ItemTemplate>
-                                            <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click"/>
+                                            <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click" />
                                             <%--<a class="color me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
@@ -119,8 +119,8 @@
                                 <div class="d-flex justify-content-center m-4">
                                     <asp:Repeater ID="RepeaterTapizado" runat="server">
                                         <ItemTemplate>
-                                            <asp:ImageButton class="tapizado dot" ID="btnTapizado" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="TapizadoId" OnClick="btnTapizado_Click"/>
-                                          <%--  <a class="tapizado me-4">
+                                            <asp:ImageButton class="tapizado dot" ID="btnTapizado" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="TapizadoId" OnClick="btnTapizado_Click" />
+                                            <%--  <a class="tapizado me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
                                             <span class="ImagenUrl2 d-none"><%#Eval("ImagenUrl") %></span>
@@ -162,7 +162,7 @@
 
                             <!-- EQUIPAMIENTO -->
 
-<%--                            <%
+                            <%--                            <%
                                 foreach (dominio.Color color in ListaColores)
                                 {
                             %>
@@ -224,7 +224,7 @@
                                     }
 
 
-%>
+                                %>
                             </div>
 
 
@@ -234,7 +234,7 @@
                         <div class="step-actions">
                             <button class="waves-effect waves-dark btn next-step bg-black  text-capitalize">Siguiente</button>
                             <button class="waves-effect waves-dark btn-flat previous-step  text-capitalize">Anterior</button>
-                            <asp:Button ID="btnFinalizar" runat="server" Text="Button" OnClick="btnFinalizar_Click" />
+
                         </div>
                     </div>
                 </li>
@@ -244,44 +244,40 @@
                         <div class="row my-4">
 
                             <!-- RESUMEN && Session["idColor"] != null && Session["idTapizado"] != null-->
-                            <%if (Session["idEquipamiento"] != null )
+                            <%if (Session["idEquipamiento"] != null)
                                 { %>
                             <div class="d-flex justify-content-evenly align-content-center">
 
                                 <div class="resumem-img-container">
-                                    <img class="resumen-img" src="#" alt="Auto">
+                                    <asp:Image class="resumen-img" ID="imageBox" runat="server" />
                                 </div>
-
                                 <div class="card p-4" style="width: 25rem;">
                                     <div class="card-body">
                                         <h6 class="card-subtitle my-2 text-muted">Precio</h6>
-                                        <h5 class="card-title fw-bold">$5.454.200,00</h5>
+                                        <h5 class="card-title fw-bold"><%: precioTotal%></h5>
                                         <div class="hl2 pe-4 my-3"></div>
                                         <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
+
                                         <p class="card-text fw-bold">VERSION</p>
-                                        
-        
-                                        
-                         
-                                         <p class="resumenP">
-                                            <p><strong>Nombre:</strong> <asp:Label ID="lblNombre" runat="server"></asp:Label></p>
-                                            <%--<span><%:Equipamiento2.Nombre %></span>--%>
+                                        <p class="resumenP">
+                                            <asp:Label ID="vNombre" runat="server" Text="Label"></asp:Label>
                                             <span class="dottedLine"></span>
-                                            <span class="fw-bold">$5.449.200,00</span>
+                                            <asp:Label ID="vPrecio" runat="server" Text="Label"></asp:Label>
                                         </p>
-                                        
+
                                         <p class="card-text fw-bold">COLOR</p>
                                         <p class="resumenP">
-                                            <span>Blanco</span>
+                                            <asp:Label ID="cNombre" runat="server" Text="Label"></asp:Label>
                                             <span class="dottedLine"></span>
                                             <span class="fw-bold">$0</span>
                                         </p>
-                                     
+
                                         <p class="card-text fw-bold">TAPIZADO</p>
                                         <p class="resumenP">
-                                            <span>Cuero</span>
+                                          <%--  <asp:Label ID="lblTapizadoPrecio" runat="server" Text="Label"></asp:Label>--%>
+                                            <asp:Label ID="tNombre" runat="server" Text="Label"></asp:Label>
                                             <span class="dottedLine"></span>
-                                            <span class="fw-bold">$5.000,00</span>
+                                            <asp:Label ID="tPrecio" runat="server" Text="Label"></asp:Label>
                                         </p>
                                     </div>
                                 </div>
@@ -290,7 +286,7 @@
                                 <a class="btn btn-light me-4">Solicitar un testdrive</a>
                                 <a class="btn btn-warning">Solicitar un asesor</a>
                             </div>
-                             <% } %>
+                            <% } %>
 
                             <!-- FIN RESUMEN -->
 

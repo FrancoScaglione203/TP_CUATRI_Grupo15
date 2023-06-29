@@ -23,23 +23,26 @@ namespace concesionaria_autos
         public Color Color2 { get; set; }
         public Tapizado Tapizado { get; set; }
         public Tapizado Tapizado2 { get; set; }
-        public List<Auto> ListaAuto { get; set; }
-        public List<Resumen> ListaResumen { get; set; }
 
         int idEquipamiento, idColor, idTapizado;
+
+        public decimal precioTotal=0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
                     EquipamientoNegocio equipamientoNegocio = new EquipamientoNegocio();
                     ColorNegocio colorNegocio = new ColorNegocio();
                     TapizadoNegocio tapizadoNegocio = new TapizadoNegocio();
                     FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
+                    
                     int id = Convert.ToInt32(Request.QueryString["id"]);
 
-                //1. Listar vistas
                 if (!IsPostBack)
                 {
+
                     ListaEquipamientos = equipamientoNegocio.listar();
                     ListaEquipamientos = ListaEquipamientos.FindAll(equipo => equipo.IdProducto == id);
                     RepeaterEquipamiento.DataSource = ListaEquipamientos;
@@ -61,31 +64,6 @@ namespace concesionaria_autos
                 ListaFichaTecnica = fichaTecnicaNegocio.listar();
                 ListaFichaTecnica = ListaFichaTecnica.FindAll(elemento => elemento.IdProducto == id);
 
-                //2. Obtener info del producto seleccionado
-
-                if (Session["idEquipamiento"]!=null & Session["idColor"] != null && Session["idTapizado"]!=null)
-                {
-                    //ListaEquipamientos2 = equipamientoNegocio.listar();
-                    //ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
-                    //Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
-
-                    //ListaColores2 = colorNegocio.listar();
-                    //Color2 = ListaColores2.Find(elemento => elemento.IdProducto == Convert.ToInt32(idColor));
-
-                    //ListaTapizado2 = tapizadoNegocio.listar();
-                    //Tapizado2 = ListaTapizado2.Find(elemento => elemento.IdProducto == Convert.ToInt32(idTapizado));
-                }
-       
-                
-              
-                //3. Cargar la clase resumen       
-                //Equipamiento -> nombre version - precio - FOTO
-                //Colores -> Id - Nombre 
-                //Tapizados -> Nombre - si es cuero + 5000
-                //TOTAL -> SUMAR e.precio + CUERO
-
-                //4. Listar datos de la clase resumen
-
             }
             catch (Exception)
             {
@@ -94,6 +72,7 @@ namespace concesionaria_autos
         }
         protected void btnEquipamiento_Click(object sender, EventArgs e)
         {
+
             //sender: elemento que envía el evento -> objeto
             string id= ((Button)sender).CommandArgument;
             idEquipamiento = Convert.ToInt32(id);
@@ -104,7 +83,14 @@ namespace concesionaria_autos
             ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
             Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
 
-            lblNombre.Text =Equipamiento2.Nombre;
+            //Session.Add("equipamientoNombre", Equipamiento2.Nombre);
+            //Session.Add("equipamientoPrecio", Equipamiento2.Precio);
+
+            precioTotal += Equipamiento2.Precio;
+
+            vNombre.Text = Equipamiento2.Nombre;
+            vPrecio.Text = Equipamiento2.Precio.ToString();
+
         }
 
 
@@ -117,18 +103,32 @@ namespace concesionaria_autos
 
             ColorNegocio colorNegocio = new ColorNegocio();
             ListaColores2 = colorNegocio.listar();
-            Color2 = ListaColores2.Find(elemento => elemento.IdProducto == Convert.ToInt32(idColor));
+            Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
+           
+            cNombre.Text = Color2.Nombre;
+            imageBox.ImageUrl = Color2.ImagenUrl;
+            //Session.Add("colorNombre", Color2.Nombre);
+            //Session.Add("colorFoto", Color2.ImagenUrl);
+
+
         }
 
         protected void btnTapizado_Click(object sender, ImageClickEventArgs e)
         {
             string id = ((ImageButton)sender).CommandArgument;
             idTapizado = Convert.ToInt32(id);
-            Session.Add("idTapizado", idTapizado);
+            //Session.Add("idTapizado", idTapizado);
 
             TapizadoNegocio tapizadoNegocio = new TapizadoNegocio();
             ListaTapizado2 = tapizadoNegocio.listar();
-            Tapizado2 = ListaTapizado2.Find(elemento => elemento.IdProducto == Convert.ToInt32(idTapizado));
+            Tapizado2 = ListaTapizado2.Find(elemento => elemento.Id == idTapizado);
+            //Session.Add("tapizadoNombre", Tapizado2.Nombre);
+            //Session.Add("tapizadoPrecio", Tapizado2.Precio);
+            tNombre.Text = Tapizado2.Nombre;
+            tPrecio.Text = Tapizado2.Precio.ToString();
+
+            precioTotal += Tapizado2.Precio;
+
         }
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
