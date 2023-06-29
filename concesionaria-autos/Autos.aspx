@@ -7,6 +7,10 @@
         <div class="d-flex justify-content-between">
             <div>
                 <a href="FormularioAuto.aspx" class="btn btn-primary">Nuevo auto</a>
+                <asp:CheckBox Text="Filtro Avanzado"
+                    CssClass="btn btn-primary" ID="chkAvanzado" runat="server"
+                    AutoPostBack="true"
+                    OnCheckedChanged="chkAvanzado_CheckedChanged" />
             </div>
 
             <div class="d-flex mb-3">
@@ -14,14 +18,6 @@
                 <asp:TextBox placeholder="Buscar" runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
             </div>
 
-        </div>
-        <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end;">
-            <div class="mb-3">
-                <asp:CheckBox Text="Filtro Avanzado"
-                    CssClass="" ID="chkAvanzado" runat="server"
-                    AutoPostBack="true"
-                    OnCheckedChanged="chkAvanzado_CheckedChanged" />
-            </div>
         </div>
 
         <%if (chkAvanzado.Checked)
@@ -77,8 +73,8 @@
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />
-            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✏️" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />    
+            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
         </Columns>
     </asp:GridView>
 
