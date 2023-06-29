@@ -103,6 +103,8 @@ namespace concesionaria_autos
             ListaEquipamientos2 = equipamientoNegocio.listar();
             ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
             Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
+
+            lblNombre.Text =Equipamiento2.Nombre;
         }
 
 
@@ -110,6 +112,7 @@ namespace concesionaria_autos
         {
             string id = ((ImageButton)sender).CommandArgument;
             idColor = Convert.ToInt32(id);
+             
             Session.Add("idColor", idColor);
 
             ColorNegocio colorNegocio = new ColorNegocio();

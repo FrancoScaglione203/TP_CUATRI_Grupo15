@@ -260,10 +260,12 @@
                                         <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
                                         <p class="card-text fw-bold">VERSION</p>
                                         
+        
                                         
                          
                                          <p class="resumenP">
-                                            <span><%:Equipamiento2.Nombre %></span>
+                                            <p><strong>Nombre:</strong> <asp:Label ID="lblNombre" runat="server"></asp:Label></p>
+                                            <%--<span><%:Equipamiento2.Nombre %></span>--%>
                                             <span class="dottedLine"></span>
                                             <span class="fw-bold">$5.449.200,00</span>
                                         </p>
