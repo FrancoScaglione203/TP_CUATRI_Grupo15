@@ -302,6 +302,82 @@ namespace negocio
             }
         }
 
+        public Usuario ObtenerUsuarioPorId(int usuarioId)
+        {
+            Usuario usuario = null;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "SELECT Id, Clave, TipoUsuario, Nombre, Apellido, Dni, Email, Provincia, Localidad, Estado FROM usuarios WHERE Id = @UsuarioId";
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@UsuarioId", usuarioId);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    usuario = new Usuario();
+                    usuario.Id = (int)datos.Lector["Id"];
+                    usuario.clave = (string)datos.Lector["Clave"];
+                    usuario.tipoUsuario = (TipoUsuario)(int)datos.Lector["TipoUsuario"];
+                    usuario.Nombre = (string)datos.Lector["Nombre"];
+                    usuario.Apellido = (string)datos.Lector["Apellido"];
+                    usuario.Dni = (string)datos.Lector["Dni"];
+                    usuario.Email = (string)datos.Lector["Email"];
+                    usuario.Provincia = (string)datos.Lector["Provincia"];
+                    usuario.Localidad = (string)datos.Lector["Localidad"];
+                    usuario.Activo = (bool)datos.Lector["Estado"];
+                }
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public Usuario BuscarUsuarioPorDNI(int dni)
+        {
+            Usuario usuario = null;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "SELECT Id, Clave, TipoUsuario, Nombre, Apellido, Dni, Email, Provincia, Localidad, Estado FROM usuarios WHERE Dni = @dni";
+                datos.setearConsulta(consulta);
+                datos.setearParametro("@dni", dni);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    usuario = new Usuario();
+                    usuario.Id = (int)datos.Lector["Id"];
+                    usuario.clave = (string)datos.Lector["Clave"];
+                    usuario.tipoUsuario = (TipoUsuario)(int)datos.Lector["TipoUsuario"];
+                    usuario.Nombre = (string)datos.Lector["Nombre"];
+                    usuario.Apellido = (string)datos.Lector["Apellido"];
+                    usuario.Dni = (string)datos.Lector["Dni"];
+                    usuario.Email = (string)datos.Lector["Email"];
+                    usuario.Provincia = (string)datos.Lector["Provincia"];
+                    usuario.Localidad = (string)datos.Lector["Localidad"];
+                    usuario.Activo = (bool)datos.Lector["Estado"];
+                }
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
 
     }
