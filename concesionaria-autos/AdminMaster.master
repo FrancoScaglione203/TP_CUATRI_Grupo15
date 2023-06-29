@@ -14,7 +14,7 @@
                   <a class="nav-link text-dark" href="Autos.aspx">Listar Autos</a>
                 </li>
                 <li class="nav-item">
-                 <a class="nav-link text-dark" href="Autos.aspx">Listar Autos</a>
+                 <a class="nav-link text-dark" href="CargaVenta.aspx">Cargar Venta</a>
                 </li>
                
             </ul>
