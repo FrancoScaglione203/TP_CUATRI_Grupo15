@@ -10,7 +10,7 @@
             </div>
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre: </label>
-                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" AutoCompleteType="None" />
             </div>
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio: </label>
