@@ -30,10 +30,10 @@
                                 <ItemTemplate>
                                     <div class="card border-0 mx-4" style="width: 22rem">
                                         <asp:Image class="card-img-top" ID="equipamientoBox" runat="server" />
-                                        <img class="card-img-top" src="#" alt="<%#Eval("Nombre") %>">
+                                        <img class="card-img-top" src="<%#Eval("Imagen").ToString() %>" alt="<%#Eval("Nombre") %>">
                                         <div class="card-body">
                                             <h6 class="card-title fw-bold"><%#Eval("Nombre") %></h6>
-                                            <h6 class="card-text fw-bold">desde $<%#Eval("Precio") %>.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></h6>
+                                            <h6 class="card-text fw-bold">desde $<%#Eval("Precio") %></h6>
                                             <div class="hl2 pe-4 my-3"></div>
                                             <p class="py-2">Ver equipamiento destacado</p>
                                             <ul class="p-1">
