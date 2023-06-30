@@ -137,7 +137,7 @@ p {
 }
 
 /*FORMULARIOS*/
-.form-floating .form-control {
+.form-floating .form-control, .form-floating .form-select {
     border: 0 none;
     border-bottom: 1px solid #E5E5EB !important;
     border-radius: 0px;
@@ -149,6 +149,8 @@ p {
     border-radius: 0px;
     background-color:var(--white)!important;
  }
+
+
 
 /*NAVBAR*/
 
