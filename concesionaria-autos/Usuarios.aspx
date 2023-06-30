@@ -1,22 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="concesionaria_autos.Usuarios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Lista de Usuarios</h1>
+   
+    <h6 class="fw-bold text-center my-3">LISTA USUARIOS</h6>
     <div class="row">
-        <div class="col-6">
-            <div class="mb-3">
-                <asp:Label Text="Filtrar" runat="server" />
-                <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
-            </div>
-        </div>
-        <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end;">
-            <div class="mb-3">
+        <div class="d-flex justify-content-between">
+            <div>
+                <a href="signin.aspx" class="btn btn-primary">Nuevo usuario</a>
                 <asp:CheckBox Text="Filtro Avanzado" 
-                    CssClass="" ID="chkAvanzado" runat="server" 
+                    CssClass="btn btn-primary" ID="chkAvanzado" runat="server" 
                     AutoPostBack="true"
                     OnCheckedChanged="chkAvanzado_CheckedChanged"/>
             </div>
-        </div>
 
+            <div class="d-flex mb-3">
+                 <%--<asp:Label Text="Filtrar" runat="server" />--%>
+                <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" placeholder="Buscar"/>
+            </div>
+
+        </div>
+   
         <%if (chkAvanzado.Checked)
             { %>
         <div class="row">
@@ -63,7 +65,7 @@
         <%} %>
     </div>
     <asp:GridView ID="dgvUsuarios" runat="server" DataKeyNames="Id"
-        CssClass="table" AutoGenerateColumns="false"
+        CssClass="table table-striped text-center" AutoGenerateColumns="false"
         OnSelectedIndexChanged="dgvUsuarios_SelectedIndexChanged"
         OnPageIndexChanging="dgvUsuarios_PageIndexChanging"
         AllowPaging="True" PageSize="10">
@@ -76,8 +78,8 @@
             <asp:BoundField HeaderText="Localidad" DataField="Localidad" />
             <asp:BoundField HeaderText="Tipo de usuario" DataField="TipoUsuario" />
             <asp:CheckBoxField headerText="Activo" DataField="Activo" />
-            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✍" />
+            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
         </Columns>
     </asp:GridView>
-    <a href="signin.aspx" class="btn btn-primary">Agregar</a>
+
 </asp:Content>

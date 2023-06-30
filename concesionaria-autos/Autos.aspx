@@ -1,20 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="Autos.aspx.cs" Inherits="concesionaria_autos.Autos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Lista de Autos</h1>
+
+    <h6 class="fw-bold text-center my-3">LISTA AUTOS</h6>
     <div class="row">
-        <div class="col-6">
-            <div class="mb-3">
-                <asp:Label Text="Filtrar" runat="server" />
-                <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
-            </div>
-        </div>
-        <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end;">
-            <div class="mb-3">
-                <asp:CheckBox Text="Filtro Avanzado" 
-                    CssClass="" ID="chkAvanzado" runat="server" 
+        <div class="d-flex justify-content-between">
+            <div>
+                <a href="FormularioAuto.aspx" class="btn btn-primary">Nuevo auto</a>
+                <asp:CheckBox Text="Filtro Avanzado"
+                    CssClass="btn btn-primary" ID="chkAvanzado" runat="server"
                     AutoPostBack="true"
-                    OnCheckedChanged="chkAvanzado_CheckedChanged"/>
+                    OnCheckedChanged="chkAvanzado_CheckedChanged" />
             </div>
+
+            <div class="d-flex mb-3">
+                <%--<asp:Label Text="Filtrar" runat="server" />--%>
+                <asp:TextBox placeholder="Buscar" runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="filtro_TextChanged" />
+            </div>
+
         </div>
 
         <%if (chkAvanzado.Checked)
@@ -23,7 +26,7 @@
             <div class="col-3">
                 <div class="mb-3">
                     <asp:Label Text="Campo" ID="lblCampo" runat="server" />
-                    <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" id="ddlCampo" OnSelectedIndexChanged="ddlCampo_SelectedIndexChanged">
+                    <asp:DropDownList runat="server" AutoPostBack="true" CssClass="form-control" ID="ddlCampo" OnSelectedIndexChanged="ddlCampo_SelectedIndexChanged">
                         <asp:ListItem Text="Nombre" />
                         <%--<asp:ListItem Text="Tipo" />
                         <asp:ListItem Text="Número" />--%>
@@ -56,23 +59,23 @@
         <div class="row">
             <div class="col-3">
                 <div class="mb-3">
-                    <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary" id="btnBuscar" OnClick="btnBuscar_Click"/>
+                    <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary" ID="btnBuscar" OnClick="btnBuscar_Click" />
                 </div>
             </div>
         </div>
         <%} %>
     </div>
     <asp:GridView ID="dgvAutos" runat="server" DataKeyNames="Id"
-        CssClass="table" AutoGenerateColumns="false"
+        CssClass="table table-striped text-center" AutoGenerateColumns="false"
         OnSelectedIndexChanged="dgvAutos_SelectedIndexChanged"
         OnPageIndexChanging="dgvAutos_PageIndexChanging"
         AllowPaging="True" PageSize="10">
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />
-            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✏️" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />    
+            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
         </Columns>
     </asp:GridView>
-    <a href="FormularioAuto.aspx" class="btn btn-primary">Agregar</a>
+
 </asp:Content>
