@@ -54,11 +54,16 @@ namespace concesionaria_autos
                     RepeaterColor.DataSource = ListaColores;
                     RepeaterColor.DataBind();
 
+                    colorBox.ImageUrl = ListaColores[0].ImagenUrl;
+
                     ListaTapizado = tapizadoNegocio.listar();
                     ListaTapizado = ListaTapizado.FindAll(tapizado => tapizado.IdProducto == id);
                     Tapizado = ListaTapizado.Find(tapizado => tapizado.IdProducto == id);
                     RepeaterTapizado.DataSource = ListaTapizado;
                     RepeaterTapizado.DataBind();
+
+                    tapizadoBox.ImageUrl = ListaTapizado[0].ImagenUrl;
+
                 }
 
                 ListaFichaTecnica = fichaTecnicaNegocio.listar();
@@ -106,6 +111,7 @@ namespace concesionaria_autos
             Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
            
             cNombre.Text = Color2.Nombre;
+            colorBox.ImageUrl = Color2.ImagenUrl;
             imageBox.ImageUrl = Color2.ImagenUrl;
             //Session.Add("colorNombre", Color2.Nombre);
             //Session.Add("colorFoto", Color2.ImagenUrl);

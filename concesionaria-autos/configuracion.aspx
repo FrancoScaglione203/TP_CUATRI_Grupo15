@@ -29,6 +29,7 @@
                             <asp:Repeater ID="RepeaterEquipamiento" runat="server">
                                 <ItemTemplate>
                                     <div class="card border-0 mx-4" style="width: 22rem">
+                                        <asp:Image class="card-img-top" ID="equipamientoBox" runat="server" />
                                         <img class="card-img-top" src="#" alt="<%#Eval("Nombre") %>">
                                         <div class="card-body">
                                             <h6 class="card-title fw-bold"><%#Eval("Nombre") %></h6>
@@ -63,14 +64,15 @@
                         <div class="row">
 
                             <!-- EXTERIOR -->
+                            <asp:Image cssClass="configImg" ID="colorBox" runat="server"/>
 
-                            <img class="configImg" src="<%#Eval("ImagenUrl") %>" alt="Auto">
+                            <%--<img class="configImg" src="<%: Color.ImagenUrl %>" alt="Auto">--%>
 
                             <div class="container ">
                                 <div class="d-flex justify-content-center m-4">
                                     <asp:Repeater ID="RepeaterColor" runat="server">
                                         <ItemTemplate>
-                                            <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click" />
+                                            <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click" AutoPostBack="false" />
                                             <%--<a class="color me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
@@ -112,8 +114,9 @@
                         <div class="row">
 
                             <!-- INTERIOR -->
+                            <asp:Image cssClass="configImg2" ID="tapizadoBox" runat="server"/>
 
-                            <img class="configImg2" src="<%#Eval("ImagenUrl") %>" alt="Auto">
+                          <%--  <img class="configImg2" src="<%#Eval("ImagenUrl") %>" alt="Auto">--%>
 
                             <div class="container">
                                 <div class="d-flex justify-content-center m-4">

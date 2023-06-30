@@ -24,6 +24,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.Repeater RepeaterEquipamiento;
 
         /// <summary>
+        /// Control colorBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image colorBox;
+
+        /// <summary>
         /// Control RepeaterColor.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater RepeaterColor;
+
+        /// <summary>
+        /// Control tapizadoBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image tapizadoBox;
 
         /// <summary>
         /// Control RepeaterTapizado.
