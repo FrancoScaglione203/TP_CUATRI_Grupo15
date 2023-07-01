@@ -1,4 +1,6 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,24 @@ namespace concesionaria_autos
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnEnviarConsulta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string asunto,consulta;
+                
+                asunto=txtAsunto.Text;
+                consulta = txtConsulta.Text;
+
+                //ENVIAR MAIL
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex.ToString());
+                Response.Redirect("ErrorLog.aspx");
+            }
         }
     }
 }

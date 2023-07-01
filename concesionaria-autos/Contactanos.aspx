@@ -58,7 +58,7 @@
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtConsulta" TextMode="MultiLine" Style="height: 6em;" />
                 <label for="txtConsulta" class="form-label">Consulta</label>
             </div>
-            <asp:Button Text="Enviar" CssClass="btn btn-warning w-50 py-2 mt-4 mb-2" runat="server" ID="btnEnviarConsulta" />
+            <asp:Button Text="Enviar" CssClass="btn btn-warning w-50 py-2 mt-4 mb-2" runat="server" ID="btnEnviarConsulta" onClick="btnEnviarConsulta_Click"/>
         </div>
 
     </div>
