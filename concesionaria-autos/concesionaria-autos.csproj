@@ -71,6 +71,8 @@
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="Cuero.png" />
     <Content Include="Concesionarias.aspx" />
+    <Content Include="financiacion.aspx" />
+    <Content Include="Imagenes\financiacion.jpg" />
     <Content Include="Logo.ico" />
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
@@ -189,6 +191,13 @@
     </Compile>
     <Compile Include="ErrorLog.aspx.designer.cs">
       <DependentUpon>ErrorLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financiacion.aspx.cs">
+      <DependentUpon>financiacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financiacion.aspx.designer.cs">
+      <DependentUpon>financiacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioAuto.aspx.cs">
       <DependentUpon>FormularioAuto.aspx</DependentUpon>

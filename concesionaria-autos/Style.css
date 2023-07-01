@@ -129,11 +129,18 @@ p {
     color: #EDC011!important;
 }
 
-.carousel-button {
+.carousel-inner .carousel-button {
     position: absolute;
     z-index: 100 !important;
     top: 15em;
     left: 6.5em;
+}
+
+.financiacion {
+    position: absolute;
+    z-index: 100 !important;
+    top: 12em;
+    left: 8em;
 }
 
 /*FORMULARIOS*/
