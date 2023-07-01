@@ -11,7 +11,7 @@
         <div class="d-flex justify-content-center my-5">
             <div class="col-8">
                 <h2 class="text-uppercase fw-bold">Renault <%:auto.Nombre %></h2>
-                <p>120 CUOTAS - 100% FINANCIADO</p>
+                <p>100 CUOTAS - 100% FINANCIADO</p>
                 <a href="/configuracion.aspx?id=<%: auto.Id %>" class="linkDetail fw-bold">configurar modelo
                 <i class="fa-solid fa-chevron-right"></i></a>
             </div>
@@ -32,27 +32,27 @@
                  <p class="resumenP">
                     <span>Precio Público</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>D.S. 3% Cuotas 2 a 20</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: ds.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Gastos de entrega</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: gastoEntrega.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Cuota Pura</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuotaPura.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Gastos Administrativos</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuotaPura.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
  
         </div>
@@ -61,27 +61,27 @@
                 <p class="resumenP">
                     <span>Cuota 1-20</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuota1A20.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Cuota 21-40</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuota21A40.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Cuota 41-20</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuota41A60.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Cuota 61-80</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuota61A80.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
                 <p class="resumenP">
                     <span>Cuota 81-100</span>
                     <span class="dottedLine"></span>
-                    <span class="fw-bold">$5.000,00</span>
+                    <span class="fw-bold">$<%: cuota81A100.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span>
                 </p>
             </div>
         </div>

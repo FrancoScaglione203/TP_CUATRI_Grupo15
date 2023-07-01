@@ -24,7 +24,7 @@
                 <img class="card-img-top" src="<%:auto.Imagen.ImagenUrl %>" alt="<%: auto.Nombre %>">
                 <div class="card-body">
                     <h6 class="card-title text-uppercase fw-bold"><%: auto.Nombre %></h6>
-                    <p class="card-text text-muted">120 Cuotas - 100% Financiado</p>
+                    <p class="card-text text-muted">100 Cuotas - 100% Financiado</p>
                     <p class="card-text">Cuota desde:<span class="card-title mx-1" style="font-size:1rem">$<%: auto.Financiacion().ToString("N",new System.Globalization.CultureInfo("es-AR")) %></span></p>
                     <a href="/financiacionDetalle.aspx?id=<%: auto.Id %>" class="btn btn-primary me-4">descubrir</a>
                 </div>

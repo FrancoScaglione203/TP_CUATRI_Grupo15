@@ -11,6 +11,10 @@ namespace concesionaria_autos
 {
     public partial class CargaVenta : System.Web.UI.Page
     {
+
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,6 +29,7 @@ namespace concesionaria_autos
 
             // Realizar la lógica de búsqueda del usuario por DNI en tu base de datos
             Usuario usuario = usuarioNegocio.BuscarUsuarioPorDNI(dni);
+            Session.Add("usuarioVenta", usuario);
 
             if (usuario != null)
             {

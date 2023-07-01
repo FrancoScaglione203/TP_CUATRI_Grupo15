@@ -4,29 +4,37 @@
             <h1>Carga de Venta - Usuario</h1>
             <div class="row">
                 <div class="col-md-6">
+                    
                     <div class="form-group">
                         <label for="txtNombre">Nombre:</label>
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                     </div>
-                    <div class="form-group">
-                        <label for="txtApellido">Apellido:</label>
-                        <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="txtEmail">Email:</label>
                         <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="ddlModelo" class="form-label">Modelo del Auto: </label>
+                        <asp:DropDownList ID="ddlModelo" CssClass="form-select" runat="server" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                     <!-- Otros campos del usuario -->
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="txtMarca">Marca del Auto:</label>
-                        <asp:TextBox ID="txtMarca" runat="server" CssClass="form-control"></asp:TextBox>
+                        <label for="txtApellido">Apellido:</label>
+                        <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="txtModelo">Modelo del Auto:</label>
-                        <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control"></asp:TextBox>
+                        <label for="txtDni">Dni:</label>
+                        <asp:TextBox ID="txtDni" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
                     </div>
+
+                    <div class="form-group">
+                        <label for="ddlVersion" class="form-label">Versión del Auto: </label>
+                        <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server"></asp:DropDownList>
+                    </div>
+                    
                     <!-- Otros campos del auto -->
                 </div>
             </div>
