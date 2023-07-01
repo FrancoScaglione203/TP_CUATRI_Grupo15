@@ -68,6 +68,7 @@
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="Imagenes\concesionaria.jpg" />
+    <Content Include="Imagenes\concesionaria2.jpg" />
     <Content Include="Imagenes\Cuero.png" />
     <Content Include="Concesionarias.aspx" />
     <Content Include="financiacion.aspx" />
