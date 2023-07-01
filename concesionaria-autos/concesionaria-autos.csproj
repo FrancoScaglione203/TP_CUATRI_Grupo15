@@ -72,7 +72,9 @@
     <Content Include="Cuero.png" />
     <Content Include="Concesionarias.aspx" />
     <Content Include="financiacion.aspx" />
+    <Content Include="financiacionDetalle.aspx" />
     <Content Include="Imagenes\financiacion.jpg" />
+    <Content Include="Imagenes\financiacion2.jpg" />
     <Content Include="Logo.ico" />
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
@@ -198,6 +200,13 @@
     </Compile>
     <Compile Include="financiacion.aspx.designer.cs">
       <DependentUpon>financiacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financiacionDetalle.aspx.cs">
+      <DependentUpon>financiacionDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financiacionDetalle.aspx.designer.cs">
+      <DependentUpon>financiacionDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioAuto.aspx.cs">
       <DependentUpon>FormularioAuto.aspx</DependentUpon>

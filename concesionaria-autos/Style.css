@@ -316,7 +316,6 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
 }
 
 .resumenP:first-child, .resumenP:nth-child(3) {
-    max-width: 70%;
     font-size: 1.3rem;
 }
 
@@ -350,3 +349,12 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
     border-end-end-radius: 0px !important;
 }
 
+/* FINANCIACION */
+
+.cuotasDetalle .resumenP {
+    font-size:0.8rem;
+}
+
+.imagenFinanciacionDetalle {
+    width:22em;
+}
