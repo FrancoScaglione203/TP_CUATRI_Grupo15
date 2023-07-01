@@ -68,6 +68,7 @@
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="Contactanos.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="Imagenes\concesionaria.jpg" />
     <Content Include="Imagenes\contacto.jpg" />
     <Content Include="Imagenes\Cuero.png" />
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="detalle.aspx.designer.cs">
       <DependentUpon>detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="ErrorLog.aspx.cs">
       <DependentUpon>ErrorLog.aspx</DependentUpon>
