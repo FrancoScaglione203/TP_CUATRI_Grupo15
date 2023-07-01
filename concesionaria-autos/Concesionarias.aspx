@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="row mb-4">
-        <img src="BannerLocales.jpg" alt="Exterior Renault DUSTER" />
+        <img src="Imagenes/BannerLocales.JPG" alt="Exterior Renault DUSTER" />
     </div>
 
     <div class="container">
@@ -20,7 +20,7 @@
                 <div class="card my-4">
                     <div class="row no-gutters">
                         <div class="col concesionaria-img-container">
-                            <img class="card-img img-concesesionaria" src="<%#Eval("ImagenUrl") %>" alt="Renault">
+                            <img class="card-img img-concesesionaria" src="Imagenes/<%#Eval("ImagenUrl") %>" alt="Renault">
                         </div>
                         <div class="col-sm-9">
                             <div class="card-body">
