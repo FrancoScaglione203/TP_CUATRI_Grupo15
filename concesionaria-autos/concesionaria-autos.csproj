@@ -65,9 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Autos.aspx" />
-    <Content Include="Imagenes\BannerLocales.JPG" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
+    <Content Include="Imagenes\concesionaria.jpg" />
     <Content Include="Imagenes\Cuero.png" />
     <Content Include="Concesionarias.aspx" />
     <Content Include="financiacion.aspx" />
@@ -83,8 +83,6 @@
     <Content Include="ConfirElimin.aspx" />
     <Content Include="ErrorLog.aspx" />
     <Content Include="FormularioAuto.aspx" />
-    <Content Include="Imagenes\banner1.png" />
-    <Content Include="Imagenes\banner2.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />

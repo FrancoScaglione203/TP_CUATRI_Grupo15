@@ -126,7 +126,7 @@ p {
 }
 
 .fa-edit {
-    color: #EDC011!important;
+    color: #EDC011 !important;
 }
 
 .carousel-inner .carousel-button {
@@ -150,12 +150,12 @@ p {
     border-radius: 0px;
 }
 
-.form-floating .form-control:hover, .form-floating .form-control:active, .form-floating .form-control:focus {
-    border: 0 none;
-    border-bottom: 1px solid #E5E5EB !important;
-    border-radius: 0px;
-    background-color:var(--white)!important;
- }
+    .form-floating .form-control:hover, .form-floating .form-control:active, .form-floating .form-control:focus {
+        border: 0 none;
+        border-bottom: 1px solid #E5E5EB !important;
+        border-radius: 0px;
+        background-color: var(--white) !important;
+    }
 
 
 
@@ -251,7 +251,6 @@ footer .fa {
 }
 
 /*COMPARAR MODELOS*/
-
 .filtroSinSeleccionar {
     filter: contrast(0) brightness(.15) opacity(.4);
 }
@@ -352,9 +351,9 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
 /* FINANCIACION */
 
 .cuotasDetalle .resumenP {
-    font-size:0.8rem;
+    font-size: 0.8rem;
 }
 
 .imagenFinanciacionDetalle {
-    width:22em;
+    width: 22em;
 }
