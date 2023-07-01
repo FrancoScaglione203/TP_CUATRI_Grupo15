@@ -64,15 +64,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
-    <Content Include="BannerLocales.JPG" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
-    <Content Include="Cuero.png" />
+    <Content Include="Imagenes\concesionaria.jpg" />
+    <Content Include="Imagenes\Cuero.png" />
     <Content Include="Concesionarias.aspx" />
-    <Content Include="Logo.ico" />
-    <Content Include="Tela.png" />
+    <Content Include="financiacion.aspx" />
+    <Content Include="financiacionDetalle.aspx" />
+    <Content Include="Imagenes\financiacion.jpg" />
+    <Content Include="Imagenes\financiacion2.jpg" />
+    <Content Include="Iconos\Logo.ico" />
+    <Content Include="Imagenes\Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
@@ -80,8 +83,6 @@
     <Content Include="ConfirElimin.aspx" />
     <Content Include="ErrorLog.aspx" />
     <Content Include="FormularioAuto.aspx" />
-    <Content Include="Imagenes\banner1.png" />
-    <Content Include="Imagenes\banner2.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -101,9 +102,9 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="LoganBlanco.png" />
-    <Content Include="LoganGris.png" />
-    <Content Include="LoganNegro.png" />
+    <Content Include="Imagenes\LoganBlanco.png" />
+    <Content Include="Imagenes\LoganGris.png" />
+    <Content Include="Imagenes\LoganNegro.png" />
     <Content Include="login.aspx" />
     <Content Include="ModificarPerfil.aspx" />
     <Content Include="Perfil.aspx" />
@@ -114,8 +115,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="signin.aspx" />
-    <Content Include="Stepper.js" />
-    <Content Include="Style.css" />
+    <Content Include="Scripts\Stepper.js" />
+    <Content Include="Estilos\Style.css" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -189,6 +190,20 @@
     </Compile>
     <Compile Include="ErrorLog.aspx.designer.cs">
       <DependentUpon>ErrorLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financiacion.aspx.cs">
+      <DependentUpon>financiacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financiacion.aspx.designer.cs">
+      <DependentUpon>financiacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financiacionDetalle.aspx.cs">
+      <DependentUpon>financiacionDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financiacionDetalle.aspx.designer.cs">
+      <DependentUpon>financiacionDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioAuto.aspx.cs">
       <DependentUpon>FormularioAuto.aspx</DependentUpon>

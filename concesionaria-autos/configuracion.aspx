@@ -67,7 +67,7 @@
 
                             <!-- EXTERIOR -->
 
-                            <img class="configImg" src="<%:Color.ImagenUrl %>" alt="Auto">
+                            <img class="configImg" src="Imagenes/<%:Color.ImagenUrl %>" alt="Auto">
 
                             <div class="container ">
                                 <div class="d-flex justify-content-center m-4">
@@ -92,7 +92,7 @@
                                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                                         var contenido = span.textContent;
                                         /* alert(contenido);*/
-                                        img.src = contenido;
+                                        img.src = "/Imagenes/"+contenido;
                                     });
                                 }
                             </script>
@@ -114,7 +114,7 @@
 
                             <!-- INTERIOR -->
 
-                            <img class="configImg2" src="<%:Tapizado.ImagenUrl %>" alt="Auto">
+                            <img class="configImg2" src="Imagenes/<%:Tapizado.ImagenUrl %>" alt="Auto">
 
                             <div class="container">
                                 <div class="d-flex justify-content-center m-4">
@@ -123,7 +123,7 @@
                                     <a class="tapizado me-4">
                                         <img class="dot" src="<%: tapizado.Muestra %>" alt="<%: tapizado.Nombre %>" style="cursor: pointer;">
                                     </a>
-                                    <span class="ImagenUrl2 d-none"><%: tapizado.ImagenUrl %></span>
+                                    <span class="ImagenUrl2 d-none">Imagenes/<%: tapizado.ImagenUrl %></span>
                                     <% } %>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@
                             <div class="d-flex justify-content-evenly align-content-center">
 
                                 <div class="resumem-img-container">
-                                    <img class="resumen-img" src="<%:Color.ImagenUrl %>" alt="Auto">
+                                    <img class="resumen-img" src="Imagenes/<%:Color.ImagenUrl %>" alt="Auto">
                                 </div>
 
                                 <div class="card p-4" style="width: 25rem;">
@@ -292,5 +292,5 @@
         </form>
     </div>
 
-    <script type="text/javascript" src="Stepper.js"></script>
+    <script type="text/javascript" src="Scripts/Stepper.js"></script>
 </asp:Content>

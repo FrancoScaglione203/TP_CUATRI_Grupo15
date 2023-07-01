@@ -55,6 +55,46 @@ namespace negocio
             }
         }
 
+        public List<Auto> listarFinanciados()
+        {
+            List<Auto> lista = new List<Auto>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT PRODUCTOS.Id, Nombre, Precio, Color, Estado, MAX(IMAGENES.ImagenUrl) AS ImagenUrl\r\nFROM PRODUCTOS\r\nINNER JOIN IMAGENES ON IMAGENES.IdProducto = PRODUCTOS.Id\r\nGROUP BY PRODUCTOS.Id, Nombre, Precio, Color, Estado;");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Auto aux = new Auto();
+
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Color = (int)datos.Lector["Color"];
+                    aux.Estado = (bool)datos.Lector["Estado"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    {
+                        aux.Imagen = new Imagen();
+                        aux.Imagen.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    }
+                    aux.Financiacion();
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
         public int UltimoId()  //Funcion que muestra el Id de la nueva categoria a Agregar
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,14 @@ namespace dominio
             this.Imagen = new Imagen();
             this.FichaTecnica = new FichaTecnica();
         }
+        public decimal Financiacion()
+        {
+            decimal interes = Convert.ToDecimal(1.1594);
 
+            decimal primeraCuota = Convert.ToDecimal(0.0072);
+
+            return (Precio * interes)* primeraCuota;
+        }
     }
 
 }
