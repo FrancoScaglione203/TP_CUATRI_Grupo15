@@ -67,8 +67,9 @@
     <Content Include="Autos.aspx" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
+    <Content Include="Contactanos.aspx" />
     <Content Include="Imagenes\concesionaria.jpg" />
-    <Content Include="Imagenes\concesionaria2.jpg" />
+    <Content Include="Imagenes\contacto.jpg" />
     <Content Include="Imagenes\Cuero.png" />
     <Content Include="Concesionarias.aspx" />
     <Content Include="financiacion.aspx" />
@@ -170,6 +171,13 @@
     </Compile>
     <Compile Include="ConfirElimin.aspx.designer.cs">
       <DependentUpon>ConfirElimin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactanos.aspx.cs">
+      <DependentUpon>Contactanos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactanos.aspx.designer.cs">
+      <DependentUpon>Contactanos.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
