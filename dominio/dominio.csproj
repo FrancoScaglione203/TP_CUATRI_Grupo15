@@ -48,6 +48,7 @@
     <Compile Include="DetalleVenta.cs" />
     <Compile Include="Equipamiento.cs" />
     <Compile Include="FichaTecnica.cs" />
+    <Compile Include="Financiacion.cs" />
     <Compile Include="Imagen.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
