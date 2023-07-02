@@ -50,24 +50,50 @@
         </div>
         <div class="row m-5 justify-content-center text-center">
             <h5 class="fw-bold mt-5">Contactanos</h5>
-             <div class="form-floating my-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
-                <label for="txtNombre" class="form-label">Nombre</label>
+            <div class="form-floating my-3">
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" type="text"/>
+                <label for="txtNombre" class="form-label">
+                    Nombre
+                <asp:RequiredFieldValidator cssClass="d-block" ID="vNombre" runat="server"
+                    ControlToValidate="txtNombre"
+                    ErrorMessage="Debe ingresar un nombre"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </label>
+             </div>
+            <div class="form-floating my-3">
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" type="email"/>
+                <label for="txtEmail" class="form-label">Email
+                    <asp:RequiredFieldValidator cssClass="d-block" ID="vEmail" runat="server"
+                    ControlToValidate="txtEmail"
+                    ErrorMessage="Debe ingresar un email"
+                    ForeColor="Red">
+                </asp:RequiredFieldValidator>
+                </label>
             </div>
             <div class="form-floating my-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
-                <label for="txtEmail" class="form-label">Email</label>
-            </div>
-            <div class="form-floating my-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtAsunto" />
-                <label for="txtAsunto" class="form-label">Asunto</label>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtAsunto" type="text"/>
+                <label for="txtAsunto" class="form-label">
+                    Asunto
+                    <asp:RequiredFieldValidator CssClass="d-block" ID="RequiredFieldValidator1" runat="server"
+                        ControlToValidate="txtAsunto"
+                        ErrorMessage="Debe ingresar un asunto"
+                        ForeColor="Red">
+                    </asp:RequiredFieldValidator>
+                </label>
             </div>
             <div class="form-floating my-3">
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtConsulta" TextMode="MultiLine" Style="height: 6em;" />
-                <label for="txtConsulta" class="form-label">Consulta</label>
+                <label for="txtConsulta" class="form-label">
+                    Consulta
+                     <asp:RequiredFieldValidator CssClass="d-block" ID="RequiredFieldValidator2" runat="server"
+                         ControlToValidate="txtConsulta"
+                         ErrorMessage="Debe ingresar una consulta"
+                         ForeColor="Red">
+                     </asp:RequiredFieldValidator>
+                </label>
             </div>
             <asp:Button Text="Enviar" CssClass="btn btn-warning w-50 py-2 mt-4 mb-2" runat="server" ID="btnEnviarConsulta" onClick="btnEnviarConsulta_Click"/>
         </div>
-
     </div>
 </asp:Content>
