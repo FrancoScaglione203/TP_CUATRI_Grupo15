@@ -79,11 +79,6 @@ namespace negocio
                     aux.ControlCrucero = (bool)datos.Lector["ControlCrucero"];
                     aux.Alarma = (bool)datos.Lector["Alarma"];
                     aux.IdProducto = (int)datos.Lector["IdProducto"];
-                    if (!(datos.Lector["ImagenUrl"] is DBNull))
-                    {
-                        aux.Imagen = new Imagen();
-                        aux.Imagen.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    }
                     lista.Add(aux);
                 }
 
