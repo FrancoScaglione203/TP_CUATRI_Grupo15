@@ -70,7 +70,11 @@
                         <div class="row">
 
                             <!-- EXTERIOR -->
-                            <asp:Image CssClass="configImg" ID="colorBox" runat="server" />
+                            <asp:UpdatePanel runat="server">
+                                <ContentTemplate runat="server">
+                                    <asp:Image CssClass="configImg" ID="colorBox" runat="server" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
 
                             <%--<img class="configImg" src="<%: Color.ImagenUrl %>" alt="Auto">--%>
 
@@ -124,7 +128,11 @@
                         <div class="row">
 
                             <!-- INTERIOR -->
-                            <asp:Image CssClass="configImg2" ID="tapizadoBox" runat="server" />
+                            <asp:UpdatePanel runat="server">
+                                <ContentTemplate runat="server">
+                                    <asp:Image CssClass="configImg2" ID="tapizadoBox" runat="server" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
 
                             <%--  <img class="configImg2" src="<%#Eval("ImagenUrl") %>" alt="Auto">--%>
 
