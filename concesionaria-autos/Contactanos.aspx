@@ -62,13 +62,19 @@
                 </label>
              </div>
             <div class="form-floating my-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" type="email"/>
-                <label for="txtEmail" class="form-label">Email
-                    <asp:RequiredFieldValidator cssClass="d-block" ID="vEmail" runat="server"
-                    ControlToValidate="txtEmail"
-                    ErrorMessage="Debe ingresar un email"
-                    ForeColor="Red">
-                </asp:RequiredFieldValidator>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
+                <label for="txtEmail" class="form-label">
+                    Email
+                    <span class="d-flex">
+                        <asp:RequiredFieldValidator CssClass="d-block" ID="vEmail" runat="server"
+                            ControlToValidate="txtEmail"
+                            ErrorMessage="Debe ingresar un email"
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="string" runat="server" ControlToValidate="txtEmail" ErrorMessage="Debe tener el formato de email"
+                            ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" ForeColor="Red">
+                        </asp:RegularExpressionValidator>
+                    </span>
                 </label>
             </div>
             <div class="form-floating my-3">
