@@ -58,11 +58,22 @@
                             <!-- FIN VERSIONES -->
 
                         </div>
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
-                        </div>
-                    </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate runat="server">
+                                <div class="step-actions">
+                                    <%if (paso1 != 0)
+                                        {%>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                                    <%}
+                                        else
+                                        { %>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize" disabled>Siguiente</button>
+                                    <%} %>
+                                    <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
+                                </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </li>
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Diseño Exterior</div>
@@ -107,7 +118,7 @@
                                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                                         var contenido = span.textContent;
                                         /* alert(contenido);*/
-                                        img.src = "/Imagenes/"+contenido;
+                                        img.src = "/Imagenes/" + contenido;
                                     });
                                 }
                             </script>
@@ -115,11 +126,22 @@
                             <!-- FIN EXTERIOR -->
                         </div>
 
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
-                        </div>
-                    </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate runat="server">
+                                <div class="step-actions">
+                                    <%if (paso2 != 0)
+                                        {%>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                                    <%}
+                                        else
+                                        { %>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize" disabled>Siguiente</button>
+                                    <%} %>
+                                    <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
+                                </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </li>
 
                 <li class="step">
@@ -170,14 +192,24 @@
                                 }
                             </script>
 
-                            <!-- FIN EXTERIOR -->
+                            <!-- FIN INTERIOR -->
                         </div>
-
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
-                        </div>
-                    </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate runat="server">
+                                <div class="step-actions">
+                                    <%if (paso3 != 0)
+                                        {%>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                                    <%}
+                                        else
+                                        { %>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize" disabled>Siguiente</button>
+                                    <%} %>
+                                    <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
+                                </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </li>
 
                 <li class="step">

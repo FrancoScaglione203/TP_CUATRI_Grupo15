@@ -26,6 +26,8 @@ namespace concesionaria_autos
 
         int idEquipamiento, idColor, idTapizado;
 
+        public int paso1=0,paso2=0,paso3=0,paso4=0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -89,6 +91,8 @@ namespace concesionaria_autos
                 Session.Add("equipamientoPrecio", Equipamiento2.Precio);
 
                 Session.Add("precio1", Equipamiento2.Precio);
+
+                paso1 = 1;
             }
 
         }
@@ -111,6 +115,7 @@ namespace concesionaria_autos
             Session.Add("colorNombre", Color2.Nombre);
             Session.Add("colorFoto", Color2.ImagenUrl);
 
+            paso2 = 2;
 
         }
 
@@ -133,6 +138,8 @@ namespace concesionaria_autos
             decimal total = precio1 + precio2;
  
             Session.Add("precioTotal", total);
+
+            paso3 = 1;
 
         }
         protected void btnFinalizar_Click(object sender, EventArgs e)
