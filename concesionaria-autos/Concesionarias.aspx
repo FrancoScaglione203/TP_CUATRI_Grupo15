@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <div class="detail-img-container">
-        <img class="detail-img" src="Imagenes/concesionaria2.jpg" alt="Financiacion" />
+        <img class="detail-img" src="Imagenes/concesionaria.jpg" alt="Financiacion" />
         <div class="financiacion">
             <h1 class="fb-bold text-white" style="font-size:3rem">CONCESCIONARIAS</h1>
             <h5 class="pb-4 text-white">siempre cerca tuyo</h5>
@@ -25,7 +25,7 @@
                 <div class="card my-4">
                     <div class="row no-gutters">
                         <div class="col concesionaria-img-container">
-                            <img class="card-img img-concesesionaria" src="Imagenes/<%#Eval("ImagenUrl") %>" alt="Renault">
+                            <img class="card-img img-concesesionaria" src="<%#Eval("ImagenUrl") %>" alt="Renault">
                         </div>
                         <div class="col-sm-9">
                             <div class="card-body">
