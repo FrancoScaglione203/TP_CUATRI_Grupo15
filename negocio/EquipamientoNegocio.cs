@@ -72,7 +72,7 @@ namespace negocio
 
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];git 
                     aux.Climatizador = (bool)datos.Lector["Climatizador"];
                     aux.SensorEstacionamiento = (bool)datos.Lector["SensorEstacionamiento"];
                     aux.Computadora = (bool)datos.Lector["Computadora"];
