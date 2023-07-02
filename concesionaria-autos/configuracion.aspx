@@ -103,7 +103,7 @@
                                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                                         var contenido = span.textContent;
                                         /* alert(contenido);*/
-                                        img.src = contenido;
+                                        img.src = "/Imagenes/"+contenido;
                                     });
                                 }
                             </script>
@@ -321,5 +321,5 @@
         </form>
     </div>
 
-    <script type="text/javascript" src="Stepper.js"></script>
+    <script type="text/javascript" src="Scripts/Stepper.js"></script>
 </asp:Content>

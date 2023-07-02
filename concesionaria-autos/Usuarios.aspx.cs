@@ -25,7 +25,7 @@ namespace concesionaria_autos
             if (!IsPostBack)
             {
                 UsuarioNegocio negocio = new UsuarioNegocio();
-                Session.Add("listaUsuarios", negocio.listarConSP());
+                Session.Add("listaUsuarios", negocio.listarUsuarios());
                 dgvUsuarios.DataSource = Session["listaUsuarios"];
                 dgvUsuarios.DataBind();
             }

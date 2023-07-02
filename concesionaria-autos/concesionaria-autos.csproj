@@ -64,22 +64,34 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
-    <Content Include="BannerLocales.JPG" />
-    <Content Include="Cuero.png" />
+    <Content Include="CargaVenta.aspx" />
+    <Content Include="cargaVentaUsuario.aspx" />
+    <Content Include="Contactanos.aspx" />
+    <Content Include="DB\TP_CUATRIMESTRAL.sql" />
+    <Content Include="error.aspx" />
+    <Content Include="Imagenes\bannerMail.png" />
+    <Content Include="Imagenes\concesionaria.jpg" />
+    <Content Include="Imagenes\contacto.jpg" />
+    <Content Include="Imagenes\Cuero.png" />
     <Content Include="Concesionarias.aspx" />
-    <Content Include="Logo.ico" />
-    <Content Include="Tela.png" />
+    <Content Include="financiacion.aspx" />
+    <Content Include="financiacionDetalle.aspx" />
+    <Content Include="Imagenes\cuerpoMail1.png" />
+    <Content Include="Imagenes\cuerpoMail2.png" />
+    <Content Include="Imagenes\financiacion.jpg" />
+    <Content Include="Imagenes\financiacion2.jpg" />
+    <Content Include="Iconos\Logo.ico" />
+    <Content Include="Imagenes\logoMail.png" />
+    <Content Include="Imagenes\Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
+    <Content Include="Correo\consultas.html" />
     <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="ConfirElimin.aspx" />
     <Content Include="ErrorLog.aspx" />
     <Content Include="FormularioAuto.aspx" />
-    <Content Include="Imagenes\banner1.png" />
-    <Content Include="Imagenes\banner2.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -99,9 +111,9 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="LoganBlanco.png" />
-    <Content Include="LoganGris.png" />
-    <Content Include="LoganNegro.png" />
+    <Content Include="Imagenes\LoganBlanco.png" />
+    <Content Include="Imagenes\LoganGris.png" />
+    <Content Include="Imagenes\LoganNegro.png" />
     <Content Include="login.aspx" />
     <Content Include="ModificarPerfil.aspx" />
     <Content Include="Perfil.aspx" />
@@ -112,8 +124,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="signin.aspx" />
-    <Content Include="Stepper.js" />
-    <Content Include="Style.css" />
+    <Content Include="Scripts\Stepper.js" />
+    <Content Include="Estilos\Style.css" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -131,6 +143,20 @@
     </Compile>
     <Compile Include="Autos.aspx.designer.cs">
       <DependentUpon>Autos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaVenta.aspx.cs">
+      <DependentUpon>CargaVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaVenta.aspx.designer.cs">
+      <DependentUpon>CargaVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cargaVentaUsuario.aspx.cs">
+      <DependentUpon>cargaVentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cargaVentaUsuario.aspx.designer.cs">
+      <DependentUpon>cargaVentaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="comparacion.aspx.cs">
       <DependentUpon>comparacion.aspx</DependentUpon>
@@ -153,6 +179,13 @@
     <Compile Include="ConfirElimin.aspx.designer.cs">
       <DependentUpon>ConfirElimin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contactanos.aspx.cs">
+      <DependentUpon>Contactanos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactanos.aspx.designer.cs">
+      <DependentUpon>Contactanos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,12 +200,33 @@
     <Compile Include="detalle.aspx.designer.cs">
       <DependentUpon>detalle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorLog.aspx.cs">
       <DependentUpon>ErrorLog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ErrorLog.aspx.designer.cs">
       <DependentUpon>ErrorLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financiacion.aspx.cs">
+      <DependentUpon>financiacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financiacion.aspx.designer.cs">
+      <DependentUpon>financiacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="financiacionDetalle.aspx.cs">
+      <DependentUpon>financiacionDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="financiacionDetalle.aspx.designer.cs">
+      <DependentUpon>financiacionDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioAuto.aspx.cs">
       <DependentUpon>FormularioAuto.aspx</DependentUpon>

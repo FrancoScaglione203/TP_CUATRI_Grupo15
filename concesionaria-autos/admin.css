@@ -1,10 +1,20 @@
-﻿.admin form {
+﻿/*COLORES*/
+:root {
+    --foreColor: black;
+    --azul-hover: #4582c4;
+    --white: #ffffff;
+    --decorations: #EFDF00;
+    --darkGrey: #F2F2F2;
+    --lightGrey: #F8F8F8;
+    --red: red;
+}
+
+.admin form {
     display: flex;
 }
 
-.admin nav {
-    background-color: #333;
-    padding: 20px;
+/*.admin nav {
+    background-color: var(--lightGrey);
 }
 
 .admin nav ul {
@@ -30,7 +40,7 @@
         background-color: #444;
         border-radius: 5px;
         transition: background-color 0.3s;
-    }
+    }*/
 
 .admin nav ul li a:hover {
             background-color: #666;

@@ -16,12 +16,31 @@
             <h6 class="fw-bold my-3">Donde quiera que vayas, disfrutá los beneficios</h6>
 
             <div class="form-floating my-3">
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
-                <label for="txtDni" class="form-label">DNI</label>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" type="number" />
+                <label for="txtDni" class="form-label">
+                    DNI
+                    <span class="d-flex">
+                        <asp:RequiredFieldValidator CssClass="d-block" ID="vDni" runat="server"
+                            ControlToValidate="txtDni"
+                            ErrorMessage="Debe ingresar un DNI"
+                            ForeColor="Red">
+                        </asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="reDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Debe ingresar números"
+                            ValidationExpression="[0-9]+" ForeColor="Red"> 
+                        </asp:RegularExpressionValidator>
+                    </span>
+                </label>
             </div>
             <div class="form-floating my-3">
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtClave" type="password" />
-                <label for="txtClave" class="form-label">Contraseña</label>
+                <label for="txtClave" class="form-label">
+                    Contraseña
+                     <asp:RequiredFieldValidator CssClass="d-block" ID="vClave" runat="server"
+                         ControlToValidate="txtClave"
+                         ErrorMessage="Debe ingresar una contraseña"
+                         ForeColor="Red">
+                     </asp:RequiredFieldValidator>
+                </label>
             </div>
 
             <asp:Button Text="Ingresar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />

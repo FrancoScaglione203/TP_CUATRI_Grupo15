@@ -5,13 +5,21 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="admin">
-        <nav>
-            <ul>
-                <li><a href="Usuarios.aspx">Listar Usuarios</a></li>
-                <li><a href="Autos.aspx">Listar Autos</a></li>
-                <!-- Sumar a la lista las opciones del menu de admin -->
+        <nav class="py-3 bg-lightGrey">
+            <ul class="nav ms-5">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="Usuarios.aspx">Listar Usuarios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Autos.aspx">Listar Autos</a>
+                </li>
+                <li class="nav-item">
+                 <a class="nav-link text-dark" href="CargaVenta.aspx">Cargar Venta</a>
+                </li>
+               
             </ul>
         </nav>
+                <!-- Sumar a la lista las opciones del menu de admin -->
 
         <main>
             <!-- Contenido que se ve en pantalla -->
