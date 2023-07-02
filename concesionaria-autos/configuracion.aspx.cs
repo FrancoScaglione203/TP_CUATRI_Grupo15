@@ -107,6 +107,7 @@ namespace concesionaria_autos
 
             colorBox.ImageUrl = Color2.ImagenUrl;
             imageBox.ImageUrl = Color2.ImagenUrl;
+
             Session.Add("colorNombre", Color2.Nombre);
             Session.Add("colorFoto", Color2.ImagenUrl);
 
@@ -121,7 +122,9 @@ namespace concesionaria_autos
             TapizadoNegocio tapizadoNegocio = new TapizadoNegocio();
             ListaTapizado2 = tapizadoNegocio.listar();
             Tapizado2 = ListaTapizado2.Find(elemento => elemento.Id == idTapizado);
-           
+
+            tapizadoBox.ImageUrl = Tapizado2.ImagenUrl;
+
             Session.Add("tapizadoNombre", Tapizado2.Nombre);
             Session.Add("tapizadoPrecio", Tapizado2.Precio);
 

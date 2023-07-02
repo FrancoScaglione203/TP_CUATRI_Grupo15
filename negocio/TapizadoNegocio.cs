@@ -20,7 +20,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select Id,Nombre,Muestra,ImagenUrl,IdProducto from TAPIZADOS");
+                datos.setearConsulta("Select Id,Nombre,Muestra,ImagenUrl,Precio,IdProducto from TAPIZADOS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -31,6 +31,7 @@ namespace negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Muestra = (string)datos.Lector["Muestra"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
                     aux.IdProducto = (int)datos.Lector["IdProducto"];
                     lista.Add(aux);
                 }

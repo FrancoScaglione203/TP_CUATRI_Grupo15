@@ -12,6 +12,7 @@ namespace dominio
         public string Nombre { get; set; }
         public string Muestra { get; set; }
         public string ImagenUrl { get; set; }
+        public decimal Precio { get; set; }
         public int IdProducto { get; set; }
     }
 }
