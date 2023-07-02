@@ -68,6 +68,7 @@
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="Contactanos.aspx" />
+    <Content Include="DB\TP_CUATRIMESTRAL.sql" />
     <Content Include="error.aspx" />
     <Content Include="Imagenes\bannerMail.png" />
     <Content Include="Imagenes\concesionaria.jpg" />
