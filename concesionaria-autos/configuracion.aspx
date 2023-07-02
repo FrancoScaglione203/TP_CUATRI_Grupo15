@@ -46,7 +46,7 @@
                                             </ul>
                                             <asp:UpdatePanel runat="server">
                                                 <ContentTemplate runat="server">
-                                                    <asp:Button CssClass="btn btn-warning w-100 my-2 fw-bold text-capitalize" ID="btnEquipamiento" runat="server" Text="Configurar" CommandArgument='<%#Eval("Id")%>' CommandName="VersionId" OnClick="btnEquipamiento_Click" AutoPostBack="false"/>
+                                                    <asp:Button CssClass="btn btn-warning w-100 my-2 fw-bold text-capitalize" ID="btnEquipamiento" runat="server" Text="Configurar" CommandArgument='<%#Eval("Id")%>' CommandName="VersionId" OnClick="btnEquipamiento_Click" AutoPostBack="false" />
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
                                         </div>
@@ -70,7 +70,7 @@
                         <div class="row">
 
                             <!-- EXTERIOR -->
-                            <asp:Image cssClass="configImg" ID="colorBox" runat="server"/>
+                            <asp:Image CssClass="configImg" ID="colorBox" runat="server" />
 
                             <%--<img class="configImg" src="<%: Color.ImagenUrl %>" alt="Auto">--%>
 
@@ -78,12 +78,12 @@
                                 <div class="d-flex justify-content-center m-4">
                                     <asp:Repeater ID="RepeaterColor" runat="server">
                                         <ItemTemplate>
-                                              <asp:UpdatePanel runat="server">
+                                            <asp:UpdatePanel runat="server">
                                                 <ContentTemplate runat="server">
-                                            <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click" AutoPostBack="false" />
-                                              </ContentTemplate>
+                                                    <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click" AutoPostBack="false" />
+                                                </ContentTemplate>
                                             </asp:UpdatePanel>
-                                                    <%--<a class="color me-4">
+                                            <%--<a class="color me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
                                             <span class="ImagenUrl d-none"><%#Eval("ImagenUrl") %></span>
@@ -124,9 +124,9 @@
                         <div class="row">
 
                             <!-- INTERIOR -->
-                            <asp:Image cssClass="configImg2" ID="tapizadoBox" runat="server"/>
+                            <asp:Image CssClass="configImg2" ID="tapizadoBox" runat="server" />
 
-                          <%--  <img class="configImg2" src="<%#Eval("ImagenUrl") %>" alt="Auto">--%>
+                            <%--  <img class="configImg2" src="<%#Eval("ImagenUrl") %>" alt="Auto">--%>
 
                             <div class="container">
                                 <div class="d-flex justify-content-center m-4">
@@ -134,11 +134,11 @@
                                         <ItemTemplate>
                                             <asp:UpdatePanel runat="server">
                                                 <ContentTemplate runat="server">
-                                            <asp:ImageButton class="tapizado dot" ID="btnTapizado" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="TapizadoId" OnClick="btnTapizado_Click" AutoPostBack="false"/>
-                                            <%--  <a class="tapizado me-4">
+                                                    <asp:ImageButton class="tapizado dot" ID="btnTapizado" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="TapizadoId" OnClick="btnTapizado_Click" AutoPostBack="false" />
+                                                    <%--  <a class="tapizado me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
-                                                       </ContentTemplate>
+                                                </ContentTemplate>
                                             </asp:UpdatePanel>
                                             <span class="ImagenUrl2 d-none"><%#Eval("ImagenUrl") %></span>
                                         </ItemTemplate>
@@ -277,7 +277,7 @@
                                                 <p class="card-text fw-bold">VERSION</p>
                                                 <p class="resumenP">
                                                     <span><%:Session["equipamientoNombre"]%></span>
-                                                   <%-- <asp:Label ID="vNombre" runat="server" Text="Label"></asp:Label>--%>
+                                                    <%-- <asp:Label ID="vNombre" runat="server" Text="Label"></asp:Label>--%>
                                                     <span class="dottedLine"></span>
                                                     <span><%:Session["equipamientoPrecio"]%></span>
                                                     <%--<asp:Label ID="vPrecio" runat="server" Text="Label"></asp:Label>--%>
@@ -295,7 +295,7 @@
                                                 <p class="resumenP">
                                                     <%--  <asp:Label ID="lblTapizadoPrecio" runat="server" Text="Label"></asp:Label>--%>
                                                     <span><%:Session["tapizadoNombre"]%></span>
-                                                   <%-- <asp:Label ID="tNombre" runat="server" Text="Label"></asp:Label>--%>
+                                                    <%-- <asp:Label ID="tNombre" runat="server" Text="Label"></asp:Label>--%>
                                                     <span class="dottedLine"></span>
                                                     <span><%:Session["tapizadoPrecio"]%></span>
                                                     <%--<asp:Label ID="tPrecio" runat="server" Text="Label"></asp:Label>--%>
@@ -309,7 +309,7 @@
                                 <a class="btn btn-light me-4">Solicitar un testdrive</a>
                                 <a class="btn btn-warning">Solicitar un asesor</a>
                             </div>
-                       
+
 
                             <!-- FIN RESUMEN -->
 
