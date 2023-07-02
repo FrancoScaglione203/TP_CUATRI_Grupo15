@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label for="ddlModelo" class="form-label">Modelo del Auto: </label>
-                        <asp:DropDownList ID="ddlModelo" CssClass="form-select" runat="server" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlModelo" CssClass="form-select" runat="server" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged" OnDataBound="ddlModelo_DataBound" AutoPostBack="True"></asp:DropDownList>
                     </div>
                     <!-- Otros campos del usuario -->
                 </div>
@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         <label for="ddlVersion" class="form-label">Versión del Auto: </label>
-                        <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server" Enabled="false"></asp:DropDownList>
                     </div>
                     
                     <!-- Otros campos del auto -->

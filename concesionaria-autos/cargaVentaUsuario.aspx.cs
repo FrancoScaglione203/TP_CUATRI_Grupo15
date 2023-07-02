@@ -39,7 +39,7 @@ namespace concesionaria_autos
                     ddlModelo.DataTextField = "Nombre";
                     ddlModelo.DataBind();
 
-                    ddlVersion.Enabled = false;
+                    //ddlVersion.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -48,6 +48,12 @@ namespace concesionaria_autos
                 Response.Redirect("Error.aspx");
             }
             
+        }
+
+        protected void ddlModelo_DataBound(object sender, EventArgs e)
+        {
+            ddlModelo.Items.Insert(0, new ListItem("Selecciona un modelo", ""));
+            ddlModelo.Items[0].Attributes.Add("disabled", "disabled");
         }
         protected void btnCargarVenta_Click(object sender, EventArgs e)
         {
@@ -75,9 +81,9 @@ namespace concesionaria_autos
         {
             try
             {
-                if (ddlModelo.SelectedIndex != 0)
-                {
+
                     ddlVersion.Enabled = true;
+
                     EquipamientoNegocio negocio = new EquipamientoNegocio();
                     List<Equipamiento> lista = negocio.listarUnModelo(Convert.ToInt32(ddlModelo.SelectedValue));
 
@@ -85,14 +91,15 @@ namespace concesionaria_autos
                     ddlVersion.DataValueField = "Id";
                     ddlVersion.DataTextField = "Nombre";
                     ddlVersion.DataBind();
-                }
-                else
-                {
-                    ddlVersion.Enabled = false;
-                }
+
+
+                
+
+
             }
             catch (Exception ex)
             {
+                throw ex;
                 Session.Add("Error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
