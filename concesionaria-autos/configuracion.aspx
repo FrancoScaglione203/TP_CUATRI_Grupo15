@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
     <head>
         <!-- Materializecss compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -42,7 +44,11 @@
                                                 <li class="list-dot">DRL LED C-shape﻿</li>
                                                 <li class="list-dot">Levantacristales delanteros con comando eléctrico﻿</li>
                                             </ul>
-                                            <asp:Button CssClass="btn btn-warning w-100 my-2 fw-bold text-capitalize" ID="btnEquipamiento" runat="server" Text="Configurar" CommandArgument='<%#Eval("Id")%>' CommandName="VersionId" OnClick="btnEquipamiento_Click" />
+                                            <asp:UpdatePanel runat="server">
+                                                <ContentTemplate runat="server">
+                                                    <asp:Button CssClass="btn btn-warning w-100 my-2 fw-bold text-capitalize" ID="btnEquipamiento" runat="server" Text="Configurar" CommandArgument='<%#Eval("Id")%>' CommandName="VersionId" OnClick="btnEquipamiento_Click" AutoPostBack="false"/>
+                                                </ContentTemplate>
+                                            </asp:UpdatePanel>
                                         </div>
                                     </div>
 
@@ -72,8 +78,12 @@
                                 <div class="d-flex justify-content-center m-4">
                                     <asp:Repeater ID="RepeaterColor" runat="server">
                                         <ItemTemplate>
+                                              <asp:UpdatePanel runat="server">
+                                                <ContentTemplate runat="server">
                                             <asp:ImageButton class="color dot" ID="btnColor" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="ColorId" OnClick="btnColor_Click" AutoPostBack="false" />
-                                            <%--<a class="color me-4">
+                                              </ContentTemplate>
+                                            </asp:UpdatePanel>
+                                                    <%--<a class="color me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
                                             <span class="ImagenUrl d-none"><%#Eval("ImagenUrl") %></span>
@@ -122,10 +132,14 @@
                                 <div class="d-flex justify-content-center m-4">
                                     <asp:Repeater ID="RepeaterTapizado" runat="server">
                                         <ItemTemplate>
-                                            <asp:ImageButton class="tapizado dot" ID="btnTapizado" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="TapizadoId" OnClick="btnTapizado_Click" />
+                                            <asp:UpdatePanel runat="server">
+                                                <ContentTemplate runat="server">
+                                            <asp:ImageButton class="tapizado dot" ID="btnTapizado" runat="server" ImageUrl='<%#Eval("Muestra")%>' CommandArgument='<%#Eval("Id")%>' CommandName="TapizadoId" OnClick="btnTapizado_Click" AutoPostBack="false"/>
                                             <%--  <a class="tapizado me-4">
                                                 <img class="dot" src="<%#Eval("Muestra") %>" alt="<%#Eval("Nombre") %>" style="cursor: pointer;">
                                             </a>--%>
+                                                       </ContentTemplate>
+                                            </asp:UpdatePanel>
                                             <span class="ImagenUrl2 d-none"><%#Eval("ImagenUrl") %></span>
                                         </ItemTemplate>
                                     </asp:Repeater>
@@ -232,6 +246,7 @@
 
 
                             <!-- FIN EQUIPAMIENTO -->
+                            <!-- FIN EQUIPAMIENTO -->
 
                         </div>
                         <div class="step-actions">
@@ -245,51 +260,56 @@
                     <div class="step-title waves-effect waves-dark">Resumen</div>
                     <div class="step-content">
                         <div class="row my-4">
+                            <asp:UpdatePanel runat="server">
+                                <ContentTemplate runat="server">
+                                    <div class="d-flex justify-content-evenly align-content-center">
 
-                            <!-- RESUMEN && Session["idColor"] != null && Session["idTapizado"] != null-->
-                            <%if (Session["idEquipamiento"] != null)
-                                { %>
-                            <div class="d-flex justify-content-evenly align-content-center">
+                                        <div class="resumem-img-container">
+                                            <asp:Image class="resumen-img" ID="imageBox" runat="server" />
+                                        </div>
+                                        <div class="card p-4" style="width: 25rem;">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle my-2 text-muted">Precio</h6>
+                                                <h5 class="card-title fw-bold"><%: Session["precioTotal"]%></h5>
+                                                <div class="hl2 pe-4 my-3"></div>
+                                                <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
 
-                                <div class="resumem-img-container">
-                                    <asp:Image class="resumen-img" ID="imageBox" runat="server" />
-                                </div>
-                                <div class="card p-4" style="width: 25rem;">
-                                    <div class="card-body">
-                                        <h6 class="card-subtitle my-2 text-muted">Precio</h6>
-                                        <h5 class="card-title fw-bold"><%: precioTotal%></h5>
-                                        <div class="hl2 pe-4 my-3"></div>
-                                        <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
+                                                <p class="card-text fw-bold">VERSION</p>
+                                                <p class="resumenP">
+                                                    <span><%:Session["equipamientoNombre"]%></span>
+                                                   <%-- <asp:Label ID="vNombre" runat="server" Text="Label"></asp:Label>--%>
+                                                    <span class="dottedLine"></span>
+                                                    <span><%:Session["equipamientoPrecio"]%></span>
+                                                    <%--<asp:Label ID="vPrecio" runat="server" Text="Label"></asp:Label>--%>
+                                                </p>
 
-                                        <p class="card-text fw-bold">VERSION</p>
-                                        <p class="resumenP">
-                                            <asp:Label ID="vNombre" runat="server" Text="Label"></asp:Label>
-                                            <span class="dottedLine"></span>
-                                            <asp:Label ID="vPrecio" runat="server" Text="Label"></asp:Label>
-                                        </p>
+                                                <p class="card-text fw-bold">COLOR</p>
+                                                <p class="resumenP">
+                                                    <span><%:Session["colorNombre"]%></span>
+                                                    <%--<asp:Label ID="cNombre" runat="server" Text="Label"></asp:Label>--%>
+                                                    <span class="dottedLine"></span>
+                                                    <span class="fw-bold">$0</span>
+                                                </p>
 
-                                        <p class="card-text fw-bold">COLOR</p>
-                                        <p class="resumenP">
-                                            <asp:Label ID="cNombre" runat="server" Text="Label"></asp:Label>
-                                            <span class="dottedLine"></span>
-                                            <span class="fw-bold">$0</span>
-                                        </p>
-
-                                        <p class="card-text fw-bold">TAPIZADO</p>
-                                        <p class="resumenP">
-                                          <%--  <asp:Label ID="lblTapizadoPrecio" runat="server" Text="Label"></asp:Label>--%>
-                                            <asp:Label ID="tNombre" runat="server" Text="Label"></asp:Label>
-                                            <span class="dottedLine"></span>
-                                            <asp:Label ID="tPrecio" runat="server" Text="Label"></asp:Label>
-                                        </p>
+                                                <p class="card-text fw-bold">TAPIZADO</p>
+                                                <p class="resumenP">
+                                                    <%--  <asp:Label ID="lblTapizadoPrecio" runat="server" Text="Label"></asp:Label>--%>
+                                                    <span><%:Session["tapizadoNombre"]%></span>
+                                                   <%-- <asp:Label ID="tNombre" runat="server" Text="Label"></asp:Label>--%>
+                                                    <span class="dottedLine"></span>
+                                                    <span><%:Session["tapizadoPrecio"]%></span>
+                                                    <%--<asp:Label ID="tPrecio" runat="server" Text="Label"></asp:Label>--%>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                             <div class="d-flex justify-content-center my-5">
                                 <a class="btn btn-light me-4">Solicitar un testdrive</a>
                                 <a class="btn btn-warning">Solicitar un asesor</a>
                             </div>
-                            <% } %>
+                       
 
                             <!-- FIN RESUMEN -->
 

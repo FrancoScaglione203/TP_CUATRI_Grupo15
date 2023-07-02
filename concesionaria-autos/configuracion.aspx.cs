@@ -26,8 +26,6 @@ namespace concesionaria_autos
 
         int idEquipamiento, idColor, idTapizado;
 
-        public decimal precioTotal=0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -77,24 +75,21 @@ namespace concesionaria_autos
         }
         protected void btnEquipamiento_Click(object sender, EventArgs e)
         {
+            {
+                //sender: elemento que envía el evento -> objeto
+                string id = ((Button)sender).CommandArgument;
+                idEquipamiento = Convert.ToInt32(id);
+  
+                EquipamientoNegocio equipamientoNegocio = new EquipamientoNegocio();
+                ListaEquipamientos2 = equipamientoNegocio.listar();
+                ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
+                Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
 
-            //sender: elemento que envía el evento -> objeto
-            string id= ((Button)sender).CommandArgument;
-            idEquipamiento = Convert.ToInt32(id);
-            Session.Add("idEquipamiento", idEquipamiento);
+                Session.Add("equipamientoNombre", Equipamiento2.Nombre);
+                Session.Add("equipamientoPrecio", Equipamiento2.Precio);
 
-            EquipamientoNegocio equipamientoNegocio = new EquipamientoNegocio();
-            ListaEquipamientos2 = equipamientoNegocio.listar();
-            ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
-            Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
-
-            //Session.Add("equipamientoNombre", Equipamiento2.Nombre);
-            //Session.Add("equipamientoPrecio", Equipamiento2.Precio);
-
-            precioTotal += Equipamiento2.Precio;
-
-            vNombre.Text = Equipamiento2.Nombre;
-            vPrecio.Text = Equipamiento2.Precio.ToString();
+                Session.Add("precio1", Equipamiento2.Precio);
+            }
 
         }
 
@@ -110,11 +105,9 @@ namespace concesionaria_autos
             ListaColores2 = colorNegocio.listar();
             Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
            
-            cNombre.Text = Color2.Nombre;
-            colorBox.ImageUrl = Color2.ImagenUrl;
             imageBox.ImageUrl = Color2.ImagenUrl;
-            //Session.Add("colorNombre", Color2.Nombre);
-            //Session.Add("colorFoto", Color2.ImagenUrl);
+            Session.Add("colorNombre", Color2.Nombre);
+            Session.Add("colorFoto", Color2.ImagenUrl);
 
 
         }
@@ -123,17 +116,18 @@ namespace concesionaria_autos
         {
             string id = ((ImageButton)sender).CommandArgument;
             idTapizado = Convert.ToInt32(id);
-            //Session.Add("idTapizado", idTapizado);
-
+   
             TapizadoNegocio tapizadoNegocio = new TapizadoNegocio();
             ListaTapizado2 = tapizadoNegocio.listar();
             Tapizado2 = ListaTapizado2.Find(elemento => elemento.Id == idTapizado);
-            //Session.Add("tapizadoNombre", Tapizado2.Nombre);
-            //Session.Add("tapizadoPrecio", Tapizado2.Precio);
-            tNombre.Text = Tapizado2.Nombre;
-            tPrecio.Text = Tapizado2.Precio.ToString();
-
-            precioTotal += Tapizado2.Precio;
+            Session.Add("tapizadoNombre", Tapizado2.Nombre);
+            Session.Add("tapizadoPrecio", Tapizado2.Precio);
+  
+            decimal precio1 = (decimal)Session["precio1"];
+            decimal precio2 = Tapizado2.Precio;
+            decimal total=precio1+precio2;
+ 
+            Session.Add("precioTotal", total);
 
         }
         protected void btnFinalizar_Click(object sender, EventArgs e)
