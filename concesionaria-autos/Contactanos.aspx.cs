@@ -20,17 +20,14 @@ namespace concesionaria_autos
         {
             try
             {
-                string asunto,consulta;
-                
-                asunto=txtAsunto.Text;
-                consulta = txtConsulta.Text;
-
-                //ENVIAR MAIL
+                EmailService emailService = new EmailService();
+                emailService.armarCorreo(txtEmail.Text,txtAsunto.Text,txtConsulta.Text);
+                emailService.enviarMail();
             }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("ErrorLog.aspx");
+                Response.Redirect("error.aspx");
             }
         }
     }
