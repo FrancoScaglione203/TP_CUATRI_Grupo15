@@ -100,6 +100,12 @@
                 </label>
             </div>
             <asp:Button Text="Enviar" CssClass="btn btn-warning w-50 py-2 mt-4 mb-2" runat="server" ID="btnEnviarConsulta" onClick="btnEnviarConsulta_Click"/>
+            <script>
+                function Alerta(valor1) {
+                    var val1 = valor1;
+                      window.alert(val1);
+                }
+            </script>
         </div>
     </div>
 </asp:Content>

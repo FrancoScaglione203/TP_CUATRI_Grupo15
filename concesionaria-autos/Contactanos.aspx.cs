@@ -25,6 +25,8 @@ namespace concesionaria_autos
                 emailService.armarCorreo(txtNombre.Text,txtEmail.Text,txtAsunto.Text,txtConsulta.Text, plantilla);
                 emailService.enviarMail();
                 emailService.enviarMail();
+                string script = string.Format("Alerta('{0}');", "Su consulta ha sido enviada");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", script, true);
             }
             catch (Exception ex)
             {
