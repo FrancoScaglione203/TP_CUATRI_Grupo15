@@ -24,9 +24,8 @@ namespace negocio
             server.EnableSsl = true;
             server.Port = 2525;
             server.Host = "sandbox.smtp.mailtrap.io";
-          
         }
-        public void armarCorreo(string mailDestino,string asunto,string cuerpo)
+        public void armarCorreo(string nombreDestinatario, string mailDestino, string asunto, string cuerpo,string pantilla)
         {
             //De Reanult a User
             email = new MailMessage();
@@ -34,7 +33,7 @@ namespace negocio
             email.To.Add(mailDestino);
             email.Subject = asunto;
             email.IsBodyHtml = true;
-            email.Body = "<h1>Respuesta</h1>";
+            email.Body = pantilla;
         }
 
         public void enviarMail() {

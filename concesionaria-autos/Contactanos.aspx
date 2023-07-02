@@ -50,6 +50,10 @@
         </div>
         <div class="row m-5 justify-content-center text-center">
             <h5 class="fw-bold mt-5">Contactanos</h5>
+             <div class="form-floating my-3">
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
+                <label for="txtNombre" class="form-label">Nombre</label>
+            </div>
             <div class="form-floating my-3">
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtEmail" />
                 <label for="txtEmail" class="form-label">Email</label>
