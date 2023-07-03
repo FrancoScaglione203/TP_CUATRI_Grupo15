@@ -21,9 +21,9 @@ namespace concesionaria_autos
                 txtNombre.Enabled = false;
                 txtApellido.Text = usuarioCargado.Apellido;
                 txtApellido.Enabled = false;
-                txtEmail.Text = usuarioCargado.Dni;
+                txtEmail.Text = usuarioCargado.Email;
                 txtEmail.Enabled = false;
-                txtDni.Text = usuarioCargado.Email;
+                txtDni.Text = usuarioCargado.Dni;
                 txtDni.Enabled = false;
             }
 
@@ -33,13 +33,19 @@ namespace concesionaria_autos
                 {
                     AutoNeogocio negocio = new AutoNeogocio();
                     List<Auto> lista = negocio.listar();
+                    FinanciacionNegocio financiacionNegocio = new FinanciacionNegocio();
+                    List<Financiacion> listaFinanciacion = financiacionNegocio.listar();
 
                     ddlModelo.DataSource = lista;
                     ddlModelo.DataValueField = "Id";
                     ddlModelo.DataTextField = "Nombre";
                     ddlModelo.DataBind();
 
-                    //ddlVersion.Enabled = false;
+                    ddlCuotas.DataSource = listaFinanciacion;
+                    ddlCuotas.DataValueField = "Id";
+                    ddlCuotas.DataTextField = "CantCuotas";
+                    ddlCuotas.DataBind();
+
                 }
             }
             catch (Exception ex)
@@ -55,19 +61,21 @@ namespace concesionaria_autos
             ddlModelo.Items.Insert(0, new ListItem("Selecciona un modelo", ""));
             ddlModelo.Items[0].Attributes.Add("disabled", "disabled");
         }
+
+        protected void ddlCuotas_DataBound(object sender, EventArgs e)
+        {
+            ddlVersion.Items.Insert(0, new ListItem("Selecciona la cantidad de cuotas", ""));
+            ddlVersion.Items[0].Attributes.Add("disabled", "disabled");
+        }
         protected void btnCargarVenta_Click(object sender, EventArgs e)
         {
             // Obtener los valores ingresados por el usuario
             string versionAuto = ddlVersion.SelectedValue;
             string modeloAuto = ddlModelo.SelectedValue;
-            int cantidadCuotas = Convert.ToInt32(txtCuotas.Text);
-            decimal montoCuota = Convert.ToDecimal(txtMontoCuota.Text);
+            int cantidadCuotas = ddlCuotas.SelectedIndex;
 
-            // Realizar las acciones necesarias para cargar la venta y los detalles de financiación
-            // ...
+            
 
-            // Redirigir a la página de confirmación o mostrar un mensaje de éxito
-            Response.Redirect("ConfirmacionVenta.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

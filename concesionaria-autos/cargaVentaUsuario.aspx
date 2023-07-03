@@ -34,22 +34,16 @@
                         <label for="ddlVersion" class="form-label">Versión del Auto: </label>
                         <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server" Enabled="false"></asp:DropDownList>
                     </div>
-                    
-                    <!-- Otros campos del auto -->
+
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <h3>Detalles de Financiación</h3>
                     <div class="form-group">
-                        <label for="txtCuotas">Cantidad de Cuotas:</label>
-                        <asp:TextBox ID="txtCuotas" runat="server" CssClass="form-control"></asp:TextBox>
+                        <label for="ddlCuotas" class="form-label">Cantidad de cuotas: </label>
+                        <asp:DropDownList ID="ddlCuotas" CssClass="form-select" runat="server" OnDataBound="ddlCuotas_DataBound"></asp:DropDownList>
                     </div>
-                    <div class="form-group">
-                        <label for="txtMontoCuota">Monto de Cuota:</label>
-                        <asp:TextBox ID="txtMontoCuota" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <!-- Otros detalles de financiación -->
                 </div>
             </div>
             <div class="row">
