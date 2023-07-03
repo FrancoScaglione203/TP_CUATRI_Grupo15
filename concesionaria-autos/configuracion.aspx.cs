@@ -169,6 +169,7 @@ namespace concesionaria_autos
         {
             contenido4.Visible = false;
             contenido5.Visible = true;
+
         }
     }
 }

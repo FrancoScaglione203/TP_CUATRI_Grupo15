@@ -178,7 +178,7 @@
                 foreach (dominio.FichaTecnica fichaTecnica in ListaFichaTecnica)
                 {
             %>
-            <div class="row justify-content-center py-3">Número de plazas</div>
+            <div class="row justify-content-center py-3 mt-5">Número de plazas</div>
             <div class="d-flex justify-content-around text-center">
                 <div class="bg-darkGrey w-50 py-3"><%: fichaTecnica != null ? fichaTecnica.Plazas : 0 %></div>
 
@@ -240,7 +240,7 @@
                     <div class="card p-4" style="width: 25rem;">
                         <div class="card-body">
                             <h6 class="card-subtitle my-2 text-muted">Precio</h6>
-                            <h5 class="card-title fw-bold"><%: Session["precioTotal"]%></h5>
+                            <h5 class="card-title fw-bold">$<%: Session["precioTotal"]%></h5>
                             <div class="hl2 pe-4 my-3"></div>
                             <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
 
@@ -248,7 +248,7 @@
                             <p class="resumenP">
                                 <span><%:Session["equipamientoNombre"]%></span>
                                 <span class="dottedLine"></span>
-                                <span><%:Session["equipamientoPrecio"]%></span>
+                                <span class="fw-bold">$<%:Session["equipamientoPrecio"]%></span>
 
                             </p>
 
@@ -263,7 +263,7 @@
                             <p class="resumenP">
                                 <span><%:Session["tapizadoNombre"]%></span>
                                 <span class="dottedLine"></span>
-                                <span><%:Session["tapizadoPrecio"]%></span>
+                                <span class="fw-bold">$<%:Session["tapizadoPrecio"]%></span>
                             </p>
                         </div>
                     </div>
