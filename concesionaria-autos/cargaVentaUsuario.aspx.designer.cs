@@ -69,22 +69,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlVersion;
 
         /// <summary>
-        /// Control txtCuotas.
+        /// Control ddlCuotas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCuotas;
-
-        /// <summary>
-        /// Control txtMontoCuota.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMontoCuota;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCuotas;
 
         /// <summary>
         /// Control btnCargarVenta.

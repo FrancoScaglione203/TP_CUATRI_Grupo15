@@ -8,6 +8,7 @@ namespace dominio
 {
     public class Financiacion
     {
+        public int id { get; set; }
         public int CantCuotas { get; set; }
         public decimal DsCuotas { get; set; }
         public decimal GastoEntrega { get; set; }
