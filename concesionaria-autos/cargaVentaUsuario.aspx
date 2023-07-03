@@ -50,6 +50,7 @@
                 <div class="col-md-12">
                     <asp:Button ID="btnCargarVenta" runat="server" Text="Cargar Venta" CssClass="btn btn-primary" OnClick="btnCargarVenta_Click" />
                     <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-secondary" OnClick="btnCancelar_Click" />
+                    <asp:label id="lblError" runat="server"></asp:label>
                 </div>
             </div>
         </div>

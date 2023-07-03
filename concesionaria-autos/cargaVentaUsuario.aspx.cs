@@ -2,6 +2,7 @@
 using negocio;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -42,7 +43,7 @@ namespace concesionaria_autos
                     ddlModelo.DataBind();
 
                     ddlCuotas.DataSource = listaFinanciacion;
-                    ddlCuotas.DataValueField = "Id";
+                    ddlCuotas.DataValueField = "CantCuotas";
                     ddlCuotas.DataTextField = "CantCuotas";
                     ddlCuotas.DataBind();
 
@@ -69,11 +70,36 @@ namespace concesionaria_autos
         }
         protected void btnCargarVenta_Click(object sender, EventArgs e)
         {
-            // Obtener los valores ingresados por el usuario
+            
             string versionAuto = ddlVersion.SelectedValue;
             string modeloAuto = ddlModelo.SelectedValue;
-            int cantidadCuotas = ddlCuotas.SelectedIndex;
+            int cantidadCuotas = int.Parse(ddlCuotas.SelectedValue);
+            string dni = txtDni.Text;
+            //int IdVersionAuto = ddlVersion.SelectedValue;
+            //int IdModeloAuto = ddlModelo.SelectedValue;
 
+                try
+                {
+                    VentaNegocio negocio = new VentaNegocio();
+                    Venta venta = new Venta();
+                //Usuario usuarioCargado = Session["usuarioVenta"] as Usuario;
+                    //venta.idVersion = IdVersionAuto;
+                    venta.DNIComprador = dni;
+                    venta.VersionAuto = versionAuto;
+                    venta.CantidadCuotas = cantidadCuotas;
+                   // venta.idModelo = IdModeloAuto; 
+                    venta.ModeloAuto = modeloAuto;
+                    negocio.agregar(venta);
+                    Session.Add("VentaDatos", venta);
+                    Response.Redirect("ventaCargada.aspx");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                    Session.Add("Error", ex.ToString());
+                    Response.Redirect("Error.aspx");
+                }
+           
             
 
         }
