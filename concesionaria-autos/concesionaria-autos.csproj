@@ -68,6 +68,8 @@
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="Contactanos.aspx" />
+    <Content Include="Correo\configuracionAsesora.html" />
+    <Content Include="Correo\RecuperarClave.html" />
     <Content Include="DB\TP_CUATRIMESTRAL.sql" />
     <Content Include="error.aspx" />
     <Content Include="Imagenes\bannerMail.png" />
