@@ -249,7 +249,6 @@
                                 <span><%:Session["equipamientoNombre"]%></span>
                                 <span class="dottedLine"></span>
                                 <span class="fw-bold">$<%:Session["equipamientoPrecio"]%></span>
-
                             </p>
 
                             <p class="card-text fw-bold">COLOR</p>
@@ -272,8 +271,14 @@
         </asp:UpdatePanel>
         <div class="d-flex justify-content-center my-5">
             <a class="btn btn-light me-4">Solicitar un testdrive</a>
-            <a class="btn btn-warning">Solicitar un asesor</a>
+            <asp:Button Text="Solicitar asesoramiento" CssClass="btn btn-warning" runat="server" ID="btnEnviarConsulta" OnClick="btnEnviarConsulta_Click"/>
         </div>
+          <script>
+              function Alerta(valor1) {
+                  var val1 = valor1;
+                  window.alert(val1);
+              }
+          </script>
     </div>
 
     <!-- FIN RESUMEN -->
