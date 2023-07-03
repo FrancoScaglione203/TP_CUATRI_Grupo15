@@ -88,6 +88,7 @@
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Correo\consultas.html" />
+    <Content Include="ventaCargada.aspx" />
     <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
@@ -296,6 +297,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ventaCargada.aspx.cs">
+      <DependentUpon>ventaCargada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ventaCargada.aspx.designer.cs">
+      <DependentUpon>ventaCargada.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
