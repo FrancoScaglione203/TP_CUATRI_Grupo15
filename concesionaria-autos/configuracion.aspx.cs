@@ -26,7 +26,8 @@ namespace concesionaria_autos
 
         int idEquipamiento, idColor, idTapizado;
 
-        public int paso1=0,paso2=0,paso3=0,paso4=0;
+        public int paso1 = 0, paso2 = 0, paso3 = 0, paso4 = 0;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -90,9 +91,11 @@ namespace concesionaria_autos
                 Session.Add("equipamientoNombre", Equipamiento2.Nombre);
                 Session.Add("equipamientoPrecio", Equipamiento2.Precio);
 
-                Session.Add("precio1", Equipamiento2.Precio);
+                if (Session["equipamientoNombre"] != null)
+                {
+                    btnpaso1.Visible = true;
 
-                paso1 = 1;
+                }
             }
 
         }
@@ -110,7 +113,8 @@ namespace concesionaria_autos
             Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
 
             colorBox.ImageUrl = Color2.ImagenUrl;
-            imageBox.ImageUrl = Color2.ImagenUrl;
+            equipamientoBox.ImageUrl = Color2.ImagenUrl;
+            resumenBox.ImageUrl = Color2.ImagenUrl;
 
             Session.Add("colorNombre", Color2.Nombre);
             Session.Add("colorFoto", Color2.ImagenUrl);
@@ -136,12 +140,22 @@ namespace concesionaria_autos
             decimal precio1 = (decimal)Session["precio1"];
             decimal precio2 = Tapizado2.Precio;
             decimal total = precio1 + precio2;
- 
+
             Session.Add("precioTotal", total);
 
             paso3 = 1;
 
         }
+
+        protected void btnpaso1_Click(object sender, EventArgs e)
+        {
+            if (paso1 == 0)
+            {
+                contenido1.Visible = false;
+                contenido2.Visible = true;
+            }
+        }
+
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
 
