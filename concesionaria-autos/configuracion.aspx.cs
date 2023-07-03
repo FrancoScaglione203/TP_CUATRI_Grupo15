@@ -192,12 +192,12 @@ namespace concesionaria_autos
                 {
                     string script = string.Format("Alerta('{0}');", "Inicie sesión para que podamos asesorarlo");
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", script, true);
+                    Response.Redirect("Contactanos.aspx");
                 }
             }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("error.aspx");
             }
 
         }
