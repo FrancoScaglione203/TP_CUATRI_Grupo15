@@ -265,15 +265,14 @@ footer .fa {
 
 /*STEPPER*/
 .stepper {
-    height: 50em !important;
+    min-height: 50em !important;
 }
-
-.step-content {
-    height: 45em !important;
-}
-
 ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .step.done .step-title:before {
     background-color: var(--decorations) !important;
+}
+
+.step-actions {
+    background-color:transparent !important;
 }
 
 

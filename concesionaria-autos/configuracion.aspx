@@ -24,7 +24,7 @@
             <ul class="stepper parallel horizontal">
                 <li class="step active">
                     <div class="step-title waves-effect waves-dark">Versiones</div>
-                    <div class="step-content">
+                    <div class="step-content" style="height: 40em">
                         <div class="row justify-content-center">
 
                             <!-- VERSIONES -->
@@ -58,15 +58,26 @@
                             <!-- FIN VERSIONES -->
 
                         </div>
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
-                        </div>
-                    </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate runat="server">
+                                <div class="step-actions">
+                                    <%if (paso1 != 0)
+                                        {%>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                                    <%}
+                                        else
+                                        { %>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize" disabled>Siguiente</button>
+                                    <%} %>
+                                    <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
+                                </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </li>
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Diseño Exterior</div>
-                    <div class="step-content">
+                    <div class="step-content" style="height: 48em">
                         <div class="row">
 
                             <!-- EXTERIOR -->
@@ -107,7 +118,7 @@
                                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                                         var contenido = span.textContent;
                                         /* alert(contenido);*/
-                                        img.src = "/Imagenes/"+contenido;
+                                        img.src = "/Imagenes/" + contenido;
                                     });
                                 }
                             </script>
@@ -115,16 +126,27 @@
                             <!-- FIN EXTERIOR -->
                         </div>
 
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
-                        </div>
-                    </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate runat="server">
+                                <div class="step-actions">
+                                    <%if (paso2 != 0)
+                                        {%>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                                    <%}
+                                        else
+                                        { %>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize" disabled>Siguiente</button>
+                                    <%} %>
+                                    <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
+                                </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </li>
 
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Diseño Interior</div>
-                    <div class="step-content">
+                    <div class="step-content" style="height: 48em">
                         <div class="row">
 
                             <!-- INTERIOR -->
@@ -170,32 +192,32 @@
                                 }
                             </script>
 
-                            <!-- FIN EXTERIOR -->
+                            <!-- FIN INTERIOR -->
                         </div>
-
-                        <div class="step-actions">
-                            <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
-                            <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
-                        </div>
-                    </div>
+                        <asp:UpdatePanel runat="server">
+                            <ContentTemplate runat="server">
+                                <div class="step-actions">
+                                    <%if (paso3 != 0)
+                                        {%>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize">Siguiente</button>
+                                    <%}
+                                        else
+                                        { %>
+                                    <button class="waves-effect waves-dark btn next-step bg-black text-capitalize" disabled>Siguiente</button>
+                                    <%} %>
+                                    <button class="waves-effect waves-dark btn-flat previous-step text-capitalize">Anterior</button>
+                                </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                 </li>
 
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Equipamiento</div>
-                    <div class="step-content">
+                    <div class="step-content" style="height: 60em">
                         <div class="row">
 
                             <!-- EQUIPAMIENTO -->
-
-                            <%--                            <%
-                                foreach (dominio.Color color in ListaColores)
-                                {
-                            %>
-                            <img class="configImg" src="<%:color.ImagenUrl %>" alt="Auto">
-
-                            <%
-                                }
-                            %>--%>
 
                             <div class="justify-content-center m-4">
 
@@ -252,8 +274,6 @@
                                 %>
                             </div>
 
-
-                            <!-- FIN EQUIPAMIENTO -->
                             <!-- FIN EQUIPAMIENTO -->
 
                         </div>
@@ -266,7 +286,7 @@
                 </li>
                 <li class="step">
                     <div class="step-title waves-effect waves-dark">Resumen</div>
-                    <div class="step-content">
+                    <div class="step-content" style="height: 40em">
                         <div class="row my-4">
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate runat="server">
