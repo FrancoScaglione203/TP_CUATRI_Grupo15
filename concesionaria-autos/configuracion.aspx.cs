@@ -26,7 +26,6 @@ namespace concesionaria_autos
 
         int idEquipamiento, idColor, idTapizado;
 
-        public int paso1=0,paso2=0,paso3=0,paso4=0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -92,7 +91,6 @@ namespace concesionaria_autos
 
                 Session.Add("precio1", Equipamiento2.Precio);
 
-                paso1 = 1;
             }
 
         }
@@ -110,12 +108,11 @@ namespace concesionaria_autos
             Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
 
             colorBox.ImageUrl = Color2.ImagenUrl;
-            imageBox.ImageUrl = Color2.ImagenUrl;
+            equipamientoBox.ImageUrl = Color2.ImagenUrl;
+            resumenBox.ImageUrl = Color2.ImagenUrl;
 
             Session.Add("colorNombre", Color2.Nombre);
             Session.Add("colorFoto", Color2.ImagenUrl);
-
-            paso2 = 2;
 
         }
 
@@ -136,15 +133,42 @@ namespace concesionaria_autos
             decimal precio1 = (decimal)Session["precio1"];
             decimal precio2 = Tapizado2.Precio;
             decimal total = precio1 + precio2;
- 
+
             Session.Add("precioTotal", total);
 
-            paso3 = 1;
-
         }
-        protected void btnFinalizar_Click(object sender, EventArgs e)
-        {
 
+        protected void btnpaso1_Click(object sender, EventArgs e)
+        {
+            if (Session["equipamientoNombre"]!=null) {   
+            contenido1.Visible = false;
+            contenido2.Visible = true;
+        }
+      
+        }
+
+        protected void btnpaso2_Click(object sender, EventArgs e)
+        {
+            if (Session["colorNombre"] != null)
+            {
+                contenido2.Visible = false;
+                contenido3.Visible = true;
+            }
+        }
+
+        protected void btnpaso3_Click(object sender, EventArgs e)
+        {
+            if (Session["tapizadoNombre"] != null)
+            {
+                contenido3.Visible = false;
+                contenido4.Visible = true;
+            }
+        }
+
+        protected void btnpaso4_Click(object sender, EventArgs e)
+        {
+            contenido4.Visible = false;
+            contenido5.Visible = true;
         }
     }
 }
