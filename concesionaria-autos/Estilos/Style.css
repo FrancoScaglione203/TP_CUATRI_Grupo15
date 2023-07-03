@@ -157,8 +157,6 @@ p {
         background-color: var(--white) !important;
     }
 
-
-
 /*NAVBAR*/
 
 nav a {
@@ -218,6 +216,11 @@ main.home .boton {
 }
 
 /*FOOTER*/
+
+footer ul li, footer h6 {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+}
 
 footer h6 {
     font-weight: 600;

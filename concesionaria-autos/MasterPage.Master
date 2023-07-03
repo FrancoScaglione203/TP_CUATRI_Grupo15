@@ -35,15 +35,15 @@
                         <a class="nav-item nav-link" href="Contactanos.aspx">Contactanos</a>
                     </div>
                     <div class="navbar-nav ms-lg-4">
-                        <a class="nav-item nav-link" href="login.aspx" >
+                        <a class="nav-item nav-link" href="login.aspx">
                             <i class="fa-solid fa-user px-1"></i>
-                            <asp:Label ID="lblIngresar"  runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
+                            <asp:Label ID="lblIngresar" runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
                         </a>
                         <% if (Session["usuario"] != null)
-                                { %>
-                        <asp:Button ID="btnCerrar" Text="Cerrar Sesion" CssClass="nav-item nav-link" runat="server" ForeColor="White" OnClick="btnCerrar_Click" /> 
-                             <!--  <asp:Label ID="btnCerrarSesion" runat="server" Text="Cerrar Sesion" Style="margin-left: 5px;"></asp:Label> -->
-                            <%}
+                            { %>
+                        <asp:Button ID="btnCerrar" Text="Cerrar Sesion" CssClass="nav-item nav-link" runat="server" ForeColor="White" OnClick="btnCerrar_Click" />
+                        <!--  <asp:Label ID="btnCerrarSesion" runat="server" Text="Cerrar Sesion" Style="margin-left: 5px;"></asp:Label> -->
+                        <%}
                             else { } %>
                     </div>
                 </div>
@@ -55,45 +55,53 @@
         </asp:ContentPlaceHolder>
 
         <!-- Footer -->
-        <footer class="mt-4">
-            <div class="bg-black">
+        <div class="bg-black mt-4">
 
-                <div class="d-flex justify-content-evenly py-4">
-                    <div class="col-2 text-center text-white">
-                        <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-client-service.svg.asset.svg/ff25e7d74c.svg" style="width:2.8rem;" />
-                        <p>contactanos a través de nuestros canales digitales</p>
-                    </div>
-                    <div class="col-2 text-center text-white">
-                        <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-warranty.svg.asset.svg/8409c777ab.svg" style="width:2.8rem;"/>
-                        <p> manejá con confianza con garantías Renault</p>
-                    </div>
-                    <div class="col-2 text-center text-white">
-                        <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-trade-in.svg.asset.svg/177e95855f.svg" style="width:2.8rem;"/>
-                        <p>hacé la vida más fácil con Renault</p>
-                    </div>
-
+            <div class="d-flex justify-content-evenly py-4">
+                <div class="col-2 text-center text-white">
+                    <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-client-service.svg.asset.svg/ff25e7d74c.svg" style="width: 2.8rem;" />
+                    <p>contactanos a través de nuestros canales digitales</p>
                 </div>
-            </div>
+                <div class="col-2 text-center text-white">
+                    <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-warranty.svg.asset.svg/8409c777ab.svg" style="width: 2.8rem;" />
+                    <p>manejá con confianza con garantías Renault</p>
+                </div>
+                <div class="col-2 text-center text-white">
+                    <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-trade-in.svg.asset.svg/177e95855f.svg" style="width: 2.8rem;" />
+                    <p>hacé la vida más fácil con Renault</p>
+                </div>
 
+            </div>
+        </div>
+        <footer>
             <div class="bg-light">
                 <div class="container py-4">
                     <div class="row py-4 justify-content-center">
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <h6 class="mb-4">Categorías</h6>
+                            <h6 class="mb-4">servicio relación cliente</h6>
                             <ul class="list-unstyled mb-0">
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Autos</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Motos</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Camionetas</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Jeep</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">preguntas frecuentes</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">solicitá información</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">hace un reclamo</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">manuales</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <h6 class="mb-4">Ayuda</h6>
+                            <h6 class="mb-4">mundo Renault</h6>
                             <ul class="list-unstyled mb-0">
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Ingresar</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Registrarse</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Sucursales</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">Planes</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">sitio global</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">trabajá con nosotros</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">The Originals Museum</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">The Originals Tienda Oficial</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">herramientas</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Encontrar un concesionario </a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">configurador</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">solicitud de test drive</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">solicitar un asesor</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-lg-0">
