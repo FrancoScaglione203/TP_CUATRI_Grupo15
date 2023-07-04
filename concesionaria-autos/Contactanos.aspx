@@ -99,13 +99,21 @@
                      </asp:RequiredFieldValidator>
                 </label>
             </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate runat="server">
+                    <div id="contenido1" class="alert alert-success alert-dismissible fade show" role="alert" runat="server" visible="false">
+                        Consulta enviada con éxito
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <asp:Button Text="Enviar" CssClass="btn btn-warning w-50 py-2 mt-4 mb-2" runat="server" ID="btnEnviarConsulta" onClick="btnEnviarConsulta_Click"/>
-            <script>
+           <%-- <script>
                 function Alerta(valor1) {
                     var val1 = valor1;
                       window.alert(val1);
                 }
-            </script>
+            </script>--%>
         </div>
     </div>
 </asp:Content>

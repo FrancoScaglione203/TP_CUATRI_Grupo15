@@ -340,12 +340,20 @@
             <a class="btn btn-light me-4">Solicitar un testdrive</a>
             <asp:Button Text="Solicitar asesoramiento" CssClass="btn btn-warning" runat="server" ID="btnEnviarConsulta" OnClick="btnEnviarConsulta_Click" />
         </div>
-        <script>
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate runat="server">
+                <div id="consulta" class="alert alert-success alert-dismissible fade show" role="alert" runat="server" visible="false">
+                    Consulta enviada con éxito
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+       <%-- <script>
             function Alerta(valor1) {
                 var val1 = valor1;
                 window.alert(val1);
             }
-        </script>
+        </script>--%>
     </div>
 
     <!-- FIN RESUMEN -->
