@@ -86,13 +86,14 @@ namespace concesionaria_autos
                 ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
                 Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
 
+                string precio= Equipamiento2.Precio.ToString("N", new System.Globalization.CultureInfo("es-AR"));
+     
                 Session.Add("equipamientoNombre", Equipamiento2.Nombre);
-                Session.Add("equipamientoPrecio", Equipamiento2.Precio);
+                Session.Add("equipamientoPrecio", precio);
 
                 Session.Add("precio1", Equipamiento2.Precio);
 
             }
-
         }
 
         protected void btnColor_Click(object sender, ImageClickEventArgs e)
@@ -124,14 +125,20 @@ namespace concesionaria_autos
             ListaTapizado2 = tapizadoNegocio.listar();
             Tapizado2 = ListaTapizado2.Find(elemento => elemento.Id == idTapizado);
 
+            string precio = Tapizado2.Precio.ToString("N", new System.Globalization.CultureInfo("es-AR"));
+            
             tapizadoBox.ImageUrl = Tapizado2.ImagenUrl;
 
+
             Session.Add("tapizadoNombre", Tapizado2.Nombre);
-            Session.Add("tapizadoPrecio", Tapizado2.Precio);
+            Session.Add("tapizadoPrecio", precio);
+
 
             decimal precio1 = (decimal)Session["precio1"];
             decimal precio2 = Tapizado2.Precio;
-            decimal total = precio1 + precio2;
+            decimal suma = precio1 + precio2;
+
+            string total = suma.ToString("N", new System.Globalization.CultureInfo("es-AR"));
 
             Session.Add("precioTotal", total);
 
