@@ -62,7 +62,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("SELECT PRODUCTOS.Id, Nombre, Precio, Color, Estado, MAX(IMAGENES.ImagenUrl) AS ImagenUrl\r\nFROM PRODUCTOS\r\nINNER JOIN IMAGENES ON IMAGENES.IdProducto = PRODUCTOS.Id\r\nGROUP BY PRODUCTOS.Id, Nombre, Precio, Color, Estado;");
+                datos.setearConsulta("SELECT PRODUCTOS.Id, Nombre, Precio, Color, Estado, MIN(IMAGENES.ImagenUrl) AS ImagenUrl\r\nFROM PRODUCTOS\r\nINNER JOIN IMAGENES ON IMAGENES.IdProducto = PRODUCTOS.Id\r\nGROUP BY PRODUCTOS.Id, Nombre, Precio, Color, Estado;");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
