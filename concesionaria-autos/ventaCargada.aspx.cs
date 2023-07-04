@@ -15,8 +15,7 @@ namespace concesionaria_autos
         {
             if (!IsPostBack)
             {
-                Venta venta = new Venta();
-                venta = Session["VentaDatos"] as Venta;
+                Venta venta = Session["VentaDatos"] as Venta;
                 string dniComprador = venta.DNIComprador;
                 string modeloAuto = venta.ModeloAuto;
                 string versionAuto = venta.VersionAuto;
