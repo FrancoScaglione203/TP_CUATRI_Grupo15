@@ -258,8 +258,12 @@ footer .fa {
 }
 
 /*COMPARAR MODELOS*/
-.filtroSinSeleccionar {
+/*.filtroSinSeleccionar {
     filter: contrast(0) brightness(.15) opacity(.4);
+}*/
+
+.filtroSinSeleccionar {
+    filter: opacity(0.5);
 }
 
 .accordion-button::after {
