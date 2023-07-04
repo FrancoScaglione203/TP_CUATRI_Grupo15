@@ -32,7 +32,7 @@
                 <ItemTemplate>
                     <div class="card border-0 mx-4" style="width: 22rem">
                         <asp:Image class="card-img-top" ID="equipamientoBox" runat="server" />
-                        <img class="card-img-top" src="<%#Eval("Imagen").ToString() %>" alt="<%#Eval("Nombre") %>">
+                        <img class="card-img-top" src="'./imagenes/'<%#Eval("Imagen").ToString() %>" alt="<%#Eval("Nombre") %>">
                         <div class="card-body">
                             <h6 class="card-title fw-bold"><%#Eval("Nombre") %></h6>
                             <h6 class="card-text fw-bold">desde <%# Eval("Precio", "{0:c}") %></h6>

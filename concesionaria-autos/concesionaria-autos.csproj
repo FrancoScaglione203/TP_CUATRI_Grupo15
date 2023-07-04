@@ -75,7 +75,7 @@
     <Content Include="Imagenes\bannerMail.png" />
     <Content Include="Imagenes\concesionaria.jpg" />
     <Content Include="Imagenes\contacto.jpg" />
-    <Content Include="Cuero.png" />
+    <Content Include="Imagenes\Cuero.png" />
     <Content Include="Concesionarias.aspx" />
     <Content Include="financiacion.aspx" />
     <Content Include="financiacionDetalle.aspx" />
@@ -85,7 +85,7 @@
     <Content Include="Imagenes\financiacion2.jpg" />
     <Content Include="Iconos\Logo.ico" />
     <Content Include="Imagenes\logoMail.png" />
-    <Content Include="Tela.png" />
+    <Content Include="Imagenes\Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Correo\consultas.html" />
     <Content Include="ventaCargada.aspx" />
@@ -114,9 +114,9 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="LoganBlanco.png" />
-    <Content Include="LoganGris.png" />
-    <Content Include="LoganNegro.png" />
+    <Content Include="Imagenes\LoganBlanco.png" />
+    <Content Include="Imagenes\LoganGris.png" />
+    <Content Include="Imagenes\LoganNegro.png" />
     <Content Include="login.aspx" />
     <Content Include="ModificarPerfil.aspx" />
     <Content Include="Perfil.aspx" />
