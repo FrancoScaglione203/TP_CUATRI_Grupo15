@@ -39,6 +39,10 @@
     margin: 0 2em;
 }
 
+.allcard .card-img-top {
+    width:22em;
+}
+
 .descCard {
 }
 
