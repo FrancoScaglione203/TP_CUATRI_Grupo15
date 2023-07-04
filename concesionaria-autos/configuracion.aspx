@@ -35,7 +35,7 @@
                         <img class="card-img-top" src="<%#Eval("Imagen").ToString() %>" alt="<%#Eval("Nombre") %>">
                         <div class="card-body">
                             <h6 class="card-title fw-bold"><%#Eval("Nombre") %></h6>
-                            <h6 class="card-text fw-bold">desde $<%#Eval("Precio") %></h6>
+                            <h6 class="card-text fw-bold">desde <%# Eval("Precio", "{0:c}") %></h6>
                             <div class="hl2 pe-4 my-3"></div>
                             <p class="py-2">Ver equipamiento destacado</p>
                             <ul class="p-1">
