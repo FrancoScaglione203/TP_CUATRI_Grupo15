@@ -20,7 +20,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select EQUIPAMIENTO.Id,Nombre,Precio,Climatizador,SensorEstacionamiento,Computadora,ControlCrucero,Alarma,EQUIPAMIENTO.IdProducto,MAX(Imagenes.ImagenUrl) as ImagenUrl from EQUIPAMIENTO\r\ninner join Imagenes on Imagenes.IdProducto=EQUIPAMIENTO.IdProducto\r\ngroup by EQUIPAMIENTO.Id,Nombre,Precio,Climatizador,SensorEstacionamiento,Computadora,ControlCrucero,Alarma,EQUIPAMIENTO.IdProducto");
+                datos.setearConsulta("Select EQUIPAMIENTO.Id,Nombre,Precio,Climatizador,SensorEstacionamiento,Computadora,ControlCrucero,Alarma,EQUIPAMIENTO.IdProducto,MIN(Imagenes.ImagenUrl) as ImagenUrl from EQUIPAMIENTO\r\ninner join Imagenes on Imagenes.IdProducto=EQUIPAMIENTO.IdProducto\r\ngroup by EQUIPAMIENTO.Id,Nombre,Precio,Climatizador,SensorEstacionamiento,Computadora,ControlCrucero,Alarma,EQUIPAMIENTO.IdProducto");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
