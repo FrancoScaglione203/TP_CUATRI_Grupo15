@@ -342,7 +342,7 @@
             </ContentTemplate>
         </asp:UpdatePanel>
         <div class="d-flex justify-content-center my-5">
-            <a class="btn btn-light me-4">Solicitar un testdrive</a>
+            <a class="btn btn-light me-4" href="Contactanos.aspx">Solicitar un testdrive</a>
             <asp:Button Text="Solicitar asesoramiento" CssClass="btn btn-warning" runat="server" ID="btnEnviarConsulta" OnClick="btnEnviarConsulta_Click" />
         </div>
         <asp:UpdatePanel runat="server">

@@ -83,30 +83,30 @@
                 <div class="container py-4">
                     <div class="row py-4 justify-content-center">
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <h6 class="mb-4">servicio relación cliente</h6>
+                            <h6 class="mb-4">Servicio relación cliente</h6>
                             <ul class="list-unstyled mb-0">
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">preguntas frecuentes</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">solicitá información</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">hace un reclamo</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">manuales</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Preguntas frecuentes</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Solicitá información</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Hace un reclamo</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Manuales</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <h6 class="mb-4">mundo Renault</h6>
+                            <h6 class="mb-4">Mundo Renault</h6>
                             <ul class="list-unstyled mb-0">
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">sitio global</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">trabajá con nosotros</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Sitio global</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Trabajá con nosotros</a></li>
                                 <li class="mb-2"><a href="#" class="nav-item nav-link">The Originals Museum</a></li>
                                 <li class="mb-2"><a href="#" class="nav-item nav-link">The Originals Tienda Oficial</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                            <h6 class="mb-4">herramientas</h6>
+                            <h6 class="mb-4">Herramientas</h6>
                             <ul class="list-unstyled mb-0">
                                 <li class="mb-2"><a href="#" class="nav-item nav-link">Encontrar un concesionario </a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">configurador</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">solicitud de test drive</a></li>
-                                <li class="mb-2"><a href="#" class="nav-item nav-link">solicitar un asesor</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Configurador</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Solicitud de test drive</a></li>
+                                <li class="mb-2"><a href="#" class="nav-item nav-link">Solicitar un asesor</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-lg-0">

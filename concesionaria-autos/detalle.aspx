@@ -14,7 +14,7 @@
             <div class="col-8">
                 <h2 class="text-uppercase fw-bold">Renault <%:auto.Nombre %></h2>
                 <p>sentite cómodo con tu momento</p>
-                <a href="/asesoramiento.aspx" class="linkDetail fw-bold">solicitar un asesor
+                <a href="/Contactanos.aspx" class="linkDetail fw-bold">solicitar un asesor
                 <i class="fa-solid fa-chevron-right"></i></a>
             </div>
             <div id="vl-detalle" class="vl pe-4"></div>

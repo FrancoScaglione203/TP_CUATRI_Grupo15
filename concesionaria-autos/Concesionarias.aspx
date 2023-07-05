@@ -9,7 +9,6 @@
         <div class="financiacion">
             <h1 class="fb-bold text-white">CONCESCIONARIAS</h1>
             <h5 class="pb-4 text-white">siempre cerca tuyo</h5>
-            <a class="btn btn-light fw-bold" href="detalle.aspx?id=4">ver sedes</a>
         </div>
     </div>
 

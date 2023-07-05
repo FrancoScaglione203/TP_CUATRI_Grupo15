@@ -30,11 +30,6 @@
 
     <div class="container">
 
-       <%-- <div class="d-flex my-4">
-            <asp:TextBox CssClass="form-control" ID="txtBuscar" runat="server"></asp:TextBox>
-            <asp:Button CssClass="btn btn-primary form-control w-25" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
-        </div>--%>
-
         <div class="d-flex justify-content-center my-4">
             <a href="/comparacion.aspx" class="btn btn-primary">Comparar modelos</a>
         </div>

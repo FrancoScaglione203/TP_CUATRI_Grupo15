@@ -9,7 +9,6 @@
         <div class="financiacion">
             <h1 class="text-white fb-bold">SUSCRIBITE AHORA</h1>
             <h5 class="text-white pb-4">cuando quieras, donde quieras</h5>
-            <a class="btn btn-light fw-bold" href="detalle.aspx?id=4">suscribite online</a>
         </div>
     </div>
 

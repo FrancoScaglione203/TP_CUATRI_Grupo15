@@ -164,6 +164,7 @@ img {
     top: 5em;
     left: 5em;
     width: 80vw;
+    z-index:10;
 }
 
 /*FORMULARIOS*/
