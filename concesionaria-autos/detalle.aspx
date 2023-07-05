@@ -17,18 +17,18 @@
                 <a href="/asesoramiento.aspx" class="linkDetail fw-bold">solicitar un asesor
                 <i class="fa-solid fa-chevron-right"></i></a>
             </div>
-            <div class="vl pe-4"></div>
+            <div id="vl-detalle" class="vl pe-4"></div>
             <div class="col-4">
                 <h4 class="fw-bold">desde $<%:auto.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></h4>
             </div>
         </div>
 
-        <div class="row d-flex justify-content-between my-5">
+        <div class="row justify-content-around my-5">
             <%
                 foreach (dominio.Descripcion desc in listaDescripcion)
                 {
             %>
-            <div class="card border-0 p-0" style="width: 23rem">
+            <div class="desc-box card border-0" style="width: 23rem">
                 <img class="card-img-top" src="<%: desc.ImagenUrl %>" alt="<%: desc.Titulo %>">
                 <div class="card-body px-0">
                     <h4 class="card-title fw-bold"><%: desc.Titulo %></h4>

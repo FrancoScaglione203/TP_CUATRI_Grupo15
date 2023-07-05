@@ -299,38 +299,43 @@
         </div>
         <asp:UpdatePanel runat="server">
             <ContentTemplate runat="server">
-                <div class="d-flex justify-content-evenly align-content-center my-4">
+                <div class="row justify-content-center my-4">
 
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="resumem-img-container">
                         <asp:Image class="resumen-img" ID="resumenBox" runat="server" />
                     </div>
-                    <div class="card p-4" style="width: 25rem;">
-                        <div class="card-body">
-                            <h6 class="card-subtitle my-2 text-muted">Precio</h6>
-                            <h5 class="card-title fw-bold">$<%: Session["precioTotal"]%></h5>
-                            <div class="hl2 pe-4 my-3"></div>
-                            <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
 
-                            <p class="card-text fw-bold">VERSION</p>
-                            <p class="resumenP">
-                                <span><%:Session["equipamientoNombre"]%></span>
-                                <span class="dottedLine"></span>
-                                <span class="fw-bold">$<%:Session["equipamientoPrecio"]%></span>
-                            </p>
+                    </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="resumen-card card p-4" style="width: 25rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle my-2 text-muted">Precio</h6>
+                                <h5 class="card-title fw-bold">$<%: Session["precioTotal"]%></h5>
+                                <div class="hl2 pe-4 my-3"></div>
+                                <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
 
-                            <p class="card-text fw-bold">COLOR</p>
-                            <p class="resumenP">
-                                <span><%:Session["colorNombre"]%></span>
-                                <span class="dottedLine"></span>
-                                <span class="fw-bold">$0</span>
-                            </p>
+                                <p class="card-text fw-bold">VERSION</p>
+                                <p class="resumenP">
+                                    <span><%:Session["equipamientoNombre"]%></span>
+                                    <span class="dottedLine"></span>
+                                    <span class="fw-bold">$<%:Session["equipamientoPrecio"]%></span>
+                                </p>
 
-                            <p class="card-text fw-bold">TAPIZADO</p>
-                            <p class="resumenP">
-                                <span><%:Session["tapizadoNombre"]%></span>
-                                <span class="dottedLine"></span>
-                                <span class="fw-bold">$<%:Session["tapizadoPrecio"]%></span>
-                            </p>
+                                <p class="card-text fw-bold">COLOR</p>
+                                <p class="resumenP">
+                                    <span><%:Session["colorNombre"]%></span>
+                                    <span class="dottedLine"></span>
+                                    <span class="fw-bold">$0</span>
+                                </p>
+
+                                <p class="card-text fw-bold">TAPIZADO</p>
+                                <p class="resumenP">
+                                    <span><%:Session["tapizadoNombre"]%></span>
+                                    <span class="dottedLine"></span>
+                                    <span class="fw-bold">$<%:Session["tapizadoPrecio"]%></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
