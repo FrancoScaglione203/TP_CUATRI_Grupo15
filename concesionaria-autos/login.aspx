@@ -11,7 +11,7 @@
 
             <div class="text-center">
 
-                <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" />
+                <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" style="height:7em" />
 
                 <h6 class="fw-bold my-3">Bienvenido a MY RENAULT</h6>
                 <h6 class="fw-bold my-3">Donde quiera que vayas, disfrutá los beneficios</h6>

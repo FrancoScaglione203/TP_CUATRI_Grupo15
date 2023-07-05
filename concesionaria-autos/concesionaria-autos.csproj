@@ -113,7 +113,6 @@
     <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Correo\consultas.html" />
     <Content Include="ventaCargada.aspx" />
-    <Content Include="Videos\Banner.mp4" />
     <Content Include="comparacion.aspx" />
     <Content Include="configuracion.aspx" />
     <Content Include="ConfirElimin.aspx" />
@@ -151,6 +150,7 @@
     <Content Include="Scripts\Stepper.js" />
     <Content Include="Estilos\Style.css" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="Videos\Banner.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
