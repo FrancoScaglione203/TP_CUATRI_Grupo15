@@ -1,4 +1,5 @@
-﻿using System;
+﻿using negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,18 @@ namespace concesionaria_autos
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            string dni = Request.QueryString["dni"].ToString();
+            string clave1 = txtClave1.Text;
+            string clave2 = txtClave2.Text;
+
+            //FALTA VALIDACION POR SI NO SON IGUALES
+
+            negocio.CambiarClave(dni, clave1);
+
+            Response.Redirect("default.aspx", false);
+
+
 
         }
     }
