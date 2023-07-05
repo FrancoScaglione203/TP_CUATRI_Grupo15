@@ -85,6 +85,8 @@
     <Content Include="Imagenes\financiacion2.jpg" />
     <Content Include="Iconos\Logo.ico" />
     <Content Include="Imagenes\logoMail.png" />
+    <Content Include="recuperoClave.aspx" />
+    <Content Include="restablecerClave.aspx" />
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Correo\consultas.html" />
@@ -284,6 +286,20 @@
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recuperoClave.aspx.cs">
+      <DependentUpon>recuperoClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recuperoClave.aspx.designer.cs">
+      <DependentUpon>recuperoClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restablecerClave.aspx.cs">
+      <DependentUpon>restablecerClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restablecerClave.aspx.designer.cs">
+      <DependentUpon>restablecerClave.aspx</DependentUpon>
+    </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

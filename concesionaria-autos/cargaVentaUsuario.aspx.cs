@@ -77,10 +77,10 @@ namespace concesionaria_autos
             string dni = txtDni.Text;
             //int IdVersionAuto = ddlVersion.SelectedValue;
             //int IdModeloAuto = ddlModelo.SelectedValue;
-
+            /*
                 try
                 {
-                    VentaNegocio negocio = new VentaNegocio();
+                    //VentaNegocio negocio = new VentaNegocio();
                     Venta venta = new Venta();
                 //Usuario usuarioCargado = Session["usuarioVenta"] as Usuario;
                     //venta.idVersion = IdVersionAuto;
@@ -98,7 +98,7 @@ namespace concesionaria_autos
                     throw ex;
                     Session.Add("Error", ex.ToString());
                     Response.Redirect("Error.aspx");
-                }
+                }*/
            
             
 

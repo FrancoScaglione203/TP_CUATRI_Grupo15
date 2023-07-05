@@ -5,7 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <% if (Session["usuario"] == null)
-        {%>
+        {
+%>
     <div class="row justify-content-center mt-4">
 
         <div class="col-5 text-center">
@@ -46,6 +47,9 @@
             <asp:Button Text="Ingresar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
             <a class="nav-item nav-link" href="signin.aspx">
                 <asp:Label ID="lblRegistro" runat="server" CssClass="btn btn-light w-50 p-3" Text="Todavía no estoy registrado" />
+            </a>
+            <a class="nav-item nav-link" href="recuperoClave.aspx">
+                <asp:Label ID="lblRecuperoClave" runat="server" CssClass="btn btn-light w-50 p-3" Text="Olvide mi contraseña" />
             </a>
         </div>
     </div>

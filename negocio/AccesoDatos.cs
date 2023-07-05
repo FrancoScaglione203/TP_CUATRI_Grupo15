@@ -19,7 +19,7 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=localhost; database=TP_CUATRIMESTRAL; integrated security=true");
+            conexion = new SqlConnection("server=DESKTOP-NVMM4F9\\SQLEXPRESS; database=TP_CUATRIMESTRAL; integrated security=true");
             comando = new SqlCommand();
         }
 
