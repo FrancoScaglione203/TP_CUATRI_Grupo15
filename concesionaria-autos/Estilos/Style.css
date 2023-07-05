@@ -140,6 +140,10 @@ p {
     left: 6.5em;
 }
 
+#video-banner {
+    font-size:4.5rem;
+    font-weight:700;
+}
 
 .detail-img-container {
     position: relative;
