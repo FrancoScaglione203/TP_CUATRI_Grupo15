@@ -29,10 +29,6 @@ namespace concesionaria_autos
             {
                 lblIngresar.Text = "Ingresar";
             }
-
-
-
-
         }
 
         protected void btnLoginSingin_Click(object sender, EventArgs e)
@@ -56,8 +52,15 @@ namespace concesionaria_autos
 
                 ListaAutos = ListaAutos.FindAll(x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper())
                 );
-                Session.Add("busqueda", ListaAutos);
-               Response.Redirect("default.aspx");
+
+                if(ListaAutos.Count > 0)
+                {
+                   Session.Add("busqueda", ListaAutos);
+                   Response.Redirect("default.aspx");
+                } else
+                {
+                    Response.Redirect("error.aspx");
+                }
             }
         }
     }
