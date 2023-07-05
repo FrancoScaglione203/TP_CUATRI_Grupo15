@@ -36,7 +36,7 @@
                     </div>
                     <div class="navbar-nav ms-lg-4">
                         <a class="nav-item nav-link" href="login.aspx">
-                            <i class="fa-solid fa-user px-1"></i>
+                           
                             <asp:Label ID="lblIngresar" runat="server" Text="Ingresar" Style="margin-left: 5px;"></asp:Label>
                         </a>
                         <% if (Session["usuario"] != null)
