@@ -16,23 +16,25 @@ namespace concesionaria_autos
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (txtBuscar.Text == "")
-            {
                 AutoNeogocio autoNegocio = new AutoNeogocio();
                 ListaAutos = autoNegocio.listar();
-            }
+                if ((List<Auto>)Session["busqueda"] != null)
+                {
+                    ListaAutos=(List<Auto>)Session["busqueda"];
+                    Session.Add("busqueda",null);
+                }
         }
 
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            if (txtBuscar.Text != "")
-            {
-                AutoNeogocio autoNegocio = new AutoNeogocio();
-                ListaAutos = autoNegocio.listar();
+        //protected void btnBuscar_Click(object sender, EventArgs e)
+        //{
+        //    if (txtBuscar.Text != "")
+        //    {
+        //        AutoNeogocio autoNegocio = new AutoNeogocio();
+        //        ListaAutos = autoNegocio.listar();
 
-                ListaAutos = ListaAutos.FindAll(x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper())
-                );
-            }
-        }
+        //        ListaAutos = ListaAutos.FindAll(x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper())
+        //        );
+        //    }
+        //}
     }
 }

@@ -11,6 +11,7 @@ namespace concesionaria_autos
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {
+        public List<Auto> ListaAutos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -44,6 +45,20 @@ namespace concesionaria_autos
         {
             Session.RemoveAll();
             Response.Redirect("default.aspx");
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text != "")
+            {
+                AutoNeogocio autoNegocio = new AutoNeogocio();
+                ListaAutos = autoNegocio.listar();
+
+                ListaAutos = ListaAutos.FindAll(x => x.Nombre.ToUpper().Contains(txtBuscar.Text.ToUpper())
+                );
+                Session.Add("busqueda", ListaAutos);
+               Response.Redirect("default.aspx");
+            }
         }
     }
 }
