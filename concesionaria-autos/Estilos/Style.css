@@ -140,11 +140,21 @@ p {
     left: 6.5em;
 }
 
+
+.detail-img-container {
+    position: relative;
+    width: 100vw;
+}
+
+img {
+    width: 100%;
+}
+
 .financiacion {
     position: absolute;
-    z-index: 100 !important;
-    top: 12em;
-    left: 8em;
+    top: 5em;
+    left: 5em;
+    width: 80vw;
 }
 
 /*FORMULARIOS*/
@@ -382,23 +392,16 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
     }
 
     .desc-box {
-        margin:auto;
+        margin: auto;
     }
 
     #vl-detalle {
-        display:none;
+        display: none;
     }
 
     .resumen-card {
-        margin:auto;
-        margin-top:4em;
-    }
-
-    .financiacion {
-        position: absolute;
-        z-index: 100 !important;
-        top: 12em;
-        left: 5em;
+        margin: auto;
+        margin-top: 4em;
     }
 
     footer {
@@ -419,13 +422,6 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
     .resumen-card {
         margin: auto;
         margin-top: 4em;
-    }
-
-    .financiacion {
-        position: absolute;
-        z-index: 100 !important;
-        top: 12em;
-        left: 5em;
     }
 
     footer {

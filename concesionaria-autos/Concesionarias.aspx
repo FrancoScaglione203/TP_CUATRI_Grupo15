@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <div class="detail-img-container">
-        <img class="detail-img" src="Imagenes/concesionaria.jpg" alt="Financiacion" />
+        <img class="detail-img" src="Imagenes/concesionaria.jpg" alt="Concesionarias" />
         <div class="financiacion">
             <h1 class="fb-bold text-white">CONCESCIONARIAS</h1>
             <h5 class="pb-4 text-white">siempre cerca tuyo</h5>
