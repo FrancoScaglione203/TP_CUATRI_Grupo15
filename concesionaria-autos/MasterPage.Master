@@ -55,22 +55,18 @@
         </asp:ContentPlaceHolder>
 
         <!-- Footer -->
-        <div class="bg-black mt-4">
-
-            <div class="d-flex justify-content-evenly py-4">
-                <div class="col-2 text-center text-white">
-                    <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-client-service.svg.asset.svg/ff25e7d74c.svg" style="width: 2.8rem;" />
-                    <p>contactanos a través de nuestros canales digitales</p>
-                </div>
-                <div class="col-2 text-center text-white">
-                    <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-warranty.svg.asset.svg/8409c777ab.svg" style="width: 2.8rem;" />
-                    <p>manejá con confianza con garantías Renault</p>
-                </div>
-                <div class="col-2 text-center text-white">
-                    <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-trade-in.svg.asset.svg/177e95855f.svg" style="width: 2.8rem;" />
-                    <p>hacé la vida más fácil con Renault</p>
-                </div>
-
+        <div class="row py-4 justify-content-center bg-black mt-4">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4 mb-lg-0 text-center text-white">
+                <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-client-service.svg.asset.svg/ff25e7d74c.svg" style="width: 2.8rem;" />
+                <p>contactanos a través de nuestros canales digitales</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-lg-0 text-center text-white">
+                <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-warranty.svg.asset.svg/8409c777ab.svg" style="width: 2.8rem;" />
+                <p>manejá con confianza con garantías Renault</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-lg-0 text-center text-white">
+                <img class="mb-2" src="https://cdn.group.renault.com/pictograms/D2-0_Pre-footer/renault-trade-in.svg.asset.svg/177e95855f.svg" style="width: 2.8rem;" />
+                <p>hacé la vida más fácil con Renault</p>
             </div>
         </div>
         <footer>
