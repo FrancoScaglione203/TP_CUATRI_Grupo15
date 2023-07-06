@@ -10,8 +10,12 @@
                 <video autoplay loop muted class="myvid" id="player">
                     <source src="./Videos/Banner.mp4" type="video/mp4">
                 </video>
+                <div class="financiacion">
+                    <h1 id="video-banner" class="text-white">RENAULT STEPWAY</h1>
+                    <h5 class="pb-4 text-white">hecha para los que hacen</h5>
+                    <a class="btn btn-light fw-bold" href="detalle.aspx?id=3">descubrir más</a>
+                </div>
             </div>
-            <a class="carousel-button btn btn-light fw-bold" href="detalle.aspx?id=4">descubrí más</a>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -25,11 +29,6 @@
 
 
     <div class="container">
-
-            <div class="d-flex my-4">
-            <asp:TextBox CssClass="form-control" ID="txtBuscar" runat="server"></asp:TextBox>
-            <asp:Button CssClass="btn btn-primary form-control w-25" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click"/>
-        </div>
 
         <div class="d-flex justify-content-center my-4">
             <a href="/comparacion.aspx" class="btn btn-primary">Comparar modelos</a>

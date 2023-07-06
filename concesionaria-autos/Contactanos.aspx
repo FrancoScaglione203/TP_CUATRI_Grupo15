@@ -3,13 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="detail-img-container">
         <img class="detail-img" src="Imagenes/contacto.jpg" alt="Financiacion" />
         <div class="financiacion">
-            <h1 class="fb-bold text-white" style="font-size: 3rem">CONTACTANOS</h1>
+            <h1 class="fb-bold text-white">CONTACTANOS</h1>
             <h5 class="pb-4 text-white">siempre cerca tuyo</h5>
-            <a class="btn btn-light fw-bold" href="detalle.aspx?id=4">solicitar asesor</a>
         </div>
     </div>
 
@@ -99,13 +98,21 @@
                      </asp:RequiredFieldValidator>
                 </label>
             </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate runat="server">
+                    <div id="contenido1" class="alert alert-success alert-dismissible fade show" role="alert" runat="server" visible="false">
+                        Consulta enviada con éxito
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
             <asp:Button Text="Enviar" CssClass="btn btn-warning w-50 py-2 mt-4 mb-2" runat="server" ID="btnEnviarConsulta" onClick="btnEnviarConsulta_Click"/>
-            <script>
+           <%-- <script>
                 function Alerta(valor1) {
                     var val1 = valor1;
                       window.alert(val1);
                 }
-            </script>
+            </script>--%>
         </div>
     </div>
 </asp:Content>

@@ -53,7 +53,7 @@ namespace concesionaria_autos
                     RepeaterColor.DataSource = ListaColores;
                     RepeaterColor.DataBind();
 
-                    colorBox.ImageUrl = ListaColores[0].ImagenUrl;
+                    colorBox.ImageUrl = "./imagenes/" + ListaColores[0].ImagenUrl;
 
                     ListaTapizado = tapizadoNegocio.listar();
                     ListaTapizado = ListaTapizado.FindAll(tapizado => tapizado.IdProducto == id);
@@ -61,7 +61,7 @@ namespace concesionaria_autos
                     RepeaterTapizado.DataSource = ListaTapizado;
                     RepeaterTapizado.DataBind();
 
-                    tapizadoBox.ImageUrl = ListaTapizado[0].ImagenUrl;
+                    tapizadoBox.ImageUrl = "./imagenes/"+ListaTapizado[0].ImagenUrl;
 
                 }
 
@@ -86,13 +86,14 @@ namespace concesionaria_autos
                 ListaEquipamientos2 = ListaEquipamientos2.FindAll(elemento => elemento.Id == idEquipamiento);
                 Equipamiento2 = ListaEquipamientos2.Find(elemento => elemento.Id == idEquipamiento);
 
+                string precio= Equipamiento2.Precio.ToString("N", new System.Globalization.CultureInfo("es-AR"));
+     
                 Session.Add("equipamientoNombre", Equipamiento2.Nombre);
-                Session.Add("equipamientoPrecio", Equipamiento2.Precio);
+                Session.Add("equipamientoPrecio", precio);
 
                 Session.Add("precio1", Equipamiento2.Precio);
 
             }
-
         }
 
         protected void btnColor_Click(object sender, ImageClickEventArgs e)
@@ -106,12 +107,12 @@ namespace concesionaria_autos
             ListaColores2 = colorNegocio.listar();
             Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
 
-            colorBox.ImageUrl = Color2.ImagenUrl;
-            equipamientoBox.ImageUrl = Color2.ImagenUrl;
-            resumenBox.ImageUrl = Color2.ImagenUrl;
+            colorBox.ImageUrl = "./imagenes/" + Color2.ImagenUrl;
+            equipamientoBox.ImageUrl = "./imagenes/" + Color2.ImagenUrl;
+            resumenBox.ImageUrl = "./imagenes/"+Color2.ImagenUrl;
 
             Session.Add("colorNombre", Color2.Nombre);
-            Session.Add("colorFoto", Color2.ImagenUrl);
+            Session.Add("colorFoto", "./imagenes/"+Color2.ImagenUrl);
 
         }
 
@@ -124,14 +125,20 @@ namespace concesionaria_autos
             ListaTapizado2 = tapizadoNegocio.listar();
             Tapizado2 = ListaTapizado2.Find(elemento => elemento.Id == idTapizado);
 
-            tapizadoBox.ImageUrl = Tapizado2.ImagenUrl;
+            string precio = Tapizado2.Precio.ToString("N", new System.Globalization.CultureInfo("es-AR"));
+            
+            tapizadoBox.ImageUrl = "./imagenes/" + Tapizado2.ImagenUrl;
+
 
             Session.Add("tapizadoNombre", Tapizado2.Nombre);
-            Session.Add("tapizadoPrecio", Tapizado2.Precio);
+            Session.Add("tapizadoPrecio", precio);
+
 
             decimal precio1 = (decimal)Session["precio1"];
             decimal precio2 = Tapizado2.Precio;
-            decimal total = precio1 + precio2;
+            decimal suma = precio1 + precio2;
+
+            string total = suma.ToString("N", new System.Globalization.CultureInfo("es-AR"));
 
             Session.Add("precioTotal", total);
 
@@ -184,9 +191,10 @@ namespace concesionaria_autos
                     EmailService emailService = new EmailService();
                     emailService.armarCorreo(nombre, email, "Consulta", null, plantilla);
                     emailService.enviarMail();
-                    emailService.enviarMail();
-                    string script = string.Format("Alerta('{0}');", "Su consulta ha sido enviada");
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", script, true);
+                    consulta.Visible = true;
+                    //emailService.enviarMail();
+                    //string script = string.Format("Alerta('{0}');", "Su consulta ha sido enviada");
+                    //ScriptManager.RegisterStartupScript(this, this.GetType(), "Script", script, true);
                 } 
                 else
                 {

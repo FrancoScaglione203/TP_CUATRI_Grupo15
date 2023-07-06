@@ -18,7 +18,7 @@
             <div class="vl pe-4"></div>
             <div class="col-4">
                 <h4 class="fw-bold">cuota desde $<%:auto.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></h4>
-                <a href="/asesoramiento.aspx" class="btn btn-warning">solicitar un asesor</a>
+                <a href="/Contactanos.aspx" class="btn btn-warning">solicitar un asesor</a>
             </div>
         </div>
 

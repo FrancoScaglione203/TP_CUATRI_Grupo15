@@ -71,26 +71,47 @@ namespace concesionaria_autos
         protected void btnCargarVenta_Click(object sender, EventArgs e)
         {
             
-            string versionAuto = ddlVersion.SelectedValue;
-            string modeloAuto = ddlModelo.SelectedValue;
+            string versionAuto = ddlVersion.SelectedItem.Text;
+            string modeloAuto = ddlModelo.SelectedItem.Text;
             int cantidadCuotas = int.Parse(ddlCuotas.SelectedValue);
             string dni = txtDni.Text;
-            //int IdVersionAuto = ddlVersion.SelectedValue;
-            //int IdModeloAuto = ddlModelo.SelectedValue;
-            /*
+            int IdVersionAuto = int.Parse(ddlVersion.SelectedValue);
+            int IdModeloAuto = int.Parse(ddlModelo.SelectedValue);
+
                 try
                 {
                     //VentaNegocio negocio = new VentaNegocio();
                     Venta venta = new Venta();
-                //Usuario usuarioCargado = Session["usuarioVenta"] as Usuario;
-                    //venta.idVersion = IdVersionAuto;
+
+                    FinanciacionNegocio financiacionNegocio = new FinanciacionNegocio();
+                    Financiacion financiacion = new Financiacion();
+                    //financiacion = financiacionNegocio.buscarFinanciacion(cantidadCuotas);
+                    
+                    CuotaNegocio cuotaNegocio = new CuotaNegocio();
+                    List<Cuota> listaCuotas = new List<Cuota>();
+                    
+                    for (int i = 1; i <= cantidadCuotas; i++)
+                    {
+                            Cuota cuota = new Cuota();
+                            cuota.IDVenta = venta.IDVenta;
+                            cuota.Numero = i;
+                            cuota.Monto = 0;
+                            cuota.FechaVencimiento = DateTime.Now.AddMonths(i);
+                            cuota.Pagada = false;
+                            listaCuotas.Add(cuota);
+                    }
+                    //Usuario usuarioCargado = Session["usuarioVenta"] as Usuario;
+                    venta.idVersion = IdVersionAuto;
                     venta.DNIComprador = dni;
                     venta.VersionAuto = versionAuto;
                     venta.CantidadCuotas = cantidadCuotas;
-                   // venta.idModelo = IdModeloAuto; 
+                    venta.idModelo = IdModeloAuto; 
                     venta.ModeloAuto = modeloAuto;
-                    negocio.agregar(venta);
                     Session.Add("VentaDatos", venta);
+
+                    
+
+                  //  negocio.agregar(venta);
                     Response.Redirect("ventaCargada.aspx");
                 }
                 catch (Exception ex)
@@ -98,7 +119,7 @@ namespace concesionaria_autos
                     throw ex;
                     Session.Add("Error", ex.ToString());
                     Response.Redirect("Error.aspx");
-                }*/
+                }
            
             
 

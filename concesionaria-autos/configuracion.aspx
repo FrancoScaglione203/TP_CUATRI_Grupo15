@@ -4,30 +4,29 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-    <div class="d-flex justify-content-between">
-        <div class="col">
-            <a id="paso1" class="btn btn-primary w-100 py-3">Versiones</a>
-        </div>
-        <div class="col">
-            <a id="paso2" class="btn btn-primary w-100 py-3">Interior</a>
-        </div>
-        <div class="col">
-            <a id="paso3" class="btn btn-primary w-100 py-3">Exterior</a>
-        </div>
-        <div class="col">
-            <a id="paso4" class="btn btn-primary w-100 py-3">Equipamiento</a>
-        </div>
-        <div class="col bg-body-secondary">
-            <a id="paso5" class="btn btn-primary w-100 py-3">Resumen</a>
-        </div>
-    </div>
-
     <!-- VERSIONES -->
     <div id="contenido1" runat="server" visible="true">
+        <div class="d-flex justify-content-between">
+            <div class="col">
+                <a class="btn btn-warning w-100 py-3">Versiones</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Interior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Exterior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Equipamiento</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Resumen</a>
+            </div>
+        </div>
         <div class="row justify-content-center my-4">
             <asp:Repeater ID="RepeaterEquipamiento" runat="server">
                 <ItemTemplate>
@@ -36,7 +35,7 @@
                         <img class="card-img-top" src="<%#Eval("Imagen").ToString() %>" alt="<%#Eval("Nombre") %>">
                         <div class="card-body">
                             <h6 class="card-title fw-bold"><%#Eval("Nombre") %></h6>
-                            <h6 class="card-text fw-bold">desde $<%#Eval("Precio") %></h6>
+                            <h6 class="card-text fw-bold">desde <%# Eval("Precio", "{0:c}") %></h6>
                             <div class="hl2 pe-4 my-3"></div>
                             <p class="py-2">Ver equipamiento destacado</p>
                             <ul class="p-1">
@@ -65,6 +64,23 @@
 
     <!-- EXTERIOR -->
     <div id="contenido2" runat="server" visible="false">
+        <div class="d-flex justify-content-between">
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Versiones</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-warning w-100 py-3">Interior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Exterior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Equipamiento</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Resumen</a>
+            </div>
+        </div>
 
         <div class="row justify-content-center">
 
@@ -106,10 +122,10 @@
             </script>
 
         </div>
-        
-            <div class="d-flex justify-content-end">
-                <asp:Button ID="btnpaso2" runat="server" OnClick="btnpaso2_Click" CssClass="btn btn-warning my-2 fw-bold text-capitalize me-5" Text="Siguiente" />
-            </div>
+
+        <div class="d-flex justify-content-end">
+            <asp:Button ID="btnpaso2" runat="server" OnClick="btnpaso2_Click" CssClass="btn btn-warning my-2 fw-bold text-capitalize me-5" Text="Siguiente" />
+        </div>
     </div>
     <!-- FIN EXTERIOR -->
 
@@ -117,6 +133,23 @@
     <!-- INTERIOR -->
 
     <div id="contenido3" runat="server" visible="false">
+        <div class="d-flex justify-content-between">
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Versiones</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Interior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-warning w-100 py-3">Exterior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Equipamiento</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Resumen</a>
+            </div>
+        </div>
         <div class="row justify-content-center">
 
             <asp:UpdatePanel runat="server">
@@ -141,9 +174,9 @@
                 </div>
             </div>
         </div>
-            <div class="d-flex justify-content-end">
-                <asp:Button ID="btnpaso3" runat="server" OnClick="btnpaso3_Click" CssClass="btn btn-warning my-2 fw-bold text-capitalize me-5" Text="Siguiente" />
-            </div>
+        <div class="d-flex justify-content-end">
+            <asp:Button ID="btnpaso3" runat="server" OnClick="btnpaso3_Click" CssClass="btn btn-warning my-2 fw-bold text-capitalize me-5" Text="Siguiente" />
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -163,11 +196,28 @@
     </script>
 
     <div id="contenido4" runat="server" visible="false">
+        <div class="d-flex justify-content-between">
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Versiones</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Interior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Exterior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-warning w-100 py-3">Equipamiento</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Resumen</a>
+            </div>
+        </div>
 
         <!-- EQUIPAMIENTO -->
 
         <div class="justify-content-center">
-            
+
             <asp:UpdatePanel runat="server">
                 <ContentTemplate runat="server">
                     <asp:Image CssClass="configImg" ID="equipamientoBox" runat="server" />
@@ -224,61 +274,91 @@
                 }
             %>
         </div>
-         <div class="d-flex justify-content-end">
-                <asp:Button ID="btnpaso4" runat="server" OnClick="btnpaso4_Click" CssClass="btn btn-warning my-2 fw-bold text-capitalize me-5" Text="Siguiente" />
-            </div>
+        <div class="d-flex justify-content-end">
+            <asp:Button ID="btnpaso4" runat="server" OnClick="btnpaso4_Click" CssClass="btn btn-warning my-2 fw-bold text-capitalize me-5" Text="Siguiente" />
+        </div>
     </div>
 
     <div id="contenido5" runat="server" visible="false">
+        <div class="d-flex justify-content-between">
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Versiones</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Interior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Exterior</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary w-100 py-3">Equipamiento</a>
+            </div>
+            <div class="col">
+                <a class="btn btn-warning w-100 py-3">Resumen</a>
+            </div>
+        </div>
         <asp:UpdatePanel runat="server">
             <ContentTemplate runat="server">
-                <div class="d-flex justify-content-evenly align-content-center my-4">
+                <div class="row justify-content-center my-4">
 
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="resumem-img-container">
                         <asp:Image class="resumen-img" ID="resumenBox" runat="server" />
                     </div>
-                    <div class="card p-4" style="width: 25rem;">
-                        <div class="card-body">
-                            <h6 class="card-subtitle my-2 text-muted">Precio</h6>
-                            <h5 class="card-title fw-bold">$<%: Session["precioTotal"]%></h5>
-                            <div class="hl2 pe-4 my-3"></div>
-                            <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
 
-                            <p class="card-text fw-bold">VERSION</p>
-                            <p class="resumenP">
-                                <span><%:Session["equipamientoNombre"]%></span>
-                                <span class="dottedLine"></span>
-                                <span class="fw-bold">$<%:Session["equipamientoPrecio"]%></span>
-                            </p>
+                    </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="resumen-card card p-4" style="width: 25rem;">
+                            <div class="card-body">
+                                <h6 class="card-subtitle my-2 text-muted">Precio</h6>
+                                <h5 class="card-title fw-bold">$<%: Session["precioTotal"]%></h5>
+                                <div class="hl2 pe-4 my-3"></div>
+                                <h6 class="card-subtitle my-4 text-muted">Detalle del precio</h6>
 
-                            <p class="card-text fw-bold">COLOR</p>
-                            <p class="resumenP">
-                                <span><%:Session["colorNombre"]%></span>
-                                <span class="dottedLine"></span>
-                                <span class="fw-bold">$0</span>
-                            </p>
+                                <p class="card-text fw-bold">VERSION</p>
+                                <p class="resumenP">
+                                    <span><%:Session["equipamientoNombre"]%></span>
+                                    <span class="dottedLine"></span>
+                                    <span class="fw-bold">$<%:Session["equipamientoPrecio"]%></span>
+                                </p>
 
-                            <p class="card-text fw-bold">TAPIZADO</p>
-                            <p class="resumenP">
-                                <span><%:Session["tapizadoNombre"]%></span>
-                                <span class="dottedLine"></span>
-                                <span class="fw-bold">$<%:Session["tapizadoPrecio"]%></span>
-                            </p>
+                                <p class="card-text fw-bold">COLOR</p>
+                                <p class="resumenP">
+                                    <span><%:Session["colorNombre"]%></span>
+                                    <span class="dottedLine"></span>
+                                    <span class="fw-bold">$0</span>
+                                </p>
+
+                                <p class="card-text fw-bold">TAPIZADO</p>
+                                <p class="resumenP">
+                                    <span><%:Session["tapizadoNombre"]%></span>
+                                    <span class="dottedLine"></span>
+                                    <span class="fw-bold">$<%:Session["tapizadoPrecio"]%></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
         <div class="d-flex justify-content-center my-5">
-            <a class="btn btn-light me-4">Solicitar un testdrive</a>
-            <asp:Button Text="Solicitar asesoramiento" CssClass="btn btn-warning" runat="server" ID="btnEnviarConsulta" OnClick="btnEnviarConsulta_Click"/>
+            <a class="btn btn-light me-4" href="Contactanos.aspx">Solicitar un testdrive</a>
+            <asp:Button Text="Solicitar asesoramiento" CssClass="btn btn-warning" runat="server" ID="btnEnviarConsulta" OnClick="btnEnviarConsulta_Click" />
         </div>
-          <script>
-              function Alerta(valor1) {
-                  var val1 = valor1;
-                  window.alert(val1);
-              }
-          </script>
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate runat="server">
+                <div id="consulta" class="alert alert-success alert-dismissible fade show" role="alert" runat="server" visible="false">
+                    Consulta enviada con éxito
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+       <%-- <script>
+            function Alerta(valor1) {
+                var val1 = valor1;
+                window.alert(val1);
+            }
+        </script>--%>
     </div>
 
     <!-- FIN RESUMEN -->
