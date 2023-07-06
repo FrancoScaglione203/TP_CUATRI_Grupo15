@@ -12,9 +12,8 @@
             <div class="row justify-content-center">
                
                 <div class="form-floating mb-3">
-                    <input for="txtDni" class="form-control" value="<%= dni() %>"/>
+                    <input for="txtDni" class="form-control" value="<%= dni() %>" disabled/>
                     <label for="txtDni" class="form-label">Dni:</label>
-
                 </div>
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />

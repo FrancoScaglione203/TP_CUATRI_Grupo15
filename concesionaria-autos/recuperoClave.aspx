@@ -7,7 +7,7 @@
 
         <div class="col-5 text-center">
 
-            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" />
+            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" style="height:9em;"/>
 
             <h6 class="fw-bold my-3">Ingresar DNI para enviar mail de recuperacion de clave a su correo electronico</h6>
 

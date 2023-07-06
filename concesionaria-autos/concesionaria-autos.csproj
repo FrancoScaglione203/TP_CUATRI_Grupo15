@@ -118,10 +118,10 @@
     <Content Include="Imagenes\LoganGris.jpg" />
     <Content Include="Imagenes\LoganNegro.jpg" />
     <Content Include="Imagenes\logoMail.png" />
+    <Content Include="login.aspx" />
     <Content Include="recuperoClave.aspx" />
     <Content Include="restablecerClave.aspx" />
     <Content Include="Pagos.aspx" />
-    <Content Include="Tela.png" />
     <Content Include="Imagenes\Sandero.jpg" />
     <Content Include="Imagenes\SanderoAzul.jpg" />
     <Content Include="Imagenes\SanderoDetalle1.jpg" />
@@ -166,7 +166,6 @@
     <Content Include="default.aspx" />
     <Content Include="detalle.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="login.aspx" />
     <Content Include="ModificarPerfil.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
