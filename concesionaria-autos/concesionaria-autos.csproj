@@ -67,6 +67,7 @@
     <Content Include="Autos.aspx" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
+    <Content Include="confirmacionRecuperoClave.aspx" />
     <Content Include="Contactanos.aspx" />
     <Content Include="Correo\configuracionAsesora.html" />
     <Content Include="Correo\RecuperarClave.html" />
@@ -116,6 +117,9 @@
     <Content Include="Imagenes\LoganGris.jpg" />
     <Content Include="Imagenes\LoganNegro.jpg" />
     <Content Include="Imagenes\logoMail.png" />
+    <Content Include="recuperoClave.aspx" />
+    <Content Include="restablecerClave.aspx" />
+    <Content Include="Tela.png" />
     <Content Include="Imagenes\Sandero.jpg" />
     <Content Include="Imagenes\SanderoAzul.jpg" />
     <Content Include="Imagenes\SanderoDetalle1.jpg" />
@@ -226,6 +230,12 @@
     <Compile Include="ConfirElimin.aspx.designer.cs">
       <DependentUpon>ConfirElimin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="confirmacionRecuperoClave.aspx.cs">
+      <DependentUpon>confirmacionRecuperoClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmacionRecuperoClave.aspx.designer.cs">
+      <DependentUpon>confirmacionRecuperoClave.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contactanos.aspx.cs">
       <DependentUpon>Contactanos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +338,19 @@
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recuperoClave.aspx.cs">
+      <DependentUpon>recuperoClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recuperoClave.aspx.designer.cs">
+      <DependentUpon>recuperoClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restablecerClave.aspx.cs">
+      <DependentUpon>restablecerClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restablecerClave.aspx.designer.cs">
+      <DependentUpon>restablecerClave.aspx</DependentUpon>
+    </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
