@@ -1,13 +1,11 @@
-﻿using System;
+﻿using dominio;
+using negocio;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Web;
-using System.Web.Compilation;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using dominio;
-using negocio;
 
 namespace concesionaria_autos
 {
@@ -15,7 +13,8 @@ namespace concesionaria_autos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+
         }
 
         public String dni()
@@ -78,8 +77,6 @@ namespace concesionaria_autos
             return email;
         }
 
-
-
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usuario;
@@ -87,11 +84,11 @@ namespace concesionaria_autos
 
             try
             {
-                usuario = new Usuario ();
+                usuario = new Usuario();
                 usuario.Dni = txtDni.Text;
                 usuario.clave = txtClave.Text;
 
-                if(negocio.loguear(usuario))
+                if (negocio.loguear(usuario))
                 {
                     Session.Add("usuario", usuario);
                     string nombreUsuario = usuario.Nombre + " " + usuario.Apellido;
@@ -103,7 +100,7 @@ namespace concesionaria_autos
                     Session.Add("error", "user o pass incorrectos");
                     Response.Redirect("Errorlog.aspx", false);
                 }
-                
+
             }
             catch (Exception ex)
             {

@@ -1,5 +1,4 @@
-
-<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="concesionaria_autos.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="concesionaria_autos.login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,12 +6,12 @@
 
     <% if (Session["usuario"] == null)
         {
-%>
+    %>
     <div class="row justify-content-center mt-4">
 
         <div class="col-5 text-center">
 
-            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" />
+            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" style="height:9em;"/>
 
             <h6 class="fw-bold my-3">Bienvenido a MY RENAULT</h6>
             <h6 class="fw-bold my-3">Donde quiera que vayas, disfrutá los beneficios</h6>
