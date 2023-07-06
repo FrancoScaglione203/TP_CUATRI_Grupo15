@@ -21,8 +21,27 @@
                 <label for="txtClave2" class="form-label">Reingresar Contraseña</label>
             </div>
 
-            <asp:Button Text="Confirmar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnConfirmar" onClick="btnConfirmar_Click"/>
+           
             
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    <ContentTemplate>
+
+    <asp:Button Text="Confirmar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnConfirmar" OnClick="btnConfirmar_Click" />
+    <br>
+     <%if (!(Session["validacionClave"] == null))
+        {%>
+     <label for="txtClave2" class="form-label">Las contraseñas ingresadas son diferentes</label>
+        <%}
+        else
+        {%>
+
+      <%}%>
+
+    </ContentTemplate>
+</asp:UpdatePanel>
+
         </div>
     </div>
 

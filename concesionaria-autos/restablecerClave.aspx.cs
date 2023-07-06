@@ -23,13 +23,20 @@ namespace concesionaria_autos
             string clave2 = txtClave2.Text;
 
             //FALTA VALIDACION POR SI NO SON IGUALES
+            
+            int validacion;
 
-            negocio.CambiarClave(dni, clave1);
-
-            Response.Redirect("default.aspx", false);
-
-
-
+            if (clave1 != clave2)
+            {
+               validacion = 1;
+               Session["validacionClave"] = validacion;
+            }
+            else
+            {
+                negocio.CambiarClave(dni, clave1);
+                Response.Redirect("default.aspx", false);
+            }
+            return;
         }
     }
 }
