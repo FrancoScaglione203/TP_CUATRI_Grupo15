@@ -359,3 +359,20 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
 .imagenFinanciacionDetalle {
     width: 22em;
 }
+
+/* Pagos */
+
+div#pagos .scrollable-cards {
+    overflow-x: auto;
+}
+
+div#pagos .card-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+div#pagos .card {
+    flex: 0 0 auto;
+    width: 18rem;
+    margin-right: 10px;
+}

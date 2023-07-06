@@ -51,6 +51,24 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.Label lblCantidadCuotas;
 
         /// <summary>
+        /// Control lblColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblColor;
+
+        /// <summary>
+        /// Control lblTapizado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTapizado;
+
+        /// <summary>
         /// Control btnVolver.
         /// </summary>
         /// <remarks>

@@ -18,6 +18,10 @@
                         <label for="ddlModelo" class="form-label">Modelo del Auto: </label>
                         <asp:DropDownList ID="ddlModelo" CssClass="form-select" runat="server" OnSelectedIndexChanged="ddlModelo_SelectedIndexChanged" OnDataBound="ddlModelo_DataBound" AutoPostBack="True"></asp:DropDownList>
                     </div>
+                    <div class="form-group">
+                        <label for="ddlColor" class="form-label">Color del Auto: </label>
+                        <asp:DropDownList ID="ddlColor" CssClass="form-select" runat="server" Enabled="false" OnDataBound="ddlColor_DataBound"></asp:DropDownList>
+                    </div>
                     <!-- Otros campos del usuario -->
                 </div>
                 <div class="col-md-6">
@@ -32,9 +36,16 @@
 
                     <div class="form-group">
                         <label for="ddlVersion" class="form-label">Versión del Auto: </label>
-                        <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server" Enabled="false"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server" Enabled="false" OnSelectedIndexChanged="ddlVersion_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                     </div>
-
+                    <div class="form-group">
+                        <label for="ddlTapizado" class="form-label">Tapizado: </label>
+                        <asp:DropDownList ID="ddlTapizado" CssClass="form-select" runat="server">
+                            <asp:ListItem Text="Selecciona un tipo de tapizado" Value="" disabled="disabled"></asp:ListItem>
+                            <asp:ListItem Text="Cuero" Value="Cuero"></asp:ListItem>
+                            <asp:ListItem Text="Tela" Value="Tela"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
                 </div>
             </div>
             <div class="row">

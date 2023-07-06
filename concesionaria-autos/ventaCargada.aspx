@@ -25,6 +25,16 @@
                     <asp:Label ID="lblCantidadCuotas" runat="server"></asp:Label>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Color del Auto:</strong>
+                    <asp:Label ID="lblColor" runat="server"></asp:Label>
+                </div>
+                <div class="col-md-6">
+                    <strong>Tapizado del Auto:</strong>
+                    <asp:Label ID="lblTapizado" runat="server"></asp:Label>
+                </div>
+             </div>
             
             <hr />
 

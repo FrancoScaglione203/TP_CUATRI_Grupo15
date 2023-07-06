@@ -20,12 +20,16 @@ namespace concesionaria_autos
                 string modeloAuto = venta.ModeloAuto;
                 string versionAuto = venta.VersionAuto;
                 int cantidadCuotas = venta.CantidadCuotas;
+                string tapizado = venta.Tapizado;
+                string color = venta.ColorAuto;
 
                 // Asignar los valores a los controles de la página
                 lblDNIComprador.Text = dniComprador;
                 lblModeloAuto.Text = modeloAuto;
                 lblVersionAuto.Text = versionAuto;
                 lblCantidadCuotas.Text = cantidadCuotas.ToString();
+                lblTapizado.Text = tapizado;
+                lblColor.Text = color;
             }
         }
 

@@ -67,6 +67,7 @@
     <Content Include="Autos.aspx" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
+    <Content Include="Compras.aspx" />
     <Content Include="Contactanos.aspx" />
     <Content Include="Correo\configuracionAsesora.html" />
     <Content Include="Correo\RecuperarClave.html" />
@@ -85,6 +86,7 @@
     <Content Include="Imagenes\financiacion2.jpg" />
     <Content Include="Iconos\Logo.ico" />
     <Content Include="Imagenes\logoMail.png" />
+    <Content Include="Pagos.aspx" />
     <Content Include="Tela.png" />
     <Content Include="ListaFichaTecnica.aspx" />
     <Content Include="Correo\consultas.html" />
@@ -167,6 +169,13 @@
     </Compile>
     <Compile Include="comparacion.aspx.designer.cs">
       <DependentUpon>comparacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.aspx.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compras.aspx.designer.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuracion.aspx.cs">
       <DependentUpon>configuracion.aspx</DependentUpon>
@@ -275,6 +284,13 @@
     </Compile>
     <Compile Include="ModificarPerfil.aspx.designer.cs">
       <DependentUpon>ModificarPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pagos.aspx.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pagos.aspx.designer.cs">
+      <DependentUpon>Pagos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>

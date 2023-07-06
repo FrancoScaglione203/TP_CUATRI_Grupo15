@@ -5,7 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <% if (Session["usuario"] == null)
-        {%>
+        {
+%>
     <div class="row justify-content-center mt-4">
 
         <div class="col-5 text-center">
