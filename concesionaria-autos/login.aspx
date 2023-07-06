@@ -43,7 +43,9 @@
                      </asp:RequiredFieldValidator>
                 </label>
             </div>
-
+            <a class="nav-item nav-link" href="recuperoClave.aspx">
+                <asp:Label ID="lblRecuperoClave" runat="server" CssClass="btn btn-light border-0 w-50 p-3" Text="Olvidé mi contraseña" />
+            </a>
             <asp:Button Text="Ingresar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
             <a class="nav-item nav-link" href="signin.aspx">
                 <asp:Label ID="lblRegistro" runat="server" CssClass="btn btn-light w-50 p-3" Text="Todavía no estoy registrado" />
