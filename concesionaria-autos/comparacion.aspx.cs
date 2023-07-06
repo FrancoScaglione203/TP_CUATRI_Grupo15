@@ -69,9 +69,12 @@ namespace concesionaria_autos
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
                 int idAuto2 = int.Parse(DropDownList2.SelectedItem.Value);
                 DropDownList2.DataSource = ((List<Auto>)Session["listaAuto2"]).FindAll(x => x.Id == idAuto2);
                 DropDownList2.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

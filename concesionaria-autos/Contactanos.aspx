@@ -3,13 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="detail-img-container">
         <img class="detail-img" src="Imagenes/contacto.jpg" alt="Financiacion" />
         <div class="financiacion">
-            <h1 class="fb-bold text-white" style="font-size: 3rem">CONTACTANOS</h1>
+            <h1 class="fb-bold text-white">CONTACTANOS</h1>
             <h5 class="pb-4 text-white">siempre cerca tuyo</h5>
-            <a class="btn btn-light fw-bold" href="detalle.aspx?id=4">solicitar asesor</a>
         </div>
     </div>
 

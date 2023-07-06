@@ -20,7 +20,7 @@
                 <% }
                     else
                     { %>
-                <img class="card-img-top filtroSinSeleccionar" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Auto">
+                <img class="card-img-top filtroSinSeleccionar" src="Imagenes/Logan.jpg" alt="Auto">
                 <% } %>
                 <asp:DropDownList class="form-select" ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
@@ -33,7 +33,7 @@
                 <% }
                     else
                     { %>
-                <img class="card-img-top filtroSinSeleccionar" src="https://www.renault.com.ar/agg/vn/unique/ONE_DACIA_PP_LARGE_DENSITY1/r_brandSite_carPicker_1.png?uri=https%3A%2F%2Far.co.rplug.renault.com%2Fproduct%2Fmodel%2FL4M%2Flogan%2Fc%2FA-ENS_0MDL2P1SERIELIM4_" alt="Auto">
+                <img class="card-img-top filtroSinSeleccionar" src="Imagenes/Logan.jpg" alt="Auto">
                 <% } %>
                 <asp:DropDownList class="form-select" ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                 </asp:DropDownList>

@@ -39,6 +39,10 @@
     margin: 0 2em;
 }
 
+    .allcard .card-img-top {
+        width: 22em;
+    }
+
 .descCard {
 }
 
@@ -59,6 +63,11 @@ p {
 .hl2 {
     border-bottom: 1px solid grey;
     width: 18.5em;
+}
+
+/*BUSCADOR*/
+#form {
+    display: none;
 }
 
 /*BOTONES*/
@@ -136,11 +145,26 @@ p {
     left: 6.5em;
 }
 
+#video-banner {
+    font-size:4.5rem;
+    font-weight:700;
+}
+
+.detail-img-container {
+    position: relative;
+    width: 100vw;
+}
+
+img {
+    width: 100%;
+}
+
 .financiacion {
     position: absolute;
-    z-index: 100 !important;
-    top: 12em;
-    left: 8em;
+    top: 5em;
+    left: 5em;
+    width: 80vw;
+    z-index:10;
 }
 
 /*FORMULARIOS*/
@@ -247,6 +271,11 @@ footer .fa {
     height: 50vh;
 }
 
+    .detail-img-container h1 {
+        font-size: 3rem;
+    }
+
+
 .detail-img {
     width: 100%;
     height: 100%;
@@ -254,8 +283,12 @@ footer .fa {
 }
 
 /*COMPARAR MODELOS*/
-.filtroSinSeleccionar {
+/*.filtroSinSeleccionar {
     filter: contrast(0) brightness(.15) opacity(.4);
+}*/
+
+.filtroSinSeleccionar {
+    filter: opacity(0.5);
 }
 
 .accordion-button::after {
@@ -270,12 +303,13 @@ footer .fa {
 .stepper {
     min-height: 50em !important;
 }
+
 ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .step.done .step-title:before {
     background-color: var(--decorations) !important;
 }
 
 .step-actions {
-    background-color:transparent !important;
+    background-color: transparent !important;
 }
 
 
@@ -358,6 +392,51 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
 
 .imagenFinanciacionDetalle {
     width: 22em;
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 767.98px) {
+
+    .detail-img-container h1 {
+        font-size: 2rem;
+    }
+
+    .desc-box {
+        margin: auto;
+    }
+
+    #vl-detalle {
+        display: none;
+    }
+
+    .resumen-card {
+        margin: auto;
+        margin-top: 4em;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .detail-img-container h1 {
+        font-size: 2rem;
+    }
+
+    #vl-detalle {
+        display: none;
+    }
+
+    .resumen-card {
+        margin: auto;
+        margin-top: 4em;
+    }
+
+    footer {
+        text-align: center;
+    }
 }
 
 /* Pagos */

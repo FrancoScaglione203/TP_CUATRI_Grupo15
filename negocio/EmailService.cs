@@ -20,7 +20,7 @@ namespace negocio
         public EmailService()
         {
             server = new SmtpClient();
-            server.Credentials = new NetworkCredential("e251eae65abbe8", "3c7451966c8a56");
+            server.Credentials = new NetworkCredential("c3a59e75b22e97", "fd5cf9760ecdb7");
             server.EnableSsl = true;
             server.Port = 2525;
             server.Host = "sandbox.smtp.mailtrap.io";
@@ -29,7 +29,7 @@ namespace negocio
         {
             //De Reanult a User
             email = new MailMessage();
-            email.From = new MailAddress("renault.grupo15@gmail.com");
+            email.From = new MailAddress("renault.programaciong15@gmail.com");
             email.To.Add(mailDestino);
             email.Subject = asunto;
             email.IsBodyHtml = true;
@@ -44,6 +44,18 @@ namespace negocio
             catch (Exception ex) { 
                 throw ex;
             }
+        }
+
+
+        public void correoRecuperarClave(string nombreDestinatario, string mailDestino, string asunto, string pantilla)
+        {
+            //De Reanult a User
+            email = new MailMessage();
+            email.From = new MailAddress("renault.grupo15@gmail.com");
+            email.To.Add(mailDestino);
+            email.Subject = asunto;
+            email.IsBodyHtml = true;
+            email.Body = pantilla;
         }
 
     }
