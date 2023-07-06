@@ -10,7 +10,7 @@ namespace dominio
     {
         public int ID { get; set; }
         public int IDVenta { get; set; }
-        public int Numero { get; set; }
+        public int NumeroCuota { get; set; }
         public decimal Monto { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public bool Pagada { get; set; }

@@ -94,6 +94,35 @@ namespace negocio
             }
         }
 
+        public decimal getPrecioAuto(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select precio from Equipamiento where id = " + id);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    decimal precio = (decimal)datos.Lector["precio"];
+                    return precio;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
 
     }
 }

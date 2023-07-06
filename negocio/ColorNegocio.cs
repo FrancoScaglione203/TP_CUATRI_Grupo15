@@ -46,5 +46,13 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public List<Color> BuscarImagenPorIdAuto(int idAuto)
+        {
+            List<Color> lista = new List<Color>();
+            lista = listar().FindAll(x => x.IdProducto == idAuto);
+
+            return lista;
+        }
     }
 }

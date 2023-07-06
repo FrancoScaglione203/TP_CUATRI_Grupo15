@@ -47,5 +47,10 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public Financiacion buscarFinanciacion(int cantCuotas)
+        {
+            return listar().Find(x => x.CantCuotas == cantCuotas);
+        }
     }
 }
