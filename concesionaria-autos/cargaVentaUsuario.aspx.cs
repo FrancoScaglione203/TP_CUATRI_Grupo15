@@ -80,7 +80,7 @@ namespace concesionaria_autos
 
                 try
                 {
-                    VentaNegocio negocio = new VentaNegocio();
+                    //VentaNegocio negocio = new VentaNegocio();
                     Venta venta = new Venta();
 
                     FinanciacionNegocio financiacionNegocio = new FinanciacionNegocio();
@@ -111,7 +111,7 @@ namespace concesionaria_autos
 
                     
 
-                    negocio.agregar(venta);
+                  //  negocio.agregar(venta);
                     Response.Redirect("ventaCargada.aspx");
                 }
                 catch (Exception ex)

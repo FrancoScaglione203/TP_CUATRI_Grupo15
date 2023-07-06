@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
+using negocio;
 
 namespace concesionaria_autos
 {
@@ -12,7 +13,7 @@ namespace concesionaria_autos
     {
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {/*
             if (!IsPostBack)
             {
                 Venta venta = Session["VentaDatos"] as Venta;
@@ -26,7 +27,7 @@ namespace concesionaria_autos
                 lblModeloAuto.Text = modeloAuto;
                 lblVersionAuto.Text = versionAuto;
                 lblCantidadCuotas.Text = cantidadCuotas.ToString();
-            }
+            }*/
         }
 
             protected void btnVolver_Click(object sender, EventArgs e)

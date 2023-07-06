@@ -46,5 +46,17 @@ namespace negocio
             }
         }
 
+
+        public void correoRecuperarClave(string nombreDestinatario, string mailDestino, string asunto, string pantilla)
+        {
+            //De Reanult a User
+            email = new MailMessage();
+            email.From = new MailAddress("renault.grupo15@gmail.com");
+            email.To.Add(mailDestino);
+            email.Subject = asunto;
+            email.IsBodyHtml = true;
+            email.Body = pantilla;
+        }
+
     }
 }   

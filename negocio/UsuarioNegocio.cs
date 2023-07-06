@@ -378,7 +378,28 @@ namespace negocio
             }
         }
 
+        public void CambiarClave(string dni, string clave)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                datos.setearProcedimiento("ModificarClave");
+                datos.setearParametro("@dni", dni);
+                datos.setearParametro("@clave", clave);
+                datos.ejecutarAccion();
+                return;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
     }
 
