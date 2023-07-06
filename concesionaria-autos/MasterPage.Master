@@ -33,6 +33,8 @@
                         <a class="nav-item nav-link" href="comparacion.aspx">Comparar</a>
                         <a class="nav-item nav-link" href="Financiacion.aspx">Financiación</a>
                         <a class="nav-item nav-link" href="Contactanos.aspx">Contactanos</a>
+                        <asp:HyperLink ID="adminLink" runat="server" CssClass="nav-item nav-link" NavigateUrl="autos.aspx" Text="Admin" Visible="false"></asp:HyperLink>
+
                     </div>
                     <div class="navbar-nav ms-lg-4">
 
