@@ -404,6 +404,11 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
     .desc-box {
         margin: auto;
     }
+    
+    #formButton {
+       display:flex;
+
+    }
 
     #vl-detalle {
         display: none;
@@ -427,6 +432,10 @@ ul.stepper.horizontal .step.active .step-title:before, ul.stepper.horizontal .st
 
     #vl-detalle {
         display: none;
+    }
+
+    #formButton {
+        display: flex;
     }
 
     .resumen-card {

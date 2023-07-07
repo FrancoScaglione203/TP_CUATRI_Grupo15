@@ -36,10 +36,8 @@
                         <asp:HyperLink ID="adminLink" runat="server" CssClass="nav-item nav-link" NavigateUrl="autos.aspx" Text="Admin" Visible="false"></asp:HyperLink>
 
                     </div>
-                    <div class="navbar-nav ms-lg-4">
-
+                    <div class="navbar-nav ms-lg-4 ms-md-4">
                         <button type="button" id="formButton" class="nav-item nav-link text-white">Buscar</button>
-
                         <div id="form">
                             <div class="d-flex">
                                 <asp:TextBox CssClass="form-control" ID="txtBuscar" runat="server" Placeholder="Buscar auto..."></asp:TextBox>

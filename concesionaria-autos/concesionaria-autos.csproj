@@ -175,7 +175,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="signin.aspx" />
-    <Content Include="Scripts\Stepper.js" />
     <Content Include="Estilos\Style.css" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Videos\Banner.mp4" />

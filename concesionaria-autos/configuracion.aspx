@@ -302,8 +302,8 @@
                 <div class="row justify-content-center my-4">
 
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="resumem-img-container">
-                        <asp:Image class="resumen-img" ID="resumenBox" runat="server" />
+                    <div>
+                        <asp:Image ID="resumenBox" runat="server" />
                     </div>
 
                     </div>
