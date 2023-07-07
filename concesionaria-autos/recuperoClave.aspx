@@ -13,7 +13,18 @@
 
             <div class="form-floating my-3">
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtDni" />
-                <label for="txtDni" class="form-label">DNI</label>
+                <label for="txtDni" class="form-label">DNI
+                    <span class="d-flex">
+                                          <asp:RequiredFieldValidator CssClass="d-block" ID="vDni" runat="server"
+                                              ControlToValidate="txtDni"
+                                              ErrorMessage="Debe ingresar un DNI"
+                                              ForeColor="Red">
+                                          </asp:RequiredFieldValidator>
+                                          <asp:RegularExpressionValidator ID="reDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Debe ingresar números"
+                                              ValidationExpression="[0-9]+" ForeColor="Red"> 
+                                          </asp:RegularExpressionValidator>
+                                      </span>
+                </label>
             </div>
 
             
