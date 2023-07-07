@@ -140,10 +140,23 @@
                 $("#form").show();
                 $("#formButton").hide();
             });
-            $("#btnBuscar").click(function () {
-                $("#form").hide();
-                $("#formButton").show();
+
+            $("#form").click(function () {
+                    $("#formButton").hide();
             });
+            var mouse_is_inside = false;
+            $(document).ready(function () {
+                $("#form").hover(function () {
+                    mouse_is_inside = true;
+                }, function () {
+                    mouse_is_inside = false;
+                });
+                $("body").mouseup(function () {
+                    if (!mouse_is_inside) $("#form").hide();
+                    $("#formButton").show();
+                });
+            });
+
         });
     </script>
 
