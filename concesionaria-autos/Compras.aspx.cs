@@ -15,13 +15,20 @@ namespace concesionaria_autos
         protected void Page_Load(object sender, EventArgs e)
         {
             VentaNegocio ventaNegocio = new VentaNegocio();
+            Usuario user = new Usuario();
             try
 
 
             {
                 if (!IsPostBack)
                 {
+                    user = (Usuario)Session["usuario"];
+
                     ListaCompras = ventaNegocio.listar();
+
+                    ListaCompras = ListaCompras.FindAll(x => x.DNIComprador == user.Dni);
+                    rptCompras.DataSource = ListaCompras; 
+                    rptCompras.DataBind();
                 }
 
             }

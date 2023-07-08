@@ -24,6 +24,7 @@ namespace concesionaria_autos
                 usuario = (Usuario)Session["usuario"];
                 string nombreUsuario = usuario.Nombre + " " + usuario.Apellido;
                 lblIngresar.Text = nombreUsuario;
+                comprasLink.Visible = true;
 
             }
             else
