@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
@@ -73,6 +74,7 @@
     <Content Include="Correo\configuracionAsesora.html" />
     <Content Include="Correo\RecuperarClave.html" />
     <Content Include="DB\TP_CUATRIMESTRAL.sql" />
+    <Content Include="DetalleVenta.aspx" />
     <Content Include="error.aspx" />
     <Content Include="Imagenes\Alaskan.jpg" />
     <Content Include="Imagenes\AlaskanBlanco.jpg" />
@@ -177,6 +179,7 @@
     <Content Include="signin.aspx" />
     <Content Include="Estilos\Style.css" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="Ventas.aspx" />
     <Content Include="Videos\Banner.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -264,6 +267,13 @@
     </Compile>
     <Compile Include="detalle.aspx.designer.cs">
       <DependentUpon>detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleVenta.aspx.cs">
+      <DependentUpon>DetalleVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleVenta.aspx.designer.cs">
+      <DependentUpon>DetalleVenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>
@@ -387,6 +397,13 @@
     </Compile>
     <Compile Include="ventaCargada.aspx.designer.cs">
       <DependentUpon>ventaCargada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

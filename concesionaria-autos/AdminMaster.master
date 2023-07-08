@@ -8,13 +8,16 @@
         <nav class="py-3 bg-lightGrey">
             <ul class="nav ms-5">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="Usuarios.aspx">Listar Usuarios</a>
+                    <a class="nav-link text-dark" href="Usuarios.aspx">Lista de Usuarios</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-dark" href="Autos.aspx">Listar Autos</a>
+                  <a class="nav-link text-dark" href="Autos.aspx">Lista de Autos</a>
                 </li>
                 <li class="nav-item">
                  <a class="nav-link text-dark" href="CargaVenta.aspx">Cargar Venta</a>
+                </li>
+                <li class="nav-item">
+                 <a class="nav-link text-dark" href="Ventas.aspx">Lista de Ventas</a>
                 </li>
                
             </ul>
