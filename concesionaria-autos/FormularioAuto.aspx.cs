@@ -22,18 +22,7 @@ namespace concesionaria_autos
                 //configuración inicial de la pantalla.
                 if (!IsPostBack)
                 {
-                //    ElementoNegocio negocio = new ElementoNegocio();
-                //    List<Elemento> lista = negocio.listar();
 
-                //    ddlTipo.DataSource = lista;
-                //    ddlTipo.DataValueField = "Id";
-                //    ddlTipo.DataTextField = "Descripcion";
-                //    ddlTipo.DataBind();
-
-                //    ddlDebilidad.DataSource = lista;
-                //    ddlDebilidad.DataValueField = "Id";
-                //    ddlDebilidad.DataTextField = "Descripcion";
-                //    ddlDebilidad.DataBind();
                 }
 
                 //configuración si estamos modificando.
@@ -80,6 +69,15 @@ namespace concesionaria_autos
         {
             try
             {
+                // Activar los validadores del front-end
+                Page.Validate();
+
+                // Verificar si la página es válida
+                if (!Page.IsValid)
+                {
+                    return;
+                }
+
                 Auto auto = new Auto();
                 Imagen imagen = new Imagen();
                 FichaTecnica fichaTecnica = new FichaTecnica();
@@ -88,13 +86,12 @@ namespace concesionaria_autos
                 ImagenNegocio imagenNegocio = new ImagenNegocio();
                 FichaTecnicaNegocio fichaTecnicaNegocio = new FichaTecnicaNegocio();
 
-                
                 auto.Nombre = txtNombre.Text;
                 auto.Precio = decimal.Parse(txtPrecio.Text);
                 auto.Color = 1;
                 auto.Estado = true;
                 imagen.ImagenUrl = txtImagenUrl.Text;
-                
+
                 fichaTecnica.Ancho = int.Parse(txtAncho.Text);
                 fichaTecnica.Longitud = int.Parse(txtLongitud.Text);
                 fichaTecnica.Plazas = int.Parse(txtPlazas.Text);
@@ -102,7 +99,6 @@ namespace concesionaria_autos
                 fichaTecnica.CajaAutomatica = ddlCajaAutomatica.SelectedValue != "0" ? true : false;
                 fichaTecnica.CajaManual = ddlCajaManual.SelectedValue != "0" ? true : false;
                 fichaTecnica.Nafta = ddlNafta.SelectedValue != "0" ? true : false;
-
 
                 if (Request.QueryString["id"] != null)
                 {
@@ -123,12 +119,10 @@ namespace concesionaria_autos
                     fichaTecnicaNegocio.agregar(fichaTecnica);
                 }
 
-
                 Response.Redirect("Autos.aspx", false);
             }
             catch (Exception ex)
             {
-                throw ex;
                 Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }

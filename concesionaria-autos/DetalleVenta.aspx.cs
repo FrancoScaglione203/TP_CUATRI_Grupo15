@@ -107,14 +107,12 @@ namespace concesionaria_autos
                 GridViewRow row = dgvCuotas.Rows[rowIndex];
                 int cuotaId = Convert.ToInt32(dgvCuotas.DataKeys[row.RowIndex].Value);
 
-                // Llamar al método PagarCancelarVenta para modificar el estado de la cuota
                 PagarCancelarVenta(cuotaId);
 
                 VentaNegocio negocioVenta = new VentaNegocio();
                 int ventaId = Convert.ToInt32(Request.QueryString["id"]);
                 negocioVenta.ActualizarCantidadCuotasPagadas(ventaId);
 
-                // Redirigir nuevamente a la página actual para actualizar los datos
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
@@ -137,15 +135,13 @@ namespace concesionaria_autos
 
         protected void PagarCancelarVenta(int cuotaId)
         {
-            // Aquí debes implementar la lógica para modificar el estado de la cuota
-            // utilizando el cuotaId y la capa de negocio correspondiente
-            // Por ejemplo:
+
             VentaNegocio negocio = new VentaNegocio();
             Cuota cuota = ListaCuotas.FirstOrDefault(x => x.ID == cuotaId);
             if (cuota != null)
             {
-                cuota.Pagada = !cuota.Pagada; // Cambiar el estado de pagada
-                negocio.PagarCancelarVenta(cuota.ID); // Llamar a la función para modificar la cuota en la capa de negocio
+                cuota.Pagada = !cuota.Pagada;
+                negocio.PagarCancelarVenta(cuota.ID); 
             }
         }
     }
