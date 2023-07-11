@@ -71,5 +71,65 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void PagarCancelarVenta(int cuotaId)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Cuota SET Pagada = ~Pagada WHERE ID = @CuotaId");
+                datos.setearParametro("@CuotaId", cuotaId);
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void ActualizarCantidadCuotasPagadas(int ventaId)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Venta SET CuotasPagadas = (SELECT COUNT(*) FROM Cuota WHERE IDVenta = @VentaId AND Pagada = 1) WHERE IDVenta = @VentaId");
+                datos.setearParametro("@VentaId", ventaId);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void ActualizarVenta(Venta venta)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE Venta SET CuotasPagadas = @CuotasPagadas WHERE IDVenta = @VentaId");
+                datos.setearParametro("@CuotasPagadas", venta.CuotasPagadas);
+                datos.setearParametro("@VentaId", venta.IDVenta);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
