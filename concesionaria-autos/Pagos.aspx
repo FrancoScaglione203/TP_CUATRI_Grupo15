@@ -3,27 +3,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+  
     <div class="container" id="Pagos">
-        <div class="row py-4 g-4 align-items-center">
+        <div class="row py-4 g-5 align-items-center">
             <div class="col scrollable-cards">
-                <div class="overflow-auto" style="max-height: 60vh;">
+                <div class="overflow-auto" style="max-height: 55vh;">
                     <asp:Repeater ID="rptCuotas" runat="server" OnItemDataBound="rptCuotas_ItemDataBound">
                         <ItemTemplate>
                             <div class="card mb-3">
-                                <div class="card-header">
-                                    Cuota <%# Eval("NumeroCuota") %>
+                                <div class="card-header bg-black text-white">
+                                    Cuota N° <%# Eval("NumeroCuota") %>
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title">Monto: $<%# Eval("Monto") %></h5>
-                                    <p class="card-text">Vencida: <%# ((DateTime)Eval("FechaVencimiento") < DateTime.Now) ? "Sí" : "No" %></p>
-                                    <p class="card-text">Fecha de Vencimiento: <%# ((DateTime)Eval("FechaVencimiento")).ToString("dd/MM/yyyy") %></p>
-                                    <p class="card-text">Pagada: <%# (bool)Eval("Pagada") ? "Sí" : "No" %></p>
-                                    <div class="form-check">
-                                        <asp:CheckBox ID="chkCuota" runat="server" AutoPostBack="True" OnCheckedChanged="chkCuota_CheckedChanged" />
-                                        <label class="form-check-label" for="chkCuota">
-                                            Seleccionar
-                                        </label>
-                                    </div>
+                                    <h6 class="card-title fw-bold">Monto: $<%# Eval("Monto") %></h6>
+                                    <p class="card-text my-1">Vencida: <%# ((DateTime)Eval("FechaVencimiento") < DateTime.Now) ? "Sí" : "No" %></p>
+                                    <p class="card-text my-1">Fecha de Vencimiento: <%# ((DateTime)Eval("FechaVencimiento")).ToString("dd/MM/yyyy") %></p>
+                                    <p class="d-flex justify-content-between card-text my-1">
+                                        Pagada: <%# (bool)Eval("Pagada") ? "Sí" : "No" %>
+                                        <span class="form-check-cuota form-check">
+                                            <asp:CheckBox ID="chkCuota" runat="server" AutoPostBack="True" OnCheckedChanged="chkCuota_CheckedChanged" />
+                                        </span>
+                                    </p>
                                 </div>
                             </div>
                         </ItemTemplate>
