@@ -49,5 +49,51 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void agregar(Descripcion nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert into DESCRIPCION(Titulo,Descripcion,ImagenUrl,IdProducto)values(@Titulo, @Plazas, @Descripcion, @IdProducto)");
+                datos.setearParametro("@Titulo", nuevo.Titulo);
+                datos.setearParametro("@Descripcion", nuevo.Bajada);
+                datos.setearParametro("@ImagenUrl", nuevo.ImagenUrl);
+                datos.setearParametro("@IdProducto", nuevo.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void modificar(Descripcion mod)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update DESCRIPCION set Titulo = @Titulo ,Descripcion = @Descripcion,ImagenUrl = @ImagenUrl WHERE IdProducto = @idProducto");
+                datos.setearParametro("@Titulo", mod.Titulo);
+                datos.setearParametro("@Descripcion", mod.Bajada);
+                datos.setearParametro("@ImagenUrl", mod.ImagenUrl);
+                datos.setearParametro("@idProducto", mod.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
+
 }

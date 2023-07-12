@@ -123,6 +123,58 @@ namespace negocio
 
         }
 
+        public void agregar(Equipamiento nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert into EQUIPAMIENTO(Nombre,Precio,Climatizador,SensorEstacionamiento,Computadora,ControlCrucero,Alarma,IdProducto)values(@Nombre, @Precio, @Climatizador, @SensorEstacionamiento,@Computadora,@ControlCrucero,@Alarma,@IdProducto)");
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Precio", nuevo.Precio);
+                datos.setearParametro("@Climatizador", nuevo.Climatizador);
+                datos.setearParametro("@SensorEstacionamiento", nuevo.SensorEstacionamiento);
+                datos.setearParametro("@Computadora", nuevo.Computadora);
+                datos.setearParametro("@ControlCrucero", nuevo.ControlCrucero);
+                datos.setearParametro("@Alarma", nuevo.Alarma);
+                datos.setearParametro("@IdProducto", nuevo.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void modificar(Equipamiento mod)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update EQUIPAMIENTO set Nombre = @Nombre ,Precio = @Precio,Climatizador = @Climatizador,@SensorEstacionamiento=SensorEstacionamiento,@Computadora=Computadora,@ControlCrucero=ControlCrucero,@Alarma=Alarma WHERE IdProducto = @idProducto");
+                datos.setearParametro("@Nombre", mod.Nombre);
+                datos.setearParametro("@Precio", mod.Precio);
+                datos.setearParametro("@Climatizador", mod.Climatizador);
+                datos.setearParametro("@SensorEstacionamiento", mod.SensorEstacionamiento);
+                datos.setearParametro("@Computadora", mod.Computadora);
+                datos.setearParametro("@ControlCrucero", mod.ControlCrucero);
+                datos.setearParametro("@Alarma", mod.Alarma);
+                datos.setearParametro("@IdProducto", mod.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
     }
 }

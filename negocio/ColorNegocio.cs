@@ -54,5 +54,50 @@ namespace negocio
 
             return lista;
         }
+
+        public void agregar(Color nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert into COLORES(Nombre,Muestra,ImagenUrl,IdProducto)values(@Nombre, @Muestra, @ImagenUrl, @IdProducto)");
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Muestra", nuevo.Muestra);
+                datos.setearParametro("@ImagenUrl", nuevo.ImagenUrl);
+                datos.setearParametro("@IdProducto", nuevo.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void modificar(Color mod)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update DESCRIPCION set Nombre = @Nombre ,Muestra = @Muestra,ImagenUrl = @ImagenUrl WHERE IdProducto = @idProducto");
+                datos.setearParametro("@Nombre", mod.Nombre);
+                datos.setearParametro("@Muestra", mod.Muestra);
+                datos.setearParametro("@ImagenUrl", mod.ImagenUrl);
+                datos.setearParametro("@IdProducto", mod.IdProducto);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
