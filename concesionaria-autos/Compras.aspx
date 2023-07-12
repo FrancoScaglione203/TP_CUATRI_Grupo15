@@ -3,36 +3,35 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid">
-        <% if (ListaCompras.Count > 0)
-            { %>
-        <h1>Mis Compras</h1>
 
-        <div class="row">
+    <% if (ListaCompras.Count > 0)
+        { %>
+    <div class="container my-5">
+        <h6 class="fw-bold text-center my-3">MIS COMPRAS</h6>
+        <div class="row my-5">
             <asp:Repeater ID="rptCompras" runat="server" OnItemCommand="rptCompras_ItemCommand">
                 <ItemTemplate>
-                    <div class="card border border-dark" style="width: 80%;">
-                        <div class="row g-0">
-                            <div class="col-md-6">
+                    <div class="card py-4">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
                                 <img src="imagenes/<%# Eval("UrlImagen") %>" class="card-img" alt="un auto">
                             </div>
-                            <div class="col-md-6">
-                                <div class="card-body">
-                                    <h4 class="card-title text-uppercase fw-bold"><%# Eval("ModeloAuto") %> <%# Eval("VersionAuto") %></h4>
-                                    <h5 class="card-title text-uppercase fw-bold"><%# Eval("ColorAuto") %></h5>
-                                    <h6 class="card-title text-uppercase fw-bold"><%# Eval("CuotasPagadas") %> de <%# Eval("CantidadCuotas") %> cuotas pagadas </h6>
-                                    <asp:Button ID="btnVerPagos" runat="server" CssClass="btn btn-warning me-4" Text="Ver Pagos" CommandName="VerPagos" CommandArgument='<%# Eval("IDVenta") %>' />
-                                </div>
+                            <div class="card-body col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                <h4 class="card-title fw-bold"><%# Eval("ModeloAuto") %> <%# Eval("VersionAuto") %></h4>
+                                <p class="card-text"><%# Eval("ColorAuto") %></p>
+                                <p class="card-title">Cuotas abonadas: <%# Eval("CuotasPagadas") %> / <%# Eval("CantidadCuotas") %> </p>
+                                <asp:Button ID="btnVerPagos" runat="server" CssClass="btn btn-warning me-4 mt-2" Text="Ver Pagos" CommandName="VerPagos" CommandArgument='<%# Eval("IDVenta") %>' />
                             </div>
                         </div>
                     </div>
-
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-        <% }
-            else
-            { %>
+    </div>
+    <% }
+        else
+        { %>
+    <div class="container">
         <div class="row text-center mb-5">
             <div class="bg-black p-5 text-white">
                 <h4 class="fw-bold p-4">AUN NO HAS REALIZADO NINGUNA COMPRA</h4>
@@ -55,6 +54,6 @@
             </div>
         </div>
 
-        <% }  %>
     </div>
+    <% }  %>
 </asp:Content>
