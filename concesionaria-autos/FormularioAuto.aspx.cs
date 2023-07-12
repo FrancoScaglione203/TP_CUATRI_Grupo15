@@ -386,6 +386,21 @@ namespace concesionaria_autos
             }
         }
 
+        protected void txtImagenDesc_TextChanged(object sender, EventArgs e)
+        {
+            imagenDesc.ImageUrl = txtImagenDesc.Text;
+        }
+
+        protected void txtImagenColor_TextChanged(object sender, EventArgs e)
+        {
+            imagenColor.ImageUrl = txtImagenColor.Text;
+        }
+
+        protected void txtImagenTapizado_TextChanged(object sender, EventArgs e)
+        {
+            imagenTapizado.ImageUrl = txtImagenTapizado.Text;
+        }
+
         //protected void btnInactivar_Click(object sender, EventArgs e)
         //{
         //    try

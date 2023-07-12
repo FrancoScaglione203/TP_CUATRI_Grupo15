@@ -60,12 +60,12 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
-       
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
-                        <asp:Button Text="Guardar" ID="btnAceptar" CssClass="btn btn-warning" OnClick="btnAceptar_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
-                    </div>
-     
+
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
+                <asp:Button Text="Guardar" ID="btnAceptar" CssClass="btn btn-warning" OnClick="btnAceptar_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
+            </div>
+
         </div>
 
         <div class="row">
@@ -171,12 +171,12 @@
                     <asp:RequiredFieldValidator ID="RFValNafta" runat="server" ControlToValidate="ddlNafta" ErrorMessage="Campo obligatorio" CssClass="text-danger" ValidationGroup="FormData" />
                 </div>
             </div>
-         
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
-                        <asp:Button Text="Guardar" ID="btnAceptarFichaTecnica" CssClass="btn btn-warning" OnClick="btnAceptarFichaTecnica_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" />
-                    </div>
-          
+
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
+                <asp:Button Text="Guardar" ID="btnAceptarFichaTecnica" CssClass="btn btn-warning" OnClick="btnAceptarFichaTecnica_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
+            </div>
+
         </div>
     </div>
     <%-- FIN FICHA TÉCNICA--%>
@@ -229,7 +229,7 @@
                     <ContentTemplate>
                         <div class="form-floating mb-3">
                             <asp:TextBox runat="server" ID="txtImagenDesc" CssClass="form-control"
-                                AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
+                                AutoPostBack="true" OnTextChanged="txtImagenDesc_TextChanged" />
                             <label for="txtImagenDesc" class="form-label">Url Imagen</label>
                         </div>
                     </ContentTemplate>
@@ -240,12 +240,12 @@
                 </div>--%>
                 <button class="btn btn-primary">Agregar otro</button>
             </div>
-  
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
-                        <asp:Button Text="Guardar" ID="btnAceptarDescripcion" CssClass="btn btn-warning" OnClick="btnAceptarDescripcion_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" />
-                    </div>
-        
+
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
+                <asp:Button Text="Guardar" ID="btnAceptarDescripcion" CssClass="btn btn-warning" OnClick="btnAceptarDescripcion_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
+            </div>
+
         </div>
     </div>
     <%-- FIN DESCRIPCION--%>
@@ -331,12 +331,12 @@
                     <label for="txtIdProdEquip" class="form-label">Id Producto</label>
                 </div>--%>
             </div>
-      
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
-                        <asp:Button Text="Guardar" ID="btnAceptarEquipamiento" CssClass="btn btn-warning" OnClick="btnAceptarEquipamiento_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" />
-                    </div>
-      
+
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
+                <asp:Button Text="Guardar" ID="btnAceptarEquipamiento" CssClass="btn btn-warning" OnClick="btnAceptarEquipamiento_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
+            </div>
+
         </div>
     </div>
 
@@ -368,7 +368,7 @@
                 <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
                         <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                            runat="server" ID="Image1" Width="60%" />
+                            runat="server" ID="imagenColor" Width="60%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -386,7 +386,7 @@
                     <ContentTemplate>
                         <div class="form-floating mb-3">
                             <asp:TextBox runat="server" ID="txtImagenColor" CssClass="form-control"
-                                AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
+                                AutoPostBack="true" OnTextChanged="txtImagenColor_TextChanged" />
                             <label for="txtImagenColor" class="form-label">Url Color</label>
                         </div>
                     </ContentTemplate>
@@ -398,12 +398,12 @@
                 </div>--%>
                 <button class="btn btn-primary">Agregar otro</button>
             </div>
-   
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
-                        <asp:Button Text="Guardar" ID="btnAceptarColor" CssClass="btn btn-warning" OnClick="btnAceptarColor_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" />
-                    </div>
-         
+
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
+                <asp:Button Text="Guardar" ID="btnAceptarColor" CssClass="btn btn-warning" OnClick="btnAceptarColor_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
+            </div>
+
         </div>
     </div>
 
@@ -437,7 +437,7 @@
                 <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                     <ContentTemplate>
                         <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                            runat="server" ID="Image2" Width="60%" />
+                            runat="server" ID="imagenTapizado" Width="60%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -455,7 +455,7 @@
                     <ContentTemplate>
                         <div class="form-floating mb-3">
                             <asp:TextBox runat="server" ID="txtImagenTapizado" CssClass="form-control"
-                                AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
+                                AutoPostBack="true" OnTextChanged="txtImagenTapizado_TextChanged" />
                             <label for="txtImagenTapizado" class="form-label">Url Tapizado</label>
                         </div>
                     </ContentTemplate>
@@ -470,12 +470,12 @@
                 </div>--%>
                 <button class="btn btn-primary">Agregar otro</button>
             </div>
-        
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
-                        <asp:Button Text="Guardar" ID="btnAceptarTapizado" CssClass="btn btn-warning" OnClick="btnAceptarTapizado_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" />
-                    </div>
-            
+
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
+                <asp:Button Text="Guardar" ID="btnAceptarTapizado" CssClass="btn btn-warning" OnClick="btnAceptarTapizado_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
+            </div>
+
         </div>
     </div>
 

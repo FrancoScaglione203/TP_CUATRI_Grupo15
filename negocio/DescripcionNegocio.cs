@@ -55,7 +55,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("Insert into DESCRIPCION(Titulo,Descripcion,ImagenUrl,IdProducto)values(@Titulo, @Plazas, @Descripcion, @IdProducto)");
+                datos.setearConsulta("Insert into DESCRIPCION(Titulo,Descripcion,ImagenUrl,IdProducto)values(@Titulo, @Descripcion,@ImagenUrl,@IdProducto)");
                 datos.setearParametro("@Titulo", nuevo.Titulo);
                 datos.setearParametro("@Descripcion", nuevo.Bajada);
                 datos.setearParametro("@ImagenUrl", nuevo.ImagenUrl);
@@ -78,7 +78,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update DESCRIPCION set Titulo = @Titulo ,Descripcion = @Descripcion,ImagenUrl = @ImagenUrl WHERE IdProducto = @idProducto");
+                datos.setearConsulta("update DESCRIPCION set Titulo = @Titulo ,Descripcion = @Descripcion,@ImagenUrl = ImagenUrl WHERE IdProducto = @idProducto");
                 datos.setearParametro("@Titulo", mod.Titulo);
                 datos.setearParametro("@Descripcion", mod.Bajada);
                 datos.setearParametro("@ImagenUrl", mod.ImagenUrl);
