@@ -116,7 +116,7 @@
                         var span = ImagenUrl[index]; // Obtener el elemento <span> correspondiente al índice
                         var contenido = span.textContent;
                         /* alert(contenido);*/
-                        img.src = "/Imagenes/" + contenido;
+                        img.src = contenido;
                     });
                 }
             </script>

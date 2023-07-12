@@ -399,6 +399,7 @@ namespace concesionaria_autos
         protected void txtImagenTapizado_TextChanged(object sender, EventArgs e)
         {
             imagenTapizado.ImageUrl = txtImagenTapizado.Text;
+            alertaExitosa.Visible = true;
         }
 
         //protected void btnInactivar_Click(object sender, EventArgs e)

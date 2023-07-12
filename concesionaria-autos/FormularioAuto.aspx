@@ -35,7 +35,7 @@
                 </asp:UpdatePanel>
             </div>
             <div class="col-6">
-                <div class="form-floating my-3">
+                <div class="form-floating my-3 d-none">
                     <asp:TextBox runat="server" ID="txtId" CssClass="form-control" />
                     <label for="txtId" class="form-label">Id</label>
                 </div>
@@ -475,6 +475,14 @@
                 <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
                 <asp:Button Text="Guardar" ID="btnAceptarTapizado" CssClass="btn btn-warning" OnClick="btnAceptarTapizado_Click" runat="server" ValidationGroup="FormData" CausesValidation="true" AutoPostBack="false" />
             </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate runat="server">
+                    <div id="alertaExitosa" class="alert alert-success alert-dismissible fade show" role="alert" runat="server" visible="false">
+                        Los datos han sido cargados exitosamente.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
 
         </div>
     </div>
