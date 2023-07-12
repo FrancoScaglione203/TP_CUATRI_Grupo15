@@ -16,10 +16,18 @@ namespace dominio
         public bool Estado { get; set; }
         public Imagen Imagen { get; set; }
         public FichaTecnica FichaTecnica { get; set; }
+        public Descripcion Descripcion { get; set; }
+        public Equipamiento Equipamiento { get; set; }
+        public Color Colores { get; set; }
+        public Tapizado Tapizado { get; set; }
         public Auto()
         {
             this.Imagen = new Imagen();
             this.FichaTecnica = new FichaTecnica();
+            this.Descripcion = new Descripcion();
+            this.Equipamiento = new Equipamiento();
+            this.Colores = new Color();
+            this.Tapizado = new Tapizado();
         }
         public decimal Financiacion()
         {

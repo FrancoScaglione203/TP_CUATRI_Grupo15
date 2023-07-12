@@ -39,10 +39,13 @@ namespace concesionaria_autos
                     Session.Add("autoSeleccionado", seleccionado);
 
                     //pre cargar todos los campos...
+                    //Autos
                     txtId.Text = id;
                     txtNombre.Text = seleccionado.Nombre;
                     txtPrecio.Text = seleccionado.Precio.ToString();
                     txtImagenUrl.Text = seleccionado.Imagen.ImagenUrl;
+                    txtImagenUrl_TextChanged(sender, e);
+                    //Ficha Técnica
                     txtAncho.Text = seleccionado.FichaTecnica.Ancho.ToString();
                     ddlCajaManual.SelectedValue = seleccionado.FichaTecnica.CajaManual.ToString() != "True" ? "0" : "1";
                     ddlCajaAutomatica.SelectedValue = seleccionado.FichaTecnica.CajaAutomatica.ToString() != "True" ? "0" : "1";
@@ -50,8 +53,31 @@ namespace concesionaria_autos
                     txtLongitud.Text = seleccionado.FichaTecnica.Longitud.ToString();
                     ddlNafta.SelectedValue = seleccionado.FichaTecnica.Nafta.ToString() != "True" ? "0" : "1";
                     txtPlazas.Text = seleccionado.FichaTecnica.Plazas.ToString();
+                    //Descripcion
+                    txtTitulo.Text = seleccionado.Descripcion.Titulo.ToString();
+                    txtDescripcion.Text = seleccionado.Descripcion.Bajada.ToString();
+                    txtImagenDesc.Text = seleccionado.Descripcion.ImagenUrl.ToString();
+                    txtImagenDesc_TextChanged(sender, e);
+                    //Equipamiento
+                    txtVersion.Text = seleccionado.Equipamiento.Nombre.ToString(); ;
+                    txtPrecioVersion.Text = seleccionado.Equipamiento.Precio.ToString(); ;
+                    ddlClimatizador.SelectedValue = seleccionado.Equipamiento.Climatizador.ToString() != "True" ? "0" : "1";
+                    ddlComputadora.SelectedValue = seleccionado.Equipamiento.Computadora.ToString() != "True" ? "0" : "1";
+                    ddlSensorEstacionamiento.SelectedValue = seleccionado.Equipamiento.SensorEstacionamiento.ToString() != "True" ? "0" : "1";
+                    ddlControlCrucero.SelectedValue = seleccionado.Equipamiento.ControlCrucero.ToString() != "True" ? "0" : "1";
+                    ddlAlarma.SelectedValue = seleccionado.Equipamiento.Alarma.ToString() != "True" ? "0" : "1";
+                    //Color
+                    txtColor.Text = seleccionado.Colores.Nombre.ToString();
+                    txtImagenMuestraColor.Text = seleccionado.Colores.Muestra.ToString();
+                    txtImagenColor.Text = seleccionado.Colores.ImagenUrl.ToString();
+                    txtImagenColor_TextChanged(sender, e);
+                    //Tapizado
+                    txtTapizado.Text = seleccionado.Tapizado.Nombre.ToString();
+                    txtImagenMuestraTapizado.Text = seleccionado.Tapizado.Muestra.ToString();
+                    txtImagenTapizado.Text = seleccionado.Tapizado.ImagenUrl.ToString();
+                    txtPrecioTapizado.Text = seleccionado.Tapizado.Precio.ToString();
+                    txtImagenTapizado_TextChanged(sender, e);
 
-                    txtImagenUrl_TextChanged(sender, e);
 
                     //configurar acciones
                     //if (!seleccionado.Activo)
