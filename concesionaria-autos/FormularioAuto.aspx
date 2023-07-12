@@ -29,8 +29,8 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
-                        <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                            runat="server" ID="imgPokemon" Width="60%" />
+                        <asp:Image class="card-img-top filtroSinSeleccionar" ImageUrl="Imagenes/Logan.jpg"
+                            runat="server" ID="imgPokemon" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -207,8 +207,8 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                     <ContentTemplate>
-                        <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                            runat="server" ID="imagenDesc" Width="60%" />
+                        <asp:Image class="filtroSinSeleccionar" ImageUrl="Imagenes/Logan.jpg"
+                            runat="server" ID="imagenDesc" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -367,8 +367,8 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
-                        <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                            runat="server" ID="imagenColor" Width="60%" />
+                        <asp:Image class="filtroSinSeleccionar" ImageUrl="Imagenes/Logan.jpg"
+                            runat="server" ID="imagenColor" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
@@ -436,8 +436,8 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                     <ContentTemplate>
-                        <asp:Image ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png"
-                            runat="server" ID="imagenTapizado" Width="60%" />
+                        <asp:Image class="filtroSinSeleccionar" ImageUrl="Imagenes/Logan.jpg"
+                            runat="server" ID="imagenTapizado" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
