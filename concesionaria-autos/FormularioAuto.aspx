@@ -25,7 +25,7 @@
                 <a class="btn btn-primary w-100 py-3">Tapizado</a>
             </div>
         </div>
-        <div class="row justify-content-center m-4 text-center">
+        <div class="row justify-content-center align-items-center m-4 text-center">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
@@ -68,7 +68,7 @@
 
         </div>
 
-        <div class="row">
+<%--        <div class="row">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
@@ -89,7 +89,7 @@
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" ValidationGroup="FormData" />
 
             </div>
-        </div>
+        </div>--%>
     </div>
     <%-- FIN AUTOS--%>
 
@@ -116,7 +116,7 @@
                 <a class="btn btn-primary w-100 py-3">Tapizado</a>
             </div>
         </div>
-        <div class="row justify-content-center m-4 text-center">
+        <div class="row justify-content-center align-items-center m-4 text-center">
             <div class="col-6">
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" ID="txtPlazas" CssClass="form-control" />
@@ -203,7 +203,7 @@
                 <a class="btn btn-primary w-100 py-3">Tapizado</a>
             </div>
         </div>
-        <div class="row justify-content-center m-4 text-center">
+        <div class="row justify-content-center align-items-center m-4 text-center">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                     <ContentTemplate>
@@ -272,7 +272,7 @@
                 <a class="btn btn-primary w-100 py-3">Tapizado</a>
             </div>
         </div>
-        <div class="row justify-content-center m-4 text-center">
+        <div class="row justify-content-center align-items-center m-4 text-center">
             <div class="col-6">
                 <%-- <div class="form-floating my-3">
                     <asp:TextBox runat="server" ID="txtIdEquip" CssClass="form-control" />
@@ -363,7 +363,7 @@
                 <a class="btn btn-primary w-100 py-3">Tapizado</a>
             </div>
         </div>
-        <div class="row justify-content-center m-4 text-center">
+        <div class="row justify-content-center align-items-center m-4 text-center">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
@@ -432,7 +432,7 @@
                 <a class="btn btn-warning w-100 py-3">Tapizado</a>
             </div>
         </div>
-        <div class="row justify-content-center m-4 text-center">
+        <div class="row justify-content-center align-items-center m-4 text-center">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                     <ContentTemplate>
