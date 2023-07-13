@@ -45,7 +45,8 @@
             </div>
             <div class="d-flex justify-content-between">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input id="Checkbox1" type="checkbox" CssClass="form-check-input"/>
+             <%--       <input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
                     <label class="form-check-label" for="exampleCheck1">Recordar sesión</label>
                 </div>
                 <div>
