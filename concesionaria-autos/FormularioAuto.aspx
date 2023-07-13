@@ -292,7 +292,7 @@
                         <asp:ListItem Text="Si" Value="1"></asp:ListItem>
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
-                    <label for="ddlCajaAutomatica" class="form-label">Climatizador</label>
+                    <label for="ddlClimatizador" class="form-label">Climatizador</label>
                 </div>
                 <div class="form-floating mb-3">
                     <asp:DropDownList ID="ddlSensorEstacionamiento" runat="server" CssClass="form-select">

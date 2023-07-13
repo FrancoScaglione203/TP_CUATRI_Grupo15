@@ -300,11 +300,11 @@ namespace concesionaria_autos
 
                 equipamiento.Nombre = txtVersion.Text;
                 equipamiento.Precio = decimal.Parse(txtPrecioVersion.Text);
-                equipamiento.Climatizador = ddlClimatizador.SelectedValue != "0" ? true : false;
-                equipamiento.Computadora = ddlComputadora.SelectedValue != "0" ? true : false;
                 equipamiento.SensorEstacionamiento = ddlSensorEstacionamiento.SelectedValue != "0" ? true : false;
+                equipamiento.Computadora = ddlComputadora.SelectedValue != "0" ? true : false;
                 equipamiento.ControlCrucero = ddlControlCrucero.SelectedValue != "0" ? true : false;
                 equipamiento.Alarma = ddlAlarma.SelectedValue != "0" ? true : false;
+                equipamiento.Climatizador = ddlClimatizador.SelectedValue != "0" ? true : false;
 
 
                 if (Request.QueryString["id"] != null)
