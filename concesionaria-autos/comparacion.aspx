@@ -20,7 +20,7 @@
                 <% }
                     else
                     { %>
-                <img class="card-img-top filtroSinSeleccionar" src="Imagenes/Logan.jpg" alt="Auto">
+                <img class="card-img-top filtroSinSeleccionar" src="Logan.jpg" alt="Auto">
                 <% } %>
                 <asp:DropDownList class="form-select" ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
@@ -33,7 +33,7 @@
                 <% }
                     else
                     { %>
-                <img class="card-img-top filtroSinSeleccionar" src="Imagenes/Logan.jpg" alt="Auto">
+                <img class="card-img-top filtroSinSeleccionar" src="Logan.jpg" alt="Auto">
                 <% } %>
                 <asp:DropDownList class="form-select" ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
                 </asp:DropDownList>
