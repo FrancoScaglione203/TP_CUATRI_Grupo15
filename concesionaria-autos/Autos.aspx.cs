@@ -93,5 +93,18 @@ namespace concesionaria_autos
                 throw;
             }
         }
+
+        protected void dgvAutos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = dgvAutos.Rows[rowIndex];
+            int id = Convert.ToInt32(dgvAutos.DataKeys[row.RowIndex].Value);
+
+            if (e.CommandName == "Eliminar")
+            { 
+                AutoNeogocio autoNeogocio = new AutoNeogocio();
+                autoNeogocio.eliminar(id);
+            }
+        }
     }
 }
