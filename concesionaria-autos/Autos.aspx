@@ -73,8 +73,9 @@
         <Columns>
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
-            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />    
-            <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
+            <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />
+            <asp:CommandField HeaderText="Editar" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
+            <asp:ButtonField CommandName="Eliminar" Text="Eliminar" />
         </Columns>
     </asp:GridView>
 

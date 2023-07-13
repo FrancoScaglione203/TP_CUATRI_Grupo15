@@ -156,13 +156,17 @@ namespace negocio
         }
 
 
-        public void modificar(Marca marca)
+        public void modificar(Auto mod)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("update MARCAS set Descripcion= '" + marca.Descripcion + "' where id = " + marca.Id + "");
+                datos.setearConsulta("update PRODUCTOS set Nombre = @Nombre ,Precio = @Precio,@Color = Color WHERE Id = @Id");
+                datos.setearParametro("@Nombre", mod.Nombre);
+                datos.setearParametro("@Precio", mod.Precio);
+                datos.setearParametro("@Color", mod.Color);
+                datos.setearParametro("@Id", mod.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -182,7 +186,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into Productos (Nombre,Precio,Color) Values ('" + auto.Nombre + "','" + auto.Precio + "','" + auto.Color + "'); SELECT SCOPE_IDENTITY()");
+                datos.setearConsulta("insert into PRODUCTOS (Nombre,Precio,Color) Values ('" + auto.Nombre + "','" + auto.Precio + "','" + auto.Color + "'); SELECT SCOPE_IDENTITY()");
                 id = datos.leerIdUltimoCreado();
 
                 return id;
@@ -204,7 +208,8 @@ namespace negocio
                 AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("delete from PRODUCTOS where Id = " + id);
+                datos.setearConsulta("update PRODUCTOS set Estado = 0 WHERE Id = @id");
+                datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
 
             }

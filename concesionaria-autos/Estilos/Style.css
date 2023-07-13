@@ -134,7 +134,7 @@ p {
     color: var(--decorations);
 }
 
-.fa-edit {
+.fa-edit,.fa-trash {
     color: #EDC011 !important;
 }
 

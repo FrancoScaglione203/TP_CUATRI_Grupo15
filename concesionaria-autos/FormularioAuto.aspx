@@ -68,7 +68,7 @@
 
         </div>
 
-<%--        <div class="row">
+      <div class="row d-none">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
@@ -89,7 +89,7 @@
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="text-danger" ValidationGroup="FormData" />
 
             </div>
-        </div>--%>
+        </div>
     </div>
     <%-- FIN AUTOS--%>
 
