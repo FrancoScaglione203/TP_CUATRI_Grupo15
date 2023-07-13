@@ -467,15 +467,23 @@ div#pagos .card {
 
 /* GRILLAS  */
 
-.gridview-pager .pagination a,
-.gridview-pager .pagination span {
-    padding: 5px 10px;
-    margin: 0 2px;
-    font-size: 16px;
-    background-color: #ebebeb;
-    border-radius: 5px;
+.custom-pager {
+    background-color: var(--foreColor);
+    color: var(--decorations);
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    font-size: 18px;
 }
 
-.gridview-pager .pagination .current {
-    background-color: #ccc;
+.custom-pager a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+
+}
+
+.custom-pager a.active {
+    font-weight: bold;
+    margin: 0 10px;
 }

@@ -66,6 +66,7 @@
     </div>
     <asp:GridView ID="dgvCuotas" runat="server" DataKeyNames="ID"
         CssClass="table table-striped text-center" AutoGenerateColumns="false"
+        PagerStyle-CssClass="custom-pager" 
         OnSelectedIndexChanged="dgvCuotas_SelectedIndexChanged"
         OnPageIndexChanging="dgvCuotas_PageIndexChanging"
         AllowPaging="True" PageSize="10" 
