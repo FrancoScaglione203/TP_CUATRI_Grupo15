@@ -83,6 +83,7 @@
     <Content Include="Imagenes\AlaskanDetalle3.jpg" />
     <Content Include="Imagenes\AlaskanDetalle4.jpg" />
     <Content Include="Imagenes\AlaskanGris.jpg" />
+    <Content Include="Imagenes\AutoTransparente.JPG" />
     <Content Include="Imagenes\bannerMail.png" />
     <Content Include="Imagenes\concesionaria.jpg" />
     <Content Include="Imagenes\contacto.jpg" />
