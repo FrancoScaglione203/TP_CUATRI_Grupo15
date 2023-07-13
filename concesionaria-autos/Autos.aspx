@@ -65,7 +65,7 @@
         </div>
         <%} %>
     </div>
-    <asp:GridView ID="dgvAutos" runat="server" DataKeyNames="Id"
+    <asp:GridView OnRowCommand="dgvAutos_RowCommand" ID="dgvAutos" runat="server" DataKeyNames="Id"
         CssClass="table table-striped text-center" AutoGenerateColumns="false"
         OnSelectedIndexChanged="dgvAutos_SelectedIndexChanged"
         OnPageIndexChanging="dgvAutos_PageIndexChanging"
@@ -75,7 +75,7 @@
             <asp:BoundField HeaderText="Precio" DataField="Precio" DataFormatString="{0:C}" />
             <asp:CheckBoxField HeaderText="Activo" DataField="Estado" />
             <asp:CommandField HeaderText="Editar" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
-            <asp:ButtonField CommandName="Eliminar" Text="Eliminar" />
+            <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" Text="Eliminar" ControlStyle-CssClass="btn btn-primary py-1"/>
         </Columns>
     </asp:GridView>
 
