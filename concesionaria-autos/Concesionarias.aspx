@@ -13,7 +13,7 @@
     </div>
 
     <div class="container">
-        <div class="d-flex my-4">
+        <div class="d-flex my-4 d-none">
             <asp:TextBox CssClass="form-control" ID="txtBuscar" runat="server"></asp:TextBox>
             <asp:Button CssClass="btn btn-primary form-control w-25" ID="btnBuscar" runat="server" Text="Buscar" OnClick="Button1_Click"/>
         </div>
