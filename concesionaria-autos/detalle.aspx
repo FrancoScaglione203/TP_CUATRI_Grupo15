@@ -4,19 +4,24 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-    <% if (listaImagenes.Count() == 2)
-        {  %>
-    <div class="detail-img-container">
-        <img class="detail-img" src="<%:listaImagenes[1].ImagenUrl %>" alt="<%:listaImagenes[1].Id %>">
-    </div>
-    <% }
-        else
-        {  %>
-    <div class="detail-img-container">
-        <img class="detail-img" src="https://cdn.group.renault.com/ren/ar/modelos/kangoo/ph2/kangoo-k61-ph2-desktop-header-002.jpg.ximg.mediumx2.webp/c9ee5e1b80.webp" alt="Desc">
-    </div>
-    <% } %>
+    <asp:UpdatePanel runat="server">
+        <ContentTemplate runat="server">
+            <% if (listaImagenes.Count() > 1)
+                {  %>
+            <div class="detail-img-container">
+                <img class="detail-img" src="<%:listaImagenes[1].ImagenUrl %>" alt="<%:listaImagenes[1].Id %>">
+            </div>
+            <% }
+                else
+                {  %>
+            <div class="detail-img-container">
+                <img class="detail-img" src="https://cdn.group.renault.com/ren/ar/modelos/kangoo/ph2/kangoo-k61-ph2-desktop-header-002.jpg.ximg.mediumx2.webp/c9ee5e1b80.webp" alt="Desc">
+            </div>
+            <% } %>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 
     <div class="container">
         <div class="d-flex justify-content-center my-5">

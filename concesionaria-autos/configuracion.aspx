@@ -84,8 +84,7 @@
 
         <div class="row justify-content-center">
 
-            <asp:UpdatePanel runat="server">
-                <ContentTemplate runat="server">
+           
                     <asp:Image CssClass="configImg" ID="colorBox" runat="server" />
                 </ContentTemplate>
             </asp:UpdatePanel>

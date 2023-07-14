@@ -207,7 +207,7 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                     <ContentTemplate>
-                        <asp:Image class="filtroSinSeleccionar" ImageUrl="https://i.ibb.co/6twKzLQ/Auto-Transparente.jpg"
+                        <asp:Image class="card-img-top" ImageUrl="https://i.ibb.co/6twKzLQ/Auto-Transparente.jpg"
                             runat="server" ID="imagenDesc" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -367,7 +367,7 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel4" runat="server">
                     <ContentTemplate>
-                        <asp:Image class="filtroSinSeleccionar" ImageUrl="https://i.ibb.co/6twKzLQ/Auto-Transparente.jpg"
+                        <asp:Image class="card-img-top" ImageUrl="https://i.ibb.co/6twKzLQ/Auto-Transparente.jpg"
                             runat="server" ID="imagenColor" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -436,7 +436,7 @@
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel5" runat="server">
                     <ContentTemplate>
-                        <asp:Image class="filtroSinSeleccionar" ImageUrl="https://i.ibb.co/6twKzLQ/Auto-Transparente.jpg"
+                        <asp:Image class="card-img-top" ImageUrl="https://i.ibb.co/6twKzLQ/Auto-Transparente.jpg"
                             runat="server" ID="imagenTapizado" Width="50%" />
                     </ContentTemplate>
                 </asp:UpdatePanel>
