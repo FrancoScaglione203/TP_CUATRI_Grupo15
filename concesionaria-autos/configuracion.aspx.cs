@@ -53,7 +53,7 @@ namespace concesionaria_autos
                     RepeaterColor.DataSource = ListaColores;
                     RepeaterColor.DataBind();
 
-                    colorBox.ImageUrl = "./imagenes/" + ListaColores[0].ImagenUrl;
+                    colorBox.ImageUrl = ListaColores[0].ImagenUrl;
 
                     ListaTapizado = tapizadoNegocio.listar();
                     ListaTapizado = ListaTapizado.FindAll(tapizado => tapizado.IdProducto == id);
@@ -61,7 +61,7 @@ namespace concesionaria_autos
                     RepeaterTapizado.DataSource = ListaTapizado;
                     RepeaterTapizado.DataBind();
 
-                    tapizadoBox.ImageUrl = "./imagenes/"+ListaTapizado[0].ImagenUrl;
+                    tapizadoBox.ImageUrl = ListaTapizado[0].ImagenUrl;
 
                 }
 
@@ -107,12 +107,12 @@ namespace concesionaria_autos
             ListaColores2 = colorNegocio.listar();
             Color2 = ListaColores2.Find(elemento => elemento.Id == idColor);
 
-            colorBox.ImageUrl = "./imagenes/" + Color2.ImagenUrl;
-            equipamientoBox.ImageUrl = "./imagenes/" + Color2.ImagenUrl;
-            resumenBox.ImageUrl = "./imagenes/"+Color2.ImagenUrl;
+            colorBox.ImageUrl = Color2.ImagenUrl;
+            equipamientoBox.ImageUrl = Color2.ImagenUrl;
+            resumenBox.ImageUrl = Color2.ImagenUrl;
 
             Session.Add("colorNombre", Color2.Nombre);
-            Session.Add("colorFoto", "./imagenes/"+Color2.ImagenUrl);
+            Session.Add("colorFoto", Color2.ImagenUrl);
 
         }
 
@@ -127,7 +127,7 @@ namespace concesionaria_autos
 
             string precio = Tapizado2.Precio.ToString("N", new System.Globalization.CultureInfo("es-AR"));
             
-            tapizadoBox.ImageUrl = "./imagenes/" + Tapizado2.ImagenUrl;
+            tapizadoBox.ImageUrl = Tapizado2.ImagenUrl;
 
 
             Session.Add("tapizadoNombre", Tapizado2.Nombre);

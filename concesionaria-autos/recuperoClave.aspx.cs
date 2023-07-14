@@ -32,6 +32,7 @@ namespace concesionaria_autos
                 int validacion;
                 string nombre;
                 nombre = lista[0].Nombre;
+                Session["confirMail"] = lista[0].Email;
 
                 if (lista.Count > 0)
                 {

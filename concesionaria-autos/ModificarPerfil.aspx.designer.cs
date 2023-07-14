@@ -132,13 +132,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.RequiredFieldValidator vClave;
 
         /// <summary>
-        /// Control btnCancelar.
+        /// Control lblCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        protected global::System.Web.UI.WebControls.Label lblCancelar;
 
         /// <summary>
         /// Control btnConfirmar.

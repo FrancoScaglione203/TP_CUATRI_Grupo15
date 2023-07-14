@@ -11,7 +11,7 @@
 
         <div class="col-5">
 
-            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" style="height:9em;"/>
+            <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" style="height: 9em;" />
 
             <h6 class="fw-bold my-3 text-center">Bienvenido a MY RENAULT</h6>
             <h6 class="fw-bold my-3 text-center">Donde quiera que vayas, disfrutá los beneficios</h6>
@@ -45,7 +45,8 @@
             </div>
             <div class="d-flex justify-content-between">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <input id="Checkbox1" type="checkbox" cssclass="form-check-input" />
+                    <%--       <input type="checkbox" class="form-check-input" id="exampleCheck1">--%>
                     <label class="form-check-label" for="exampleCheck1">Recordar sesión</label>
                 </div>
                 <div>
@@ -54,7 +55,21 @@
             </div>
             <%--<asp:Label ID="lblRecuperoClave" runat="server" CssClass="btn btn-light border-0 w-50 p-3" Text="Olvidé mi contraseña" />--%>
             <div class="text-center my-2">
-                <asp:Button Text="Ingresar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
+
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <div>
+                            <%if (!(Session["validacionLogin"] == null))
+                                {%>
+                            <label for="txtClave2" class="text-danger form-label">DNI o contraseña incorrectos</label>
+                            <%}%>
+                        </div>
+                        <asp:Button Text="Ingresar" CssClass="btn btn-warning w-50 p-3 mt-4 mb-2" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+
                 <a class="nav-item nav-link" href="signin.aspx">
                     <asp:Label ID="lblRegistro" runat="server" CssClass="btn btn-light w-50 p-3" Text="Todavía no estoy registrado" />
                 </a>

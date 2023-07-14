@@ -97,8 +97,10 @@ namespace concesionaria_autos
                 }
                 else
                 {
-                    Session.Add("error", "user o pass incorrectos");
-                    Response.Redirect("Errorlog.aspx", false);
+
+                    int x = 1;
+                    Session["validacionLogin"] = x;
+                    return;
                 }
 
             }

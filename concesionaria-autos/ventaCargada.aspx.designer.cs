@@ -15,15 +15,6 @@ namespace concesionaria_autos
     {
 
         /// <summary>
-        /// Control lblDNIComprador.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDNIComprador;
-
-        /// <summary>
         /// Control lblModeloAuto.
         /// </summary>
         /// <remarks>
@@ -31,6 +22,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblModeloAuto;
+
+        /// <summary>
+        /// Control lblDNIComprador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDNIComprador;
 
         /// <summary>
         /// Control lblVersionAuto.

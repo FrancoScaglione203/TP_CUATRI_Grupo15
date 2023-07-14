@@ -9,7 +9,7 @@
 
             <img class="my-3" src="https://myrenault.com.ar/vendor/template/assets/img/renault_black.svg" alt="Renault" style="height:9em;"/>
 
-            <h6 class="fw-bold my-3">Ya te enviamos un mail para que recuperes la contraseña</h6>
+            <h6 class="fw-bold my-3">Enviamos un mail a "<%= Session["confirMail"] %>"para que recuperes la contraseña</h6>
 
            
         </div>
