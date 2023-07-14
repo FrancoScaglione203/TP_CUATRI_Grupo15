@@ -332,7 +332,39 @@ namespace negocio
             }
         }
 
-        
+        public List<Auto> FiltrarAutosAvanzado(string campo, string criterio, string filtro, string estado)
+        {
+            List<Auto> lista = listar();
+
+            List<Auto> listaFiltrada = lista;
+
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                if (campo == "Nombre")
+                {
+                    if (criterio == "Contiene")
+                        listaFiltrada = listaFiltrada.Where(a => a.Nombre.Contains(filtro)).ToList();
+                    else if (criterio == "Comienza con")
+                        listaFiltrada = listaFiltrada.Where(a => a.Nombre.StartsWith(filtro)).ToList();
+                    else if (criterio == "Termina con")
+                        listaFiltrada = listaFiltrada.Where(a => a.Nombre.EndsWith(filtro)).ToList();
+                }
+                else if (campo == "Precio")
+                {
+
+                }
+            }
+
+            if (estado != "Todos")
+            {
+                bool estadoActivo = (estado == "Activo");
+                listaFiltrada = listaFiltrada.Where(a => a.Estado == estadoActivo).ToList();
+            }
+
+            return listaFiltrada;
+        }
+
+
 
 
     }
