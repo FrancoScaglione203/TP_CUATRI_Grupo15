@@ -123,6 +123,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.TextBox txtImagenUrl;
 
         /// <summary>
+        /// Control RFImagenMain.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFImagenMain;
+
+        /// <summary>
         /// Control btnAceptar.
         /// </summary>
         /// <remarks>
@@ -303,13 +312,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlCajaManual;
 
         /// <summary>
-        /// Control RFValCajaManual.
+        /// Control RFddlCajaManual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFValCajaManual;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFddlCajaManual;
 
         /// <summary>
         /// Control ddlCajaAutomatica.
@@ -321,13 +330,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlCajaAutomatica;
 
         /// <summary>
-        /// Control RFValCajaAutomatica.
+        /// Control RFddlCajaAutomatica.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFValCajaAutomatica;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFddlCajaAutomatica;
 
         /// <summary>
         /// Control ddlNafta.
@@ -339,13 +348,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlNafta;
 
         /// <summary>
-        /// Control RFValNafta.
+        /// Control RFddlNafta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFValNafta;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFddlNafta;
 
         /// <summary>
         /// Control btnAceptarFichaTecnica.
@@ -393,6 +402,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.TextBox txtTitulo;
 
         /// <summary>
+        /// Control RFDescTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFDescTitulo;
+
+        /// <summary>
         /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
@@ -400,6 +418,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+
+        /// <summary>
+        /// Control RFDescDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFDescDescripcion;
 
         /// <summary>
         /// Control UpdatePanel10.
@@ -418,6 +445,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImagenDesc;
+
+        /// <summary>
+        /// Control RFDescImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFDescImagen;
 
         /// <summary>
         /// Control btnAceptarDescripcion.
@@ -447,6 +483,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.TextBox txtVersion;
 
         /// <summary>
+        /// Control RFEquipVersion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFEquipVersion;
+
+        /// <summary>
         /// Control txtPrecioVersion.
         /// </summary>
         /// <remarks>
@@ -454,6 +499,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecioVersion;
+
+        /// <summary>
+        /// Control RFEquiPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFEquiPrecio;
 
         /// <summary>
         /// Control ddlClimatizador.
@@ -465,6 +519,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlClimatizador;
 
         /// <summary>
+        /// Control RFClimatizador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFClimatizador;
+
+        /// <summary>
         /// Control ddlSensorEstacionamiento.
         /// </summary>
         /// <remarks>
@@ -472,6 +535,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSensorEstacionamiento;
+
+        /// <summary>
+        /// Control RFSensor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFSensor;
 
         /// <summary>
         /// Control ddlComputadora.
@@ -483,6 +555,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlComputadora;
 
         /// <summary>
+        /// Control RFCompu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFCompu;
+
+        /// <summary>
         /// Control ddlControlCrucero.
         /// </summary>
         /// <remarks>
@@ -492,6 +573,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.DropDownList ddlControlCrucero;
 
         /// <summary>
+        /// Control RFControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFControl;
+
+        /// <summary>
         /// Control ddlAlarma.
         /// </summary>
         /// <remarks>
@@ -499,6 +589,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlAlarma;
+
+        /// <summary>
+        /// Control RFAlarma.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFAlarma;
 
         /// <summary>
         /// Control btnAceptarEquipamiento.
@@ -546,6 +645,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.TextBox txtColor;
 
         /// <summary>
+        /// Control RFColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFColor;
+
+        /// <summary>
         /// Control txtImagenMuestraColor.
         /// </summary>
         /// <remarks>
@@ -553,6 +661,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImagenMuestraColor;
+
+        /// <summary>
+        /// Control RFMuestaColor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFMuestaColor;
 
         /// <summary>
         /// Control UpdatePanel12.
@@ -571,6 +688,15 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImagenColor;
+
+        /// <summary>
+        /// Control RFImagenAuto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFImagenAuto;
 
         /// <summary>
         /// Control btnAceptarColor.
@@ -618,6 +744,15 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.TextBox txtTapizado;
 
         /// <summary>
+        /// Control RFTapizado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFTapizado;
+
+        /// <summary>
         /// Control txtImagenMuestraTapizado.
         /// </summary>
         /// <remarks>
@@ -625,6 +760,33 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtImagenMuestraTapizado;
+
+        /// <summary>
+        /// Control RFTapizadoMuestra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFTapizadoMuestra;
+
+        /// <summary>
+        /// Control txtPrecioTapizado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPrecioTapizado;
+
+        /// <summary>
+        /// Control RFPrecioTapizado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFPrecioTapizado;
 
         /// <summary>
         /// Control UpdatePanel14.
@@ -645,13 +807,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.TextBox txtImagenTapizado;
 
         /// <summary>
-        /// Control txtPrecioTapizado.
+        /// Control RFTapizadoImagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrecioTapizado;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFTapizadoImagen;
 
         /// <summary>
         /// Control btnAceptarTapizado.

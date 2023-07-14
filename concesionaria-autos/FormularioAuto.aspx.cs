@@ -120,14 +120,6 @@ namespace concesionaria_autos
                 auto.Estado = true;
                 imagen.ImagenUrl = txtImagenUrl.Text;
 
-                //fichaTecnica.Ancho = int.Parse(txtAncho.Text);
-                //fichaTecnica.Longitud = int.Parse(txtLongitud.Text);
-                //fichaTecnica.Plazas = int.Parse(txtPlazas.Text);
-                //fichaTecnica.Ejes = int.Parse(txtEjes.Text);
-                //fichaTecnica.CajaAutomatica = ddlCajaAutomatica.SelectedValue != "0" ? true : false;
-                //fichaTecnica.CajaManual = ddlCajaManual.SelectedValue != "0" ? true : false;
-                //fichaTecnica.Nafta = ddlNafta.SelectedValue != "0" ? true : false;
-
                 if (Request.QueryString["id"] != null)
                 {
                     int idAuto = int.Parse(txtId.Text);
@@ -402,7 +394,8 @@ namespace concesionaria_autos
                     tapizadoNegocio.agregar(tapizado);
                 }
 
-                Response.Redirect("Autos.aspx", false);
+                alertaExitosa.Visible = true;
+                //Response.Redirect("Autos.aspx", false);
 
             }
             catch (Exception ex)
@@ -425,26 +418,7 @@ namespace concesionaria_autos
         protected void txtImagenTapizado_TextChanged(object sender, EventArgs e)
         {
             imagenTapizado.ImageUrl = txtImagenTapizado.Text;
-            alertaExitosa.Visible = true;
+
         }
-
-        //protected void btnInactivar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        AutoNeogocio negocio = new AutoNeogocio();
-        //        Auto seleccionado = (Auto)Session["autoSeleccionado"];
-
-        //        negocio.eliminarLogico(seleccionado.Id);
-        //        Response.Redirect("Autos.aspx");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Session.Add("error", ex.ToString());
-        //        Response.Redirect("Error.aspx");
-        //    }
-        //}
-
-
     }
 }
