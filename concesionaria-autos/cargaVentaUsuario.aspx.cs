@@ -1,6 +1,7 @@
 ﻿using dominio;
 using negocio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -70,8 +71,8 @@ namespace concesionaria_autos
 
         protected void ddlCuotas_DataBound(object sender, EventArgs e)
         {
-            ddlVersion.Items.Insert(0, new ListItem("Selecciona la cantidad de cuotas", ""));
-            ddlVersion.Items[0].Attributes.Add("disabled", "disabled");
+            ddlCuotas.Items.Insert(0, new ListItem("Selecciona la cantidad de cuotas", ""));
+            ddlCuotas.Items[0].Attributes.Add("disabled", "disabled");
         }
         protected void btnCargarVenta_Click(object sender, EventArgs e)
         {
@@ -181,6 +182,11 @@ namespace concesionaria_autos
                     EquipamientoNegocio negocio = new EquipamientoNegocio();
                     List<Equipamiento> lista = negocio.listarUnModelo(Convert.ToInt32(ddlModelo.SelectedValue));
 
+                    Equipamiento opcionSeleccione = new Equipamiento();
+                    opcionSeleccione.Id = 0;
+                    opcionSeleccione.Nombre = "Seleccione un modelo";
+                    lista.Insert(0, opcionSeleccione);
+
                     ddlVersion.DataSource = lista;
                     ddlVersion.DataValueField = "Id";
                     ddlVersion.DataTextField = "Nombre";
@@ -215,7 +221,10 @@ namespace concesionaria_autos
                 ColorNegocio colorNegocio = new ColorNegocio();
                 List<Color> listaColores = colorNegocio.listar().FindAll(x => x.IdProducto == Convert.ToInt32(ddlModelo.SelectedValue));
 
-
+                Color opcionSeleccione = new Color();
+                opcionSeleccione.Id = 0;
+                opcionSeleccione.Nombre = "Seleccione un modelo";
+                listaColores.Insert(0, opcionSeleccione);
 
                 ddlColor.DataSource = listaColores;
                 ddlColor.DataValueField = "Id";

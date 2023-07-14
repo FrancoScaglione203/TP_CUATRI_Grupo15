@@ -71,6 +71,7 @@
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="confirmacionRecuperoClave.aspx" />
     <Content Include="Compras.aspx" />
+    <Content Include="confirmar_pago.aspx" />
     <Content Include="Contactanos.aspx" />
     <Content Include="Correo\configuracionAsesora.html" />
     <Content Include="Correo\RecuperarClave.html" />
@@ -255,6 +256,13 @@
     </Compile>
     <Compile Include="confirmacionRecuperoClave.aspx.designer.cs">
       <DependentUpon>confirmacionRecuperoClave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmar_pago.aspx.cs">
+      <DependentUpon>confirmar_pago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmar_pago.aspx.designer.cs">
+      <DependentUpon>confirmar_pago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contactanos.aspx.cs">
       <DependentUpon>Contactanos.aspx</DependentUpon>

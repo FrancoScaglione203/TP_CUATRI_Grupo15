@@ -33,13 +33,13 @@ namespace concesionaria_autos
         protected global::System.Web.UI.WebControls.Label lblMontoPago;
 
         /// <summary>
-        /// Control lblReferenciaPago.
+        /// Control txtReferenciaPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblReferenciaPago;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtReferenciaPago;
 
         /// <summary>
         /// Control comprobantePago.
@@ -49,5 +49,23 @@ namespace concesionaria_autos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputFile comprobantePago;
+
+        /// <summary>
+        /// Control btnSubirPago.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubirPago;
+
+        /// <summary>
+        /// Control divError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divError;
     }
 }

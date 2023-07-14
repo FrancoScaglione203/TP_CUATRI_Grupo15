@@ -33,17 +33,17 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <div class="card-body p-4">
+                    <div class="card-body p-4 pagos">
                         <h6 class="card-title fw-bold">Datos Bancarios</h6>
                         <p class="card-text">Banco: BBVA BANCO FRANCÉS S.A.</p>
                         <p class="card-text">Número de cuenta: 204-87865/8</p>
                         <p class="card-text">CBU: 01702046600000087865</p>
                         <p class="card-text">Titular de la cuenta: Pedrito Renault</p>
                         <p class="card-text">Monto a pagar: $<asp:Label ID="lblMontoPago" runat="server"></asp:Label></p>
-                        <p class="card-text">
-                            Referencia:
-                           <asp:Label ID="lblReferenciaPago" runat="server"></asp:Label>
-                        </p>
+                        <div class="mb-3 d-flex align-items-center">
+                            <label for="txtReferenciaPago" class="form-label me-2">Referencia:</label>
+                            <input type="text" class="form-control" id="txtReferenciaPago" runat="server" />
+                        </div>
                     </div>
                 </div>
                 <div class="card my-3">
@@ -56,7 +56,10 @@
                     <p class="card-text">Importante: Indique la referencia al realizar la transferencia para identificar su pago.</p>
                 </div>
                 <div class="text-center my-1">
-                    <button type="button" class="btn btn-primary w-100">Subir pago</button>
+                    <asp:Button ID="btnSubirPago" runat="server" Text="Subir pago" CssClass="btn btn-primary w-100" OnClick="btnSubirPago_Click" />
+                    <div class="alert alert-danger mt-3" id="divError" runat="server" visible="false">
+                        <strong>Error:</strong> Debe seleccionar al menos una cuota para realizar el pago.
+                    </div>
                 </div>
             </div>
         </div>

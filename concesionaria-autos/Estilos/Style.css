@@ -487,3 +487,8 @@ div#pagos .card {
     font-weight: bold;
     margin: 0 10px;
 }
+
+.pagos p{
+    font-size: 1.1rem;
+
+}

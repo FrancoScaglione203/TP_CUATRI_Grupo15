@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server" Enabled="false" OnSelectedIndexChanged="ddlVersion_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlVersion" CssClass="form-select" runat="server" Enabled="false" OnSelectedIndexChanged="ddlVersion_SelectedIndexChanged" AutoPostBack="True" AppendDataBoundItems="true"></asp:DropDownList>
                     <label for="ddlVersion" class="form-label">Versión del Auto: </label>
                 </div>
                 <div class="form-floating mb-3">

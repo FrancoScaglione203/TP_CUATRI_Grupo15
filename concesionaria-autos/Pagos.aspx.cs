@@ -11,11 +11,14 @@ namespace concesionaria_autos
     {
         public List<Cuota> ListaCuotas { get; set; }
         public decimal MontoPago { get; set; }
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
             CuotaNegocio cuotaNegocio = new CuotaNegocio();
             int idVenta = Convert.ToInt32(Session["idVenta"]);
+
+            
 
             try
             {
@@ -56,12 +59,12 @@ namespace concesionaria_autos
         protected void chkCuota_CheckedChanged(object sender, EventArgs e)
         {
             CalcularMontoPago();
+            Session.Add("montoPago", MontoPago);
             lblMontoPago.Text = MontoPago.ToString("N", new System.Globalization.CultureInfo("es-AR"));
         }
 
         protected void CalcularMontoPago()
         {
-            MontoPago = 0;
 
             foreach (RepeaterItem item in rptCuotas.Items)
             {
@@ -73,8 +76,45 @@ namespace concesionaria_autos
                     {
                         decimal monto = decimal.Parse(chkCuota.Attributes["data-monto"]);
                         MontoPago += monto;
+                        
                     }
                 }
+            }
+        }
+
+        protected void btnSubirPago_Click(object sender, EventArgs e)
+        {
+
+            bool hayCuota = false;
+
+            foreach (RepeaterItem item in rptCuotas.Items)
+            {
+                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+                {
+                    CheckBox chkCuota = item.FindControl("chkCuota") as CheckBox;
+
+                    if (chkCuota != null && chkCuota.Checked)
+                    {
+                        hayCuota = true;
+                        break;
+                    }
+                }
+            }
+
+            if (hayCuota)
+            {
+                decimal montoPago = MontoPago;
+
+                string referenciaPago = txtReferenciaPago.Value;
+
+                //Session.Add("montoPago", montoPago);
+
+                Session.Add("referenciaPago", referenciaPago);
+
+                Response.Redirect("confirmar_pago.aspx");
+            } else
+            {
+                divError.Visible = true;
             }
         }
     }
