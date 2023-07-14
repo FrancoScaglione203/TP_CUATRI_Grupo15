@@ -14,7 +14,7 @@
                     <div class="card py-4">
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
-                                <img src="imagenes/<%# Eval("UrlImagen") %>" class="card-img" alt="un auto">
+                                <img src="<%# Eval("UrlImagen") %>" class="card-img" alt="un auto">
                             </div>
                             <div class="card-body col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                 <h4 class="card-title fw-bold"><%# Eval("ModeloAuto") %> <%# Eval("VersionAuto") %></h4>
