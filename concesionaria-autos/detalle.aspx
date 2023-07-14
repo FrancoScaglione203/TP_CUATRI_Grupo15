@@ -5,9 +5,18 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <% if (listaImagenes.Count() == 2)
+        {  %>
     <div class="detail-img-container">
         <img class="detail-img" src="<%:listaImagenes[1].ImagenUrl %>" alt="<%:listaImagenes[1].Id %>">
     </div>
+    <% }
+        else
+        {  %>
+    <div class="detail-img-container">
+        <img class="detail-img" src="https://cdn.group.renault.com/ren/ar/modelos/kangoo/ph2/kangoo-k61-ph2-desktop-header-002.jpg.ximg.mediumx2.webp/c9ee5e1b80.webp" alt="Desc">
+    </div>
+    <% } %>
 
     <div class="container">
         <div class="d-flex justify-content-center my-5">
@@ -19,7 +28,7 @@
             </div>
             <div id="vl-detalle" class="vl pe-4"></div>
             <div class="col-4">
-                <h4 class="fw-bold">desde $<%:auto.Precio.ToString("N",new System.Globalization.CultureInfo("es-AR")) %></h4>
+                <h4 class="fw-bold">desde $<%:auto.Precio.ToString("N", new System.Globalization.CultureInfo("es-AR")) %></h4>
             </div>
         </div>
 
