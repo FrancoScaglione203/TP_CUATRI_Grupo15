@@ -15,13 +15,13 @@ namespace concesionaria_autos
     {
 
         /// <summary>
-        /// Control chkAvanzado.
+        /// Control btnFiltroAvanzado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAvanzado;
+        protected global::System.Web.UI.WebControls.Button btnFiltroAvanzado;
 
         /// <summary>
         /// Control txtFiltro.

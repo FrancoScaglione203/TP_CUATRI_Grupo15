@@ -21,9 +21,13 @@ namespace concesionaria_autos
             //}
 
 
-            FiltroAvanzado = chkAvanzado.Checked;
+
+            // Actualiza la apariencia de acuerdo al estado actual del filtro avanzado
+                UpdateFiltroAvanzadoAppearance();
+
             if (!IsPostBack)
             {
+                //FiltroAvanzado = false;
                 AutoNeogocio negocio = new AutoNeogocio();
                 Session.Add("listaAutos", negocio.listar());
                 dgvAutos.DataSource = Session["listaAutos"];
@@ -51,10 +55,36 @@ namespace concesionaria_autos
             dgvAutos.DataBind();
         }
 
-        protected void chkAvanzado_CheckedChanged(object sender, EventArgs e)
+        protected void btnFiltroAvanzado_Click(object sender, EventArgs e)
         {
-            FiltroAvanzado = chkAvanzado.Checked;
-            txtFiltro.Enabled = !FiltroAvanzado;
+            FiltroAvanzado = !FiltroAvanzado;
+
+            if (FiltroAvanzado)
+            {
+                btnFiltroAvanzado.Text = "Filtro Avanzado: Activado";
+                btnFiltroAvanzado.CssClass = "btn btn-primary active";
+                txtFiltro.Enabled = false;
+            }
+            else
+            {
+                btnFiltroAvanzado.Text = "Filtro Avanzado: Desactivado";
+                btnFiltroAvanzado.CssClass = "btn btn-primary";
+                txtFiltro.Enabled = true;
+            }
+        }
+
+        protected void UpdateFiltroAvanzadoAppearance()
+        {
+            if (FiltroAvanzado)
+            {
+                btnFiltroAvanzado.CssClass = "btn btn-primary active";
+                btnFiltroAvanzado.Text = "Filtro Avanzado: Activado";
+            }
+            else
+            {
+                btnFiltroAvanzado.CssClass = "btn btn-primary";
+                btnFiltroAvanzado.Text = "Filtro Avanzado: Desactivado";
+            }
         }
 
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)

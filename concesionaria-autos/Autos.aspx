@@ -7,10 +7,8 @@
         <div class="d-flex justify-content-between">
             <div>
                 <a href="FormularioAuto.aspx" class="btn btn-primary">Nuevo auto</a>
-                <asp:CheckBox Text="Filtro Avanzado"
-                    CssClass="btn btn-primary" ID="chkAvanzado" runat="server"
-                    AutoPostBack="true"
-                    OnCheckedChanged="chkAvanzado_CheckedChanged" />
+                <asp:Button Text="Filtro Avanzado" CssClass="btn btn-primary" ID="btnFiltroAvanzado" runat="server" OnClick="btnFiltroAvanzado_Click" />
+
             </div>
 
             <div class="d-flex mb-3">
@@ -20,7 +18,7 @@
 
         </div>
 
-        <%if (chkAvanzado.Checked)
+        <%if (FiltroAvanzado)
             { %>
         <div class="row">
             <div class="col-3">

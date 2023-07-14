@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="admin.css" />
     <Content Include="Autos.aspx" />
+    <Content Include="CargaAuto.aspx" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="confirmacionRecuperoClave.aspx" />
@@ -197,6 +198,13 @@
     </Compile>
     <Compile Include="Autos.aspx.designer.cs">
       <DependentUpon>Autos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaAuto.aspx.cs">
+      <DependentUpon>CargaAuto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaAuto.aspx.designer.cs">
+      <DependentUpon>CargaAuto.aspx</DependentUpon>
     </Compile>
     <Compile Include="CargaVenta.aspx.cs">
       <DependentUpon>CargaVenta.aspx</DependentUpon>
