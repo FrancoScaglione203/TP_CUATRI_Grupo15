@@ -395,7 +395,7 @@ namespace concesionaria_autos
                 }
 
                 alertaExitosa.Visible = true;
-                Response.Redirect("Autos.aspx", false);
+                //Response.Redirect("Autos.aspx", false);
 
             }
             catch (Exception ex)
