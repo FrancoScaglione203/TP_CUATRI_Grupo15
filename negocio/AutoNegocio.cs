@@ -231,7 +231,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select top 1 p.id, p.nombre,p.precio,i.idproducto, i.ImagenUrl, f.ancho, f.CajaManual,f.CajaAutomatica,f.Ejes,f.Longitud,f.Nafta,f.Plazas from productos p inner join imagenes i on p.id = i.idProducto inner join fichatecnica f on p.id = f.id where P.id ="+ id);
+                datos.setearConsulta("select top 1 p.id as id, p.nombre as nombre,p.precio as precio,i.idproducto as idproducto, i.ImagenUrl as imagenUrl, f.ancho as ancho, f.CajaManual as CajaManual,f.CajaAutomatica as CajaAutomatica,f.Ejes as Ejes,f.Longitud as Longitud,f.Nafta as Nafta,f.Plazas as Plazas,d.Titulo as Titulo,d.Descripcion as Bajada,d.ImagenUrl as DImagenUrl,e.Alarma as Alarma,e.Climatizador as Climatizador,e.Computadora as Computadora,e.ControlCrucero as ControlCrucero,e.Nombre as ENombre,e.Precio EPrecio,e.SensorEstacionamiento as SensorEstacionamiento,c.ImagenUrl as CImagenUrl,c.Muestra as Muestra,c.Nombre as CNombre,t.ImagenUrl TImagenUrl,t.Muestra as TMuestra,t.Nombre as TNombre,t.Precio as TPrecio from productos p inner join imagenes i on p.id = i.idProducto  inner join fichatecnica f on p.id = f.id  inner join descripcion d on p.id = d.IdProducto inner join equipamiento e on p.id = e.IdProducto inner join colores c on p.id = c.IdProducto inner join TAPIZADOS t on p.id = t.IdProducto where P.id =" + id + " and estado = 1");
+
                 datos.ejecutarLectura();
 
 
@@ -251,6 +252,24 @@ namespace negocio
                     aux.FichaTecnica.Longitud = (int)datos.Lector["Longitud"];
                     aux.FichaTecnica.Nafta = (bool)datos.Lector["Nafta"];
                     aux.FichaTecnica.Plazas = (int)datos.Lector["Plazas"];
+                    aux.Descripcion.Titulo = (string)datos.Lector["Titulo"];
+                    aux.Descripcion.Bajada = (string)datos.Lector["Bajada"];
+                    aux.Descripcion.ImagenUrl = (string)datos.Lector["DImagenUrl"];
+                    aux.Equipamiento.Alarma = (bool)datos.Lector["Alarma"];
+                    aux.Equipamiento.Climatizador = (bool)datos.Lector["Climatizador"];
+                    aux.Equipamiento.Computadora = (bool)datos.Lector["Computadora"];
+                    aux.Equipamiento.ControlCrucero = (bool)datos.Lector["ControlCrucero"];
+                    aux.Equipamiento.Nombre = (string)datos.Lector["ENombre"];
+                    aux.Equipamiento.Precio = (decimal)datos.Lector["EPrecio"];
+                    aux.Equipamiento.SensorEstacionamiento = (bool)datos.Lector["SensorEstacionamiento"];
+                    aux.Colores.ImagenUrl = (string)datos.Lector["CImagenUrl"];
+                    aux.Colores.Muestra = (string)datos.Lector["Muestra"];
+                    aux.Colores.Nombre = (string)datos.Lector["CNombre"];
+                    aux.Tapizado.ImagenUrl = (string)datos.Lector["TImagenUrl"];
+                    aux.Tapizado.Muestra = (string)datos.Lector["TMuestra"];
+                    aux.Tapizado.Nombre = (string)datos.Lector["TNombre"];
+                    aux.Tapizado.Precio = (decimal)datos.Lector["TPrecio"];
+
 
 
                     lista.Add(aux);

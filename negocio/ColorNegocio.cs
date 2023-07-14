@@ -83,7 +83,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update DESCRIPCION set Nombre = @Nombre ,Muestra = @Muestra,ImagenUrl = @ImagenUrl WHERE IdProducto = @idProducto");
+                datos.setearConsulta("update Colores set Nombre = @Nombre ,Muestra = @Muestra,ImagenUrl = @ImagenUrl WHERE IdProducto = @idProducto");
                 datos.setearParametro("@Nombre", mod.Nombre);
                 datos.setearParametro("@Muestra", mod.Muestra);
                 datos.setearParametro("@ImagenUrl", mod.ImagenUrl);
