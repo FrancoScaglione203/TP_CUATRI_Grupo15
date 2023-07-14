@@ -11,7 +11,20 @@ namespace concesionaria_autos
 {
     public partial class Autos : System.Web.UI.Page
     {
-        public bool FiltroAvanzado { get; set; }
+        public bool FiltroAvanzado
+        {
+            get
+            {
+                if (Session["FiltroAvanzado"] != null)
+                    return (bool)Session["FiltroAvanzado"];
+                else
+                    return false; // Valor predeterminado si no se encuentra en la sesión
+            }
+            set
+            {
+                Session["FiltroAvanzado"] = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (!Seguridad.esAdmin(Session["trainee"]))
@@ -20,9 +33,6 @@ namespace concesionaria_autos
             //    Response.Redirect("Error.aspx");
             //}
 
-
-
-            // Actualiza la apariencia de acuerdo al estado actual del filtro avanzado
                 UpdateFiltroAvanzadoAppearance();
 
             if (!IsPostBack)
@@ -108,17 +118,19 @@ namespace concesionaria_autos
         {
             try
             {
-                UsuarioNegocio negocio = new UsuarioNegocio();
-                dgvAutos.DataSource = negocio.filtrar(
+                AutoNeogocio negocio = new AutoNeogocio();
+                List<Auto> listaFiltrada = negocio.FiltrarAutosAvanzado(
                     ddlCampo.SelectedItem.ToString(),
                     ddlCriterio.SelectedItem.ToString(),
                     txtFiltroAvanzado.Text,
                     ddlEstado.SelectedItem.ToString());
+
+                dgvAutos.DataSource = listaFiltrada;
                 dgvAutos.DataBind();
             }
             catch (Exception ex)
             {
-                throw ex;
+                // Manejar la excepción apropiadamente
                 Session.Add("error", ex);
                 throw;
             }
