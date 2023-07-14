@@ -394,6 +394,7 @@ namespace concesionaria_autos
                     tapizadoNegocio.agregar(tapizado);
                 }
 
+                alertaExitosa.Visible = true;
                 Response.Redirect("Autos.aspx", false);
 
             }
@@ -417,7 +418,6 @@ namespace concesionaria_autos
         protected void txtImagenTapizado_TextChanged(object sender, EventArgs e)
         {
             imagenTapizado.ImageUrl = txtImagenTapizado.Text;
-            alertaExitosa.Visible = true;
 
         }
     }

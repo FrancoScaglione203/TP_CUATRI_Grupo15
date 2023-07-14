@@ -444,6 +444,11 @@
                     <label for="txtImagenMuestraTapizado" class="form-label">Url Muestra</label>
                     <asp:RequiredFieldValidator ID="RFTapizadoMuestra" ControlToValidate="txtImagenMuestraTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una muestra" />
                 </div>
+                <div class="form-floating mb-3">
+                    <asp:TextBox runat="server" ID="txtPrecioTapizado" CssClass="form-control" type="number"/>
+                    <label for="txtPrecioTapizado" class="form-label">Precio</label>
+                    <asp:RequiredFieldValidator ID="RFPrecioTapizado" ControlToValidate="txtPrecioTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un precio" />
+                </div>
                 <asp:UpdatePanel ID="UpdatePanel14" runat="server">
                     <ContentTemplate>
                         <div class="form-floating mb-3">
@@ -454,11 +459,7 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                <div class="form-floating mb-3">
-                    <asp:TextBox runat="server" ID="txtPrecioTapizado" CssClass="form-control" type="number"/>
-                    <label for="txtPrecioTapizado" class="form-label">Precio</label>
-                    <asp:RequiredFieldValidator ID="RFPrecioTapizado" ControlToValidate="txtPrecioTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un precio" />
-                </div>
+                
             </div>
 
             <div class="d-flex justify-content-end">
