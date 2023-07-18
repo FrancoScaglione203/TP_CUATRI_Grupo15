@@ -77,6 +77,48 @@ namespace negocio
 
         }
 
+        public void modificar(Concesionaria concesionaria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update CONCESIONARIAS set Nombre = '" + concesionaria.Nombre + "' ,Calle = '" + concesionaria.Calle + "' ,Altura = "+ concesionaria.Altura + " ,Descripcion = '" + concesionaria.Descripcion + "' ,ImagenUrl = '" + concesionaria.ImagenUrl + "' ,MapsUrl = '" + concesionaria.MapsUrl + "' ,Localidad = '" + concesionaria.Localidad + "' ,Provincia = '" + concesionaria.Provincia + "' ,Estado = 1 WHERE id = " + concesionaria.Id + "  ");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public int agregar(Concesionaria concesionaria)
+        {
+            int id = 0;
+            AccesoDatos datos = new AccesoDatos();
+            try
+            { 
+                datos.setearConsulta("insert into CONCESIONARIAS(Nombre, Calle, Altura, Descripcion, ImagenUrl, MapsUrl, SemanaAbre, SemanaCierra, Localidad, Provincia, Estado) Values('" + concesionaria.Nombre + "', '"+concesionaria.Calle+"', "+concesionaria.Altura+", '"+concesionaria.Descripcion+"', '"+concesionaria.ImagenUrl+"', '"+concesionaria.MapsUrl+"', 10, 10, '"+concesionaria.Localidad+"', '"+concesionaria.Provincia+"', 1)");
+                
+                id = datos.leerIdUltimoCreado();
+
+                return id;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+
 
         public List<Concesionaria> FiltrarAutosAvanzado(string campo, string criterio, string filtro, string estado)
         {

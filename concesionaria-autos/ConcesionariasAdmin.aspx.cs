@@ -11,6 +11,13 @@ namespace concesionaria_autos
 {
     public partial class ConcesionariasAdmin : System.Web.UI.Page
    {
+
+        protected void dgvConcesionarias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id = dgvConcesionarias.SelectedDataKey.Value.ToString();
+            Response.Redirect("FormularioConcesionaria.aspx?id=" + id);
+        }
+
         public bool FiltroAvanzado
         {
             get
@@ -45,11 +52,6 @@ namespace concesionaria_autos
             dgvConcesionarias.DataBind();
         }
 
-        protected void dgvConcesionarias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string id = dgvConcesionarias.SelectedDataKey.Value.ToString();
-            Response.Redirect("FormularioAuto.aspx?id=" + id);
-        }
 
         protected void filtro_TextChanged(object sender, EventArgs e)
         {

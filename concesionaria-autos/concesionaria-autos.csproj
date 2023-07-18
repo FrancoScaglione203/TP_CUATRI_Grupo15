@@ -86,6 +86,7 @@
     <Content Include="AlaskanDetalle3.jpg" />
     <Content Include="AlaskanDetalle4.jpg" />
     <Content Include="AlaskanGris.jpg" />
+    <Content Include="FormularioConcesionaria.aspx" />
     <Content Include="Imagenes\AutoTransparente.JPG" />
     <Content Include="Imagenes\bannerMail.png" />
     <Content Include="Imagenes\concesionaria.jpg" />
@@ -334,6 +335,13 @@
     </Compile>
     <Compile Include="FormularioAuto.aspx.designer.cs">
       <DependentUpon>FormularioAuto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioConcesionaria.aspx.cs">
+      <DependentUpon>FormularioConcesionaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioConcesionaria.aspx.designer.cs">
+      <DependentUpon>FormularioConcesionaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

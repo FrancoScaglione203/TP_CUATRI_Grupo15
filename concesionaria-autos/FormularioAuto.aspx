@@ -69,7 +69,7 @@
 
         </div>
 
-      <div class="row d-none">
+        <div class="row d-none">
             <div class="col-6">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
@@ -151,7 +151,7 @@
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlCajaManual" class="form-label">Caja Manual: </label>
-                  <asp:RequiredFieldValidator ID="RFddlCajaManual" ControlToValidate="ddlCajaManual" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Seleccione una opción" />
+                    <asp:RequiredFieldValidator ID="RFddlCajaManual" ControlToValidate="ddlCajaManual" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Seleccione una opción" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:DropDownList ID="ddlCajaAutomatica" runat="server" CssClass="form-select">
@@ -230,7 +230,7 @@
                             <asp:TextBox runat="server" ID="txtImagenDesc" CssClass="form-control"
                                 AutoPostBack="true" OnTextChanged="txtImagenDesc_TextChanged" />
                             <label for="txtImagenDesc" class="form-label">Url Imagen</label>
-                             <asp:RequiredFieldValidator ID="RFDescImagen" ControlToValidate="txtImagenDesc" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una imagen" />
+                            <asp:RequiredFieldValidator ID="RFDescImagen" ControlToValidate="txtImagenDesc" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una imagen" />
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -286,7 +286,7 @@
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlClimatizador" class="form-label">Climatizador</label>
-                     <asp:RequiredFieldValidator ID="RFClimatizador" ControlToValidate="ddlClimatizador" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
+                    <asp:RequiredFieldValidator ID="RFClimatizador" ControlToValidate="ddlClimatizador" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:DropDownList ID="ddlSensorEstacionamiento" runat="server" CssClass="form-select">
@@ -295,7 +295,7 @@
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlSensorEstacionamiento" class="form-label">Sensor de Estacionamiento</label>
-                      <asp:RequiredFieldValidator ID="RFSensor" ControlToValidate="ddlSensorEstacionamiento" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
+                    <asp:RequiredFieldValidator ID="RFSensor" ControlToValidate="ddlSensorEstacionamiento" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:DropDownList ID="ddlComputadora" runat="server" CssClass="form-select">
@@ -304,7 +304,7 @@
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlComputadora" class="form-label">Computadora</label>
-                      <asp:RequiredFieldValidator ID="RFCompu" ControlToValidate="ddlComputadora" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
+                    <asp:RequiredFieldValidator ID="RFCompu" ControlToValidate="ddlComputadora" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:DropDownList ID="ddlControlCrucero" runat="server" CssClass="form-select">
@@ -313,7 +313,7 @@
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlControlCrucero" class="form-label">Control Crucero</label>
-                      <asp:RequiredFieldValidator ID="RFControl" ControlToValidate="ddlControlCrucero" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
+                    <asp:RequiredFieldValidator ID="RFControl" ControlToValidate="ddlControlCrucero" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:DropDownList ID="ddlAlarma" runat="server" CssClass="form-select">
@@ -322,7 +322,7 @@
                         <asp:ListItem Text="No" Value="0"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlAlarma" class="form-label">Alarma</label>
-                      <asp:RequiredFieldValidator ID="RFAlarma" ControlToValidate="ddlAlarma" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
+                    <asp:RequiredFieldValidator ID="RFAlarma" ControlToValidate="ddlAlarma" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe seleccionar una opción" />
                 </div>
             </div>
 
@@ -370,13 +370,13 @@
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" ID="txtColor" CssClass="form-control" />
                     <label for="txtColor" class="form-label">Color</label>
-                      <asp:RequiredFieldValidator ID="RFColor" ControlToValidate="txtColor" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un color" />
+                    <asp:RequiredFieldValidator ID="RFColor" ControlToValidate="txtColor" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un color" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" ID="txtImagenMuestraColor" CssClass="form-control"
                         AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
                     <label for="txtImagenMuestraColor" class="form-label">Url Muestra</label>
-                      <asp:RequiredFieldValidator ID="RFMuestaColor" ControlToValidate="txtImagenMuestraColor" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una muestra" />
+                    <asp:RequiredFieldValidator ID="RFMuestaColor" ControlToValidate="txtImagenMuestraColor" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una muestra" />
                 </div>
                 <asp:UpdatePanel ID="UpdatePanel12" runat="server">
                     <ContentTemplate>
@@ -384,11 +384,11 @@
                             <asp:TextBox runat="server" ID="txtImagenColor" CssClass="form-control"
                                 AutoPostBack="true" OnTextChanged="txtImagenColor_TextChanged" />
                             <label for="txtImagenColor" class="form-label">Url Color</label>
-                             <asp:RequiredFieldValidator ID="RFImagenAuto" ControlToValidate="txtImagenColor" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una imagen del auto" />
+                            <asp:RequiredFieldValidator ID="RFImagenAuto" ControlToValidate="txtImagenColor" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una imagen del auto" />
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                       </div>
+            </div>
 
             <div class="d-flex justify-content-end">
                 <a class="btn btn-primary me-2" href="autos.aspx">Cancelar</a>
@@ -436,7 +436,7 @@
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" ID="txtTapizado" CssClass="form-control" />
                     <label for="txtTapizado" class="form-label">Tapizado</label>
-                     <asp:RequiredFieldValidator ID="RFTapizado" ControlToValidate="txtTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un tapizado" />
+                    <asp:RequiredFieldValidator ID="RFTapizado" ControlToValidate="txtTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un tapizado" />
                 </div>
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" ID="txtImagenMuestraTapizado" CssClass="form-control"
@@ -445,7 +445,7 @@
                     <asp:RequiredFieldValidator ID="RFTapizadoMuestra" ControlToValidate="txtImagenMuestraTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una muestra" />
                 </div>
                 <div class="form-floating mb-3">
-                    <asp:TextBox runat="server" ID="txtPrecioTapizado" CssClass="form-control" type="number"/>
+                    <asp:TextBox runat="server" ID="txtPrecioTapizado" CssClass="form-control" type="number" />
                     <label for="txtPrecioTapizado" class="form-label">Precio</label>
                     <asp:RequiredFieldValidator ID="RFPrecioTapizado" ControlToValidate="txtPrecioTapizado" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un precio" />
                 </div>
@@ -459,7 +459,7 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
-                
+
             </div>
 
             <div class="d-flex justify-content-end">
