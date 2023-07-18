@@ -10,6 +10,8 @@ namespace dominio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public string Calle { get; set; }
+        public int Altura { get; set; }
         public string Descripcion { get; set; }
         public string ImagenUrl { get; set; }
         public string MapsUrl { get; set; }
@@ -19,5 +21,6 @@ namespace dominio
         public decimal SabadoCierra { get; set; }
         public string Localidad { get; set; }
         public string Provincia { get; set; }
+        public bool Estado { get; set; }
     }
 }

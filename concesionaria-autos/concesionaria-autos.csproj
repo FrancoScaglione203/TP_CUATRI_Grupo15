@@ -69,6 +69,7 @@
     <Content Include="CargaAuto.aspx" />
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
+    <Content Include="ConcesionariasAdmin.aspx" />
     <Content Include="confirmacionRecuperoClave.aspx" />
     <Content Include="Compras.aspx" />
     <Content Include="confirmar_pago.aspx" />
@@ -235,6 +236,13 @@
     </Compile>
     <Compile Include="Compras.aspx.designer.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConcesionariasAdmin.aspx.cs">
+      <DependentUpon>ConcesionariasAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConcesionariasAdmin.aspx.designer.cs">
+      <DependentUpon>ConcesionariasAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="configuracion.aspx.cs">
       <DependentUpon>configuracion.aspx</DependentUpon>

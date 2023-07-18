@@ -19,6 +19,9 @@
                 <li class="nav-item">
                  <a class="nav-link text-dark" href="Ventas.aspx">Lista de Ventas</a>
                 </li>
+                <li class="nav-item">
+                 <a class="nav-link text-dark" href="ConcesionariasAdmin.aspx">Lista de Concecionarias</a>
+                </li>
                
             </ul>
         </nav>

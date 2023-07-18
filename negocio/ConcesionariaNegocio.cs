@@ -20,7 +20,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select Id,Nombre,Descripcion,ImagenUrl,MapsUrl,SemanaAbre,SemanaCierra,SabadoAbre,SabadoCierra,Localidad,Provincia from CONCESIONARIAS");
+                datos.setearConsulta("Select Id,Nombre,Calle,Altura,Descripcion,ImagenUrl,MapsUrl,SemanaAbre,SemanaCierra,SabadoAbre,SabadoCierra,Localidad,Provincia from CONCESIONARIAS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -29,6 +29,8 @@ namespace negocio
 
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Calle = (string)datos.Lector["Calle"];
+                    aux.Altura = (int)datos.Lector["Altura"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.MapsUrl = (string)datos.Lector["MapsUrl"];
@@ -52,5 +54,61 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update CONCECIONARIAS set Estado = 0 WHERE Id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+
+        public List<Concesionaria> FiltrarAutosAvanzado(string campo, string criterio, string filtro, string estado)
+        {
+            List<Concesionaria> lista = listar();
+
+            List<Concesionaria> listaFiltrada = lista;
+
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                if (campo == "Nombre")
+                {
+                    if (criterio == "Contiene")
+                        listaFiltrada = listaFiltrada.Where(a => a.Nombre.Contains(filtro)).ToList();
+                    else if (criterio == "Comienza con")
+                        listaFiltrada = listaFiltrada.Where(a => a.Nombre.StartsWith(filtro)).ToList();
+                    else if (criterio == "Termina con")
+                        listaFiltrada = listaFiltrada.Where(a => a.Nombre.EndsWith(filtro)).ToList();
+                }
+                else if (campo == "Precio")
+                {
+
+                }
+            }
+
+            if (estado != "Todos")
+            {
+                bool estadoActivo = (estado == "Activo");
+                listaFiltrada = listaFiltrada.Where(a => a.Estado == estadoActivo).ToList();
+            }
+
+            return listaFiltrada;
+        }
+
     }
 }
