@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,8 +15,15 @@ namespace concesionaria_autos
 
         protected void dgvConcesionarias_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ConcesionariaNegocio negocio = new ConcesionariaNegocio();
+
             string id = dgvConcesionarias.SelectedDataKey.Value.ToString();
-            Response.Redirect("FormularioConcesionaria.aspx?id=" + id);
+            int Id = int.Parse(id);
+  
+
+
+            Response.Redirect("FormularioConcesionaria.aspx?id=" + id+ "&valid=1");
+
         }
 
         public bool FiltroAvanzado
@@ -132,6 +140,8 @@ namespace concesionaria_autos
             }
         }
 
+
+        // EL PROBLEMA POR EL CUAL NO MODIFICA VIENE POR ACA
         protected void dgvConcesionarias_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int rowIndex = Convert.ToInt32(e.CommandArgument);
@@ -140,8 +150,10 @@ namespace concesionaria_autos
 
             if (e.CommandName == "Eliminar")
             { 
+
                 ConcesionariaNegocio concesionariaNeogocio = new ConcesionariaNegocio();
                 concesionariaNeogocio.eliminar(id);
+                Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
     }

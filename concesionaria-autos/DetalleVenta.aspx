@@ -79,7 +79,7 @@
                
             <asp:TemplateField HeaderText="Confirmar Pago">
                 <ItemTemplate>
-                    <asp:Button ID="btnConfirmarPago" runat="server" CommandName="ConfirmarCancelarPago" CssClass="btn btn-primary"
+                    <asp:Button ID="btnConfirmarPago" runat="server" CommandName="ConfirmarEliminar" CssClass="btn btn-primary"
                     OnClientClick='<%# Convert.ToBoolean(Eval("Pagada")) ? "return confirm(\"¿Estás seguro de cancelar el pago?\");" : "return confirm(\"¿Estás seguro de confirmar el pago?\");" %>'
                         Text='<%# Convert.ToBoolean(Eval("Pagada")) ? "Cancelar Pago" : "Confirmar Pago" %>' />
                 </ItemTemplate>

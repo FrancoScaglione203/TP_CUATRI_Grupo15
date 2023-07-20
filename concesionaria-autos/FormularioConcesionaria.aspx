@@ -52,9 +52,40 @@
                 </div>
                 <div class="form-floating mb-3">
                     <asp:TextBox runat="server" ID="txtUrlMaps" CssClass="form-control" />
-                    <label for="txtUrlMaps" class="form-label">Descripcion: </label>
+                    <label for="txtUrlMaps" class="form-label">Url Maps: </label>
                     <asp:RequiredFieldValidator ID="RFVaUrlMaps" ControlToValidate="txtUrlMaps" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un link" />
                 </div>
+
+
+
+                <div class="form-floating mb-3">
+                    <div class="row">
+                        <div class="col">
+                            <asp:TextBox runat="server" ID="txtHorarioV1" CssClass="form-control"  />
+                            <label for="txtHorarioV1" class="form-label">Viernes desde</label>
+                            <asp:RequiredFieldValidator ID="RFVaHorarioV1" ControlToValidate="txtHorarioV1" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un horario" />
+                        </div>
+                        <div class="col">
+                            <asp:TextBox runat="server" ID="txtHorarioV2" CssClass="form-control"  />
+                            <label for="txtHorarioV2" class="form-label">Viernes hasta:</label>
+                            <asp:RequiredFieldValidator ID="RFVaHorarioV2" ControlToValidate="txtHorarioV2" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar un horario" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-floating mb-3">
+    <div class="row">
+        <div class="col">
+            <asp:TextBox runat="server" ID="txtHorarioS1" CssClass="form-control"  />
+            <label for="txtHorarioS1" class="form-label">Sabado desde:</label>
+        </div>
+        <div class="col">
+            <asp:TextBox runat="server" ID="txtHorarioS2" CssClass="form-control" />
+            <label for="txtHorarioS2" class="form-label">Sabado hasta:</label>
+        </div>
+    </div>
+</div>
 
 
                 <asp:UpdatePanel ID="UpdatePanel6" runat="server">
@@ -63,7 +94,7 @@
                             <asp:TextBox runat="server" ID="txtImagenUrl" CssClass="form-control"
                                 AutoPostBack="true" OnTextChanged="txtImagenUrl_TextChanged" />
                             <label for="txtImagenUrl" class="form-label">Url Imagen</label>
-                            <asp:RequiredFieldValidator ID="RFImagenMain" ControlToValidate="txtImagenUrl" runat="server" ValidationGroup="FormData" Display="Dynamic" CssClass="text-danger" ErrorMessage="Debe ingresar una imagen" />
+                            
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>

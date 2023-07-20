@@ -15,6 +15,39 @@ namespace concesionaria_autos
         protected void Page_Load(object sender, EventArgs e)
         {
             ConfirmaEliminacion = false;
+
+            Concesionaria concesionaria = new Concesionaria();
+
+            ConcesionariaNegocio concesionariaNegocio = new ConcesionariaNegocio();
+            //ImagenNegocio imagenNegocio = new ImagenNegocio();
+
+            if (Request.QueryString["id"] != null && !IsPostBack)
+            {
+                int idConcesionaria = int.Parse(Request.QueryString["id"]);
+                concesionaria.Id = idConcesionaria;
+                //concesionaria = concesionariaNegocio.mostrar(idConcesionaria);
+
+                concesionaria = concesionariaNegocio.listar(idConcesionaria);
+
+
+                txtNombre.Text = concesionaria.Nombre;
+                txtCalle.Text = concesionaria.Calle;
+                txtAltura.Text = concesionaria.Altura.ToString();
+                txtLocalidad.Text = concesionaria.Localidad;
+                txtProvincia.Text = concesionaria.Provincia;
+                txtDescripcion.Text = concesionaria.Descripcion;
+                txtUrlMaps.Text = concesionaria.MapsUrl;
+                txtImagenUrl.Text = concesionaria.ImagenUrl.ToString();
+                txtImagenUrl_TextChanged(sender, e);
+
+                txtHorarioV1.Text = concesionaria.SemanaAbre.ToString();
+                txtHorarioV2.Text = concesionaria.SemanaCierra.ToString();
+                txtHorarioS1.Text = concesionaria.SabadoAbre.ToString();
+                txtHorarioS2.Text = concesionaria.SabadoCierra.ToString();
+
+            }
+
+
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -34,43 +67,56 @@ namespace concesionaria_autos
              try
              {
 
+                Concesionaria concesionaria = new Concesionaria();
 
+                ConcesionariaNegocio concesionariaNegocio = new ConcesionariaNegocio();
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
 
-                 Concesionaria concesionaria = new Concesionaria();
+                if (Request.QueryString["valid"] == null) 
+                {
+                    concesionaria.Nombre = txtNombre.Text;
+                    concesionaria.Calle = txtCalle.Text;
+                    concesionaria.Altura = int.Parse(txtAltura.Text);
+                    concesionaria.Localidad = txtLocalidad.Text;
+                    concesionaria.Provincia = txtProvincia.Text;
+                    concesionaria.Descripcion = txtDescripcion.Text;
+                    concesionaria.MapsUrl = txtUrlMaps.Text;
+                    concesionaria.ImagenUrl = txtImagenUrl.Text;
 
-                 ConcesionariaNegocio concesionariaNegocio = new ConcesionariaNegocio();
-                 ImagenNegocio imagenNegocio = new ImagenNegocio();
-                 //Tengo que hacer una funcion que dependiendo si es NUEVO aparezcan vacios los campos y grave un nuevo registro
-                 //o MODIFICAR que busca si hay un id por url y con id llena los campos
+                    string valorHorarioV1 = txtHorarioV1.Text;
+                    concesionaria.SemanaAbre = decimal.Parse(valorHorarioV1);
 
+                    string valorHorarioV2 = txtHorarioV2.Text;
+                    concesionaria.SemanaCierra = decimal.Parse(valorHorarioV2) ;
+             
+                    string valorHorarioS1 = txtHorarioS1.Text;
+                    concesionaria.SabadoAbre = decimal.Parse(valorHorarioS1);
 
-                 concesionaria.Nombre = txtNombre.Text;
-                 concesionaria.Calle = txtCalle.Text;
-                 concesionaria.Altura = int.Parse(txtAltura.Text);
-                 concesionaria.Localidad = txtLocalidad.Text;
-                 concesionaria.Provincia = txtProvincia.Text;
-                 concesionaria.Descripcion = txtDescripcion.Text;
-                 concesionaria.MapsUrl = txtUrlMaps.Text;
-                 concesionaria.ImagenUrl = txtImagenUrl.Text;
+                    string valorHorarioS2 = txtHorarioS2.Text;
+                    concesionaria.SabadoCierra = decimal.Parse(valorHorarioS2);
 
-                 if (Request.QueryString["id"] != null)
-                 {
-                     int idConcesionaria = int.Parse(Request.QueryString["id"]);              
-                     concesionaria.Id = idConcesionaria;
-                     concesionariaNegocio.modificar(concesionaria);
-
-                     Session.Add("IdAutoExistente", idConcesionaria); // ver si me sirve
-                 }
-                 else
-                 {
-                     concesionariaNegocio.agregar(concesionaria);
-
-                     //Session.Add("IdAutoNuevo", idArt); // ver si me sirve
+                    concesionariaNegocio.InsertarNuevo(concesionaria);
+                    Response.Redirect("ConcesionariasAdmin.aspx", false);
+                }
+                else
+                {
+                    int idConcesionaria = int.Parse(Request.QueryString["id"]);
+                    concesionaria.Id = idConcesionaria;
+                    concesionariaNegocio.ModificarConcesionaria(concesionaria, idConcesionaria);
+                    //concesionariaNegocio.modificar(concesionaria);
+                    Response.Redirect("ConcesionariasAdmin.aspx", false);
                 }
 
-                 //contenido1.Visible = false;
-                 //contenido2.Visible = true;
 
+
+
+
+
+
+                //TENGO QUE ASIGNARLES VALOR A LAS DE SABADO CUANDO NO LAS LLENAN
+
+
+                
 
              }
              catch (Exception ex)

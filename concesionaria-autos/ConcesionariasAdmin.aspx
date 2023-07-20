@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMaster.master" AutoEventWireup="true" CodeBehind="ConcesionariasAdmin.aspx.cs" Inherits="concesionaria_autos.ConcesionariasAdmin" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-      <h6 class="fw-bold text-center my-3">LISTA CONCESIONARIAS</h6>
+    <h6 class="fw-bold text-center my-3">LISTA CONCESIONARIAS</h6>
     <div class="row">
         <div class="d-flex justify-content-between">
             <div>
@@ -62,21 +63,29 @@
         </div>
         <%} %>
     </div>
-    <asp:GridView OnRowCommand="dgvConcesionarias_RowCommand" ID="dgvConcesionarias" runat="server" DataKeyNames="Id"
-        CssClass="table table-striped text-center" AutoGenerateColumns="false"
-        OnSelectedIndexChanged="dgvConcesionarias_SelectedIndexChanged"
-        OnPageIndexChanging="dgvConcesionarias_PageIndexChanging"
-        AllowPaging="True" PageSize="10">
-        <Columns>
-            <asp:ImageField HeaderText="Foto" DataImageUrlField="ImagenUrl" ControlStyle-Width="100" ControlStyle-Height="100" />
-            <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-            <asp:BoundField HeaderText="Provincia" DataField="Provincia" />
-            <asp:BoundField HeaderText="Localidad" DataField="Localidad" />
-            <asp:BoundField HeaderText="Calle" DataField="Calle" />
-            <asp:BoundField HeaderText="Altura" DataField="Altura" />
-            <asp:CommandField HeaderText="Editar" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
-            <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" Text="Eliminar" ControlStyle-CssClass="btn btn-primary py-1"/>
-        </Columns>
-    </asp:GridView>
 
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <asp:GridView OnRowCommand="dgvConcesionarias_RowCommand" ID="dgvConcesionarias" runat="server" DataKeyNames="Id"
+                CssClass="table table-striped text-center" AutoGenerateColumns="false"
+                OnSelectedIndexChanged="dgvConcesionarias_SelectedIndexChanged"
+                OnPageIndexChanging="dgvConcesionarias_PageIndexChanging"
+                AllowPaging="True" PageSize="10">
+                <Columns>
+                    <asp:ImageField HeaderText="Foto" DataImageUrlField="ImagenUrl" ControlStyle-Width="100" ControlStyle-Height="100" />
+                    <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                    <asp:BoundField HeaderText="Provincia" DataField="Provincia" />
+                    <asp:BoundField HeaderText="Localidad" DataField="Localidad" />
+                    <asp:BoundField HeaderText="Calle" DataField="Calle" />
+                    <asp:BoundField HeaderText="Altura" DataField="Altura" />
+                    <asp:CommandField HeaderText="Editar" ShowSelectButton="true" SelectText="<i class='fas fa-edit'></i>" />
+                    <asp:ButtonField HeaderText="Eliminar" CommandName="Eliminar" Text="Eliminar" ControlStyle-CssClass="btn btn-primary py-1" />
+
+                </Columns>
+            </asp:GridView>
+        </ContentTemplate>
+    </asp:UpdatePanel>
 </asp:Content>
