@@ -5,7 +5,7 @@
     <div class="row">
         <div class="d-flex justify-content-between">
             <div>
-                <a href="signin.aspx" class="btn btn-primary">Nuevo usuario</a>
+                <a href="FormularioUsuario.aspx" class="btn btn-primary">Nuevo usuario</a>
                 <asp:Button Text="Filtro Avanzado" CssClass="btn btn-primary" ID="btnFiltroAvanzado" runat="server" OnClick="btnFiltroAvanzado_Click" />
             </div>
 

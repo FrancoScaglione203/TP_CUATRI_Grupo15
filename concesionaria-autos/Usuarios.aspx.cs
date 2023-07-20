@@ -69,6 +69,8 @@ namespace concesionaria_autos
         {
             string id = dgvUsuarios.SelectedDataKey.Value.ToString();
             Response.Redirect("FormularioUsuario.aspx?id=" + id);
+
+
         }
 
         protected void filtro_TextChanged(object sender, EventArgs e)

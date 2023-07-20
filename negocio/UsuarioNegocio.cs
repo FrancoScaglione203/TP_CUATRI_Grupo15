@@ -78,7 +78,7 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "select id,clave,tipousuario,nombre,apellido,dni,provincia,localidad from usuarios";
+                string consulta = "select Id,Clave,TipoUsuario,Nombre,Apellido,Dni,Provincia,Localidad, Email from usuarios";
                 datos.setearConsulta(consulta);
                 //datos.setearProcedimiento("storedListar");
 
@@ -90,9 +90,12 @@ namespace negocio
                     aux.Apellido = (string)datos.Lector["Apellido"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Dni = (string)datos.Lector["Dni"];
-                    //aux.usuario = (string)datos.Lector["Usuario"];
-                    //aux.Admin = (bool)datos.Lector["Admin"];
-                    //aux.Activo = bool.Parse(datos.Lector["Activo"].ToString());
+                    aux.Email = (string)datos.Lector["Email"];
+                    aux.clave = (string)datos.Lector["Clave"];
+                    aux.Provincia = (string)datos.Lector["Provincia"];
+                    aux.Localidad = (string)datos.Lector["Localidad"];
+                    aux.tipoUsuario = (TipoUsuario)datos.Lector["TipoUsuario"];
+
 
                     lista.Add(aux);
                 }
@@ -215,6 +218,34 @@ namespace negocio
                 throw ex;
             }
             finally 
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void InsertarNuevoDesdeAdmin(Usuario nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearProcedimiento("insertarNuevoDesdeAdmin");
+                datos.setearParametro("@clave", nuevo.clave);
+                datos.setearParametro("@TipoUsuario", nuevo.tipoUsuario);
+                datos.setearParametro("@Nombre", nuevo.Nombre);
+                datos.setearParametro("@Apellido", nuevo.Apellido);
+                datos.setearParametro("@Dni", nuevo.Dni);
+                datos.setearParametro("@Email", nuevo.Email);
+                datos.setearParametro("@Provincia", nuevo.Provincia);
+                datos.setearParametro("@Localidad", nuevo.Localidad);         
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
             {
                 datos.cerrarConexion();
             }

@@ -109,13 +109,6 @@ namespace concesionaria_autos
 
 
 
-
-
-
-
-                //TENGO QUE ASIGNARLES VALOR A LAS DE SABADO CUANDO NO LAS LLENAN
-
-
                 
 
              }
