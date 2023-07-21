@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace concesionaria_autos
 {
-    public partial class ConfirElimin : System.Web.UI.Page
+    public partial class confirElimAdmin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,19 +18,17 @@ namespace concesionaria_autos
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Usuario usuario;
             UsuarioNegocio negocio = new UsuarioNegocio();
 
+            string idUsuario =(Request.QueryString["id"].ToString());
+            negocio.bajaFisica(idUsuario);
 
-            usuario = (Usuario)Session["usuario"];
-            //negocio.BajaLogica(usuario.Id);
-            Session.RemoveAll();
-            Response.Redirect("default.aspx");
+            Response.Redirect("Usuarios.aspx");
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ModificarPerfil.aspx");
+
         }
     }
 }

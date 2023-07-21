@@ -119,11 +119,26 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <asp:DropDownList ID="ddlTipoUsuario" runat="server">
-                        <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
-                        <asp:ListItem Text="Normal" Value="Normal"></asp:ListItem>
+                    <%/*   <asp:DropDownList ID="ddlTipoUsuario" runat="server">
+                                    <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
+                                    <asp:ListItem Text="Normal" Value="Normal"></asp:ListItem>
+                                </asp:DropDownList>
+                                <label for="ddlTipoUsuario" class="form-label">Tipo Usuario: </label>*/%>
+
+                    <%/* <asp:DropDownList ID="ddlTipoUsuario" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoUsuario_SelectedIndexChanged">
+                                <asp:ListItem Text="Admin" Value="Admin"></asp:ListItem>
+                                <asp:ListItem Text="Normal" Value="Normal"></asp:ListItem>
+                            </asp:DropDownList>
+                            <label for="ddlTipoUsuario" class="form-label">Tipo Usuario: </label>*/%>
+
+                    <asp:DropDownList ID="ddlTipoUsuario" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoUsuario_SelectedIndexChanged">
+                        <asp:ListItem Text="Admin" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Normal" Value="2"></asp:ListItem>
                     </asp:DropDownList>
                     <label for="ddlTipoUsuario" class="form-label">Tipo Usuario: </label>
+
+
+
                 </div>
 
 
@@ -131,7 +146,7 @@
 
 
 
-                <a class="nav-item nav-link" href="login.aspx">
+                <a class="nav-item nav-link" href="Usuarios.aspx">
                     <asp:Label ID="lblCancelar" runat="server" CssClass="btn btn-light w-20 p-3" Text="Cancelar" />
 
 
@@ -140,7 +155,33 @@
                     <asp:Button Text="Confirmar" CssClass="btn btn-warning w-25 p-3 mt-4 mb-2" runat="server" ID="btnConfirmar" OnClick="btnConfirmar_Click" />
 
 
-                    <asp:Button Text="Eliminar Cuenta" CssClass="btn btn-light border-1" runat="server" ID="btnEliminar" />
+                    <%if (Session["usuarioNomApell"] != null)
+                        {%>
+
+
+
+
+                    <asp:Button Text="Eliminar Cuenta" CssClass="btn btn-light border-1" runat="server" ID="btnEliminarFisic" OnClick="btnEliminarFisic_Click" />
+
+
+                    <%if (Request.QueryString["activo"] == null)
+                        {%>
+                    <asp:Button Text="Desactivar Cuenta" CssClass="btn btn-light border-1" runat="server" ID="btnEliminarLog" OnClick="btnEliminarLog_Click" />
+                    <%}
+                        else
+                        {%>
+                    <asp:Button Text="Activar cuenta" CssClass="btn btn-light border-1" runat="server" ID="btnActivarLog" OnClick="btnActivarLog_Click" />
+                    <%}%>
+
+                    <% }
+                        else
+                        {%>
+
+                    <%}%>
+
+
+
+
                 </a>
             </div>
         </div>

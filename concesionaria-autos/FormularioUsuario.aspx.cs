@@ -35,16 +35,20 @@ namespace concesionaria_autos
                 txtLocalidad.Text = usuario.Localidad;
                 txtEmail.Text = usuario.Email;
                 txtClave.Text = usuario.clave;
+                ddlTipoUsuario.SelectedIndex = (int)usuario.tipoUsuario;
+                /*
+                if (usuario.tipoUsuario == TipoUsuario.ADMIN)
+                {
+                    ddlTipoUsuario.SelectedValue = "Admin";
+                }
+                else if (usuario.tipoUsuario == TipoUsuario.NORMAL)
+                {
+                    ddlTipoUsuario.SelectedValue = "Normal";
+                }
+                */
 
 
-                if (usuario.tipoUsuario == TipoUsuario.NORMAL)
-                {
-                    ddlTipoUsuario.SelectedValue = "NORMAL";
-                }
-                else if (usuario.tipoUsuario == TipoUsuario.ADMIN)
-                {
-                    ddlTipoUsuario.SelectedValue = "ADMIN";
-                }
+
                 Session["usuarioModif"] = usuario;
             }
         }
@@ -56,34 +60,44 @@ namespace concesionaria_autos
             Usuario usuario;
             UsuarioNegocio negocio = new UsuarioNegocio();
 
-
-            usuario = (Usuario)Session["usuarioModif"];
+            int idUsuario = int.Parse(Request.QueryString["id"]);
+            usuario = negocio.ObtenerUsuarioPorId(idUsuario);
+            //usuario = (Usuario)Session["usuarioModif"];
             string dni = usuario.Dni;
             return dni;
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            
-                Usuario usuario = new Usuario();
-                UsuarioNegocio negocio = new UsuarioNegocio();
-                if(Request.QueryString["id"] != null)
-                { 
-                    usuario = Session["usuarioModif"] as Usuario;
+
+            Usuario usuario = new Usuario();
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            if (Request.QueryString["id"] != null)
+            {
+                usuario = Session["usuarioModif"] as Usuario;
+            }
+            else
+            {
+                if (Session["usuarioNuev"] == null) 
+                {
+                    usuario.Dni = txtDni.Text.ToString();
                 }
                 else 
                 {
-                usuario.Dni = txtDni.Text.ToString();
+                    usuario = Session["usuarioNuev"] as Usuario;
+                    usuario.Dni = txtDni.Text.ToString();
                 }
-        
                 
-                usuario.Apellido = txtApellido.Text;
-                usuario.Nombre = txtNombre.Text;
-                usuario.Provincia = txtProvincia.Text.ToString();
-                usuario.Localidad = txtLocalidad.Text.ToString();
-                usuario.Email = txtEmail.Text.ToString();
-                usuario.clave = txtClave.Text.ToString();
-                usuario.tipoUsuario = (TipoUsuario)ddlTipoUsuario.SelectedIndex;
+            }
+
+
+            usuario.Apellido = txtApellido.Text;
+            usuario.Nombre = txtNombre.Text;
+            usuario.Provincia = txtProvincia.Text.ToString();
+            usuario.Localidad = txtLocalidad.Text.ToString();
+            usuario.Email = txtEmail.Text.ToString();
+            usuario.clave = txtClave.Text.ToString();
+            //usuario.tipoUsuario = (TipoUsuario)ddlTipoUsuario.SelectedIndex;
 
             if (Request.QueryString["id"] != null)
             {
@@ -92,7 +106,7 @@ namespace concesionaria_autos
             }
             else
             {
-                negocio.InsertarNuevoDesdeAdmin(usuario);
+                negocio.agregar(usuario);
                 Response.Redirect("Usuarios.aspx", false);
             }
             Session.Remove("usuarioNomApell");
@@ -102,8 +116,80 @@ namespace concesionaria_autos
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Usuarios.aspx");
+            Session.Remove("usuarioNomApell");
+            Session.Remove("usuarioModif");
         }
 
 
+        protected void btnEliminarFisic_Click(object sender, EventArgs e)
+        {
+            int idUsuario = int.Parse(Request.QueryString["id"]);
+            Session.Remove("usuarioNomApell");
+            Session.Remove("usuarioModif");
+            Response.Redirect("confirElimAdmin.aspx?id=" + idUsuario);
+
+        }
+
+        protected void btnEliminarLog_Click(object sender, EventArgs e)
+        {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            int idUsuario = int.Parse(Request.QueryString["id"]);
+            negocio.BajaLogica(idUsuario);
+            Session.Remove("usuarioNomApell");
+            Session.Remove("usuarioModif");
+            Response.Redirect("Usuarios.aspx");
+
+        }
+
+        protected void btnActivarLog_Click(object sender, EventArgs e)
+        {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+
+            int idUsuario = int.Parse(Request.QueryString["id"]);
+            negocio.alta(idUsuario);
+            Session.Remove("usuarioNomApell");
+            Session.Remove("usuarioModif");
+            Response.Redirect("Usuarios.aspx");
+        }
+
+        protected void ddlTipoUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Session["usuarioModif"] != null)
+            {
+                Usuario usuario = Session["usuarioModif"] as Usuario;
+
+                int valorSeleccionado = int.Parse(ddlTipoUsuario.SelectedValue);
+
+                // Verificamos el valor seleccionado y asignamos el TipoUsuario correspondiente al objeto Usuario
+                if (valorSeleccionado == 1)
+                {
+                    usuario.tipoUsuario = TipoUsuario.ADMIN;
+                }
+                else if (valorSeleccionado == 2)
+                {
+                    usuario.tipoUsuario = TipoUsuario.NORMAL;
+                }
+
+                Session["usuarioModif"] = usuario;
+            }
+            else
+            {
+                Usuario us = new Usuario();
+
+                string valorSeleccionado = ddlTipoUsuario.SelectedValue;
+                int valorEntero;
+
+                if (int.TryParse(valorSeleccionado, out valorEntero))
+                {
+                    if (Enum.IsDefined(typeof(TipoUsuario), valorEntero))
+                    {
+                        us.tipoUsuario = (TipoUsuario)valorEntero;
+                    }
+                }
+                Session["usuarioNuev"] = us;
+
+            }
+        }
     }
 }

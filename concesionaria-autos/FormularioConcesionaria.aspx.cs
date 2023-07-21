@@ -45,6 +45,8 @@ namespace concesionaria_autos
                 txtHorarioS1.Text = concesionaria.SabadoAbre.ToString();
                 txtHorarioS2.Text = concesionaria.SabadoCierra.ToString();
 
+                //usuario = Session["usuarioModif"] as Usuario;
+
             }
 
 
@@ -70,10 +72,9 @@ namespace concesionaria_autos
                 Concesionaria concesionaria = new Concesionaria();
 
                 ConcesionariaNegocio concesionariaNegocio = new ConcesionariaNegocio();
-                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                
 
-                if (Request.QueryString["valid"] == null) 
-                {
+                
                     concesionaria.Nombre = txtNombre.Text;
                     concesionaria.Calle = txtCalle.Text;
                     concesionaria.Altura = int.Parse(txtAltura.Text);
@@ -94,6 +95,9 @@ namespace concesionaria_autos
 
                     string valorHorarioS2 = txtHorarioS2.Text;
                     concesionaria.SabadoCierra = decimal.Parse(valorHorarioS2);
+
+                if (Request.QueryString["valid"] == null)
+                {
 
                     concesionariaNegocio.InsertarNuevo(concesionaria);
                     Response.Redirect("ConcesionariasAdmin.aspx", false);

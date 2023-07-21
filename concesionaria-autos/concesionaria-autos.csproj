@@ -70,6 +70,7 @@
     <Content Include="CargaVenta.aspx" />
     <Content Include="cargaVentaUsuario.aspx" />
     <Content Include="ConcesionariasAdmin.aspx" />
+    <Content Include="confirElimAdmin.aspx" />
     <Content Include="confirmacionRecuperoClave.aspx" />
     <Content Include="Compras.aspx" />
     <Content Include="confirmar_pago.aspx" />
@@ -252,6 +253,13 @@
     </Compile>
     <Compile Include="configuracion.aspx.designer.cs">
       <DependentUpon>configuracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirElimAdmin.aspx.cs">
+      <DependentUpon>confirElimAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirElimAdmin.aspx.designer.cs">
+      <DependentUpon>confirElimAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirElimin.aspx.cs">
       <DependentUpon>ConfirElimin.aspx</DependentUpon>

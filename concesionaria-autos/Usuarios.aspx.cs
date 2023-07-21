@@ -27,12 +27,6 @@ namespace concesionaria_autos
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Seguridad.esAdmin(Session["trainee"]))
-            //{
-            //    Session.Add("error", "Se requiere permisos de admin para acceder a esta pantalla");
-            //    Response.Redirect("Error.aspx");
-            //}
-
 
             UpdateFiltroAvanzadoAppearance();
 
@@ -68,7 +62,22 @@ namespace concesionaria_autos
         protected void dgvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             string id = dgvUsuarios.SelectedDataKey.Value.ToString();
-            Response.Redirect("FormularioUsuario.aspx?id=" + id);
+
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            Usuario usuario = new Usuario();
+            int ID= int.Parse(id);
+            usuario = negocio.ObtenerUsuarioPorId(ID);
+
+            if (usuario.Activo == true)
+            {
+                Response.Redirect("FormularioUsuario.aspx?id=" + id);
+            }
+            else
+            {
+                Response.Redirect("FormularioUsuario.aspx?id=" + id + "&activo=" + usuario.Activo);
+            }
+
+            
 
 
         }
@@ -108,7 +117,7 @@ namespace concesionaria_autos
                     ddlCriterio.SelectedItem.ToString(),
                     txtFiltroAvanzado.Text,
                     ddlEstado.SelectedItem.ToString());
-                dgvUsuarios.DataBind();
+                    dgvUsuarios.DataBind();
             }
             catch (Exception ex)
             {

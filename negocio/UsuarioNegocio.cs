@@ -333,6 +333,29 @@ namespace negocio
             }
         }
 
+        public void alta(int id)
+        {
+          
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update USUARIOS set estado = 1 where id="+id+"");
+                datos.ejecutarAccion();
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+
         public Usuario ObtenerUsuarioPorId(int usuarioId)
         {
             Usuario usuario = null;
@@ -430,6 +453,50 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public void agregar(Usuario usuario)
+        {
+            
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into USUARIOS(Clave, TipoUsuario, Nombre, Apellido,Dni, Email,Provincia,Localidad,Estado) Values ('"+usuario.clave+"',"+(int)usuario.tipoUsuario+",'"+usuario.Nombre+"','"+usuario.Apellido+"','"+usuario.Dni+"','"+usuario.Email+"','"+usuario.Provincia+"','"+usuario.Localidad+"', 1)");
+                datos.ejecutarAccion();
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void bajaFisica(string id)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from USUARIOS where id = "+id+"");
+                datos.ejecutarAccion();
+
+                return;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
 
     }
